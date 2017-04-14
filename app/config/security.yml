@@ -1,0 +1,40 @@
+imports:
+    - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Security/Resources/config/security.yml" }
+
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login:
+            pattern: ^/login
+            stateless: true
+            anonymous: true
+            provider: fos_userbundle
+            form_login:
+                check_path: /login_check
+                username_parameter: username
+                password_parameter: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                require_previous_session: false
+
+        main:
+            pattern: ^/
+            provider: fos_userbundle
+            stateless: true
+            anonymous: true
+            lexik_jwt: ~
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/registration, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/users, role: IS_AUTHENTICATED_FULLY }

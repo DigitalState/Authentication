@@ -1,0 +1,17 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: database8007
+    database_port: null
+    database_name: ds_authentication
+    database_user: ds_authentication
+    database_password: ds_authentication
+    jwt_private_key_path: '%kernel.root_dir%/../var/jwt/private.pem'
+    jwt_public_key_path: '%kernel.root_dir%/../var/jwt/public.pem'
+    jwt_key_pass_phrase: rpr2vgr2ijcg7nOhP
+    jwt_token_ttl: 3600
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: admin@localhost
+    mailer_password: null
+    secret: ThisTokenIsNotSoSecretChangeIt
+    cors_allow_origin: 'http://localhost'

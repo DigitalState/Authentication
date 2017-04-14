@@ -1,0 +1,4 @@
+imports:
+    - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Entity/Resources/config/event_listener/uuid.yml" }
+
+services:

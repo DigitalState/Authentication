@@ -1,0 +1,18 @@
+web8007:
+    build: .
+    environment:
+        SYMFONY_ENV: dev
+    links:
+        - database8007
+    volumes:
+        - .:/app
+    ports:
+        - 8007:80
+
+database8007:
+    image: mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: ds_authentication
+        MYSQL_USER: ds_authentication
+        MYSQL_PASSWORD: ds_authentication
