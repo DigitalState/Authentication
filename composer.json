@@ -28,7 +28,6 @@
         "nelmio/cors-bundle": "^1.4",
         "phpdocumentor/reflection-docblock": "^3.0",
         "knplabs/doctrine-behaviors": "~1.1",
-        "lexik/jwt-authentication-bundle": "^2.2",
         "friendsofsymfony/user-bundle": "~2.0",
         "digitalstate/core": "dev-develop"
     },
