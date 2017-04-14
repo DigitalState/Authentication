@@ -1,4 +1,6 @@
 imports:
     - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Entity/Resources/config/event_listener/uuid.yml" }
+    - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Security/Resources/config/event_listener/token/ip.yml" }
+    - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Security/Resources/config/event_listener/token/uuid.yml" }
 
 services:
