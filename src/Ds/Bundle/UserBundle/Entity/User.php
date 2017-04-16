@@ -4,6 +4,7 @@ namespace Ds\Bundle\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Ds\Component\Entity\Entity\Uuidentifiable;
+use Ds\Component\Entity\Entity\Identitiable;
 use Ds\Component\Entity\Entity\Accessor;
 use Knp\DoctrineBehaviors\Model As Behavior;
 use FOS\UserBundle\Model\UserInterface;
@@ -29,12 +30,14 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\HasLifecycleCallbacks
  * @ORMAssert\UniqueEntity(fields="uuid")
  */
-class User extends BaseUser implements Uuidentifiable
+class User extends BaseUser implements Uuidentifiable, Identitiable
 {
     use Behavior\Timestampable\Timestampable;
 
     use Accessor\Id;
     use Accessor\Uuid;
+    use Accessor\Identity;
+    use Accessor\IdentityUuid;
 
     /**
      * @var integer
@@ -108,6 +111,22 @@ class User extends BaseUser implements Uuidentifiable
      * @Serializer\Groups({"user_output", "user_input_user"})
      */
     protected $roles;
+
+    /**
+     * @var string
+     * @Serializer\Groups({"user_output"})
+     * @ORM\Column(name="identity", type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     */
+    protected $identity;
+
+    /**
+     * @var string
+     * @Serializer\Groups({"user_output"})
+     * @ORM\Column(name="identity_uuid", type="guid", unique=true)
+     * @Assert\Uuid
+     */
+    protected $identityUuid;
 
     /**
      * Check if user is user

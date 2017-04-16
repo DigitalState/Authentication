@@ -29,7 +29,6 @@ security:
 
         main:
             pattern: ^/
-            provider: fos_userbundle
             stateless: true
             anonymous: true
             provider: jwt

@@ -4,6 +4,7 @@ namespace Ds\Bundle\UserBundle\Action;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use FOS\UserBundle\Model\UserManagerInterface;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -53,6 +54,8 @@ class Registration
             ->setEmail($request->get('username'))
             ->setPlainPassword($request->get('password'))
             ->setRoles([ 'ROLE_INDIVIDUAL'])
+            ->setIdentity('Individual')
+            ->setIdentityUuid(Uuid::uuid4()->toString()) // @todo this should create an individual to the identities microservice
             ->setEnabled(true);
 
         $this->userManager->updateUser($user);
