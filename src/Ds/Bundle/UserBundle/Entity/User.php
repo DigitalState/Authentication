@@ -3,6 +3,7 @@
 namespace Ds\Bundle\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
+use Ds\Component\Entity\Entity\Identifiable;
 use Ds\Component\Entity\Entity\Uuidentifiable;
 use Ds\Component\Entity\Entity\Identitiable;
 use Ds\Component\Entity\Entity\Accessor;
@@ -30,7 +31,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\HasLifecycleCallbacks
  * @ORMAssert\UniqueEntity(fields="uuid")
  */
-class User extends BaseUser implements Uuidentifiable, Identitiable
+class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiable
 {
     use Behavior\Timestampable\Timestampable;
 
