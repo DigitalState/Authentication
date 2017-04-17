@@ -3,6 +3,5 @@ imports:
     - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Security/Resources/config/event_listener/token/ip.yml" }
     - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Security/Resources/config/event_listener/token/client.yml" }
     - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Security/Resources/config/event_listener/token/identity.yml" }
-    - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Security/Resources/config/event_listener/token/modifier.yml" }
 
 services:
