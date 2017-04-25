@@ -2,6 +2,9 @@ api:
     resource: .
     type: api_platform
 
+ds_security:
+    resource: "@DsSecurityBundle/Resources/config/routing.yml"
+
 ds_user:
     resource: "@DsUserBundle/Action/"
     type: annotation
