@@ -3,31 +3,30 @@
 namespace Ds\Bundle\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
-use Ds\Component\Entity\Entity\Identifiable;
-use Ds\Component\Entity\Entity\Uuidentifiable;
-use Ds\Component\Entity\Entity\Identitiable;
-use Ds\Component\Entity\Entity\Accessor;
+use Ds\Component\Model\Type\Identifiable;
+use Ds\Component\Model\Type\Uuidentifiable;
+use Ds\Component\Model\Type\Identitiable;
+use Ds\Component\Model\Accessor;
 use Knp\DoctrineBehaviors\Model As Behavior;
 use FOS\UserBundle\Model\UserInterface;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiProperty;
 use Symfony\Component\Serializer\Annotation As Serializer;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints as ORMAssert;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
  *     attributes={
+ *         "filters"={"ds_user.user.filter"},
  *         "normalization_context"={"groups"={"user_output"}},
  *         "denormalization_context"={"groups"={"user_input"}}
  *     }
  * )
  * @ORM\Entity
  * @ORM\Table(name="ds_user")
- * @ORM\InheritanceType("JOINED")
- * @ORM\DiscriminatorColumn(name="discriminator", type="string")
  * @ORM\HasLifecycleCallbacks
  * @ORMAssert\UniqueEntity(fields="uuid")
  */
@@ -42,8 +41,8 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
 
     /**
      * @var integer
-     * @ApiProperty(identifier=false)
-     * @Serializer\Groups({"user_output_user"})
+     * @ApiProperty(identifier=false, writable=false)
+     * @Serializer\Groups({"user_output"})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(name="id", type="integer")
@@ -52,7 +51,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
 
     /**
      * @var string
-     * @ApiProperty(identifier=true)
+     * @ApiProperty(identifier=true, writable=false)
      * @Serializer\Groups({"user_output"})
      * @ORM\Column(name="uuid", type="guid", unique=true)
      * @Assert\Uuid
@@ -61,61 +60,71 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
 
     /**
      * @var \DateTime
-     * @Serializer\Groups({"user_output_user"})
+     * @ApiProperty(writable=false)
+     * @Serializer\Groups({"user_output"})
      */
     protected $createdAt;
 
     /**
      * @var \DateTime
-     * @Serializer\Groups({"user_output_admin"})
+     * @ApiProperty(writable=false)
+     * @Serializer\Groups({"user_output"})
      */
     protected $updatedAt;
 
     /**
      * @var string
+     * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
      */
     protected $username;
 
     /**
      * @var string
+     * @ApiProperty(readable=false)
      * @Serializer\Groups({"user_input"})
      */
     protected $plainPassword;
 
     /**
      * @var string
+     * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
      */
     protected $email;
 
     /**
      * @var boolean
-     * @Serializer\Groups({"user_output_user", "user_input_user"})
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
      */
     protected $enabled;
 
     /**
      * @var \DateTime
-     * @Serializer\Groups({"user_output_user"})
+     * @ApiProperty(writable=false)
+     * @Serializer\Groups({"user_output"})
      */
     protected $lastLogin;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection;
-     * @Serializer\Groups({"user_output", "user_input_user"})
+     * @var \Doctrine\Common\Collections\Collection
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
      */
     protected $groups;
 
     /**
      * @var array
-     * @Serializer\Groups({"user_output", "user_input_user"})
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
      */
     protected $roles;
 
     /**
      * @var string
-     * @Serializer\Groups({"user_output"})
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
      * @ORM\Column(name="identity", type="string", length=255, nullable=true)
      * @Assert\NotBlank
      */
@@ -123,7 +132,8 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
 
     /**
      * @var string
-     * @Serializer\Groups({"user_output"})
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
      * @ORM\Column(name="identity_uuid", type="guid", unique=true)
      * @Assert\Uuid
      */

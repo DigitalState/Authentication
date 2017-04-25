@@ -95,7 +95,7 @@ nelmio_cors:
 
 dunglas_action:
     directories:
-        - ../src/*/Bundle/*Bundle/{Controller,Action,Command,EventSubscriber}
+        - ../src/*/Bundle/*Bundle/{Controller,Action,Command,EventSubscriber,Service}
 
 api_platform:
     title: Authentication
@@ -104,3 +104,13 @@ api_platform:
     default_operation_path_resolver: api_platform.operation_path_resolver.dash
     eager_loading:
         force_eager: false
+
+ds_model:
+    behavior:
+        uuidentifiable: ~
+
+ds_security:
+    token:
+        ip: ~
+        client: ~
+        identity: ~

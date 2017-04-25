@@ -1,1 +1,10 @@
 services:
+    ds_user.service.user:
+        class: Ds\Bundle\UserBundle\Service\UserService
+
+    ds_user.user.filter:
+        parent: api_platform.doctrine.orm.search_filter
+        arguments:
+            - { uuid: exact }
+        tags:
+            - { name: api_platform.filter, id: ds_case.case.filter }

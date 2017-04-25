@@ -1,6 +1,3 @@
-imports:
-    - { resource: "../../vendor/digitalstate/core/src/Ds/Component/Security/Resources/config/security.yml" }
-
 security:
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
@@ -37,6 +34,7 @@ security:
                     - lexik_jwt_authentication.jwt_token_authenticator
 
     access_control:
+        - { path: ^/acl/permissions, role: IS_AUTHENTICATED_FULLY }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/registration, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/users, role: IS_AUTHENTICATED_FULLY }

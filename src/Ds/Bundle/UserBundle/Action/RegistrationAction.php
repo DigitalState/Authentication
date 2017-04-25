@@ -12,9 +12,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 /**
- * Class Registration
+ * Class RegistrationAction
  */
-class Registration
+class RegistrationAction
 {
     /**
      * @var \Symfony\Component\HttpFoundation\RequestStack
