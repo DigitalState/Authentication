@@ -1,1 +1,14 @@
 services:
+    session.handler.pdo:
+        class: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
+        public: false
+        arguments:
+            - "mysql:host=%database_host%;port=%database_port%;dbname=%database_name%"
+            -
+                db_table: session
+                db_id_col: id
+                db_data_col: data
+                db_time_col: time
+                db_lifetime_col: lifetime
+                db_username: "%database_user%"
+                db_password: "%database_password%"

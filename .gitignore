@@ -1,6 +1,6 @@
 /app/config/dev/parameters.yml
-/app/config/prod/parameters.yml
 /app/config/test/parameters.yml
+/app/config/prod/parameters.yml
 /build/
 /phpunit.xml
 /var/*
@@ -19,4 +19,3 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
-/web/adminer.php

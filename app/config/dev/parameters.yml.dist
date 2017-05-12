@@ -1,9 +1,9 @@
 parameters:
-    database_host: database8007
-    database_port: ~
-    database_name: ds_authentication
-    database_user: ds_authentication
-    database_password: ds_authentication
+    database_host: db
+    database_port: 3306
+    database_name: api_platform
+    database_user: api_platform
+    database_password: api_platform
 
     jwt_private_key_path: "%kernel.root_dir%/../var/jwt/private.pem"
     jwt_public_key_path: "%kernel.root_dir%/../var/jwt/public.pem"
