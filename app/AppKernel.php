@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Ds\Component\Model\Bridge\Symfony\Bundle\DsModelBundle(),
             new Ds\Component\Security\Bridge\Symfony\Bundle\DsSecurityBundle(),
+            new Ds\Component\Session\Bridge\Symfony\Bundle\DsSessionBundle(),
             new Ds\Bundle\UserBundle\DsUserBundle(),
         ];
 
