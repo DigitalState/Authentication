@@ -1,0 +1,19 @@
+users:
+    -
+        username: user@ds
+        email: user@ds
+        password: user
+        roles: [ROLE_INDIVIDUAL]
+        uuid: 6caaabae-c446-404d-bd67-79f47e44a3e7
+        identity: Individual
+        identityUuid: 15938c66-8ecb-4ee8-b317-9437404dd89e
+
+prototype:
+    username: ~
+    email: ~
+    enabled: true
+    password: ~
+    roles: []
+    uuid: ~
+    identity: ~
+    identityUuid: ~

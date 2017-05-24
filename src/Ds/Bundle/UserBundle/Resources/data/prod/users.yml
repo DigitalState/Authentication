@@ -1,0 +1,11 @@
+users: []
+
+prototype:
+    username: ~
+    email: ~
+    enabled: true
+    password: ~
+    roles: []
+    uuid: ~
+    identity: ~
+    identityUuid: ~
