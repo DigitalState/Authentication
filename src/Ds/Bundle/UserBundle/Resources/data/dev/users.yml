@@ -1,12 +1,138 @@
 users:
     -
-        username: user@ds
-        email: user@ds
-        password: user
+        username: morgan
+        email: morgan@site
+        password: 1
         roles: [ROLE_INDIVIDUAL]
-        uuid: 6caaabae-c446-404d-bd67-79f47e44a3e7
+        uuid: a57ccc4b-6567-4ea5-83b2-5332baf94611
         identity: Individual
-        identityUuid: 15938c66-8ecb-4ee8-b317-9437404dd89e
+        identityUuid: 9be0af28-ef41-49b7-86d9-72a2d9beb051 # Morgan
+
+    -
+        username: cindy
+        email: cindy@site
+        password: 1
+        roles: [ROLE_INDIVIDUAL]
+        uuid: 56e46441-adf8-43a1-93e2-6027fc62f7f5
+        identity: Individual
+        identityUuid: cfc5c5ce-cc7b-41ff-8699-fbf1dc92d555 # Cindy
+
+    -
+        username: admin
+        email: admin@ds
+        password: 1
+        roles: [ROLE_STAFF]
+        uuid: 19629729-61b6-4675-a3d5-8cf60893a90a
+        identity: Staff
+        identityUuid: 977663e7-c98d-4a51-bcbf-855ff44bd6d0 # Admin
+
+    -
+        username: fa
+        email: finance.admin@ds
+        password: 1
+        roles: [ROLE_STAFF]
+        uuid: 80706c70-ed7c-4a12-8fc1-669a1c655b2d
+        identity: Staff
+        identityUuid: 4ddbd9b7-8fb3-41db-a053-73a12145ab0c # Finance Admin
+
+    -
+        username: fs
+        email: finance.staff@ds
+        password: 1
+        roles: [ROLE_STAFF]
+        uuid: 3b16703e-b725-42dd-bba6-3b05a8483c82
+        identity: Staff
+        identityUuid: da066d19-16a7-49f9-8b38-d9eca91ee0ee # Finance Staff
+
+    -
+        username: hra
+        email: hr.admin@ds
+        password: 1
+        roles: [ROLE_STAFF]
+        uuid: a8f346b0-3b8a-42ea-8770-0a0e92ce1d85
+        identity: Staff
+        identityUuid: 549de645-0dc5-48eb-a527-74fdcd6dda81 # Human Resources Admin
+
+    -
+        username: hrs
+        email: hr.staff@ds
+        password: 1
+        roles: [ROLE_STAFF]
+        uuid: 15ff482d-bbbc-4eb0-a7b6-c59e96975fd1
+        identity: Staff
+        identityUuid: a7c45060-97ce-4a38-ad39-93f7a4dfe107 # Human Resources Staff
+
+    -
+        username: pa
+        email: public.admin@ds
+        password: 1
+        roles: [ROLE_STAFF]
+        uuid: e4a4d679-0553-4954-bead-95c7e795d126
+        identity: Staff
+        identityUuid: 26db6674-ebe5-4511-95b1-e2919e7ab10a # Public Admin
+
+    -
+        username: ps
+        email: public.staff@ds
+        password: 1
+        roles: [ROLE_STAFF]
+        uuid: 891546bf-32ea-4e7e-85cb-5d1e24a8c913
+        identity: Staff
+        identityUuid: e0fbc566-6159-4910-8927-f402fe8fc449 # Public Staff
+
+    -
+        username: assets
+        email: system.assets@ds
+        password: 1
+        roles: [ROLE_SYSTEM]
+        uuid: 2afad27f-7780-4d41-801a-2af638fe1c2c
+        identity: System
+        identityUuid: 2a792547-6f96-48fb-a865-abebcce65333 # Assets
+
+    -
+        username: auth
+        email: system.authentication@ds
+        password: 1
+        roles: [ROLE_SYSTEM]
+        uuid: 9ea51b1a-1755-4821-93ac-29eabde37505
+        identity: System
+        identityUuid: 94c98357-1691-4d20-aa43-c083c70b44a7 # Authentication
+
+    -
+        username: cases
+        email: system.cases@ds
+        password: 1
+        roles: [ROLE_SYSTEM]
+        uuid: 3857e928-657d-474c-a8e6-21a7b75a7789
+        identity: System
+        identityUuid: 3d0abba6-82b2-4c75-88d9-5571d23ca055 # Cases
+
+    -
+        username: identities
+        email: system.identities@ds
+        password: 1
+        roles: [ROLE_SYSTEM]
+        uuid: ae1b6efd-2194-4a99-a739-e5b863d461ea
+        identity: System
+        identityUuid: dd8bbbc5-2554-4a4f-8dd0-e3dc8d86b821 # Identities
+
+    -
+        username: records
+        email: system.records@ds
+        password: 1
+        roles: [ROLE_SYSTEM]
+        uuid: 7d2d74fc-cc2f-48e7-90d7-fbbc49704d9b
+        identity: System
+        identityUuid: bb2c0a92-1b03-4bbf-b61a-dd67d1f8d1dd # Records
+
+    -
+        username: services
+        email: system.services@ds
+        password: 1
+        roles: [ROLE_SYSTEM]
+        uuid: d3c71417-068c-4129-9893-9f7e13a6b42b
+        identity: System
+        identityUuid: c8ac6bd2-7e3c-430a-bbd0-265e7236a143 # Services
 
 prototype:
     username: ~

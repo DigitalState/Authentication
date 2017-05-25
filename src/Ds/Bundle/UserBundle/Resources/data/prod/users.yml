@@ -3,7 +3,7 @@ users: []
 prototype:
     username: ~
     email: ~
-    enabled: true
+    enabled: ~
     password: ~
     roles: []
     uuid: ~
