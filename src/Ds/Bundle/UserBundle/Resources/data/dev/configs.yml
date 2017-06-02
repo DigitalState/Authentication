@@ -1,7 +1,7 @@
 configs:
     -
         key: ds_user.services.identities.url
-        value: ~
+        value: http://192.168.99.100:8054/app_dev.php
         enabled: true
 
 prototype:
