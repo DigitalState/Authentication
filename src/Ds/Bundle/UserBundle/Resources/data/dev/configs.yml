@@ -1,0 +1,10 @@
+configs:
+    -
+        key: ds_user.services.identities.url
+        value: ~
+        enabled: true
+
+prototype:
+    key: ~
+    value: ~
+    enabled: false

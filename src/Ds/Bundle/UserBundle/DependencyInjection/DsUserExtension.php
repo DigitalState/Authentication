@@ -32,5 +32,7 @@ class DsUserExtension extends Extension implements PrependExtensionInterface
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $container->setParameter('ds_user.services.identities.url', $config['services']['identities']['url']);
     }
 }
