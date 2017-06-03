@@ -29,6 +29,7 @@
         "phpdocumentor/reflection-docblock": "^3.0",
         "knplabs/doctrine-behaviors": "~1.1",
         "friendsofsymfony/user-bundle": "~2.0",
+        "guzzlehttp/guzzle": "^6.2",
         "digitalstate/core": "dev-develop"
     },
     "require-dev": {
