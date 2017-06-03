@@ -5,8 +5,14 @@ namespace Ds\Bundle\UserBundle\Action;
 use Symfony\Component\HttpFoundation\RequestStack;
 use FOS\UserBundle\Model\UserManagerInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
+use Ds\Component\Config\Service\ConfigService;
+use GuzzleHttp;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use ApiPlatform\Core\Bridge\Symfony\Validator\Exception\ValidationException;
+use Symfony\Component\Validator\ConstraintViolationList;
+use Symfony\Component\Validator\ConstraintViolation;
+use Exception;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -27,17 +33,29 @@ class RegistrationAction
     protected $userManager;
 
     /**
+     * @var \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface
+     */
+    protected $tokenManager;
+
+    /**
+     * @var \Ds\Component\Config\Service\ConfigService
+     */
+    protected $configService;
+
+    /**
      * Constructor
      *
      * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
      * @param \FOS\UserBundle\Model\UserManagerInterface $userManager
      * @param \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface $tokenManager
+     * @param \Ds\Component\Config\Service\ConfigService $configService
      */
-    public function __construct(RequestStack $requestStack, UserManagerInterface $userManager, JWTTokenManagerInterface $tokenManager)
+    public function __construct(RequestStack $requestStack, UserManagerInterface $userManager, JWTTokenManagerInterface $tokenManager, ConfigService $configService)
     {
         $this->requestStack = $requestStack;
         $this->userManager = $userManager;
         $this->tokenManager = $tokenManager;
+        $this->configService = $configService;
     }
 
     /**
@@ -49,29 +67,91 @@ class RegistrationAction
     public function __invoke()
     {
         $request = $this->requestStack->getCurrentRequest();
+
+        if (!$request->request->has('username')) {
+            throw new ValidationException(new ConstraintViolationList, 'Username is required.');
+        }
+
+        if (!$request->request->has('password')) {
+            throw new ValidationException(new ConstraintViolationList, 'Password is required.');
+        }
+
         $username = $request->get('username');
         $password = $request->get('password');
 
         $exists = $this->userManager->findUserByUsernameOrEmail($username);
 
         if ($exists) {
-            return new JsonResponse([ 'error' => 'Username is already taken.' ], Response::HTTP_BAD_REQUEST);
+            throw new ValidationException(new ConstraintViolationList, 'Username is already taken.');
         }
 
-        // @todo Create Individual identity on the Identities microservice
-
+        $individual = $this->createIndividual();
         $user = $this->userManager->createUser();
         $user
             ->setUsername($username)
             ->setEmail($username)
             ->setPlainPassword($password)
-            ->setRoles([ 'ROLE_INDIVIDUAL'])
-            ->setIdentity('Individual')
-            ->setIdentityUuid('fb848938-add9-4c5e-8922-1a841a73d344')
-            ->setEnabled(true);
+            ->setRoles([$this->configService->get('ds_user.registration.individual.role')])
+            ->setIdentity($this->configService->get('ds_user.registration.individual.identity'))
+            ->setIdentityUuid($individual->uuid)
+            ->setEnabled($this->configService->get('ds_user.registration.individual.enabled'));
 
         $this->userManager->updateUser($user);
 
         return new JsonResponse([ 'uuid' => $user->getUuid() ], Response::HTTP_CREATED);
+    }
+
+    /**
+     * Create an individual identity
+     *
+     * @return array
+     */
+    protected function createIndividual()
+    {
+        $identities = $this->userManager->findUserByUsername($this->configService->get('ds_user.registration.user'));
+        $token = $this->tokenManager->create($identities);
+
+        $client = new GuzzleHttp\Client;
+        $headers = [
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
+            'Authorization' => 'Bearer '.$token
+        ];
+        $json = [
+            'owner' => $this->configService->get('ds_user.registration.individual.owner'),
+            'ownerUuid' => $this->configService->get('ds_user.registration.individual.owner_uuid')
+        ];
+
+        try {
+            $response = $client->request('POST', $this->configService->get('ds_user.services.identities.url').'/individuals', [
+                'headers' => $headers,
+                'json' => $json
+            ]);
+            $individual = GuzzleHttp\json_decode($response->getBody()->getContents());
+        } catch (Exception $exception) {
+            throw new ValidationException(new ConstraintViolationList, 'Individual could not be created.');
+        }
+
+
+        $json = [
+            'owner' => $this->configService->get('ds_user.registration.individual.owner'),
+            'ownerUuid' => $this->configService->get('ds_user.registration.individual.owner_uuid'),
+            'title' => [
+                'en' => 'Default',
+                'fr' => 'Défaut'
+            ],
+            'individual' => '/individuals/'.$individual->uuid
+        ];
+
+        try {
+            $response = $client->request('POST', $this->configService->get('ds_user.services.identities.url').'/app_dev.php/individual-personas', [
+                'headers' => $headers,
+                'json' => $json
+            ]);
+        } catch (Exception $exception) {
+            throw new ValidationException(new ConstraintViolationList, 'Individual could not be created.');
+        }
+
+        return $individual;
     }
 }

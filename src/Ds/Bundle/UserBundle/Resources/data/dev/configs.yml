@@ -2,9 +2,32 @@ configs:
     -
         key: ds_user.services.identities.url
         value: http://192.168.99.100:8054/app_dev.php
-        enabled: true
+
+    -
+        key: ds_user.registration.user
+        value: identities
+
+    -
+        key: ds_user.registration.individual.role
+        value: ROLE_INDIVIDUAL
+
+    -
+        key: ds_user.registration.individual.identity
+        value: Individual
+
+    -
+        key: ds_user.registration.individual.owner
+        value: BusinessUnit
+
+    -
+        key: ds_user.registration.individual.owner_uuid
+        value: ad81abef-6910-4c63-be5c-ad875dea3024        # Public
+
+    -
+        key: ds_user.registration.individual.enabled
+        value: 1
 
 prototype:
     key: ~
     value: ~
-    enabled: false
+    enabled: true
