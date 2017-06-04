@@ -132,7 +132,6 @@ class RegistrationAction
             throw new ValidationException(new ConstraintViolationList, 'Individual could not be created.');
         }
 
-
         $json = [
             'owner' => $this->configService->get('ds_user.registration.individual.owner'),
             'ownerUuid' => $this->configService->get('ds_user.registration.individual.owner_uuid'),
