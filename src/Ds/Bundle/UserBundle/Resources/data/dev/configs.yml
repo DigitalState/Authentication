@@ -1,7 +1,7 @@
 configs:
     -
         key: ds_user.services.identities.url
-        value: http://192.168.99.100:8054/app_dev.php
+        value: http://172.19.0.1:8054/app_dev.php
 
     -
         key: ds_user.registration.user
