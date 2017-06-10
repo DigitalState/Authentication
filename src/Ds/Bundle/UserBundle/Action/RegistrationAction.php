@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use ApiPlatform\Core\Bridge\Symfony\Validator\Exception\ValidationException;
 use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Component\Validator\ConstraintViolation;
+use stdClass;
 use Exception;
 
 use Symfony\Component\Routing\Annotation\Route;
@@ -98,7 +99,7 @@ class RegistrationAction
 
         $this->userManager->updateUser($user);
 
-        return new JsonResponse([ 'uuid' => $user->getUuid() ], Response::HTTP_CREATED);
+        return new JsonResponse(new StdClass, Response::HTTP_CREATED);
     }
 
     /**
