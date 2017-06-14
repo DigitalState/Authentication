@@ -1,19 +1,18 @@
 <?php
 
-namespace Ds\Bundle\AnonymousBundle\Action;
+namespace Ds\Bundle\TokenBundle\Action\Token;
 
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use stdClass;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 /**
- * Class LoginAction
+ * Class RefreshAction
  */
-class LoginAction
+class RefreshAction
 {
     /**
      * @var \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface
@@ -33,11 +32,11 @@ class LoginAction
     /**
      * Login
      *
-     * @Route(path="/login")
+     * @Route(path="/token/refresh")
      * @Method("POST")
      */
     public function __invoke()
     {
-        return new JsonResponse(new StdClass, Response::HTTP_CREATED);
+        return new JsonResponse(['token' => null], Response::HTTP_CREATED);
     }
 }

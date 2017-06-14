@@ -1,6 +1,6 @@
 <?php
 
-namespace Ds\Bundle\AnonymousBundle\DependencyInjection;
+namespace Ds\Bundle\TokenBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -8,9 +8,9 @@ use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\Config\FileLocator;
 
 /**
- * Class DsAnonymousExtension
+ * Class DsTokenExtension
  */
-class DsAnonymousExtension extends Extension
+class DsTokenExtension extends Extension
 {
     /**
      * {@inheritdoc}

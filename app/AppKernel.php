@@ -32,7 +32,7 @@ class AppKernel extends Kernel
             new Ds\Component\Model\Bridge\Symfony\Bundle\DsModelBundle(),
             new Ds\Component\Security\Bridge\Symfony\Bundle\DsSecurityBundle(),
             new Ds\Component\Session\Bridge\Symfony\Bundle\DsSessionBundle(),
-            new Ds\Bundle\AnonymousBundle\DsAnonymousBundle(),
+            new Ds\Bundle\TokenBundle\DsTokenBundle(),
             new Ds\Bundle\UserBundle\DsUserBundle(),
         ];
 
