@@ -5,6 +5,10 @@ api:
 ds_security:
     resource: "@DsSecurityBundle/Resources/config/routing.yml"
 
+ds_anonymous:
+    resource: "@DsAnonymousBundle/Action/"
+    type: annotation
+
 ds_user:
     resource: "@DsUserBundle/Action/"
     type: annotation
