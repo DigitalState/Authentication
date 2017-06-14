@@ -30,7 +30,7 @@ class RefreshAction
     }
 
     /**
-     * Login
+     * Token refresh
      *
      * @Route(path="/token/refresh")
      * @Method("POST")

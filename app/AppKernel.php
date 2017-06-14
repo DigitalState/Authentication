@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new Ds\Component\Security\Bridge\Symfony\Bundle\DsSecurityBundle(),
             new Ds\Component\Session\Bridge\Symfony\Bundle\DsSessionBundle(),
             new Ds\Bundle\TokenBundle\DsTokenBundle(),
+            new Ds\Bundle\RegistrationBundle\DsRegistrationBundle(),
             new Ds\Bundle\UserBundle\DsUserBundle(),
         ];
 

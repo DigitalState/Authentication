@@ -30,7 +30,7 @@ class TokenAction
     }
 
     /**
-     * Login
+     * Token
      *
      * @Route(path="/token")
      * @Method("POST")
