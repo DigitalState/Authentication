@@ -3,16 +3,3 @@ ds_security:
         permissions:
             user:               { entity: Ds\Bundle\UserBundle\Entity\User, attributes: [BROWSE, READ, EDIT, ADD, DELETE] }
             user_field:         { field:  Ds\Bundle\UserBundle\Entity\User.*, attributes: [BROWSE, READ, EDIT] }
-
-ds_user:
-    services:
-        identities:
-            url: ~
-    registration:
-        user: ~
-        individual:
-            role: ROLE_INDIVIDUAL
-            identity: Individual
-            owner: BusinessUnit
-            owner_uuid: ~
-            enabled: false

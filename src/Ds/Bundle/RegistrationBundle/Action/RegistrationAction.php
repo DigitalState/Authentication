@@ -1,6 +1,6 @@
 <?php
 
-namespace Ds\Bundle\UserBundle\Action;
+namespace Ds\Bundle\RegistrationBundle\Action;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use FOS\UserBundle\Model\UserManagerInterface;
@@ -92,10 +92,10 @@ class RegistrationAction
             ->setUsername($username)
             ->setEmail($username)
             ->setPlainPassword($password)
-            ->setRoles([$this->configService->get('ds_user.registration.individual.role')])
-            ->setIdentity($this->configService->get('ds_user.registration.individual.identity'))
+            ->setRoles([$this->configService->get('ds_registration.individual.role')])
+            ->setIdentity($this->configService->get('ds_registration.individual.identity'))
             ->setIdentityUuid($individual->uuid)
-            ->setEnabled($this->configService->get('ds_user.registration.individual.enabled'));
+            ->setEnabled($this->configService->get('ds_registration.individual.enabled'));
 
         $this->userManager->updateUser($user);
 
@@ -109,7 +109,7 @@ class RegistrationAction
      */
     protected function createIndividual()
     {
-        $identities = $this->userManager->findUserByUsername($this->configService->get('ds_user.registration.user'));
+        $identities = $this->userManager->findUserByUsername($this->configService->get('ds_registration.user'));
         $token = $this->tokenManager->create($identities);
 
         $client = new GuzzleHttp\Client;
@@ -119,12 +119,12 @@ class RegistrationAction
             'Authorization' => 'Bearer '.$token
         ];
         $json = [
-            'owner' => $this->configService->get('ds_user.registration.individual.owner'),
-            'ownerUuid' => $this->configService->get('ds_user.registration.individual.owner_uuid')
+            'owner' => $this->configService->get('ds_registration.individual.owner'),
+            'ownerUuid' => $this->configService->get('ds_registration.individual.owner_uuid')
         ];
 
         try {
-            $response = $client->request('POST', $this->configService->get('ds_user.services.identities.url').'/individuals', [
+            $response = $client->request('POST', $this->configService->get('ds_registration.services.identities.url').'/individuals', [
                 'headers' => $headers,
                 'json' => $json
             ]);
@@ -134,8 +134,8 @@ class RegistrationAction
         }
 
         $json = [
-            'owner' => $this->configService->get('ds_user.registration.individual.owner'),
-            'ownerUuid' => $this->configService->get('ds_user.registration.individual.owner_uuid'),
+            'owner' => $this->configService->get('ds_registration.individual.owner'),
+            'ownerUuid' => $this->configService->get('ds_registration.individual.owner_uuid'),
             'title' => [
                 'en' => 'Default',
                 'fr' => 'Défaut'
@@ -144,7 +144,7 @@ class RegistrationAction
         ];
 
         try {
-            $response = $client->request('POST', $this->configService->get('ds_user.services.identities.url').'/app_dev.php/individual-personas', [
+            $response = $client->request('POST', $this->configService->get('ds_registration.services.identities.url').'/app_dev.php/individual-personas', [
                 'headers' => $headers,
                 'json' => $json
             ]);

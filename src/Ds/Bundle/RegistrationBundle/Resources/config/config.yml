@@ -1,0 +1,11 @@
+ds_registration:
+    services:
+        identities:
+            url: ~
+    user: ~
+    individual:
+        role: ROLE_INDIVIDUAL
+        identity: Individual
+        owner: BusinessUnit
+        owner_uuid: ~
+        enabled: false
