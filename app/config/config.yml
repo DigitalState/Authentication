@@ -112,6 +112,7 @@ api_platform:
     default_operation_path_resolver: api_platform.operation_path_resolver.dash
     eager_loading:
         force_eager: false
+    enable_fos_user: true
 
 ds_model:
     behavior:
