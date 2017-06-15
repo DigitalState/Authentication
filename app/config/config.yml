@@ -113,6 +113,8 @@ api_platform:
     eager_loading:
         force_eager: false
     enable_fos_user: true
+    enable_swagger: false
+    enable_swagger_ui: false
 
 ds_model:
     behavior:
