@@ -21,7 +21,7 @@ ds_registration:
 #    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
 fos_user_security_check:
-    path: /login_check
+    path: /login
     methods: POST
     defaults: { _controller: FOSUserBundle:Security:check }
 
