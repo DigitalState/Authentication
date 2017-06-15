@@ -6,7 +6,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Ds\Component\Model\Type\Identifiable;
 use Ds\Component\Model\Type\Uuidentifiable;
 use Ds\Component\Model\Type\Identitiable;
-use Ds\Component\Model\Accessor;
+use Ds\Component\Model\Attribute\Accessor;
 use Knp\DoctrineBehaviors\Model As Behavior;
 use FOS\UserBundle\Model\UserInterface;
 
