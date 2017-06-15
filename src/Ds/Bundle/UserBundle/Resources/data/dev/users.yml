@@ -5,7 +5,7 @@ users:
         password: 1
         roles: [ROLE_ANONYMOUS]
         uuid: ff50bdc0-013b-4fd7-b53c-627888e803b7
-        identity: ~
+        identity: Anonymous
         identityUuid: ~
 
     -
