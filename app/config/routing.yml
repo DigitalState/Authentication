@@ -13,8 +13,8 @@ ds_token:
 #    resource: "@DsRegistrationBundle/Action/"
 #    type: annotation
 
-ds_user:
-    resource: "@DsUserBundle/Action/"
+ds_registration:
+    resource: "@DsRegistrationBundle/Action/"
     type: annotation
 
 #fos_user_security:
