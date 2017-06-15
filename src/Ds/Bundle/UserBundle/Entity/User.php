@@ -134,7 +134,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @var string
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
-     * @ORM\Column(name="identity_uuid", type="guid", unique=true)
+     * @ORM\Column(name="identity_uuid", type="guid", unique=true, nullable=true)
      * @Assert\Uuid
      */
     protected $identityUuid;
