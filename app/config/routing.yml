@@ -3,22 +3,22 @@ api:
     type: api_platform
 
 ds_security:
-    resource: "@DsSecurityBundle/Resources/config/routing.yml"
+    resource: '@DsSecurityBundle/Resources/config/routing.yml'
 
 ds_token:
-    resource: "@DsTokenBundle/Action/"
+    resource: '@DsTokenBundle/Action/'
     type: annotation
 
 #ds_registration:
-#    resource: "@DsRegistrationBundle/Action/"
+#    resource: '@DsRegistrationBundle/Action/'
 #    type: annotation
 
 ds_registration:
-    resource: "@DsRegistrationBundle/Action/"
+    resource: '@DsRegistrationBundle/Action/'
     type: annotation
 
 #fos_user_security:
-#    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+#    resource: '@FOSUserBundle/Resources/config/routing/security.xml'
 
 fos_user_security_check:
     path: /security-check
@@ -26,17 +26,17 @@ fos_user_security_check:
     defaults: { _controller: FOSUserBundle:Security:check }
 
 #fos_user_profile:
-#    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+#    resource: '@FOSUserBundle/Resources/config/routing/profile.xml'
 #    prefix: /profile
 
 #fos_user_register:
-#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+#    resource: '@FOSUserBundle/Resources/config/routing/registration.xml'
 #    prefix: /register
 
 #fos_user_resetting:
-#    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+#    resource: '@FOSUserBundle/Resources/config/routing/resetting.xml'
 #    prefix: /resetting
 
 #fos_user_change_password:
-#    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+#    resource: '@FOSUserBundle/Resources/config/routing/change_password.xml'
 #    prefix: /profile
