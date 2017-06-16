@@ -11,13 +11,13 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        login:
-            pattern: ^/login
+        security:
+            pattern: ^/security
             stateless: true
             anonymous: true
             provider: fos_userbundle
             form_login:
-                check_path: /login
+                check_path: fos_user_security_check
                 username_parameter: username
                 password_parameter: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
