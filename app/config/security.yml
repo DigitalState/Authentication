@@ -11,13 +11,26 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        security:
-            pattern: ^/tokens
+        security_check_staff:
+            pattern: ^/tokens/staff
             stateless: true
             anonymous: true
             provider: fos_userbundle
             form_login:
-                check_path: fos_user_security_check
+                check_path: fos_user_security_check_staff
+                username_parameter: username
+                password_parameter: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                require_previous_session: false
+
+        security_check_individual:
+            pattern: ^/tokens/individual
+            stateless: true
+            anonymous: true
+            provider: fos_userbundle
+            form_login:
+                check_path: fos_user_security_check_individual
                 username_parameter: username
                 password_parameter: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success

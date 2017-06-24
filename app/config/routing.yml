@@ -16,8 +16,13 @@ ds_registration:
 #fos_user_security:
 #    resource: '@FOSUserBundle/Resources/config/routing/security.xml'
 
-fos_user_security_check:
+fos_user_security_check_staff:
     path: /tokens/staff
+    methods: POST
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+fos_user_security_check_individual:
+    path: /tokens/individual
     methods: POST
     defaults: { _controller: FOSUserBundle:Security:check }
 
