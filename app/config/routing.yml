@@ -9,10 +9,6 @@ ds_token:
     resource: '@DsTokenBundle/Action/'
     type: annotation
 
-#ds_registration:
-#    resource: '@DsRegistrationBundle/Action/'
-#    type: annotation
-
 ds_registration:
     resource: '@DsRegistrationBundle/Action/'
     type: annotation
@@ -21,7 +17,7 @@ ds_registration:
 #    resource: '@FOSUserBundle/Resources/config/routing/security.xml'
 
 fos_user_security_check:
-    path: /security-check
+    path: /tokens/staff
     methods: POST
     defaults: { _controller: FOSUserBundle:Security:check }
 

@@ -1,6 +1,9 @@
 services:
     ds_user.service.user:
         class: Ds\Bundle\UserBundle\Service\UserService
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - Ds\Bundle\UserBundle\Entity\User
 
     ds_user.user.filter:
         parent: api_platform.doctrine.orm.search_filter

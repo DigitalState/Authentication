@@ -33,6 +33,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as ORMAssert;
 class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiable
 {
     use Behavior\Timestampable\Timestampable;
+    use Behavior\SoftDeletable\SoftDeletable;
 
     use Accessor\Id;
     use Accessor\Uuid;
@@ -71,6 +72,13 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @Serializer\Groups({"user_output"})
      */
     protected $updatedAt;
+
+    /**
+     * @var \DateTime
+     * @ApiProperty(writable=false)
+     * @Serializer\Groups({"user_output"})
+     */
+    protected $deletedAt;
 
     /**
      * @var string

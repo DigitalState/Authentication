@@ -80,7 +80,7 @@ class RegistrationAction
         $username = $request->get('username');
         $password = $request->get('password');
 
-        $exists = $this->userManager->findUserByUsernameOrEmail($username);
+        $exists = $this->userManager->findUserByUsername($username);
 
         if ($exists) {
             throw new ValidationException(new ConstraintViolationList, 'Username is already taken.');

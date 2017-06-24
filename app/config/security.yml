@@ -12,7 +12,7 @@ security:
             security: false
 
         security:
-            pattern: ^/security
+            pattern: ^/tokens
             stateless: true
             anonymous: true
             provider: fos_userbundle
@@ -34,7 +34,11 @@ security:
                     - lexik_jwt_authentication.jwt_token_authenticator
 
     access_control:
-        - { path: ^/acl/permissions, role: IS_AUTHENTICATED_FULLY }
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/registration, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/users, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/security/permissions, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/permissions,          role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/configs,              role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/users,                role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/registration,         role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tokens/anonymous,     role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tokens/individual,    role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tokens/staff,         role: IS_AUTHENTICATED_ANONYMOUSLY }
