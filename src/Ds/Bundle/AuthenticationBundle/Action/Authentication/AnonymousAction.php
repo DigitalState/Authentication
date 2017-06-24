@@ -1,8 +1,8 @@
 <?php
 
-namespace Ds\Bundle\TokenBundle\Action\Tokens;
+namespace Ds\Bundle\AuthenticationBundle\Action\Authentication;
 
-use FOS\UserBundle\Model\UserManagerInterface;
+use Ds\Bundle\AuthenticationBundle\Security\Provider\AnonymousProvider;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -16,9 +16,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class AnonymousAction
 {
     /**
-     * @var \FOS\UserBundle\Model\UserManagerInterface
+     * @var \Ds\Bundle\AuthenticationBundle\Security\Provider\AnonymousProvider
      */
-    protected $userManager;
+    protected $anonymousProvider;
 
     /**
      * @var \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface
@@ -28,12 +28,12 @@ class AnonymousAction
     /**
      * Constructor
      *
-     * @param \FOS\UserBundle\Model\UserManagerInterface $userManager
+     * @param \Ds\Bundle\AuthenticationBundle\Security\Provider\AnonymousProvider $anonymousProvider
      * @param \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface $tokenManager
      */
-    public function __construct(UserManagerInterface $userManager, JWTTokenManagerInterface $tokenManager)
+    public function __construct(AnonymousProvider $anonymousProvider, JWTTokenManagerInterface $tokenManager)
     {
-        $this->userManager = $userManager;
+        $this->anonymousProvider = $anonymousProvider;
         $this->tokenManager = $tokenManager;
     }
 
@@ -45,7 +45,7 @@ class AnonymousAction
      */
     public function post()
     {
-        $user = $this->userManager->findUserByUsername('anonymous');
+        $user = $this->anonymousProvider->loadUserByUsername('anonymous');
         $token = $this->tokenManager->create($user);
 
         return new JsonResponse(['token' => $token], Response::HTTP_CREATED);

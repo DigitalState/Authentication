@@ -3,34 +3,46 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     providers:
-        fos_userbundle:
+        fos_user_security_provider_user:
             id: fos_user.user_provider.username
+
+        ds_authentication_security_provider_anonymous:
+            id: ds_authentication.security.provider.anonymous
+
+        ds_authentication_security_provider_individual:
+            id: ds_authentication.security.provider.individual
+
+        ds_authentication_security_provider_staff:
+            id: ds_authentication.security.provider.staff
+
+        ds_authentication_security_provider_system:
+            id: ds_authentication.security.provider.system
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        security_check_staff:
-            pattern: ^/tokens/staff
+        security_check_individual:
+            pattern: ^/tokens/individual
             stateless: true
             anonymous: true
-            provider: fos_userbundle
+            provider: ds_authentication_security_provider_individual
             form_login:
-                check_path: fos_user_security_check_staff
+                check_path: ds_authentication_security_check_individual
                 username_parameter: username
                 password_parameter: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
                 require_previous_session: false
 
-        security_check_individual:
-            pattern: ^/tokens/individual
+        security_check_staff:
+            pattern: ^/tokens/staff
             stateless: true
             anonymous: true
-            provider: fos_userbundle
+            provider: ds_authentication_security_provider_staff
             form_login:
-                check_path: fos_user_security_check_individual
+                check_path: ds_authentication_security_check_staff
                 username_parameter: username
                 password_parameter: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success

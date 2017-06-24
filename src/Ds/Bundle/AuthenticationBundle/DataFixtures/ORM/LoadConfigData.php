@@ -1,6 +1,6 @@
 <?php
 
-namespace Ds\Bundle\TokenBundle\DataFixtures\ORM;
+namespace Ds\Bundle\AuthenticationBundle\DataFixtures\ORM;
 
 use Ds\Component\Config\Fixture\ORM\ConfigFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
