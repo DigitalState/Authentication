@@ -1,6 +1,7 @@
 users: []
 
 prototype:
+    uuid: ~
     username: ~
     email: ~
     enabled: ~

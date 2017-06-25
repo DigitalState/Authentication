@@ -22,6 +22,7 @@ class LoadUserData extends ResourceFixture implements OrderedFixtureInterface
         foreach ($users as $user) {
             $entity = $userManager->createUser();
             $entity
+                ->setUuid($user['uuid'])
                 ->setUsername($user['username'])
                 ->setEmail($user['email'])
                 ->setPlainPassword($user['password'])
