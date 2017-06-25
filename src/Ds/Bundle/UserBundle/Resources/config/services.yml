@@ -17,7 +17,7 @@ services:
               identityUuid: exact
               roles: partial
         tags:
-            - { name: api_platform.filter, id: user.search }
+            - { name: api_platform.filter, id: ds.user.search }
 
     ds_user.filter.user.date:
         parent: api_platform.doctrine.orm.date_filter
@@ -28,7 +28,7 @@ services:
                 deletedAt: ~
                 lastLogin: ~
         tags:
-            - { name: api_platform.filter, id: user.date }
+            - { name: api_platform.filter, id: ds.user.date }
 
     ds_user.filter.user.boolean:
         parent: api_platform.doctrine.orm.boolean_filter
@@ -36,4 +36,4 @@ services:
             -
                 enabled: ~
         tags:
-            - { name: api_platform.filter, id: user.boolean }
+            - { name: api_platform.filter, id: ds.user.boolean }
