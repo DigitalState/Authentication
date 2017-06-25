@@ -6,6 +6,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Ds\Component\Model\Type\Identifiable;
 use Ds\Component\Model\Type\Uuidentifiable;
 use Ds\Component\Model\Type\Identitiable;
+use Ds\Component\Model\Type\Versionable;
 use Ds\Component\Model\Attribute\Accessor;
 use Knp\DoctrineBehaviors\Model As Behavior;
 use FOS\UserBundle\Model\UserInterface;
@@ -30,7 +31,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as ORMAssert;
  * @ORM\HasLifecycleCallbacks
  * @ORMAssert\UniqueEntity(fields="uuid")
  */
-class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiable
+class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiable, Versionable
 {
     use Behavior\Timestampable\Timestampable;
     use Behavior\SoftDeletable\SoftDeletable;
@@ -39,6 +40,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
     use Accessor\Uuid;
     use Accessor\Identity;
     use Accessor\IdentityUuid;
+    use Accessor\Version;
 
     /**
      * @var integer
@@ -146,6 +148,17 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @Assert\Uuid
      */
     protected $identityUuid;
+
+    /**
+     * @var integer
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
+     * @ORM\Column(name="version", type="integer")
+     * @ORM\Version
+     * @Assert\NotBlank
+     * @Assert\Type("integer")
+     */
+    protected $version;
 
     /**
      * Check if user is user
