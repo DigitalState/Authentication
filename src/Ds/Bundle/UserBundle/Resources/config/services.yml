@@ -5,9 +5,35 @@ services:
             - '@doctrine.orm.entity_manager'
             - Ds\Bundle\UserBundle\Entity\User
 
-    ds_user.user.filter:
+    ds_user.filter.user.search:
         parent: api_platform.doctrine.orm.search_filter
         arguments:
-            - { uuid: exact }
+            -
+              id: exact
+              uuid: exact
+              username: partial
+              email: partial
+              identity: exact
+              identityUuid: exact
+              roles: partial
         tags:
-            - { name: api_platform.filter, id: ds_case.case.filter }
+            - { name: api_platform.filter, id: user.search }
+
+    ds_user.filter.user.date:
+        parent: api_platform.doctrine.orm.date_filter
+        arguments:
+            -
+                createdAt: ~
+                updatedAt: ~
+                deletedAt: ~
+                lastLogin: ~
+        tags:
+            - { name: api_platform.filter, id: user.date }
+
+    ds_user.filter.user.boolean:
+        parent: api_platform.doctrine.orm.boolean_filter
+        arguments:
+            -
+                enabled: ~
+        tags:
+            - { name: api_platform.filter, id: user.boolean }
