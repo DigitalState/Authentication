@@ -30,6 +30,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as ORMAssert;
  * @ORM\Table(name="ds_user")
  * @ORM\HasLifecycleCallbacks
  * @ORMAssert\UniqueEntity(fields="uuid")
+ * @ORMAssert\UniqueEntity(fields="username")
  */
 class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiable, Versionable
 {
@@ -86,6 +87,8 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @var string
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
+     * @Assert\NotBlank
+     * @Assert\Length(min=1, max=255)
      */
     protected $username;
 
@@ -100,6 +103,9 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @var string
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
+     * @Assert\NotBlank
+     * @Assert\Length(min=1, max=255)
+     * @Assert\Email
      */
     protected $email;
 
@@ -107,6 +113,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @var boolean
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
+     * @Assert\Type("boolean")
      */
     protected $enabled;
 
@@ -128,6 +135,11 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @var array
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
+     * @Assert\Type("array")
+     * @Assert\All({
+     *     @Assert\NotBlank,
+     *     @Assert\Length(min=1)
+     * })
      */
     protected $roles;
 
@@ -137,6 +149,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @Serializer\Groups({"user_output", "user_input"})
      * @ORM\Column(name="identity", type="string", length=255, nullable=true)
      * @Assert\NotBlank
+     * @Assert\Length(min=1, max=255)
      */
     protected $identity;
 
@@ -145,6 +158,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
      * @ORM\Column(name="identity_uuid", type="guid", unique=true, nullable=true)
+     * @Assert\NotBlank
      * @Assert\Uuid
      */
     protected $identityUuid;
