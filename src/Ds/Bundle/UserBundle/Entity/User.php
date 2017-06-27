@@ -6,6 +6,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Ds\Component\Model\Type\Identifiable;
 use Ds\Component\Model\Type\Uuidentifiable;
 use Ds\Component\Model\Type\Identitiable;
+use Ds\Component\Model\Type\Versionable;
 use Ds\Component\Model\Attribute\Accessor;
 use Knp\DoctrineBehaviors\Model As Behavior;
 use FOS\UserBundle\Model\UserInterface;
@@ -20,24 +21,31 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as ORMAssert;
 /**
  * @ApiResource(
  *     attributes={
- *         "filters"={"ds_user.user.filter"},
- *         "normalization_context"={"groups"={"user_output"}},
- *         "denormalization_context"={"groups"={"user_input"}}
+ *         "filters"={"ds.user.search", "ds.user.date", "ds.user.boolean"},
+ *         "normalization_context"={
+ *             "groups"={"user_output"}
+ *         },
+ *         "denormalization_context"={
+ *             "groups"={"user_input"}
+ *         }
  *     }
  * )
  * @ORM\Entity
  * @ORM\Table(name="ds_user")
  * @ORM\HasLifecycleCallbacks
  * @ORMAssert\UniqueEntity(fields="uuid")
+ * @ORMAssert\UniqueEntity(fields="username")
  */
-class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiable
+class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiable, Versionable
 {
     use Behavior\Timestampable\Timestampable;
+    use Behavior\SoftDeletable\SoftDeletable;
 
     use Accessor\Id;
     use Accessor\Uuid;
     use Accessor\Identity;
     use Accessor\IdentityUuid;
+    use Accessor\Version;
 
     /**
      * @var integer
@@ -73,9 +81,18 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
     protected $updatedAt;
 
     /**
+     * @var \DateTime
+     * @ApiProperty(writable=false)
+     * @Serializer\Groups({"user_output"})
+     */
+    protected $deletedAt;
+
+    /**
      * @var string
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
+     * @Assert\NotBlank
+     * @Assert\Length(min=1, max=255)
      */
     protected $username;
 
@@ -90,6 +107,9 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @var string
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
+     * @Assert\NotBlank
+     * @Assert\Length(min=1, max=255)
+     * @Assert\Email
      */
     protected $email;
 
@@ -97,6 +117,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @var boolean
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
+     * @Assert\Type("boolean")
      */
     protected $enabled;
 
@@ -118,6 +139,11 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @var array
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
+     * @Assert\Type("array")
+     * @Assert\All({
+     *     @Assert\NotBlank,
+     *     @Assert\Length(min=1)
+     * })
      */
     protected $roles;
 
@@ -127,6 +153,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @Serializer\Groups({"user_output", "user_input"})
      * @ORM\Column(name="identity", type="string", length=255, nullable=true)
      * @Assert\NotBlank
+     * @Assert\Length(min=1, max=255)
      */
     protected $identity;
 
@@ -135,9 +162,21 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
      * @ORM\Column(name="identity_uuid", type="guid", unique=true, nullable=true)
+     * @Assert\NotBlank
      * @Assert\Uuid
      */
     protected $identityUuid;
+
+    /**
+     * @var integer
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
+     * @ORM\Column(name="version", type="integer")
+     * @ORM\Version
+     * @Assert\NotBlank
+     * @Assert\Type("integer")
+     */
+    protected $version;
 
     /**
      * Check if user is user
