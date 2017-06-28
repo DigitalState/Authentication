@@ -120,7 +120,8 @@ class RegistrationAction
         ];
         $json = [
             'owner' => $this->configService->get('ds_registration.individual.owner'),
-            'ownerUuid' => $this->configService->get('ds_registration.individual.owner_uuid')
+            'ownerUuid' => $this->configService->get('ds_registration.individual.owner_uuid'),
+            'version' => 0
         ];
 
         try {
@@ -140,7 +141,8 @@ class RegistrationAction
                 'en' => 'Default',
                 'fr' => 'Défaut'
             ],
-            'individual' => '/individuals/'.$individual->uuid
+            'individual' => '/individuals/'.$individual->uuid,
+            'version' => 0
         ];
 
         try {
