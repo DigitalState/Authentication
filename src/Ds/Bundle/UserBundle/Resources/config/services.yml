@@ -37,3 +37,20 @@ services:
                 enabled: ~
         tags:
             - { name: api_platform.filter, id: ds.user.boolean }
+
+    ds_user.filter.user.order:
+        parent: api_platform.doctrine.orm.order_filter
+        arguments:
+            -
+                id: ~
+                createdAt: ~
+                updatedAt: ~
+                deletedAt: ~
+                username: ~
+                email: ~
+                lastLogin: ~
+                identity: ~
+                identityUuid: ~
+
+        tags:
+            - { name: api_platform.filter, id: ds.user.order }

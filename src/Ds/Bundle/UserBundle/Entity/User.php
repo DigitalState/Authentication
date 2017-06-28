@@ -21,7 +21,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as ORMAssert;
 /**
  * @ApiResource(
  *     attributes={
- *         "filters"={"ds.user.search", "ds.user.date", "ds.user.boolean"},
+ *         "filters"={"ds.user.search", "ds.user.date", "ds.user.boolean", "ds.user.order"},
  *         "normalization_context"={
  *             "groups"={"user_output"}
  *         },
