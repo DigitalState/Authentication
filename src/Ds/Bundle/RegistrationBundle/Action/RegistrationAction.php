@@ -93,6 +93,8 @@ class RegistrationAction
             ->setEmail($username)
             ->setPlainPassword($password)
             ->setRoles([$this->configService->get('ds_registration.individual.role')])
+            ->setOwner($this->configService->get('ds_registration.individual.owner'))
+            ->setOwnerUuid($this->configService->get('ds_registration.individual.owner_uuid'))
             ->setIdentity($this->configService->get('ds_registration.individual.identity'))
             ->setIdentityUuid($individual->uuid)
             ->setEnabled($this->configService->get('ds_registration.individual.enabled'));
@@ -120,7 +122,8 @@ class RegistrationAction
         ];
         $json = [
             'owner' => $this->configService->get('ds_registration.individual.owner'),
-            'ownerUuid' => $this->configService->get('ds_registration.individual.owner_uuid')
+            'ownerUuid' => $this->configService->get('ds_registration.individual.owner_uuid'),
+            'version' => 1
         ];
 
         try {
@@ -140,7 +143,8 @@ class RegistrationAction
                 'en' => 'Default',
                 'fr' => 'Défaut'
             ],
-            'individual' => '/individuals/'.$individual->uuid
+            'individual' => '/individuals/'.$individual->uuid,
+            'version' => 1
         ];
 
         try {

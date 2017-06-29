@@ -5,6 +5,7 @@ namespace Ds\Bundle\UserBundle\Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 use Ds\Component\Model\Type\Identifiable;
 use Ds\Component\Model\Type\Uuidentifiable;
+use Ds\Component\Model\Type\Ownable;
 use Ds\Component\Model\Type\Identitiable;
 use Ds\Component\Model\Type\Versionable;
 use Ds\Component\Model\Attribute\Accessor;
@@ -36,13 +37,15 @@ use Symfony\Bridge\Doctrine\Validator\Constraints as ORMAssert;
  * @ORMAssert\UniqueEntity(fields="uuid")
  * @ORMAssert\UniqueEntity(fields="username")
  */
-class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiable, Versionable
+class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Identitiable, Versionable
 {
     use Behavior\Timestampable\Timestampable;
     use Behavior\SoftDeletable\SoftDeletable;
 
     use Accessor\Id;
     use Accessor\Uuid;
+    use Accessor\Owner;
+    use Accessor\OwnerUuid;
     use Accessor\Identity;
     use Accessor\IdentityUuid;
     use Accessor\Version;
@@ -146,6 +149,26 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Identitiabl
      * })
      */
     protected $roles;
+
+    /**
+     * @var string
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
+     * @ORM\Column(name="`owner`", type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     * @Assert\Length(min=1, max=255)
+     */
+    protected $owner;
+
+    /**
+     * @var string
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
+     * @ORM\Column(name="owner_uuid", type="guid", unique=true, nullable=true)
+     * @Assert\NotBlank
+     * @Assert\Uuid
+     */
+    protected $ownerUuid;
 
     /**
      * @var string
