@@ -4,9 +4,10 @@ prototype:
     uuid: ~
     username: ~
     email: ~
-    enabled: ~
     password: ~
+    enabled: true
     roles: []
-    uuid: ~
     identity: ~
     identityUuid: ~
+    owner: BusinessUnit
+    ownerUuid: ~
