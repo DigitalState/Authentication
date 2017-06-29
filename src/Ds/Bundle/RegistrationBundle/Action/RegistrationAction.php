@@ -111,8 +111,8 @@ class RegistrationAction
      */
     protected function createIndividual()
     {
-        $identities = $this->userManager->findUserByUsername($this->configService->get('ds_registration.user'));
-        $token = $this->tokenManager->create($identities);
+        $system = $this->userManager->findUserByUsername($this->configService->get('ds_registration.user'));
+        $token = $this->tokenManager->create($system);
 
         $client = new GuzzleHttp\Client;
         $headers = [

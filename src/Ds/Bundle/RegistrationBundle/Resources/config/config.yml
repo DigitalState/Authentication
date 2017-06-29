@@ -2,7 +2,7 @@ ds_registration:
     services:
         identities:
             url: ~
-    user: ~
+    user: system
     individual:
         role: ROLE_INDIVIDUAL
         identity: Individual

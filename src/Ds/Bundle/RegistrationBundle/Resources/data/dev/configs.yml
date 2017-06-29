@@ -7,7 +7,7 @@ configs:
     -
         uuid: 107cc9ad-3de1-4beb-8fe0-bfb65da0463a
         key: ds_registration.user
-        value: identities
+        value: system
 
     -
         uuid: 2ada6dde-af3e-47b9-94a4-e824eb65974c
@@ -27,7 +27,7 @@ configs:
     -
         uuid: dff40407-b871-4fd8-b325-9e774d902d02
         key: ds_registration.individual.owner_uuid
-        value: ad81abef-6910-4c63-be5c-ad875dea3024        # Public
+        value: ad81abef-6910-4c63-be5c-ad875dea3024 # Public
 
     -
         uuid: 4d8e6963-1028-4e85-9962-496cbb48b7ef
@@ -37,7 +37,7 @@ configs:
 prototype:
     uuid: ~
     owner: BusinessUnit
-    owner_uuid: 25b88f35-eb37-4dae-9d89-668151e11a0d       # Administration
+    owner_uuid: 25b88f35-eb37-4dae-9d89-668151e11a0d # Administration
     key: ~
     value: ~
     enabled: true
