@@ -6,17 +6,17 @@ security:
         fos_user_security_provider_user:
             id: fos_user.user_provider.username
 
-        ds_authentication_security_provider_anonymous:
-            id: ds_authentication.security.provider.anonymous
+        app_security_provider_anonymous:
+            id: app.security.provider.anonymous
 
-        ds_authentication_security_provider_individual:
-            id: ds_authentication.security.provider.individual
+        app_security_provider_individual:
+            id: app.security.provider.individual
 
-        ds_authentication_security_provider_staff:
-            id: ds_authentication.security.provider.staff
+        app_security_provider_staff:
+            id: app.security.provider.staff
 
-        ds_authentication_security_provider_system:
-            id: ds_authentication.security.provider.system
+        app_security_provider_system:
+            id: app.security.provider.system
 
     firewalls:
         dev:
@@ -27,9 +27,9 @@ security:
             pattern: ^/tokens/individual
             stateless: true
             anonymous: true
-            provider: ds_authentication_security_provider_individual
+            provider: app_security_provider_individual
             form_login:
-                check_path: ds_authentication_security_check_individual
+                check_path: app_security_check_individual
                 username_parameter: username
                 password_parameter: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
@@ -40,9 +40,9 @@ security:
             pattern: ^/tokens/staff
             stateless: true
             anonymous: true
-            provider: ds_authentication_security_provider_staff
+            provider: app_security_provider_staff
             form_login:
-                check_path: ds_authentication_security_check_staff
+                check_path: app_security_check_staff
                 username_parameter: username
                 password_parameter: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success

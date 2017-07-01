@@ -1,0 +1,26 @@
+ds_security:
+    permissions:
+        user:               { title: User,          entity: AppBundle\Entity\User,              attributes: [BROWSE, READ, EDIT, ADD, DELETE] }
+        user_id:            { title: ID,            field:  AppBundle\Entity\User.id,           attributes: [BROWSE, READ, EDIT] }
+        user_uuid:          { title: UUID,          field:  AppBundle\Entity\User.uuid,         attributes: [BROWSE, READ, EDIT] }
+        user_created_at:    { title: Created At,    field:  AppBundle\Entity\User.createdAt,    attributes: [BROWSE, READ, EDIT] }
+        user_updated_at:    { title: Updated At,    field:  AppBundle\Entity\User.updatedAt,    attributes: [BROWSE, READ, EDIT] }
+        user_deleted_at:    { title: Deleted At,    field:  AppBundle\Entity\User.deletedAt,    attributes: [BROWSE, READ, EDIT] }
+        user_username:      { title: Username,      field:  AppBundle\Entity\User.username,     attributes: [BROWSE, READ, EDIT] }
+        user_email:         { title: Email,         field:  AppBundle\Entity\User.email,        attributes: [BROWSE, READ, EDIT] }
+        user_enabled:       { title: Enabled,       field:  AppBundle\Entity\User.enabled,      attributes: [BROWSE, READ, EDIT] }
+        user_last_login:    { title: Last Login,    field:  AppBundle\Entity\User.lastLogin,    attributes: [BROWSE, READ, EDIT] }
+        user_roles:         { title: Roles,         field:  AppBundle\Entity\User.roles,        attributes: [BROWSE, READ, EDIT] }
+        user_identity:      { title: Identity,      field:  AppBundle\Entity\User.identity,     attributes: [BROWSE, READ, EDIT] }
+        user_identity_uuid: { title: Identity UUID, field:  AppBundle\Entity\User.identityUuid, attributes: [BROWSE, READ, EDIT] }
+
+app:
+    registration:
+        handler: system
+        endpoint: ~
+        individual:
+            roles: ROLE_INDIVIDUAL
+            identity: Individual
+            owner: BusinessUnit
+            owner_uuid: ~
+            enabled: false

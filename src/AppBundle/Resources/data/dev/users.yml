@@ -1,0 +1,67 @@
+users:
+    -
+        uuid: 30b09cdf-6c77-4bcb-bb3d-ad1dcdc9f1ef
+        username: admin@ds
+        email: admin@ds
+        password: 1
+        roles: [ROLE_ADMIN]
+        identity: Admin
+        identityUuid: 905686c8-0c86-4ee3-9051-904d1ca46960
+        owner: Admin
+        ownerUuid: 905686c8-0c86-4ee3-9051-904d1ca46960
+
+    -
+        uuid: 201c6e27-d159-4cdf-ae99-6b594c851e1e
+        username: system@ds
+        email: system@ds
+        password: 1
+        roles: [ROLE_SYSTEM]
+        identity: System
+        identityUuid: c8ac6bd2-7e3c-430a-bbd0-265e7236a143
+        owner: System
+        ownerUuid: c8ac6bd2-7e3c-430a-bbd0-265e7236a143
+
+    -
+        uuid: ff50bdc0-013b-4fd7-b53c-627888e803b7
+        username: anonymous@ds
+        email: anonymous@ds
+        password: 1
+        roles: [ROLE_ANONYMOUS]
+        identity: Anonymous
+        identityUuid: ~
+        owner: BusinessUnit
+        ownerUuid: 25b88f35-eb37-4dae-9d89-668151e11a0d # Administration
+
+    -
+        uuid: 62f19203-5b81-4d7a-af23-fb19aad08b0e
+        username: agent@ds
+        email: agent@ds
+        password: 1
+        roles: [ROLE_STAFF]
+        identity: Staff
+        identityUuid: b007c755-a9b6-4aa4-8de8-547828bc9a26 # Agent
+        owner: BusinessUnit
+        ownerUuid: ad81abef-6910-4c63-be5c-ad875dea3024 # Public
+
+    -
+        uuid: a57ccc4b-6567-4ea5-83b2-5332baf94611
+        username: morgan@site
+        email: morgan@site
+        password: 1
+        roles: [ROLE_INDIVIDUAL]
+        identity: Individual
+        identityUuid: 9be0af28-ef41-49b7-86d9-72a2d9beb051 # Morgan
+        owner: BusinessUnit
+        ownerUuid: ad81abef-6910-4c63-be5c-ad875dea3024 # Public
+
+prototype:
+    uuid: ~
+    username: ~
+    email: ~
+    password: ~
+    enabled: true
+    roles: []
+    identity: ~
+    identityUuid: ~
+    owner: BusinessUnit
+    ownerUuid: ~

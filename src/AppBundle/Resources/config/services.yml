@@ -1,0 +1,6 @@
+services:
+    app.service.user:
+        class: AppBundle\Service\UserService
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - AppBundle\Entity\User

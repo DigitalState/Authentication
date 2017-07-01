@@ -48,9 +48,9 @@ doctrine:
         auto_mapping: true
 
 doctrine_migrations:
-    dir_name: '%kernel.root_dir%/Migrations'
-    namespace: Migrations
-    table_name: ds_migration
+    dir_name: '%kernel.root_dir%/../src/AppBundle/Migrations'
+    namespace: AppBundle\Migrations
+    table_name: app_migration
     name: Application Migrations
 
 knp_doctrine_behaviors:
@@ -66,7 +66,7 @@ knp_doctrine_behaviors:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Ds\Bundle\UserBundle\Entity\User
+    user_class: AppBundle\Entity\User
     from_email:
         address: '%mailer_user%'
         sender_name: '%mailer_user%'
@@ -96,7 +96,7 @@ nelmio_cors:
 
 dunglas_action:
     directories:
-        - ../src/*/Bundle/*Bundle/Action
+        - ../src/*Bundle/Action
 
 api_platform:
     title: Authentication
