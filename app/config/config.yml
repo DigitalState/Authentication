@@ -46,6 +46,9 @@ doctrine:
         auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+        second_level_cache:
+            enabled: true
+            region_lifetime: 60
 
 doctrine_migrations:
     dir_name: '%kernel.root_dir%/../src/AppBundle/Migrations'
