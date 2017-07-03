@@ -47,8 +47,16 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
         second_level_cache:
-            enabled: true
-            region_lifetime: 60
+            region_lifetime: 300
+            region_cache_driver:
+                type: file_system
+                cache_provider: app_query
+
+doctrine_cache:
+    providers:
+        app_query:
+            type: file_system
+            namespace: app_query
 
 doctrine_migrations:
     dir_name: '%kernel.root_dir%/../src/AppBundle/Migrations'
