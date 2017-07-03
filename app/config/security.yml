@@ -3,33 +3,33 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     providers:
-        fos_user_security_provider_user:
-            id: fos_user.user_provider.username
+        app_security_provider_admin:
+            id: app.security.provider.admin
 
-        app_security_provider_anonymous:
-            id: app.security.provider.anonymous
-
-        app_security_provider_individual:
-            id: app.security.provider.individual
+        app_security_provider_system:
+            id: app.security.provider.system
 
         app_security_provider_staff:
             id: app.security.provider.staff
 
-        app_security_provider_system:
-            id: app.security.provider.system
+        app_security_provider_individual:
+            id: app.security.provider.individual
+
+        app_security_provider_anonymous:
+            id: app.security.provider.anonymous
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        security_check_individual:
-            pattern: ^/tokens/individual
+        security_check_admin:
+            pattern: ^/tokens/admin
             stateless: true
             anonymous: true
-            provider: app_security_provider_individual
+            provider: app_security_provider_admin
             form_login:
-                check_path: app_security_check_individual
+                check_path: app_security_check_admin
                 username_parameter: username
                 password_parameter: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
@@ -43,6 +43,19 @@ security:
             provider: app_security_provider_staff
             form_login:
                 check_path: app_security_check_staff
+                username_parameter: username
+                password_parameter: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                require_previous_session: false
+
+        security_check_individual:
+            pattern: ^/tokens/individual
+            stateless: true
+            anonymous: true
+            provider: app_security_provider_individual
+            form_login:
+                check_path: app_security_check_individual
                 username_parameter: username
                 password_parameter: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success
@@ -63,7 +76,8 @@ security:
         - { path: ^/permissions,          role: IS_AUTHENTICATED_FULLY }
         - { path: ^/configs,              role: IS_AUTHENTICATED_FULLY }
         - { path: ^/users,                role: IS_AUTHENTICATED_FULLY }
-        - { path: ^/registration,         role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/tokens/anonymous,     role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/tokens/individual,    role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tokens/admin,         role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/tokens/staff,         role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tokens/individual,    role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tokens/anonymous,     role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/registration,         role: IS_AUTHENTICATED_ANONYMOUSLY }

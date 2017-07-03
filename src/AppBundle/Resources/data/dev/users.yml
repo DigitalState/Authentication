@@ -1,8 +1,8 @@
 users:
     -
         uuid: 30b09cdf-6c77-4bcb-bb3d-ad1dcdc9f1ef
-        username: admin@ds
-        email: admin@ds
+        username: admin@digitalstate.ca
+        email: admin@digitalstate.ca
         password: 1
         roles: [ROLE_ADMIN]
         identity: Admin
@@ -12,8 +12,8 @@ users:
 
     -
         uuid: 201c6e27-d159-4cdf-ae99-6b594c851e1e
-        username: system@ds
-        email: system@ds
+        username: system@digitalstate.ca
+        email: system@digitalstate.ca
         password: 1
         roles: [ROLE_SYSTEM]
         identity: System
@@ -23,8 +23,8 @@ users:
 
     -
         uuid: ff50bdc0-013b-4fd7-b53c-627888e803b7
-        username: anonymous@ds
-        email: anonymous@ds
+        username: anonymous@digitalstate.ca
+        email: anonymous@digitalstate.ca
         password: 1
         roles: [ROLE_ANONYMOUS]
         identity: Anonymous
@@ -34,8 +34,8 @@ users:
 
     -
         uuid: 62f19203-5b81-4d7a-af23-fb19aad08b0e
-        username: agent@ds
-        email: agent@ds
+        username: agent@digitalstate.ca
+        email: agent@digitalstate.ca
         password: 1
         roles: [ROLE_STAFF]
         identity: Staff
@@ -45,8 +45,8 @@ users:
 
     -
         uuid: a57ccc4b-6567-4ea5-83b2-5332baf94611
-        username: morgan@site
-        email: morgan@site
+        username: morgan@site.com
+        email: morgan@site.com
         password: 1
         roles: [ROLE_INDIVIDUAL]
         identity: Individual
