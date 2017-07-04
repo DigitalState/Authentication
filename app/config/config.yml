@@ -22,7 +22,7 @@ framework:
     trusted_hosts: ~
     trusted_proxies: ~
     session:
-        handler_id: ds.session.handler.pdo
+        handler_id: ds_session.handler.pdo
     fragments: ~
     http_method_override: true
     assets: ~
@@ -46,11 +46,21 @@ doctrine:
         auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+        second_level_cache:
+            region_cache_driver:
+                type: file_system
+                cache_provider: app_query
+
+doctrine_cache:
+    providers:
+        app_query:
+            type: file_system
+            namespace: app_query
 
 doctrine_migrations:
-    dir_name: '%kernel.root_dir%/Migrations'
-    namespace: Migrations
-    table_name: ds_migration
+    dir_name: '%kernel.root_dir%/../src/AppBundle/Migrations'
+    namespace: AppBundle\Migrations
+    table_name: app_migration
     name: Application Migrations
 
 knp_doctrine_behaviors:
@@ -66,7 +76,7 @@ knp_doctrine_behaviors:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Ds\Bundle\UserBundle\Entity\User
+    user_class: AppBundle\Entity\User
     from_email:
         address: '%mailer_user%'
         sender_name: '%mailer_user%'
@@ -96,7 +106,7 @@ nelmio_cors:
 
 dunglas_action:
     directories:
-        - ../src/*/Bundle/*Bundle/Action
+        - ../src/*Bundle/Action
 
 api_platform:
     title: Authentication

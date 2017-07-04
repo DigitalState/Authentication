@@ -5,20 +5,21 @@ api:
 ds_security:
     resource: '@DsSecurityBundle/Resources/config/routing.yml'
 
-ds_registration:
-    resource: '@DsRegistrationBundle/Action/'
+app_action:
+    resource: '@AppBundle/Action/'
     type: annotation
 
-ds_authentication:
-    resource: '@DsAuthenticationBundle/Action/'
-    type: annotation
-
-ds_authentication_security_check_individual:
-    path: /tokens/individual
+app_security_check_admin:
     methods: POST
+    path: /tokens/admin
     defaults: { _controller: FOSUserBundle:Security:check }
 
-ds_authentication_security_check_staff:
-    path: /tokens/staff
+app_security_check_staff:
     methods: POST
+    path: /tokens/staff
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+app_security_check_individual:
+    methods: POST
+    path: /tokens/individual
     defaults: { _controller: FOSUserBundle:Security:check }

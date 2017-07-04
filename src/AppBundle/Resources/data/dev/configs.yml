@@ -1,0 +1,43 @@
+configs:
+    -
+        uuid: 107cc9ad-3de1-4beb-8fe0-bfb65da0463a
+        key: app.registration.handler
+        value: system@ds
+
+    -
+        uuid: 57b7bbe6-97bd-4d61-b963-d96d02905a39
+        key: app.registration.endpoint
+        value: http://172.19.0.1:8054/app_dev.php
+
+    -
+        uuid: 2ada6dde-af3e-47b9-94a4-e824eb65974c
+        key: app.registration.individual.roles
+        value: ROLE_INDIVIDUAL
+
+    -
+        uuid: 26f65733-7c80-45dd-95b7-0271c88555e5
+        key: app.registration.individual.identity
+        value: Individual
+
+    -
+        uuid: 93e39c2b-f1f2-4dcb-804f-a5ebb1ff4a64
+        key: app.registration.individual.owner
+        value: BusinessUnit
+
+    -
+        uuid: dff40407-b871-4fd8-b325-9e774d902d02
+        key: app.registration.individual.owner_uuid
+        value: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+
+    -
+        uuid: 4d8e6963-1028-4e85-9962-496cbb48b7ef
+        key: app.registration.individual.enabled
+        value: 1
+
+prototype:
+    uuid: ~
+    owner: BusinessUnit
+    owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+    key: ~
+    value: ~
+    enabled: true
