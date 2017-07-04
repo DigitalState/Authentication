@@ -11,6 +11,8 @@ ds_security:
         user_enabled:       { title: Enabled,       property: AppBundle\Entity\User.enabled,      attributes: [BROWSE, READ, EDIT] }
         user_last_login:    { title: Last Login,    property: AppBundle\Entity\User.lastLogin,    attributes: [BROWSE, READ, EDIT] }
         user_roles:         { title: Roles,         property: AppBundle\Entity\User.roles,        attributes: [BROWSE, READ, EDIT] }
+        user_owner:         { title: Owner,         property: AppBundle\Entity\User.identity,     attributes: [BROWSE, READ, EDIT] }
+        user_owner_uuid:    { title: Owner UUID,    property: AppBundle\Entity\User.identityUuid, attributes: [BROWSE, READ, EDIT] }
         user_identity:      { title: Identity,      property: AppBundle\Entity\User.identity,     attributes: [BROWSE, READ, EDIT] }
         user_identity_uuid: { title: Identity UUID, property: AppBundle\Entity\User.identityUuid, attributes: [BROWSE, READ, EDIT] }
 

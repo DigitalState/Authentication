@@ -6,4 +6,4 @@ prototype:
     owner_uuid: ~
     key: ~
     value: ~
-    enabled: false
+    enabled: true

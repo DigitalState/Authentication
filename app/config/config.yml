@@ -47,7 +47,6 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
         second_level_cache:
-            region_lifetime: 300
             region_cache_driver:
                 type: file_system
                 cache_provider: app_query

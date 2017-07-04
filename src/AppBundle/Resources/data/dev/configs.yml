@@ -27,7 +27,7 @@ configs:
     -
         uuid: dff40407-b871-4fd8-b325-9e774d902d02
         key: app.registration.individual.owner_uuid
-        value: ad81abef-6910-4c63-be5c-ad875dea3024 # Public
+        value: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
 
     -
         uuid: 4d8e6963-1028-4e85-9962-496cbb48b7ef
@@ -37,7 +37,7 @@ configs:
 prototype:
     uuid: ~
     owner: BusinessUnit
-    owner_uuid: 25b88f35-eb37-4dae-9d89-668151e11a0d # Administration
+    owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
     key: ~
     value: ~
     enabled: true

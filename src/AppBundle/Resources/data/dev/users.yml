@@ -1,58 +1,63 @@
 users:
     -
-        uuid: 30b09cdf-6c77-4bcb-bb3d-ad1dcdc9f1ef
+        uuid: 2acf3e47-2ac7-4bdc-a93a-5edd4a11cd61
         username: admin@digitalstate.ca
         email: admin@digitalstate.ca
         password: 1
         roles: [ROLE_ADMIN]
+        owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
         identity: Admin
-        identityUuid: 905686c8-0c86-4ee3-9051-904d1ca46960
-        owner: Admin
-        ownerUuid: 905686c8-0c86-4ee3-9051-904d1ca46960
+        identity_uuid: bda1634e-6028-4cce-bc1a-b7e220cdf609 # Admin
 
     -
-        uuid: 201c6e27-d159-4cdf-ae99-6b594c851e1e
+        uuid: 4b0237d1-0917-4d8b-af6d-2aa89be336de
         username: system@digitalstate.ca
         email: system@digitalstate.ca
         password: 1
         roles: [ROLE_SYSTEM]
+        owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
         identity: System
-        identityUuid: c8ac6bd2-7e3c-430a-bbd0-265e7236a143
-        owner: System
-        ownerUuid: c8ac6bd2-7e3c-430a-bbd0-265e7236a143
+        identity_uuid: fe1b94ed-783a-48d7-8bf2-2f9cea89f11e # System
 
     -
-        uuid: ff50bdc0-013b-4fd7-b53c-627888e803b7
+        uuid: 945824f2-3099-442d-ac4f-6c867a1692e6
         username: anonymous@digitalstate.ca
         email: anonymous@digitalstate.ca
         password: 1
         roles: [ROLE_ANONYMOUS]
+        owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
         identity: Anonymous
-        identityUuid: ~
-        owner: BusinessUnit
-        ownerUuid: 25b88f35-eb37-4dae-9d89-668151e11a0d # Administration
+        identity_uuid: ~
 
     -
-        uuid: 62f19203-5b81-4d7a-af23-fb19aad08b0e
+        uuid: 03f8c569-9c5d-43a8-83bb-9cf6c9249e63
+        username: manager@digitalstate.ca
+        email: manager@digitalstate.ca
+        password: 1
+        roles: [ROLE_STAFF]
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        identity: Staff
+        identity_uuid: 47a5a9cb-496f-4db7-8999-489ec404887f # Manager
+
+    -
+        uuid: a84a47a9-60c0-4337-b185-1966aac90373
         username: agent@digitalstate.ca
         email: agent@digitalstate.ca
         password: 1
         roles: [ROLE_STAFF]
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
         identity: Staff
-        identityUuid: b007c755-a9b6-4aa4-8de8-547828bc9a26 # Agent
-        owner: BusinessUnit
-        ownerUuid: ad81abef-6910-4c63-be5c-ad875dea3024 # Public
+        identity_uuid: 9d10157c-f2ce-48fb-a5ab-83faaae952a7 # Agent
 
     -
-        uuid: a57ccc4b-6567-4ea5-83b2-5332baf94611
+        uuid: 42182fd0-9665-4ba4-9f5c-ec290e23814e
         username: morgan@site.com
         email: morgan@site.com
         password: 1
         roles: [ROLE_INDIVIDUAL]
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
         identity: Individual
-        identityUuid: 9be0af28-ef41-49b7-86d9-72a2d9beb051 # Morgan
-        owner: BusinessUnit
-        ownerUuid: ad81abef-6910-4c63-be5c-ad875dea3024 # Public
+        identity_uuid: d0daa7e4-07d1-47e6-93f2-0629adaa3b49 # Morgan
 
 prototype:
     uuid: ~
@@ -61,7 +66,7 @@ prototype:
     password: ~
     enabled: true
     roles: []
-    identity: ~
-    identityUuid: ~
     owner: BusinessUnit
-    ownerUuid: ~
+    owner_uuid: ~
+    identity: ~
+    identity_uuid: ~

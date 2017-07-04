@@ -28,9 +28,9 @@ class LoadUserData extends ResourceFixture implements OrderedFixtureInterface
                 ->setPlainPassword($user['password'])
                 ->setRoles($user['roles'])
                 ->setOwner($user['owner'])
-                ->setOwnerUuid($user['ownerUuid'])
+                ->setOwnerUuid($user['owner_uuid'])
                 ->setIdentity($user['identity'])
-                ->setIdentityUuid($user['identityUuid'])
+                ->setIdentityUuid($user['identity_uuid'])
                 ->setEnabled($user['enabled']);
             $userManager->updateUser($entity);
         }

@@ -7,7 +7,7 @@ prototype:
     password: ~
     enabled: true
     roles: []
-    identity: ~
-    identityUuid: ~
     owner: BusinessUnit
-    ownerUuid: ~
+    owner_uuid: ~
+    identity: ~
+    identity_uuid: ~

@@ -1,4 +1,81 @@
-permission_entries: []
+permission_entries:
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user
+        attributes: [BROWSE, READ, EDIT, ADD, DELETE]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_id
+        attributes: [BROWSE, READ]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_uuid
+        attributes: [BROWSE, READ]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_created_at
+        attributes: [BROWSE, READ]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_updated_at
+        attributes: [BROWSE, READ]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_deleted_at
+        attributes: [BROWSE, READ]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_username
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_email
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_enabled
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_last_login
+        attributes: [BROWSE, READ]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_roles
+        attributes: [BROWSE, READ]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_identity
+        attributes: [BROWSE, READ]
+
+    -
+        permission: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        business_unit_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_identity_uuid
+        attributes: [BROWSE, READ]
 
 prototype:
     permission: ~
