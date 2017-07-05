@@ -106,7 +106,7 @@ nelmio_cors:
 
 dunglas_action:
     directories:
-        - ../src/*Bundle/Action
+        - '%kernel.root_dir%/../src/*Bundle/Action'
 
 api_platform:
     title: Authentication
@@ -121,4 +121,7 @@ api_platform:
 
 ds_model:
     behavior:
-        uuidentifiable: ~
+        uuidentifiable: true
+
+ds_security:
+    acl: true

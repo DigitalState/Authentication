@@ -1,0 +1,19 @@
+accesses:
+    -
+        uuid: 37b4da57-4444-47f5-92ee-bcf09e415f4e
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        identity: Staff
+        identity_uuid: ~
+
+    -
+        uuid: 896c57eb-cdc5-43d7-990b-e98aefc2d75b
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        identity: Staff
+        identity_uuid: 47a5a9cb-496f-4db7-8999-489ec404887f # Manager
+
+prototype:
+    uuid: ~
+    owner: BusinessUnit
+    owner_uuid: ~
+    identity: ~
+    identity_uuid: ~

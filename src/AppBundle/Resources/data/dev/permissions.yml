@@ -1,13 +1,121 @@
 permissions:
     -
-        uuid: 896c57eb-cdc5-43d7-990b-e98aefc2d75b
-        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
-        identity: Staff
-        identity_uuid: 47a5a9cb-496f-4db7-8999-489ec404887f # Manager
+        access: 37b4da57-4444-47f5-92ee-bcf09e415f4e # Staff (all)
+        entity_uuid: ~
+        key: user
+        attributes: [BROWSE, READ]
+
+    -
+        access: 37b4da57-4444-47f5-92ee-bcf09e415f4e # Staff (all)
+        entity_uuid: ~
+        key: user_uuid
+        attributes: [BROWSE, READ]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user
+        attributes: [BROWSE, READ, EDIT, ADD, DELETE]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_id
+        attributes: [BROWSE, READ]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_uuid
+        attributes: [BROWSE, READ]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_created_at
+        attributes: [BROWSE, READ]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_updated_at
+        attributes: [BROWSE, READ]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_deleted_at
+        attributes: [BROWSE, READ]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_username
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_plain_password
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_email
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_enabled
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_last_login
+        attributes: [BROWSE, READ]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_roles
+        attributes: [BROWSE, READ]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_owner
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_owner_uuid
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_identity
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_identity_uuid
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_version
+        attributes: [BROWSE, READ, EDIT]
 
 prototype:
-    uuid: ~
-    owner: BusinessUnit
-    owner_uuid: ~
-    identity: ~
-    identity_uuid: ~
+    access: ~
+    entity: BusinessUnit
+    entity_uuid: ~
+    key: ~
+    attributes: []
