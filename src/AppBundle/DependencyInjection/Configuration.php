@@ -15,10 +15,9 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder;
-        $rootNode = $treeBuilder->root('app');
-
-        $rootNode
+        $builder = new TreeBuilder;
+        $node = $builder->root('app');
+        $node
             ->children()
                 ->arrayNode('registration')
                     ->children()
@@ -44,6 +43,6 @@ class Configuration implements ConfigurationInterface
                 ->end()
             ->end();
 
-        return $treeBuilder;
+        return $builder;
     }
 }

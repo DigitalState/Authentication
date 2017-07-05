@@ -73,7 +73,7 @@ security:
 
     access_control:
         - { path: ^/security/permissions, role: IS_AUTHENTICATED_FULLY }
-        - { path: ^/permissions,          role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/accesses,             role: IS_AUTHENTICATED_FULLY }
         - { path: ^/configs,              role: IS_AUTHENTICATED_FULLY }
         - { path: ^/users,                role: IS_AUTHENTICATED_FULLY }
         - { path: ^/tokens/admin,         role: IS_AUTHENTICATED_ANONYMOUSLY }
