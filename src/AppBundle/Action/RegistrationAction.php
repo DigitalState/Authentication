@@ -110,6 +110,7 @@ class RegistrationAction
      */
     protected function createIndividual()
     {
+        $request = $this->requestStack->getCurrentRequest();
         $handler = $this->userManager->findUserByUsername($this->configService->get('app.registration.handler'));
         $token = $this->tokenManager->create($handler);
 
@@ -126,6 +127,7 @@ class RegistrationAction
         ];
 
         try {
+            $personaData = GuzzleHttp\json_decode($request->get('data', '{}'), true);
             $response = $client->request('POST', $this->configService->get('app.registration.endpoint').'/individuals', [
                 'headers' => $headers,
                 'json' => $json
@@ -142,12 +144,13 @@ class RegistrationAction
                 'en' => 'Default',
                 'fr' => 'Défaut'
             ],
+            'data' => $personaData,
             'individual' => '/individuals/'.$individual->uuid,
             'version' => 1
         ];
 
         try {
-            $response = $client->request('POST', $this->configService->get('app.registration.endpoint').'/app_dev.php/individual-personas', [
+            $response = $client->request('POST', $this->configService->get('app.registration.endpoint').'/individual-personas', [
                 'headers' => $headers,
                 'json' => $json
             ]);
