@@ -65,7 +65,7 @@ class RegistrationAction
      * @Method("POST")
      * @Route(path="/registration")
      */
-    public function __invoke()
+    public function post()
     {
         $request = $this->requestStack->getCurrentRequest();
 
