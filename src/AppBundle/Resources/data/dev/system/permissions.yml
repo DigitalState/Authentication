@@ -1,14 +1,14 @@
 items:
     -
         access: 67e87316-7954-4af1-861d-bcfe5e2e4c87 # Any system
-        entity_uuid: ~ # Any business units
+        entity_uuid: ~ # Any business unit
         key: user
         attributes: [BROWSE, READ, EDIT, ADD, DELETE]
 
     -
         access: 67e87316-7954-4af1-861d-bcfe5e2e4c87 # Any system
-        entity_uuid: ~ # Any business units
-        key: user_uuid
+        entity_uuid: ~ # Any business unit
+        key: user_fields
         attributes: [BROWSE, READ, EDIT]
 
 prototype:

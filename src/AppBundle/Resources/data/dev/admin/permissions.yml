@@ -1,14 +1,14 @@
 items:
     -
         access: 2e01d75e-5ded-43b2-a365-1e4cd1e7a433 # Any admin
-        entity_uuid: ~ # Any business units
+        entity_uuid: ~ # Any business unit
         key: user
         attributes: [BROWSE, READ, EDIT, ADD, DELETE]
 
     -
         access: 2e01d75e-5ded-43b2-a365-1e4cd1e7a433 # Any admin
-        entity_uuid: ~ # Any business units
-        key: user_uuid
+        entity_uuid: ~ # Any business unit
+        key: user_fields
         attributes: [BROWSE, READ, EDIT]
 
 prototype:
