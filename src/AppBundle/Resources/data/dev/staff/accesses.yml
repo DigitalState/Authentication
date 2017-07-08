@@ -17,6 +17,12 @@ items:
         identity: Staff
         identity_uuid: 9d10157c-f2ce-48fb-a5ab-83faaae952a7 # Agent
 
+    -
+        uuid: 992f6408-6c44-4f45-9183-78568b1b8f3c
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        identity: Staff
+        identity_uuid: 71f285ba-f994-444c-b9e5-fa813295a0b7 # Intern
+
 prototype:
     uuid: ~
     owner: BusinessUnit

@@ -1,4 +1,15 @@
-items: []
+items:
+    -
+        access: 37b4da57-4444-47f5-92ee-bcf09e415f4e # Any staff
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user
+        attributes: [BROWSE, READ]
+
+    -
+        access: 37b4da57-4444-47f5-92ee-bcf09e415f4e # Any staff
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_fields
+        attributes: [BROWSE, READ]
 
 prototype:
     access: ~
