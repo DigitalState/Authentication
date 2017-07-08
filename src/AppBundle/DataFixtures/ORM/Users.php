@@ -23,6 +23,6 @@ class Users extends UserFixture implements OrderedFixtureInterface
      */
     protected function getResource()
     {
-        return __DIR__.'/../../Resources/data/{server}/users/*.yml';
+        return __DIR__.'/../../Resources/data/{server}/*/users.yml';
     }
 }
