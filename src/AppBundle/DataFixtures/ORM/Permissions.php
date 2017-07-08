@@ -3,19 +3,19 @@
 namespace AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Ds\Component\Config\Fixture\ORM\ConfigFixture;
+use Ds\Component\Security\Fixture\ORM\PermissionFixture;
 
 /**
- * Class LoadConfigData
+ * Class Permissions
  */
-class LoadConfigData extends ConfigFixture implements OrderedFixtureInterface
+class Permissions extends PermissionFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritdoc}
      */
     public function getOrder()
     {
-        return 0;
+        return 1;
     }
 
     /**
@@ -23,6 +23,6 @@ class LoadConfigData extends ConfigFixture implements OrderedFixtureInterface
      */
     protected function getResource()
     {
-        return __DIR__.'/../../Resources/data/{server}/configs.yml';
+        return __DIR__.'/../../Resources/data/{server}/permissions/*.yml';
     }
 }

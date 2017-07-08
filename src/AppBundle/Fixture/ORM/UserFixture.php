@@ -1,15 +1,14 @@
 <?php
 
-namespace AppBundle\DataFixtures\ORM;
+namespace AppBundle\Fixture\ORM;
 
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Ds\Component\Migration\Fixture\ORM\ResourceFixture;
 
 /**
- * Class LoadUserData
+ * Class UserFixture
  */
-class LoadUserData extends ResourceFixture implements OrderedFixtureInterface
+abstract class UserFixture extends ResourceFixture
 {
     /**
      * {@inheritdoc}
@@ -17,7 +16,7 @@ class LoadUserData extends ResourceFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $userManager = $this->container->get('fos_user.user_manager');
-        $users = $this->parse(__DIR__.'/../../Resources/data/{server}/users.yml');
+        $users = $this->parse($this->getResource());
 
         foreach ($users as $user) {
             $entity = $userManager->createUser();
@@ -37,10 +36,9 @@ class LoadUserData extends ResourceFixture implements OrderedFixtureInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Get resource
+     *
+     * @return string
      */
-    public function getOrder()
-    {
-        return 10;
-    }
+    abstract protected function getResource();
 }
