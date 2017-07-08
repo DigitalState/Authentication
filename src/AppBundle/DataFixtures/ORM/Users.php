@@ -2,8 +2,8 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use AppBundle\Fixture\ORM\UserFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
 /**
  * Class Users
