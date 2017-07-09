@@ -11,6 +11,30 @@ items:
         key: user_fields
         attributes: [BROWSE, READ]
 
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user
+        attributes: [EDIT, ADD, DELETE]
+
+    -
+        access: 896c57eb-cdc5-43d7-990b-e98aefc2d75b # Manager
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_fields
+        attributes: [EDIT]
+
+    -
+        access: f4f2eb9d-a3e4-47c2-b630-09895d3d74e0 # Agent
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user
+        attributes: [EDIT]
+
+    -
+        access: f4f2eb9d-a3e4-47c2-b630-09895d3d74e0 # Agent
+        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        key: user_fields
+        attributes: [EDIT]
+
 prototype:
     access: ~
     entity: BusinessUnit
