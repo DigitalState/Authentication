@@ -1,0 +1,20 @@
+items:
+    -
+        uuid: 42182fd0-9665-4ba4-9f5c-ec290e23814e
+        username: morgan@site.com
+        email: morgan@site.com
+        password: 1
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        identity_uuid: d0daa7e4-07d1-47e6-93f2-0629adaa3b49 # Morgan
+
+prototype:
+    uuid: ~
+    username: ~
+    email: ~
+    password: ~
+    enabled: true
+    roles: [ROLE_INDIVIDUAL]
+    owner: BusinessUnit
+    owner_uuid: ~
+    identity: Individual
+    identity_uuid: ~

@@ -2,20 +2,20 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
+use AppBundle\Fixture\ORM\UserFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Ds\Component\Security\Fixture\ORM\AccessFixture;
 
 /**
- * Class LoadAccessData
+ * Class Users
  */
-class LoadAccessData extends AccessFixture implements OrderedFixtureInterface
+class Users extends UserFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritdoc}
      */
     public function getOrder()
     {
-        return 0;
+        return 10;
     }
 
     /**
@@ -23,6 +23,6 @@ class LoadAccessData extends AccessFixture implements OrderedFixtureInterface
      */
     protected function getResource()
     {
-        return __DIR__.'/../../Resources/data/{server}/accesses.yml';
+        return __DIR__.'/../../Resources/data/{server}/*/users.yml';
     }
 }

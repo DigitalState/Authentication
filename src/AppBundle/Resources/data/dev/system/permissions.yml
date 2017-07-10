@@ -1,0 +1,19 @@
+items:
+    -
+        access: 67e87316-7954-4af1-861d-bcfe5e2e4c87 # Any system
+        entity_uuid: ~ # Any business unit
+        key: entity
+        attributes: [BROWSE, READ, EDIT, ADD, DELETE]
+
+    -
+        access: 67e87316-7954-4af1-861d-bcfe5e2e4c87 # Any system
+        entity_uuid: ~ # Any business unit
+        key: entity_fields
+        attributes: [BROWSE, READ, EDIT]
+
+prototype:
+    access: ~
+    entity: BusinessUnit
+    entity_uuid: ~
+    key: ~
+    attributes: []

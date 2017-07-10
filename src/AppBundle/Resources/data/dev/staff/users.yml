@@ -1,0 +1,36 @@
+items:
+    -
+        uuid: 03f8c569-9c5d-43a8-83bb-9cf6c9249e63
+        username: manager@digitalstate.ca
+        email: manager@digitalstate.ca
+        password: 1
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        identity_uuid: 47a5a9cb-496f-4db7-8999-489ec404887f # Manager
+
+    -
+        uuid: a84a47a9-60c0-4337-b185-1966aac90373
+        username: agent@digitalstate.ca
+        email: agent@digitalstate.ca
+        password: 1
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        identity_uuid: 9d10157c-f2ce-48fb-a5ab-83faaae952a7 # Agent
+
+    -
+        uuid: 3ff10fe3-4594-4b57-ba16-59130e4409b5
+        username: intern@digitalstate.ca
+        email: intern@digitalstate.ca
+        password: 1
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        identity_uuid: 71f285ba-f994-444c-b9e5-fa813295a0b7 # Intern
+
+prototype:
+    uuid: ~
+    username: ~
+    email: ~
+    password: ~
+    enabled: true
+    roles: [ROLE_STAFF]
+    owner: BusinessUnit
+    owner_uuid: ~
+    identity: Staff
+    identity_uuid: ~

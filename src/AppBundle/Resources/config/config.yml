@@ -1,6 +1,7 @@
 ds_security:
     permissions:
         user:                { title: User,           entity:   AppBundle\Entity\User,               attributes: [BROWSE, READ, EDIT, ADD, DELETE] }
+        user_fields:         { title: All Fields,     property: AppBundle\Entity\User.*,             attributes: [BROWSE, READ, EDIT] }
         user_id:             { title: ID,             property: AppBundle\Entity\User.id,            attributes: [BROWSE, READ, EDIT] }
         user_uuid:           { title: UUID,           property: AppBundle\Entity\User.uuid,          attributes: [BROWSE, READ, EDIT] }
         user_created_at:     { title: Created At,     property: AppBundle\Entity\User.createdAt,     attributes: [BROWSE, READ, EDIT] }

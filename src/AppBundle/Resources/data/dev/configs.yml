@@ -1,4 +1,4 @@
-configs:
+items:
     -
         uuid: 107cc9ad-3de1-4beb-8fe0-bfb65da0463a
         key: app.registration.handler

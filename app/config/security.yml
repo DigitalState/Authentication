@@ -6,17 +6,17 @@ security:
         app_security_provider_admin:
             id: app.security.provider.admin
 
-        app_security_provider_system:
-            id: app.security.provider.system
-
-        app_security_provider_staff:
-            id: app.security.provider.staff
+        app_security_provider_anonymous:
+            id: app.security.provider.anonymous
 
         app_security_provider_individual:
             id: app.security.provider.individual
 
-        app_security_provider_anonymous:
-            id: app.security.provider.anonymous
+        app_security_provider_staff:
+            id: app.security.provider.staff
+
+        app_security_provider_system:
+            id: app.security.provider.system
 
     firewalls:
         dev:

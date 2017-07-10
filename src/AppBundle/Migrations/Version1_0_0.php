@@ -32,23 +32,25 @@ class Version1_0_0 extends AbstractMigration
             INSERT INTO 
                 `app_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `confirmation_token`, `password_requested_at`, `roles`, `uuid`, `owner`, `owner_uuid`, `identity`, `identity_uuid`, `version`, `created_at`, `updated_at`, `deleted_at`)
             VALUES 
-                (1, \'admin@digitalstate.ca\', \'admin@digitalstate.ca\', \'admin@digitalstate.ca\', \'admin@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:10:"ROLE_ADMIN";}\', \'aad70948-0089-483a-bae7-f71d50b0386f\', \'Admin\', \'59717ce0-5a37-46d8-ad80-66d5b22d2ccf\', \'Admin\', \'59717ce0-5a37-46d8-ad80-66d5b22d2ccf\', 1, now(), now(), NULL),
-                (2, \'system@digitalstate.ca\', \'system@digitalstate.ca\', \'system@digitalstate.ca\', \'system@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:11:"ROLE_SYSTEM";}\', \'e67b996e-357f-48d8-b18c-a5e84d87eeef\', \'System\', \'bd654051-6a03-488a-a771-bb3bfc646a9f\', \'System\', \'bd654051-6a03-488a-a771-bb3bfc646a9f\', 1, now(), now(), NULL),
-                (3, \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:14:"ROLE_ANONYMOUS";}\', \'2f5cd00c-613a-4813-bcd1-caccd3e4f2a4\', \'BusinessUnit\', \'6836c95c-4d92-4642-8b39-be60176411e6\', \'Anonymous\', NULL, 1, now(), now(), NULL);
+                (1, \'admin@digitalstate.ca\', \'admin@digitalstate.ca\', \'admin@digitalstate.ca\', \'admin@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:10:"ROLE_ADMIN";}\', \'b3fdddc9-896d-4e56-98a2-63b6eeab0598\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'Admin\', \'b7651daf-8ecb-4c23-b703-e7c379791778\', 1, now(), now(), NULL),
+                (2, \'system@digitalstate.ca\', \'system@digitalstate.ca\', \'system@digitalstate.ca\', \'system@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:11:"ROLE_SYSTEM";}\', \'b496655f-8fe6-4340-9a77-1bc3eeabab53\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'System\', \'df5fd904-aa47-452f-9c4a-d6b52fe5ace4\', 1, now(), now(), NULL),
+                (3, \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:14:"ROLE_ANONYMOUS";}\', \'4b3fbbe5-d76a-40d6-a646-d6166c843eb2\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'Anonymous\', NULL, 1, now(), now(), NULL);
         ');
 
         $this->addSql('
             INSERT INTO 
                 `ds_config` (`id`, `uuid`, `owner`, `owner_uuid`, `key`, `value`, `enabled`, `version`, `created_at`, `updated_at`)
             VALUES 
-                (1, \'f6751b55-653b-4a66-8b31-06ad2a3b52c2\', \'BusinessUnit\', \'ed1fe135-b791-4b8d-a033-acab9daa9853\', \'app.registration.handler\', \'system@ds\', 1, 1, now(), now()),
-                (2, \'6928362f-5162-4c12-88fa-b77a9d6d9641\', \'BusinessUnit\', \'ed1fe135-b791-4b8d-a033-acab9daa9853\', \'app.registration.endpoint\', \'https://api.ds\', 1, 1, now(), now()),
-                (3, \'d4e199b3-e128-4e9f-bb82-f50704d05ce5\', \'BusinessUnit\', \'ed1fe135-b791-4b8d-a033-acab9daa9853\', \'app.registration.individual.roles\', \'ROLE_INDIVIDUAL\', 1, 1, now(), now()),
-                (4, \'296d729c-b18e-424f-913f-5121ee012865\', \'BusinessUnit\', \'ed1fe135-b791-4b8d-a033-acab9daa9853\', \'app.registration.individual.identity\', \'Individual\', 1, 1, now(), now()),
-                (5, \'f246584b-d3af-42b1-8c8d-7cf1a650a739\', \'BusinessUnit\', \'ed1fe135-b791-4b8d-a033-acab9daa9853\', \'app.registration.individual.owner\', \'BusinessUnit\', 1, 1, now(), now()),
-                (6, \'81f84145-56b5-4a3d-a8d7-9a4a7fe5adf0\', \'BusinessUnit\', \'ed1fe135-b791-4b8d-a033-acab9daa9853\', \'app.registration.individual.owner_uuid\', \'194671e9-12aa-41df-8feb-1ba45e4a71e6\', 1, 1, now(), now()),
-                (7, \'b17c83be-c768-4352-a839-045048d0c0aa\', \'BusinessUnit\', \'ed1fe135-b791-4b8d-a033-acab9daa9853\', \'app.registration.individual.enabled\', 1, 1, 1, now(), now());
+                (1, \'bdba6587-124f-443a-ae4e-ef2d925b4848\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.handler\', \'system@ds\', 1, 1, now(), now()),
+                (2, \'68487cdf-5e7c-48c4-b353-99b100c07921\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.endpoint\', \'https://api.ds\', 1, 1, now(), now()),
+                (3, \'87351e29-a842-438c-aa9d-37fd415c3570\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.roles\', \'ROLE_INDIVIDUAL\', 1, 1, now(), now()),
+                (4, \'6b6e5828-d05e-42d2-b1d3-fa35a07ec3ee\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.identity\', \'Individual\', 1, 1, now(), now()),
+                (5, \'4f4e90e3-3f0d-438d-b327-4cfc8febf40b\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.owner\', \'BusinessUnit\', 1, 1, now(), now()),
+                (6, \'d8788c41-6972-4afc-9b27-d3c8edc5846f\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.owner_uuid\', \'194671e9-12aa-41df-8feb-1ba45e4a71e6\', 1, 1, now(), now()),
+                (7, \'6f75ecdd-407d-4240-9a5d-e880f1050d0d\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.enabled\', 1, 1, 1, now(), now());
         ');
+
+        // @todo permissions
     }
 
     /**
