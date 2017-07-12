@@ -1,23 +1,23 @@
 ds_security:
     permissions:
-        user:                { title: User,           entity:   AppBundle\Entity\User,               attributes: [BROWSE, READ, EDIT, ADD, DELETE] }
-        user_fields:         { title: All Fields,     property: AppBundle\Entity\User.*,             attributes: [BROWSE, READ, EDIT] }
-        user_id:             { title: ID,             property: AppBundle\Entity\User.id,            attributes: [BROWSE, READ, EDIT] }
-        user_uuid:           { title: UUID,           property: AppBundle\Entity\User.uuid,          attributes: [BROWSE, READ, EDIT] }
-        user_created_at:     { title: Created At,     property: AppBundle\Entity\User.createdAt,     attributes: [BROWSE, READ, EDIT] }
-        user_updated_at:     { title: Updated At,     property: AppBundle\Entity\User.updatedAt,     attributes: [BROWSE, READ, EDIT] }
-        user_deleted_at:     { title: Deleted At,     property: AppBundle\Entity\User.deletedAt,     attributes: [BROWSE, READ, EDIT] }
-        user_username:       { title: Username,       property: AppBundle\Entity\User.username,      attributes: [BROWSE, READ, EDIT] }
-        user_plain_password: { title: Plain Password, property: AppBundle\Entity\User.plainPassword, attributes: [BROWSE, READ, EDIT] }
-        user_email:          { title: Email,          property: AppBundle\Entity\User.email,         attributes: [BROWSE, READ, EDIT] }
-        user_enabled:        { title: Enabled,        property: AppBundle\Entity\User.enabled,       attributes: [BROWSE, READ, EDIT] }
-        user_last_login:     { title: Last Login,     property: AppBundle\Entity\User.lastLogin,     attributes: [BROWSE, READ, EDIT] }
-        user_roles:          { title: Roles,          property: AppBundle\Entity\User.roles,         attributes: [BROWSE, READ, EDIT] }
-        user_owner:          { title: Owner,          property: AppBundle\Entity\User.owner,         attributes: [BROWSE, READ, EDIT] }
-        user_owner_uuid:     { title: Owner UUID,     property: AppBundle\Entity\User.ownerUuid,     attributes: [BROWSE, READ, EDIT] }
-        user_identity:       { title: Identity,       property: AppBundle\Entity\User.identity,      attributes: [BROWSE, READ, EDIT] }
-        user_identity_uuid:  { title: Identity UUID,  property: AppBundle\Entity\User.identityUuid,  attributes: [BROWSE, READ, EDIT] }
-        user_version:        { title: Version,        property: AppBundle\Entity\User.version,       attributes: [BROWSE, READ, EDIT] }
+        user:                { title: app.permissions.user,           entity:   AppBundle\Entity\User,               attributes: [BROWSE, READ, EDIT, ADD, DELETE] }
+        user_property:       { title: app.permissions.property,       property: AppBundle\Entity\User.*,             attributes: [BROWSE, READ, EDIT] }
+        user_id:             { title: app.permissions.id,             property: AppBundle\Entity\User.id,            attributes: [BROWSE, READ, EDIT] }
+        user_uuid:           { title: app.permissions.uuid,           property: AppBundle\Entity\User.uuid,          attributes: [BROWSE, READ, EDIT] }
+        user_created_at:     { title: app.permissions.created_at,     property: AppBundle\Entity\User.createdAt,     attributes: [BROWSE, READ, EDIT] }
+        user_updated_at:     { title: app.permissions.updated_at,     property: AppBundle\Entity\User.updatedAt,     attributes: [BROWSE, READ, EDIT] }
+        user_deleted_at:     { title: app.permissions.deleted_at,     property: AppBundle\Entity\User.deletedAt,     attributes: [BROWSE, READ, EDIT] }
+        user_username:       { title: app.permissions.username,       property: AppBundle\Entity\User.username,      attributes: [BROWSE, READ, EDIT] }
+        user_plain_password: { title: app.permissions.plain_password, property: AppBundle\Entity\User.plainPassword, attributes: [BROWSE, READ, EDIT] }
+        user_email:          { title: app.permissions.email,          property: AppBundle\Entity\User.email,         attributes: [BROWSE, READ, EDIT] }
+        user_enabled:        { title: app.permissions.enabled,        property: AppBundle\Entity\User.enabled,       attributes: [BROWSE, READ, EDIT] }
+        user_last_login:     { title: app.permissions.last_login,     property: AppBundle\Entity\User.lastLogin,     attributes: [BROWSE, READ, EDIT] }
+        user_roles:          { title: app.permissions.roles,          property: AppBundle\Entity\User.roles,         attributes: [BROWSE, READ, EDIT] }
+        user_owner:          { title: app.permissions.owner,          property: AppBundle\Entity\User.owner,         attributes: [BROWSE, READ, EDIT] }
+        user_owner_uuid:     { title: app.permissions.owner_uuid,     property: AppBundle\Entity\User.ownerUuid,     attributes: [BROWSE, READ, EDIT] }
+        user_identity:       { title: app.permissions.identity,       property: AppBundle\Entity\User.identity,      attributes: [BROWSE, READ, EDIT] }
+        user_identity_uuid:  { title: app.permissions.identity_uuid,  property: AppBundle\Entity\User.identityUuid,  attributes: [BROWSE, READ, EDIT] }
+        user_version:        { title: app.permissions.version,        property: AppBundle\Entity\User.version,       attributes: [BROWSE, READ, EDIT] }
 
 app:
     registration:
