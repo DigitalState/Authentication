@@ -13,7 +13,7 @@ prototype:
     email: ~
     password: ~
     enabled: true
-    roles: [ROLE_INDIVIDUAL]
+    roles: []
     owner: BusinessUnit
     owner_uuid: ~
     identity: Individual
