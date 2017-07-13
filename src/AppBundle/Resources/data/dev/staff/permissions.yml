@@ -2,13 +2,9 @@ items:
     -
         access: 37b4da57-4444-47f5-92ee-bcf09e415f4e # Any staff
         entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
-        key: user
-        attributes: [BROWSE, READ]
-
-    -
-        access: 37b4da57-4444-47f5-92ee-bcf09e415f4e # Any staff
-        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
-        key: user_property
+        key:
+            - user
+            - user_property
         attributes: [BROWSE, READ]
 
     -
@@ -26,13 +22,9 @@ items:
     -
         access: f4f2eb9d-a3e4-47c2-b630-09895d3d74e0 # Agent
         entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
-        key: user
-        attributes: [EDIT]
-
-    -
-        access: f4f2eb9d-a3e4-47c2-b630-09895d3d74e0 # Agent
-        entity_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
-        key: user_property
+        key:
+            - user
+            - user_property
         attributes: [EDIT]
 
 prototype:
