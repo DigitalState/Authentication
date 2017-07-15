@@ -2,6 +2,8 @@
 
 namespace AppBundle\Service;
 
+use AppBundle\Entity\User;
+use Doctrine\ORM\EntityManager;
 use Ds\Component\Entity\Service\EntityService;
 
 /**
@@ -9,4 +11,14 @@ use Ds\Component\Entity\Service\EntityService;
  */
 class UserService extends EntityService
 {
+    /**
+     * Constructor
+     *
+     * @param \Doctrine\ORM\EntityManager $manager
+     * @param string $entity
+     */
+    public function __construct(EntityManager $manager, $entity = User::class)
+    {
+        parent::__construct($manager, $entity);
+    }
 }
