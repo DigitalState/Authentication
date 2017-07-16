@@ -18,6 +18,20 @@ class AppExtension extends Extension implements PrependExtensionInterface
      */
     public function prepend(ContainerBuilder $container)
     {
+        $container->prependExtensionConfig('app', [
+            'registration' => [
+                'handler' => null,
+                'endpoint' => null,
+                'individual' => [
+                    'roles' => null,
+                    'identity' => 'Individual',
+                    'owner' => 'BusinessUnit',
+                    'owner_uuid' => null,
+                    'enabled' => false
+                ]
+            ]
+        ]);
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('config.yml');
     }

@@ -18,14 +18,3 @@ ds_security:
         user_identity:       { title: app.permissions.user.identity,       property: AppBundle\Entity\User.identity,      attributes: [BROWSE, READ, EDIT] }
         user_identity_uuid:  { title: app.permissions.user.identity_uuid,  property: AppBundle\Entity\User.identityUuid,  attributes: [BROWSE, READ, EDIT] }
         user_version:        { title: app.permissions.user.version,        property: AppBundle\Entity\User.version,       attributes: [BROWSE, READ, EDIT] }
-
-app:
-    registration:
-        handler: system
-        endpoint: ~
-        individual:
-            roles: ROLE_INDIVIDUAL
-            identity: Individual
-            owner: BusinessUnit
-            owner_uuid: ~
-            enabled: false
