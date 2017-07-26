@@ -1,4 +1,4 @@
-users: []
+items: []
 
 prototype:
     uuid: ~
@@ -9,5 +9,5 @@ prototype:
     roles: []
     owner: BusinessUnit
     owner_uuid: ~
-    identity: ~
+    identity: Individual
     identity_uuid: ~

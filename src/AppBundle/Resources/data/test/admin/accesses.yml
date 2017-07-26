@@ -1,0 +1,13 @@
+items:
+    -
+        uuid: d781546c-8144-476d-a5cd-cd614b29e178
+        owner_uuid: 5c1dce0b-7c40-4f80-91ad-dd28593b2a8d
+        identity: Admin
+        identity_uuid: ~ # Any admin
+
+prototype:
+    uuid: ~
+    owner: BusinessUnit
+    owner_uuid: ~
+    identity: ~
+    identity_uuid: ~

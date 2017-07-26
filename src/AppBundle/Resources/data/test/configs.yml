@@ -1,9 +1,43 @@
-configs: []
+items:
+    -
+        uuid: 8b4093d4-426b-4e45-812c-c1677e165cea
+        key: app.registration.handler
+        value: system@digitalstate.ca
+
+    -
+        uuid: e0142b9f-c210-43b8-889a-6a369733278e
+        key: app.registration.endpoint
+        value: http://172.19.0.1:8054/app_dev.php
+
+    -
+        uuid: 70bdb487-e855-4a7f-83ab-77c55ee7d42b
+        key: app.registration.individual.roles
+        value: ROLE_INDIVIDUAL
+
+    -
+        uuid: f47a8168-585c-4320-9abf-da1630dd5cd7
+        key: app.registration.individual.identity
+        value: Individual
+
+    -
+        uuid: 526d23f1-74c0-4bb4-937d-0447f5577d8e
+        key: app.registration.individual.owner
+        value: BusinessUnit
+
+    -
+        uuid: 12e2723a-0c7f-46a4-b9d6-77881c7d56e4
+        key: app.registration.individual.owner_uuid
+        value: a0dd7bfa-9ec8-47ef-bc89-f66f5bbd7964
+
+    -
+        uuid: a72e09f1-6cda-48ee-b4ca-6428eec32b93
+        key: app.registration.individual.enabled
+        value: 1
 
 prototype:
     uuid: ~
     owner: BusinessUnit
-    owner_uuid: ~
+    owner_uuid: 7b2eb2a6-613f-474b-a361-ee563b0d750e
     key: ~
     value: ~
     enabled: true

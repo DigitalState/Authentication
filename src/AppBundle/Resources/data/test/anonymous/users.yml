@@ -1,0 +1,13 @@
+items: []
+
+prototype:
+    uuid: ~
+    username: ~
+    email: ~
+    password: ~
+    enabled: true
+    roles: []
+    owner: BusinessUnit
+    owner_uuid: 7b2eb2a6-613f-474b-a361-ee563b0d750e
+    identity: Anonymous
+    identity_uuid: ~

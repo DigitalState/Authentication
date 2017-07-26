@@ -1,0 +1,13 @@
+items: []
+
+prototype:
+    uuid: ~
+    username: ~
+    email: ~
+    password: ~
+    enabled: true
+    roles: []
+    owner: BusinessUnit
+    owner_uuid: ~
+    identity: Staff
+    identity_uuid: ~

@@ -1,6 +1,4 @@
 parameters:
-    server: test
-
     database_host: db
     database_port: 3306
     database_name: api_platform
@@ -19,4 +17,4 @@ parameters:
 
     secret: ThisTokenIsNotSoSecretChangeIt
 
-    cors_allow_origin: http://localhost
+    cors_allow_origin: '*'
