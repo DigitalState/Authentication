@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Ds\Component\Model\Type\Deletable;
 use Ds\Component\Model\Type\Identifiable;
 use Ds\Component\Model\Type\Uuidentifiable;
 use Ds\Component\Model\Type\Ownable;
@@ -41,7 +42,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORMAssert\UniqueEntity(fields="uuid")
  * @ORMAssert\UniqueEntity(fields="username")
  */
-class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Identitiable, Versionable
+class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Identitiable, Deletable, Versionable
 {
     use Behavior\Timestampable\Timestampable;
     use Behavior\SoftDeletable\SoftDeletable;
@@ -52,6 +53,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
     use Accessor\OwnerUuid;
     use Accessor\Identity;
     use Accessor\IdentityUuid;
+    use Accessor\Deleted;
     use Accessor\Version;
 
     /**
