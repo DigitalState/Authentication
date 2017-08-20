@@ -4,7 +4,7 @@ items:
         username: admin@digitalstate.ca
         email: admin@digitalstate.ca
         password: 1
-        identity_uuid: 217a3f42-4b8e-40a2-b020-d53b265ebf13
+        identity_uuid: b163571a-d4b9-4b72-9827-4178301a1a24 # Admin
 
 prototype:
     uuid: ~
@@ -14,6 +14,6 @@ prototype:
     enabled: true
     roles: []
     owner: BusinessUnit
-    owner_uuid: 7b2eb2a6-613f-474b-a361-ee563b0d750e
+    owner_uuid: d5de44e0-d727-4f69-a8b3-c3afbf75eda3 # Administration
     identity: Admin
     identity_uuid: ~

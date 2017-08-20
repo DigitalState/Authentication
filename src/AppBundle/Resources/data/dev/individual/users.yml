@@ -4,7 +4,7 @@ items:
         username: morgan@site.com
         email: morgan@site.com
         password: 1
-        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public Works
         identity_uuid: d0daa7e4-07d1-47e6-93f2-0629adaa3b49 # Morgan
 
 prototype:

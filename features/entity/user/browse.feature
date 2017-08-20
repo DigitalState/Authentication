@@ -55,7 +55,7 @@ Feature: Browse users
 
   Scenario: Browse users with specific uuids
     When I add "Accept" header equal to "application/json"
-    And I send a "GET" request to "/users?uuid[0]=ae0aebf7-8bae-45af-853b-fc01ac3b9e20&uuid[1]=fefe5c05-f4df-4089-b766-2f46699f9175"
+    And I send a "GET" request to "/users?uuid[0]=ae0aebf7-8bae-45af-853b-fc01ac3b9e20"
     Then the response status code should be 200
     And the header "Content-Type" should be equal to "application/json; charset=utf-8"
     And the response should be in JSON
@@ -82,7 +82,7 @@ Feature: Browse users
 
   Scenario: Browse users with a specific owner uuid
     When I add "Accept" header equal to "application/json"
-    And I send a "GET" request to "/users?ownerUuid=f2b7c698-80b9-413f-ad7e-eeaf6aa048e5"
+    And I send a "GET" request to "/users?ownerUuid=d5de44e0-d727-4f69-a8b3-c3afbf75eda3"
     Then the response status code should be 200
     And the header "Content-Type" should be equal to "application/json; charset=utf-8"
     And the response should be in JSON
@@ -91,7 +91,7 @@ Feature: Browse users
 
   Scenario: Browse users with specific owner uuids
     When I add "Accept" header equal to "application/json"
-    And I send a "GET" request to "/users?ownerUuid[0]=f2b7c698-80b9-413f-ad7e-eeaf6aa048e5&ownerUuid[1]=44a24145-c302-496f-808e-10a3cfee633d"
+    And I send a "GET" request to "/users?ownerUuid[0]=d5de44e0-d727-4f69-a8b3-c3afbf75eda3"
     Then the response status code should be 200
     And the header "Content-Type" should be equal to "application/json; charset=utf-8"
     And the response should be in JSON

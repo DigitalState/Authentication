@@ -1,31 +1,27 @@
 items:
     -
         uuid: 37b4da57-4444-47f5-92ee-bcf09e415f4e
-        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
-        identity: Staff
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public Works
         identity_uuid: ~ # Any staff
 
     -
         uuid: 896c57eb-cdc5-43d7-990b-e98aefc2d75b
-        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
-        identity: Staff
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public Works
         identity_uuid: 47a5a9cb-496f-4db7-8999-489ec404887f # Manager
 
     -
         uuid: f4f2eb9d-a3e4-47c2-b630-09895d3d74e0
-        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
-        identity: Staff
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public Works
         identity_uuid: 9d10157c-f2ce-48fb-a5ab-83faaae952a7 # Agent
 
     -
         uuid: 992f6408-6c44-4f45-9183-78568b1b8f3c
-        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public
-        identity: Staff
+        owner_uuid: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public Works
         identity_uuid: 71f285ba-f994-444c-b9e5-fa813295a0b7 # Intern
 
 prototype:
     uuid: ~
     owner: BusinessUnit
     owner_uuid: ~
-    identity: ~
+    identity: Staff
     identity_uuid: ~

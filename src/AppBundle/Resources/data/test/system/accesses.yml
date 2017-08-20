@@ -1,13 +1,12 @@
 items:
     -
         uuid: dd780206-652b-42aa-b26d-15f00582d0ed
-        owner_uuid: 5c1dce0b-7c40-4f80-91ad-dd28593b2a8d
-        identity: System
+        owner_uuid: d5de44e0-d727-4f69-a8b3-c3afbf75eda3 # Administration
         identity_uuid: ~ # Any system
 
 prototype:
     uuid: ~
     owner: BusinessUnit
     owner_uuid: ~
-    identity: ~
+    identity: System
     identity_uuid: ~
