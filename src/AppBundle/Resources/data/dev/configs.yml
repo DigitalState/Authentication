@@ -27,7 +27,7 @@ items:
     -
         uuid: dff40407-b871-4fd8-b325-9e774d902d02
         key: app.registration.individual.owner_uuid
-        value: 8454c987-cbc5-4a24-ba1a-d420283caabd # Public Works
+        value: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
 
     -
         uuid: 4d8e6963-1028-4e85-9962-496cbb48b7ef
