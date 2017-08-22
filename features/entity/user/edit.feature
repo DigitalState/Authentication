@@ -1,4 +1,4 @@
-@entity @user @edit
+@app @entity @user @edit
 Feature: Edit users
   In order to edit users
   As an admin identity

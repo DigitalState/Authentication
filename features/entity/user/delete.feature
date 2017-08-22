@@ -1,4 +1,4 @@
-@entity @user @delete
+@app @entity @user @delete
 Feature: Delete users
   In order to delete users
   As an admin identity

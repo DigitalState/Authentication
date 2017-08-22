@@ -1,4 +1,4 @@
-@entity @user @browse
+@app @entity @user @browse
 Feature: Browse users
   In order to browse users
   As an admin identity
