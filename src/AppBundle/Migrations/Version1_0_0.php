@@ -53,7 +53,7 @@ class Version1_0_0 extends AbstractMigration
             INSERT INTO 
                 `ds_access` (`id`, `uuid`, `owner`, `owner_uuid`, `identity`, `identity_uuid`, `version`, `created_at`, `updated_at`)
             VALUES 
-                (1, \'fda501b2-6fdb-4122-8a2a-2f4e8eddc83c\', \'System\', \'df5fd904-aa47-452f-9c4a-d6b52fe5ace4\', \'System\', NULL, 1, now(), now());
+                (1, \'fda501b2-6fdb-4122-8a2a-2f4e8eddc83c\', \'System\', \'df5fd904-aa47-452f-9c4a-d6b52fe5ace4\', \'System\', \'df5fd904-aa47-452f-9c4a-d6b52fe5ace4\', 1, now(), now());
         ');
 
         $this->addSql('
