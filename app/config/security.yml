@@ -3,9 +3,6 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     providers:
-        app_security_provider_admin:
-            id: app.security.provider.admin
-
         app_security_provider_anonymous:
             id: app.security.provider.anonymous
 
@@ -22,19 +19,6 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
-        security_check_admin:
-            pattern: ^/tokens/admin
-            stateless: true
-            anonymous: true
-            provider: app_security_provider_admin
-            form_login:
-                check_path: app_security_check_admin
-                username_parameter: username
-                password_parameter: password
-                success_handler: lexik_jwt_authentication.handler.authentication_success
-                failure_handler: lexik_jwt_authentication.handler.authentication_failure
-                require_previous_session: false
 
         security_check_staff:
             pattern: ^/tokens/staff
@@ -77,7 +61,6 @@ security:
         - { path: ^/accesses,             role: IS_AUTHENTICATED_FULLY }
         - { path: ^/configs,              role: IS_AUTHENTICATED_FULLY }
         - { path: ^/users,                role: IS_AUTHENTICATED_FULLY }
-        - { path: ^/tokens/admin,         role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/tokens/staff,         role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/tokens/individual,    role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/tokens/anonymous,     role: IS_AUTHENTICATED_ANONYMOUSLY }

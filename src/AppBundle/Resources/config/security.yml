@@ -1,9 +1,4 @@
 services:
-    app.security.provider.admin:
-        class: AppBundle\Security\Provider\AdminProvider
-        arguments:
-            - '@fos_user.user_manager'
-
     app.security.provider.anonymous:
         class: AppBundle\Security\Provider\AnonymousProvider
         arguments:

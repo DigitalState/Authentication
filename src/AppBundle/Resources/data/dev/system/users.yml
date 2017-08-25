@@ -4,6 +4,8 @@ items:
         username: system@digitalstate.ca
         email: system@digitalstate.ca
         password: 1
+        owner: System
+        owner_uuid: fe1b94ed-783a-48d7-8bf2-2f9cea89f11e # System
         identity_uuid: fe1b94ed-783a-48d7-8bf2-2f9cea89f11e # System
 
 prototype:
@@ -14,6 +16,6 @@ prototype:
     enabled: true
     roles: []
     owner: BusinessUnit
-    owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+    owner_uuid: ~
     identity: System
     identity_uuid: ~

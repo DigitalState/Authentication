@@ -1,11 +1,11 @@
 @app @entity @user @browse
 Feature: Browse users
   In order to browse users
-  As an admin identity
+  As a system identity
   I should be able to send api requests related to users
 
   Background:
-    Given I am authenticated as an "admin" identity
+    Given I am authenticated as a "system" identity
 
   @createSchema @loadFixtures
   Scenario: Browse all users
@@ -46,7 +46,7 @@ Feature: Browse users
 
   Scenario: Browse users with a specific uuid
     When I add "Accept" header equal to "application/json"
-    And I send a "GET" request to "/users?uuid=ae0aebf7-8bae-45af-853b-fc01ac3b9e20"
+    And I send a "GET" request to "/users?uuid=cd5ca384-436a-44f5-b5bc-0aeed1a3fe02"
     Then the response status code should be 200
     And the header "Content-Type" should be equal to "application/json; charset=utf-8"
     And the response should be in JSON
@@ -55,7 +55,7 @@ Feature: Browse users
 
   Scenario: Browse users with specific uuids
     When I add "Accept" header equal to "application/json"
-    And I send a "GET" request to "/users?uuid[0]=ae0aebf7-8bae-45af-853b-fc01ac3b9e20"
+    And I send a "GET" request to "/users?uuid[0]=cd5ca384-436a-44f5-b5bc-0aeed1a3fe02"
     Then the response status code should be 200
     And the header "Content-Type" should be equal to "application/json; charset=utf-8"
     And the response should be in JSON

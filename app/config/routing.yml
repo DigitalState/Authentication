@@ -12,11 +12,6 @@ app_action:
     resource: '@AppBundle/Action/'
     type: annotation
 
-app_security_check_admin:
-    methods: POST
-    path: /tokens/admin
-    defaults: { _controller: FOSUserBundle:Security:check }
-
 app_security_check_staff:
     methods: POST
     path: /tokens/staff

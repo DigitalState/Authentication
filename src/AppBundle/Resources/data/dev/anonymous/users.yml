@@ -4,6 +4,8 @@ items:
         username: anonymous@digitalstate.ca
         email: anonymous@digitalstate.ca
         password: 1
+        owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+        identity_uuid: 9914c48e-a312-49dc-86f0-1a734bc803ef # Anonymous
 
 prototype:
     uuid: ~
@@ -13,6 +15,6 @@ prototype:
     enabled: true
     roles: []
     owner: BusinessUnit
-    owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+    owner_uuid: ~
     identity: Anonymous
     identity_uuid: ~

@@ -1,11 +1,11 @@
 @app @entity @user @add
 Feature: Add users
   In order to add users
-  As an admin identity
+  As a system identity
   I should be able to send api requests related to users
 
   Background:
-    Given I am authenticated as an "admin" identity
+    Given I am authenticated as a "system" identity
 
   @createSchema @loadFixtures @dropSchema
   Scenario: Add a user
@@ -32,7 +32,7 @@ Feature: Add users
     And the header "Content-Type" should be equal to "application/json; charset=utf-8"
     And the response should be in JSON
     And the JSON node "id" should exist
-    And the JSON node "id" should be equal to the number 4
+    And the JSON node "id" should be equal to the number 3
     And the JSON node "uuid" should exist
     And the JSON node "createdAt" should exist
     And the JSON node "updatedAt" should exist

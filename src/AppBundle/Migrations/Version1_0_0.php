@@ -32,9 +32,8 @@ class Version1_0_0 extends AbstractMigration
             INSERT INTO 
                 `app_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `confirmation_token`, `password_requested_at`, `roles`, `uuid`, `owner`, `owner_uuid`, `identity`, `identity_uuid`, `version`, `created_at`, `updated_at`, `deleted_at`)
             VALUES 
-                (1, \'admin@digitalstate.ca\', \'admin@digitalstate.ca\', \'admin@digitalstate.ca\', \'admin@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:10:"ROLE_ADMIN";}\', \'b3fdddc9-896d-4e56-98a2-63b6eeab0598\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'Admin\', \'b7651daf-8ecb-4c23-b703-e7c379791778\', 1, now(), now(), NULL),
-                (2, \'system@digitalstate.ca\', \'system@digitalstate.ca\', \'system@digitalstate.ca\', \'system@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:11:"ROLE_SYSTEM";}\', \'b496655f-8fe6-4340-9a77-1bc3eeabab53\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'System\', \'df5fd904-aa47-452f-9c4a-d6b52fe5ace4\', 1, now(), now(), NULL),
-                (3, \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:14:"ROLE_ANONYMOUS";}\', \'4b3fbbe5-d76a-40d6-a646-d6166c843eb2\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'Anonymous\', NULL, 1, now(), now(), NULL);
+                (1, \'system@digitalstate.ca\', \'system@digitalstate.ca\', \'system@digitalstate.ca\', \'system@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:11:"ROLE_SYSTEM";}\', \'b496655f-8fe6-4340-9a77-1bc3eeabab53\', \'System\', \'df5fd904-aa47-452f-9c4a-d6b52fe5ace4\', \'System\', \'df5fd904-aa47-452f-9c4a-d6b52fe5ace4\', 1, now(), now(), NULL),
+                (2, \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', \'anonymous@digitalstate.ca\', 1, NULL, \'$2y$13$N2Zv69vP24ScS4IQ.gLHL.r2bDI8x/M5TxSZIRbTSFGkxiXfGzOgi\', NULL, NULL, NULL, \'a:1:{i:0;s:14:"ROLE_ANONYMOUS";}\', \'4b3fbbe5-d76a-40d6-a646-d6166c843eb2\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'Anonymous\', NULL, 1, now(), now(), NULL);
         ');
 
         $this->addSql('
@@ -54,8 +53,7 @@ class Version1_0_0 extends AbstractMigration
             INSERT INTO 
                 `ds_access` (`id`, `uuid`, `owner`, `owner_uuid`, `identity`, `identity_uuid`, `version`, `created_at`, `updated_at`)
             VALUES 
-                (1, \'bca8113e-9443-44ac-bb17-069c66f28c35\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'Admin\', NULL, 1, now(), now()),
-                (2, \'fda501b2-6fdb-4122-8a2a-2f4e8eddc83c\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'System\', NULL, 1, now(), now());
+                (1, \'fda501b2-6fdb-4122-8a2a-2f4e8eddc83c\', \'System\', \'df5fd904-aa47-452f-9c4a-d6b52fe5ace4\', \'System\', NULL, 1, now(), now());
         ');
 
         $this->addSql('
@@ -64,10 +62,7 @@ class Version1_0_0 extends AbstractMigration
             VALUES 
                 (1, 1, \'BusinessUnit\', NULL, \'entity\', \'["BROWSE","READ","EDIT","ADD","DELETE"]\'),
                 (2, 1, \'BusinessUnit\', NULL, \'property\', \'["BROWSE","READ","EDIT"]\'),
-                (3, 1, \'BusinessUnit\', NULL, \'custom\', \'["BROWSE","READ","EDIT","ADD","DELETE","EXECUTE"]\'),
-                (4, 2, \'BusinessUnit\', NULL, \'entity\', \'["BROWSE","READ","EDIT","ADD","DELETE"]\'),
-                (5, 2, \'BusinessUnit\', NULL, \'property\', \'["BROWSE","READ","EDIT"]\'),
-                (6, 2, \'BusinessUnit\', NULL, \'custom\', \'["BROWSE","READ","EDIT","ADD","DELETE","EXECUTE"]\');
+                (3, 1, \'BusinessUnit\', NULL, \'custom\', \'["BROWSE","READ","EDIT","ADD","DELETE","EXECUTE"]\');
         ');
     }
 
