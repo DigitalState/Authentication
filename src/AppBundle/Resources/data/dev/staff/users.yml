@@ -1,5 +1,13 @@
 items:
     -
+        uuid: 40759f94-3e8b-41a1-8a3c-dd84393da5b9
+        username: admin@digitalstate.ca
+        email: admin@digitalstate.ca
+        password: 1
+        owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+        identity_uuid: e32f09b7-e1cf-4a91-a0e1-6822bf47a662 # Admin
+
+    -
         uuid: 03f8c569-9c5d-43a8-83bb-9cf6c9249e63
         username: manager@digitalstate.ca
         email: manager@digitalstate.ca
