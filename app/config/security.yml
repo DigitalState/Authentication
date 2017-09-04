@@ -26,7 +26,7 @@ security:
             anonymous: true
             provider: app_security_provider_system
             form_login:
-                check_path: app_security_check_system
+                check_path: _app_security_check_system
                 username_parameter: username
                 password_parameter: password
                 success_handler: lexik_jwt_authentication.handler.authentication_success

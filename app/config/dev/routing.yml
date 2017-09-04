@@ -1,8 +1,3 @@
-_app_security_check_system:
-    methods: POST
-    path: /tokens/system
-    defaults: { _controller: FOSUserBundle:Security:check }
-
 _wdt:
     resource: '@WebProfilerBundle/Resources/config/routing/wdt.xml'
     prefix: /_wdt
@@ -17,3 +12,8 @@ _errors:
 
 _main:
     resource: ../routing.yml
+
+_app_security_check_system:
+    methods: POST
+    path: /tokens/system
+    defaults: { _controller: FOSUserBundle:Security:check }
