@@ -39,12 +39,17 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
         ];
 
+        if (in_array($this->getEnvironment(), ['prod'], true)) {
+            $bundles[] = new Ds\Component\Exception\Bridge\Symfony\Bundle\DsExceptionBundle();
+        }
+
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+            $bundles[] = new Ds\Component\Debug\Bridge\Symfony\Bundle\DsDebugBundle();
             $bundles[] = new Ds\Component\Identity\Bridge\Symfony\TestBundle\DsIdentityTestBundle();
         }
 
