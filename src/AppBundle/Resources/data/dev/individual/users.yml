@@ -1,8 +1,8 @@
 items:
     -
         uuid: 42182fd0-9665-4ba4-9f5c-ec290e23814e
-        username: morgan@citizen
-        email: morgan@citizen
+        username: morgan@individual
+        email: morgan@individual
         password: 1
         owner_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
         identity_uuid: d0daa7e4-07d1-47e6-93f2-0629adaa3b49 # Morgan
