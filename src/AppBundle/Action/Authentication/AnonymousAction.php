@@ -45,7 +45,7 @@ class AnonymousAction
      */
     public function post()
     {
-        $user = $this->anonymousProvider->loadUserByUsername('anonymous@digitalstate.ca');
+        $user = $this->anonymousProvider->loadUserByUsername('anonymous@ds');
         $token = $this->tokenManager->create($user);
 
         return new JsonResponse(['token' => $token], Response::HTTP_CREATED);

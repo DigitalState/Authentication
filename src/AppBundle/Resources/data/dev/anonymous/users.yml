@@ -1,8 +1,8 @@
 items:
     -
         uuid: 945824f2-3099-442d-ac4f-6c867a1692e6
-        username: anonymous@digitalstate.ca
-        email: anonymous@digitalstate.ca
+        username: anonymous@ds
+        email: anonymous@ds
         password: 1
         owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
         identity_uuid: 9914c48e-a312-49dc-86f0-1a734bc803ef # Anonymous

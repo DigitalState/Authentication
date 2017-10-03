@@ -1,8 +1,8 @@
 items:
     -
         uuid: fefe5c05-f4df-4089-b766-2f46699f9175
-        username: system@digitalstate.ca
-        email: system@digitalstate.ca
+        username: system@ds
+        email: system@ds
         password: 1
         owner: System
         owner_uuid: 5386e249-8ad0-45f1-a30e-d5a055cc5993 # System

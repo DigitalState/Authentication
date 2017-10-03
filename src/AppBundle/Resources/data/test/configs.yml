@@ -2,7 +2,7 @@ items:
     -
         uuid: 8b4093d4-426b-4e45-812c-c1677e165cea
         key: app.registration.handler
-        value: system@digitalstate.ca
+        value: system@ds
 
     -
         uuid: e0142b9f-c210-43b8-889a-6a369733278e
