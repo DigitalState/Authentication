@@ -12,7 +12,7 @@ app_action:
     resource: '@AppBundle/Action/'
     type: annotation
 
-_app_security_check_system:
+app_security_check_system:
     methods: POST
     path: /tokens/system
     defaults: { _controller: FOSUserBundle:Security:check }
