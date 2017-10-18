@@ -118,7 +118,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
      * @Serializer\Groups({"user_output", "user_input"})
      * @Assert\NotBlank
      * @Assert\Length(min=1, max=255)
-     * @Assert\Email
+     * @Assert\Regex("/^.+@.+$/")
      */
     protected $email;
 
