@@ -7,8 +7,6 @@ volumes:
 services:
     db:
         image: mysql:5.7
-#        ports:
-#            - 9010:3306
         environment:
             MYSQL_DATABASE: api_platform
             MYSQL_USER: api_platform
@@ -38,8 +36,6 @@ services:
         depends_on:
             php:
                 condition: service_started
-#        ports:
-#            - 8010:80
         environment:
             VIRTUAL_HOST: api.authentication.ds
         volumes_from:
