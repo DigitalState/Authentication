@@ -1,45 +1,53 @@
 version: '2.1'
 
 volumes:
-  db_data:
-    driver: 'local'
+    db_data:
+        driver: local
 
 services:
-  db:
-    image: 'mysql:5.7'
-    ports:
-      - '9010:3306'
-    environment:
-      MYSQL_DATABASE: 'api_platform'
-      MYSQL_USER: 'api_platform'
-      MYSQL_PASSWORD: 'api_platform'
-      MYSQL_RANDOM_ROOT_PASSWORD: 'true'
-    volumes:
-      - 'db_data:/var/lib/mysql'
-    healthcheck:
-      test: ['CMD-SHELL', 'mysql --user=api_platform --password=api_platform -e "SHOW TABLES" api_platform']
-      interval: '5s'
-      timeout: '1s'
-      retries: 10
+    db:
+        image: mysql:5.7
+#        ports:
+#            - 9010:3306
+        environment:
+            MYSQL_DATABASE: api_platform
+            MYSQL_USER: api_platform
+            MYSQL_PASSWORD: api_platform
+            MYSQL_RANDOM_ROOT_PASSWORD: 'true'
+            VIRTUAL_HOST: db.authentication.ds
+        volumes:
+            - db_data:/var/lib/mysql
+        healthcheck:
+            test: ['CMD-SHELL', 'mysql --user=api_platform --password=api_platform -e "SHOW TABLES" api_platform']
+            interval: 5s
+            timeout: 1s
+            retries: 10
 
-  php:
-    build: '.'
-    depends_on:
-      db:
-        condition: 'service_healthy'
-    environment:
-      SYMFONY_ENV: 'dev'
-    volumes:
-      - './:/srv/api-platform'
+    php:
+        build: .
+        depends_on:
+            db:
+                condition: service_healthy
+        environment:
+            SYMFONY_ENV: dev
+        volumes:
+            - ./:/srv/api-platform
 
-  nginx:
-    image: 'nginx:1.11-alpine'
-    depends_on:
-      php:
-        condition: 'service_started'
-    ports:
-      - '8010:80'
-    volumes_from:
-      - php
-    volumes:
-      - './docker/nginx/conf.d:/etc/nginx/conf.d:ro'
+    nginx:
+        image: nginx:1.11-alpine
+        depends_on:
+            php:
+                condition: service_started
+#        ports:
+#            - 8010:80
+        environment:
+            VIRTUAL_HOST: authentication.ds
+        volumes_from:
+            - php
+        volumes:
+            - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+
+networks:
+    default:
+        external:
+          name: api_default
