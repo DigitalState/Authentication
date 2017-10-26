@@ -41,7 +41,7 @@ services:
 #        ports:
 #            - 8010:80
         environment:
-            VIRTUAL_HOST: authentication.ds
+            VIRTUAL_HOST: api.authentication.ds
         volumes_from:
             - php
         volumes:
