@@ -1,45 +1,44 @@
 version: '2.1'
 
 volumes:
-    db_data:
+    authentication_db_data:
         driver: local
 
 services:
-    db:
+    authentication_db:
         image: mysql:5.7
         environment:
             MYSQL_DATABASE: api_platform
             MYSQL_USER: api_platform
             MYSQL_PASSWORD: api_platform
             MYSQL_RANDOM_ROOT_PASSWORD: 'true'
-            VIRTUAL_HOST: db.authentication.ds
         volumes:
-            - db_data:/var/lib/mysql
+            - authentication_db_data:/var/lib/mysql
         healthcheck:
             test: ['CMD-SHELL', 'mysql --user=api_platform --password=api_platform -e "SHOW TABLES" api_platform']
             interval: 5s
             timeout: 1s
             retries: 10
 
-    php:
+    authentication_php:
         build: .
         depends_on:
-            db:
+            authentication_db:
                 condition: service_healthy
         environment:
             SYMFONY_ENV: dev
         volumes:
             - ./:/srv/api-platform
 
-    nginx:
+    authentication_nginx:
         image: nginx:1.11-alpine
         depends_on:
-            php:
+            authentication_php:
                 condition: service_started
         environment:
             VIRTUAL_HOST: api.authentication.ds
         volumes_from:
-            - php
+            - authentication_php
         volumes:
             - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
 
