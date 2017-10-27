@@ -19,9 +19,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class RegistrationAction
+ * Class RegistrationsAction
  */
-class RegistrationAction
+class RegistrationsAction
 {
     /**
      * @var \Symfony\Component\HttpFoundation\RequestStack
@@ -63,7 +63,7 @@ class RegistrationAction
      * Registration
      *
      * @Method("POST")
-     * @Route(path="/registration")
+     * @Route(path="/registrations")
      */
     public function post()
     {
