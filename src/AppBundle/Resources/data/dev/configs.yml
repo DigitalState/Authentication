@@ -42,7 +42,7 @@ items:
     -
         uuid: b15a1424-1322-4ab2-8938-3bb84966ae4e
         key: ds_api.user.roles
-        value: ROLE_USER
+        value: ROLE_SYSTEM
 
     -
         uuid: 244559cc-bf51-4d18-950e-edd0bc61f66c
