@@ -4,6 +4,7 @@ namespace AppBundle\EventListener\Registration;
 
 use AppBundle\Entity\Registration;
 use Ds\Component\Api\Model\Individual;
+use Ds\Component\Api\Model\IndividualPersona;
 use Ds\Component\Identity\Identity;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -70,6 +71,20 @@ class UserListener
             ->setOwner($this->configService->get('app.registration.individual.owner'))
             ->setOwnerUuid($this->configService->get('app.registration.individual.owner_uuid'));
         $individual = $this->api->identities->individual->create($individual);
+
+        $persona = new IndividualPersona;
+        $persona
+            ->setOwner($this->configService->get('app.registration.individual.persona.owner'))
+            ->setOwnerUuid($this->configService->get('app.registration.individual.persona.owner_uuid'))
+            ->setIdentity(Identity::INDIVIDUAL)
+            ->setIdentityUuid($individual->getUuid())
+            ->setIndividual($individual)
+            ->setTitle([ // @todo remove hard-coded titles
+                'en' => 'Default',
+                'fr' => 'Défaut'
+            ])
+            ->setData($registration->getData());
+        $persona = $this->api->identities->individualPersona->create($persona);
 
         $user = $this->userManager->createUser();
         $user

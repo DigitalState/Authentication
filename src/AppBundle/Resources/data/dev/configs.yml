@@ -30,6 +30,16 @@ items:
         value: 1
 
     -
+        uuid: c692b78e-33c9-4b5a-8519-b5725f051ea0
+        key: app.registration.individual.persona.owner
+        value: BusinessUnit
+
+    -
+        uuid: 96d1256e-529e-474b-992b-fd37badf2fde
+        key: app.registration.individual.persona.owner_uuid
+        value: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+
+    -
         uuid: da037c20-59e1-40fb-89bd-c84a2aff6c0b
         key: ds_api.user.username
         value: system@ds

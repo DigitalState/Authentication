@@ -26,7 +26,11 @@ class AppExtension extends Extension implements PrependExtensionInterface
                     'owner' => null,
                     'owner_uuid' => null,
                     'roles' => null,
-                    'enabled' => null
+                    'enabled' => null,
+                    'persona' => [
+                        'owner' => null,
+                        'owner_uuid' => null
+                    ]
                 ]
             ]
         ]);
@@ -56,5 +60,9 @@ class AppExtension extends Extension implements PrependExtensionInterface
         $container->setParameter('ds_config.configs.app.registration.owner_uuid', $config['registration']['owner_uuid']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner_uuid', $config['registration']['individual']['owner_uuid']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner_uuid', $config['registration']['individual']['owner_uuid']);
+        $container->setParameter('ds_config.configs.app.registration.individual.roles', $config['registration']['individual']['roles']);
+        $container->setParameter('ds_config.configs.app.registration.individual.enabled', $config['registration']['individual']['enabled']);
+        $container->setParameter('ds_config.configs.app.registration.individual.persona.owner', $config['registration']['individual']['persona']['owner_uuid']);
+        $container->setParameter('ds_config.configs.app.registration.individual.persona.owner_uuid', $config['registration']['individual']['persona']['owner_uuid']);
     }
 }
