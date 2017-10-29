@@ -22,7 +22,7 @@ items:
     -
         uuid: 19367aa4-9893-4162-ace5-9b56cb266e6a
         key: app.registration.individual.roles
-        value: ROLE_USER
+        value: ROLE_INDIVIDUAL
 
     -
         uuid: 544b5bb3-e27c-4a89-873b-55086aad7cde
