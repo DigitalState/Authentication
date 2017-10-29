@@ -2,7 +2,7 @@ services:
     app.filter.user.search:
         parent: api_platform.doctrine.orm.search_filter
         arguments:
-            - { id: exact, uuid: exact, username: partial, email: partial, identity: exact, identityUuid: exact, roles: partial }
+            - { id: exact, uuid: exact, owner: exact, ownerUuid: exact, username: partial, email: partial, identity: exact, identityUuid: exact, roles: partial }
         tags:
             - { name: api_platform.filter, id: app.user.search }
 
@@ -24,6 +24,28 @@ services:
         parent: api_platform.doctrine.orm.order_filter
         arguments:
             - {
-                id: ~, createdAt: ~, updatedAt: ~, deletedAt: ~, username: ~, email: ~, lastLogin: ~, identity: ~, identityUuid: ~ }
+                id: ~, createdAt: ~, updatedAt: ~, deletedAt: ~, owner: ~, username: ~, email: ~, lastLogin: ~, identity: ~, identityUuid: ~ }
         tags:
             - { name: api_platform.filter, id: app.user.order }
+
+    app.filter.registration.search:
+        parent: api_platform.doctrine.orm.search_filter
+        arguments:
+            - { id: exact, uuid: exact, owner: exact, ownerUuid: exact, username: partial }
+        tags:
+            - { name: api_platform.filter, id: app.registration.search }
+
+    app.filter.registration.date:
+        parent: api_platform.doctrine.orm.date_filter
+        arguments:
+            - { createdAt: ~, updatedAt: ~, deletedAt: ~ }
+        tags:
+            - { name: api_platform.filter, id: app.registration.date }
+
+    app.filter.registration.order:
+        parent: api_platform.doctrine.orm.order_filter
+        arguments:
+            - {
+                id: ~, createdAt: ~, updatedAt: ~, deletedAt: ~, owner: ~, username: ~ }
+        tags:
+            - { name: api_platform.filter, id: app.registration.order }

@@ -1,0 +1,14 @@
+services:
+    app.serializer.normalizer.registration:
+        decorates: ds_security.serializer.normalizer.acl.property
+        class: AppBundle\Serializer\Normalizer\RegistrationNormalizer
+        arguments:
+            - '@app.serializer.normalizer.registration.inner'
+            - '@ds_config.service.config'
+
+    app.serializer.jsonld.normalizer.registration:
+        decorates: ds_security.serializer.jsonld.normalizer.acl.property
+        class: AppBundle\Serializer\Normalizer\RegistrationNormalizer
+        arguments:
+            - '@app.serializer.jsonld.normalizer.registration.inner'
+            - '@ds_config.service.config'

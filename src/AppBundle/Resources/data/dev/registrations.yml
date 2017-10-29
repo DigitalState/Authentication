@@ -1,0 +1,9 @@
+items: []
+
+prototype:
+    uuid: ~
+    owner: BusinessUnit
+    owner_uuid: d5de44e0-d727-4f69-a8b3-c3afbf75eda3 # Administration
+    username: ~
+    password: ~
+    data: []

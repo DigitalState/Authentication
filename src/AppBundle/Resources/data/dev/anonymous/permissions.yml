@@ -1,4 +1,21 @@
-items: []
+items:
+    -
+        access: aad25627-2a23-409f-9a72-7f557fb54041 # Any Anonymous
+        entity_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+        key: registration
+        attributes: [ADD]
+
+    -
+        access: aad25627-2a23-409f-9a72-7f557fb54041 # Any Anonymous
+        entity_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+        key:
+            - registration_owner
+            - registration_owner_uuid
+            - registration_username
+            - registration_password
+            - registration_data
+            - registration_version
+        attributes: [EDIT]
 
 prototype:
     access: ~

@@ -2,3 +2,7 @@ services:
     app.service.user:
         class: AppBundle\Service\UserService
         parent: ds_entity.service.entity
+
+    app.service.registration:
+        class: AppBundle\Service\RegistrationService
+        parent: ds_entity.service.entity
