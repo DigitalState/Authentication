@@ -47,19 +47,27 @@ class RegistrationService extends EntityService
      */
     public function createUser(Registration $registration)
     {
+        $key = 'app.registration.'.strtolower($registration->getIdentity());
+        $configs = [
+            'roles' => [$this->configService->get($key.'.roles')],
+            'owner' => $this->configService->get($key.'.owner'),
+            'owner_uuid' => $this->configService->get($key.'.owner_uuid'),
+            'enabled' => $this->configService->get($key.'.enabled')
+        ];
+
         $user = $this->userService->getCustomManager()->createUser();
         $user
             ->setRegistration($registration)
             ->setUsername($registration->getUsername())
             ->setEmail($registration->getUsername())
             ->setPlainPassword($registration->getPassword())
-            ->setRoles([$this->configService->get('app.registration.individual.roles')])
-            ->setOwner($this->configService->get('app.registration.individual.owner'))
-            ->setOwnerUuid($this->configService->get('app.registration.individual.owner_uuid'))
-            ->setIdentity(Identity::INDIVIDUAL)
-            ->setEnabled($this->configService->get('app.registration.individual.enabled'));
-
+            ->setRoles($configs['roles'])
+            ->setOwner($configs['owner'])
+            ->setOwnerUuid($configs['owner_uuid'])
+            ->setIdentity($registration->getIdentity())
+            ->setEnabled($configs['enabled']);
         $this->userService->getCustomManager()->updateUser($user);
+
         $registration->setUser($user);
         $this->manager->persist($registration);
         $this->manager->flush();

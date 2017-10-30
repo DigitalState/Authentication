@@ -50,6 +50,7 @@ class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, 
     use Accessor\OwnerUuid;
     use Accessor\Username;
     use Accessor\Password;
+    use Accessor\Identity;
     use Accessor\Data;
     use EntityAccessor\User;
     use Accessor\Deleted;
@@ -129,6 +130,16 @@ class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, 
      * @Serializer\Groups({"registration_input"})
      */
     protected $password;
+
+    /**
+     * @var string
+     * @ApiProperty
+     * @Serializer\Groups({"registration_output", "registration_input"})
+     * @ORM\Column(name="identity", type="string", length=255, nullable=true)
+     * @Assert\NotBlank
+     * @Assert\Length(min=1, max=255)
+     */
+    protected $identity;
 
     /**
      * @var array

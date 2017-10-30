@@ -5,7 +5,6 @@ services:
             - '@doctrine.orm.entity_manager'
             - '@fos_user.user_manager'
             - '@ds_api.factory'
-            - '@ds_config.service.config'
 
     app.service.registration:
         class: AppBundle\Service\RegistrationService

@@ -20,17 +20,17 @@ class AppExtension extends Extension implements PrependExtensionInterface
     {
         $container->prependExtensionConfig('app', [
             'registration' => [
-                'owner' => null,
-                'owner_uuid' => null,
                 'individual' => [
                     'owner' => null,
                     'owner_uuid' => null,
                     'roles' => null,
-                    'enabled' => null,
-                    'persona' => [
-                        'owner' => null,
-                        'owner_uuid' => null
-                    ]
+                    'enabled' => null
+                ],
+                'organization' => [
+                    'owner' => null,
+                    'owner_uuid' => null,
+                    'roles' => null,
+                    'enabled' => null
                 ]
             ]
         ]);
@@ -56,13 +56,13 @@ class AppExtension extends Extension implements PrependExtensionInterface
         $loader->load('services.yml');
 
         // @todo Move this config -> parameters logic to a common trait in the config component bridge
-        $container->setParameter('ds_config.configs.app.registration.owner', $config['registration']['owner']);
-        $container->setParameter('ds_config.configs.app.registration.owner_uuid', $config['registration']['owner_uuid']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner_uuid', $config['registration']['individual']['owner_uuid']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner_uuid', $config['registration']['individual']['owner_uuid']);
         $container->setParameter('ds_config.configs.app.registration.individual.roles', $config['registration']['individual']['roles']);
         $container->setParameter('ds_config.configs.app.registration.individual.enabled', $config['registration']['individual']['enabled']);
-        $container->setParameter('ds_config.configs.app.registration.individual.persona.owner', $config['registration']['individual']['persona']['owner_uuid']);
-        $container->setParameter('ds_config.configs.app.registration.individual.persona.owner_uuid', $config['registration']['individual']['persona']['owner_uuid']);
+        $container->setParameter('ds_config.configs.app.registration.organization.owner_uuid', $config['registration']['organization']['owner_uuid']);
+        $container->setParameter('ds_config.configs.app.registration.organization.owner_uuid', $config['registration']['organization']['owner_uuid']);
+        $container->setParameter('ds_config.configs.app.registration.organization.roles', $config['registration']['organization']['roles']);
+        $container->setParameter('ds_config.configs.app.registration.organization.enabled', $config['registration']['organization']['enabled']);
     }
 }

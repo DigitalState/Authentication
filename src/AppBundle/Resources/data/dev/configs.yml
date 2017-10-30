@@ -1,15 +1,5 @@
 items:
     -
-        uuid: 4470b2b7-d886-4c01-a987-3aeb166921af
-        key: app.registration.owner
-        value: BusinessUnit
-
-    -
-        uuid: f2f7e5c7-349b-43d8-a26c-4ccb76aa12fc
-        key: app.registration.owner_uuid
-        value: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
-
-    -
         uuid: 20346d3f-5ef2-4aec-a644-210c5e71d662
         key: app.registration.individual.owner
         value: BusinessUnit
@@ -30,14 +20,24 @@ items:
         value: 1
 
     -
-        uuid: c692b78e-33c9-4b5a-8519-b5725f051ea0
-        key: app.registration.individual.persona.owner
+        uuid: ccc518c4-c770-48b5-b9fd-0fac607389be
+        key: app.registration.organization.owner
         value: BusinessUnit
 
     -
-        uuid: 96d1256e-529e-474b-992b-fd37badf2fde
-        key: app.registration.individual.persona.owner_uuid
+        uuid: 37752baf-fb62-4606-87a4-a80967e43ae3
+        key: app.registration.organization.owner_uuid
         value: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+
+    -
+        uuid: da101a75-a016-4490-a448-4f3de472dca2
+        key: app.registration.organization.roles
+        value: ROLE_ORGANIZATION
+
+    -
+        uuid: 32ae8398-a416-4100-bb37-1674b357bcc9
+        key: app.registration.organization.enabled
+        value: 1
 
     -
         uuid: da037c20-59e1-40fb-89bd-c84a2aff6c0b
