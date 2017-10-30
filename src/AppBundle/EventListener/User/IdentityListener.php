@@ -1,14 +1,15 @@
 <?php
 
-namespace AppBundle\EventListener\Registration;
+namespace AppBundle\EventListener\User;
 
-use AppBundle\Entity\Registration;
+use AppBundle\Entity\User;
+
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class UserListener
+ * Class IdentityListener
  */
-class UserListener
+class IdentityListener
 {
     /**
      * @var \Symfony\Component\DependencyInjection\ContainerInterface
@@ -16,9 +17,9 @@ class UserListener
     protected $container;
 
     /**
-     * @var \AppBundle\Service\RegistrationService
+     * @var \AppBundle\Service\UserService
      */
-    protected $registrationService;
+    protected $userService;
 
     /**
      * Constructor
@@ -31,16 +32,16 @@ class UserListener
     }
 
     /**
-     * Create user on registration
+     * Create identity on user creation
      *
-     * @param \AppBundle\Entity\Registration $registration
+     * @param \AppBundle\Entity\User $user
      */
-    public function postPersist(Registration $registration)
+    public function postPersist(User $user)
     {
         // Circular reference error workaround
-        $this->registrationService = $this->container->get('app.service.registration');
+        $this->userService = $this->container->get('app.service.user');
         //
 
-        $this->registrationService->createUser($registration);
+        $this->userService->createIdentity($user);
     }
 }

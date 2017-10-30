@@ -31,7 +31,7 @@ services:
     app.filter.registration.search:
         parent: api_platform.doctrine.orm.search_filter
         arguments:
-            - { id: exact, uuid: exact, owner: exact, ownerUuid: exact, username: partial }
+            - { id: exact, uuid: exact, owner: exact, ownerUuid: exact, username: partial, user: exact }
         tags:
             - { name: api_platform.filter, id: app.registration.search }
 

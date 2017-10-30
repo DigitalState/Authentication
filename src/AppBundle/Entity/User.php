@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Attribute\Accessor as EntityAccessor;
 use Ds\Component\Model\Type\Deletable;
 use Ds\Component\Model\Type\Identifiable;
 use Ds\Component\Model\Type\Uuidentifiable;
@@ -53,6 +54,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
     use Accessor\OwnerUuid;
     use Accessor\Identity;
     use Accessor\IdentityUuid;
+    use EntityAccessor\Registration;
     use Accessor\Deleted;
     use Accessor\Version;
 
@@ -195,6 +197,12 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
      * @Assert\Uuid
      */
     protected $identityUuid;
+
+    /**
+     * @var \AppBundle\Entity\Registration
+     * @ORM\OneToOne(targetEntity="Registration", mappedBy="user")
+     */
+    protected $registration;
 
     /**
      * @var integer

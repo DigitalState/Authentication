@@ -30,4 +30,5 @@ ds_security:
         registration_username:       { title: app.permissions.registration.username,       property: AppBundle\Entity\Registration.username,      attributes: [BROWSE, READ, EDIT] }
         registration_password:       { title: app.permissions.registration.password,       property: AppBundle\Entity\Registration.password,      attributes: [BROWSE, READ, EDIT] }
         registration_data:           { title: app.permissions.registration.data,           property: AppBundle\Entity\Registration.data,          attributes: [BROWSE, READ, EDIT] }
+        registration_user:           { title: app.permissions.registration.user,           property: AppBundle\Entity\Registration.user,          attributes: [BROWSE, READ, EDIT] }
         registration_version:        { title: app.permissions.registration.version,        property: AppBundle\Entity\Registration.version,       attributes: [BROWSE, READ, EDIT] }

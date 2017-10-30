@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Attribute\Accessor as EntityAccessor;
 use Ds\Component\Model\Type\Deletable;
 use Ds\Component\Model\Type\Identifiable;
 use Ds\Component\Model\Type\Uuidentifiable;
@@ -50,6 +51,7 @@ class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, 
     use Accessor\Username;
     use Accessor\Password;
     use Accessor\Data;
+    use EntityAccessor\User;
     use Accessor\Deleted;
     use Accessor\Version;
 
@@ -136,6 +138,15 @@ class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, 
      * @Assert\Type("array")
      */
     protected $data;
+
+    /**
+     * @var \AppBundle\Entity\User
+     * @ApiProperty(writable=false)
+     * @Serializer\Groups({"registration_output"})
+     * @ORM\OneToOne(targetEntity="User", inversedBy="registration")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
 
     /**
      * @var integer

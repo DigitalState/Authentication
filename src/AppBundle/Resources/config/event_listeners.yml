@@ -5,3 +5,10 @@ services:
             - '@service_container'
         tags:
             - { name: doctrine.orm.entity_listener, entity: AppBundle\Entity\Registration, event: postPersist }
+
+    app.event_listener.user.identity:
+        class: AppBundle\EventListener\User\IdentityListener
+        arguments:
+            - '@service_container'
+        tags:
+            - { name: doctrine.orm.entity_listener, entity: AppBundle\Entity\User, event: postPersist }
