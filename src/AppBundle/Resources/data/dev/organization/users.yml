@@ -1,0 +1,20 @@
+items:
+    -
+        uuid: 336dcc1c-d7dc-46de-9640-e19dc567bd3f
+        username: acme@organization
+        email: acme@organization
+        password: 1
+        owner_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+        identity_uuid: 104bf19a-73ef-45bd-ac6a-8ea8d8889023 # Acme
+
+prototype:
+    uuid: ~
+    username: ~
+    email: ~
+    password: ~
+    enabled: true
+    roles: []
+    owner: BusinessUnit
+    owner_uuid: ~
+    identity: Organization
+    identity_uuid: ~
