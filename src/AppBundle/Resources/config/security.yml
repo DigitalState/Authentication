@@ -9,6 +9,11 @@ services:
         arguments:
             - '@fos_user.user_manager'
 
+    app.security.provider.organization:
+        class: AppBundle\Security\Provider\OrganizationProvider
+        arguments:
+            - '@fos_user.user_manager'
+
     app.security.provider.staff:
         class: AppBundle\Security\Provider\StaffProvider
         arguments:

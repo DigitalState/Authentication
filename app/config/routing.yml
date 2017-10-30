@@ -22,6 +22,11 @@ app_security_check_staff:
     path: /tokens/staff
     defaults: { _controller: FOSUserBundle:Security:check }
 
+app_security_check_organization:
+    methods: POST
+    path: /tokens/organization
+    defaults: { _controller: FOSUserBundle:Security:check }
+
 app_security_check_individual:
     methods: POST
     path: /tokens/individual

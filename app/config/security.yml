@@ -9,6 +9,9 @@ security:
         app_security_provider_individual:
             id: app.security.provider.individual
 
+        app_security_provider_organization:
+            id: app.security.provider.organization
+
         app_security_provider_staff:
             id: app.security.provider.staff
 
@@ -46,6 +49,19 @@ security:
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
                 require_previous_session: false
 
+        security_check_organization:
+            pattern: ^/tokens/organization
+            stateless: true
+            anonymous: true
+            provider: app_security_provider_organization
+            form_login:
+                check_path: app_security_check_organization
+                username_parameter: username
+                password_parameter: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                require_previous_session: false
+
         security_check_individual:
             pattern: ^/tokens/individual
             stateless: true
@@ -76,6 +92,7 @@ security:
         - { path: ^/users,                role: IS_AUTHENTICATED_FULLY }
         - { path: ^/tokens/system,        role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/tokens/staff,         role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tokens/organization,  role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/tokens/individual,    role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/tokens/anonymous,     role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/registration,         role: IS_AUTHENTICATED_ANONYMOUSLY }
