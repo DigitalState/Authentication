@@ -22,7 +22,7 @@ prototype:
     email: ~
     password: ~
     enabled: true
-    roles: []
+    roles: [ROLE_SYSTEM]
     owner: BusinessUnit
     owner_uuid: ~
     identity: System
