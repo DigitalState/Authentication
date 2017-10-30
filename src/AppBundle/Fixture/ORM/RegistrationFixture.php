@@ -3,6 +3,7 @@
 namespace AppBundle\Fixture\ORM;
 
 use AppBundle\Entity\Registration;
+use AppBundle\EventListener\Registration\UserListener;
 use Doctrine\Common\Persistence\ObjectManager;
 use Ds\Component\Database\Fixture\ORM\ResourceFixture;
 
@@ -16,6 +17,16 @@ abstract class RegistrationFixture extends ResourceFixture
      */
     public function load(ObjectManager $manager)
     {
+        $data = $manager->getClassMetadata(Registration::class);
+
+        foreach ($data->entityListeners as $event => $listeners) {
+            foreach ($listeners as $key => $listener) {
+                if (UserListener::class === $listener['class']) {
+                    unset($data->entityListeners[$event][$key]);
+                }
+            }
+        }
+
         $registrations = $this->parse($this->getResource());
 
         foreach ($registrations as $registration) {

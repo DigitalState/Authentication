@@ -2,6 +2,8 @@
 
 namespace AppBundle\Fixture\ORM;
 
+use AppBundle\Entity\User;
+use AppBundle\EventListener\User\IdentityListener;
 use Doctrine\Common\Persistence\ObjectManager;
 use Ds\Component\Database\Fixture\ORM\ResourceFixture;
 
@@ -15,6 +17,16 @@ abstract class UserFixture extends ResourceFixture
      */
     public function load(ObjectManager $manager)
     {
+        $data = $manager->getClassMetadata(User::class);
+
+        foreach ($data->entityListeners as $event => $listeners) {
+            foreach ($listeners as $key => $listener) {
+                if (IdentityListener::class === $listener['class']) {
+                    unset($data->entityListeners[$event][$key]);
+                }
+            }
+        }
+
         $userManager = $this->container->get('fos_user.user_manager');
         $users = $this->parse($this->getResource());
 
