@@ -5,7 +5,7 @@ items:
         email: acme@organization
         password: 1
         owner_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
-        identity_uuid: 104bf19a-73ef-45bd-ac6a-8ea8d8889023 # Acme
+        identity_uuid: c9599da5-35a8-494c-9181-975d78be9694 # Acme
 
 prototype:
     uuid: ~
