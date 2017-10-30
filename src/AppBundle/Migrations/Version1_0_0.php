@@ -43,14 +43,14 @@ class Version1_0_0 extends AbstractMigration
             INSERT INTO 
                 `ds_config` (`id`, `uuid`, `owner`, `owner_uuid`, `key`, `value`, `enabled`, `version`, `created_at`, `updated_at`)
             VALUES 
-                (1, \'bdba6587-124f-443a-ae4e-ef2d925b4848\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.owner\', \'BusinessUnit\', 1, 1, now(), now()),
-                (2, \'68487cdf-5e7c-48c4-b353-99b100c07921\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.owner_uuid\', \'447a62c0-7043-41f7-8540-d57aa15070de\', 1, 1, now(), now()),
-                (3, \'4f4e90e3-3f0d-438d-b327-4cfc8febf40b\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.owner\', \'BusinessUnit\', 1, 1, now(), now()),
-                (4, \'d8788c41-6972-4afc-9b27-d3c8edc5846f\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.owner_uuid\', \'447a62c0-7043-41f7-8540-d57aa15070de\', 1, 1, now(), now()),
-                (5, \'003e1dfd-5ac2-4c20-ad40-0d1310a70d61\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.roles\', \'ROLE_INDIVIDUAL\', 1, 1, now(), now()),
-                (6, \'6f75ecdd-407d-4240-9a5d-e880f1050d0d\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.enabled\', 1, 1, 1, now(), now()),
-                (7, \'4480577b-06a5-4369-bfcb-7803f8e7b8a1\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.persona.owner\', \'BusinessUnit\', 1, 1, now(), now()),
-                (8, \'badf036e-4b66-438b-8ed9-5b8a993eb18e\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.persona.owner_uuid\', \'447a62c0-7043-41f7-8540-d57aa15070de\', 1, 1, now(), now()),
+                (1, \'fb96f432-d95f-4555-a2fa-7841d817a626\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.owner\', \'BusinessUnit\', 1, 1, now(), now()),
+                (2, \'f4b4bcc4-78a9-4b54-9bcc-6a8924db1eae\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.owner_uuid\', \'447a62c0-7043-41f7-8540-d57aa15070de\', 1, 1, now(), now()),
+                (3, \'aeda0e1f-28b4-463f-9387-9b1e2b6073b0\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.roles\', \'ROLE_INDIVIDUAL\', 1, 1, now(), now()),
+                (4, \'2244f1ab-293c-4ee0-a158-2bb4621b9256\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.individual.enabled\', 1, 1, 1, now(), now()),
+                (5, \'4f4e90e3-3f0d-438d-b327-4cfc8febf40b\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.organization.owner\', \'BusinessUnit\', 1, 1, now(), now()),
+                (6, \'d8788c41-6972-4afc-9b27-d3c8edc5846f\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.organization.owner_uuid\', \'447a62c0-7043-41f7-8540-d57aa15070de\', 1, 1, now(), now()),
+                (7, \'003e1dfd-5ac2-4c20-ad40-0d1310a70d61\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.organization.roles\', \'ROLE_ORGANIZATION\', 1, 1, now(), now()),
+                (8, \'6f75ecdd-407d-4240-9a5d-e880f1050d0d\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'app.registration.organization.enabled\', 1, 1, 1, now(), now()),
                 (9, \'328005da-f30a-4d6c-beeb-a7b121af9dda\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.user.username\', \'system@ds\', 1, 1, now(), now()),
                 (10, \'03192e19-0a42-4580-9ce4-8cadd885f4b6\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.user.uuid\', \'b496655f-8fe6-4340-9a77-1bc3eeabab53\', 1, 1, now(), now()),
                 (11, \'d8ef0814-b88f-4a66-858e-9ab0341f12b5\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.user.roles\', \'ROLE_SYSTEM\', 1, 1, now(), now()),
