@@ -5,7 +5,7 @@ namespace AppBundle\Service;
 use AppBundle\Entity\User;
 use Doctrine\ORM\EntityManager;
 use DomainException;
-use Ds\Component\Api\Api\Factory;
+use Ds\Component\Api\Api\Api;
 use Ds\Component\Api\Model\Individual;
 use Ds\Component\Api\Model\IndividualPersona;
 use Ds\Component\Api\Model\Organization;
@@ -37,11 +37,6 @@ class UserService extends EntityService
     # endregion
 
     /**
-     * @var \Ds\Component\Api\Api\Factory
-     */
-    protected $factory;
-
-    /**
      * @var \Ds\Component\Api\Api\Api
      */
     protected $api;
@@ -51,15 +46,15 @@ class UserService extends EntityService
      *
      * @param \Doctrine\ORM\EntityManager $manager
      * @param \FOS\UserBundle\Model\UserManagerInterface $customManager
-     * @param \Ds\Component\Api\Api\Factory $factory
+     * @param \Ds\Component\Api\Api\Api $api
      * @param string $entity
      */
-    public function __construct(EntityManager $manager, UserManagerInterface $customManager, Factory $factory, $entity = User::class)
+    public function __construct(EntityManager $manager, UserManagerInterface $customManager, Api $api, $entity = User::class)
     {
         parent::__construct($manager, $entity);
 
         $this->customManager = $customManager;
-        $this->factory = $factory;
+        $this->api = $api;
     }
 
     /**
@@ -70,17 +65,13 @@ class UserService extends EntityService
      */
     public function createIdentity(User $user)
     {
-        if (!$this->api) {
-            $this->api = $this->factory->create();
-        }
-
         switch ($user->getIdentity()) {
             case Identity::INDIVIDUAL:
                 $identity = new Individual;
                 $identity
                     ->setOwner($user->getOwner())
                     ->setOwnerUuid($user->getOwnerUuid());
-                $identity = $this->api->identities->individual->create($identity);
+                $identity = $this->api->get('identities.individual')->create($identity);
 
                 $persona = new IndividualPersona;
                 $persona
@@ -94,7 +85,7 @@ class UserService extends EntityService
                         'fr' => 'Défaut'
                     ])
                     ->setData($user->getRegistration()->getData());
-                $this->api->identities->individualPersona->create($persona);
+                $this->api->get('identities.individual_persona')->create($persona);
                 break;
 
             case Identity::ORGANIZATION:
@@ -102,7 +93,7 @@ class UserService extends EntityService
                 $identity
                     ->setOwner($user->getOwner())
                     ->setOwnerUuid($user->getOwnerUuid());
-                $identity = $this->api->identities->organization->create($identity);
+                $identity = $this->api->get('identities.organization')->create($identity);
 
                 $persona = new OrganizationPersona;
                 $persona
@@ -116,7 +107,7 @@ class UserService extends EntityService
                         'fr' => 'Défaut'
                     ])
                     ->setData($user->getRegistration()->getData());
-                $this->api->identities->organizationPersona->create($persona);
+                $this->api->get('identities.organization_persona')->create($persona);
                 break;
 
             default:

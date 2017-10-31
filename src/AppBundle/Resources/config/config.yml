@@ -27,6 +27,7 @@ ds_security:
         registration_deleted_at:     { title: app.permissions.registration.deleted_at,     property: AppBundle\Entity\Registration.deletedAt,     attributes: [BROWSE, READ, EDIT] }
         registration_owner:          { title: app.permissions.registration.owner,          property: AppBundle\Entity\Registration.owner,         attributes: [BROWSE, READ, EDIT] }
         registration_owner_uuid:     { title: app.permissions.registration.owner_uuid,     property: AppBundle\Entity\Registration.ownerUuid,     attributes: [BROWSE, READ, EDIT] }
+        registration_identity:       { title: app.permissions.registration.identity,       property: AppBundle\Entity\Registration.identity,      attributes: [BROWSE, READ, EDIT] }
         registration_username:       { title: app.permissions.registration.username,       property: AppBundle\Entity\Registration.username,      attributes: [BROWSE, READ, EDIT] }
         registration_password:       { title: app.permissions.registration.password,       property: AppBundle\Entity\Registration.password,      attributes: [BROWSE, READ, EDIT] }
         registration_data:           { title: app.permissions.registration.data,           property: AppBundle\Entity\Registration.data,          attributes: [BROWSE, READ, EDIT] }

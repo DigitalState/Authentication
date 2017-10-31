@@ -11,6 +11,7 @@ items:
         key:
             - registration_owner
             - registration_owner_uuid
+            - registration_identity
             - registration_username
             - registration_password
             - registration_data

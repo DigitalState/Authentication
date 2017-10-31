@@ -1,14 +1,14 @@
 services:
     app.service.user:
         class: AppBundle\Service\UserService
+        parent: ds_entity.service.entity
         arguments:
-            - '@doctrine.orm.entity_manager'
             - '@fos_user.user_manager'
-            - '@ds_api.factory'
+            - '@ds_api.api'
 
     app.service.registration:
         class: AppBundle\Service\RegistrationService
+        parent: ds_entity.service.entity
         arguments:
-            - '@doctrine.orm.entity_manager'
             - '@app.service.user'
             - '@ds_config.service.config'
