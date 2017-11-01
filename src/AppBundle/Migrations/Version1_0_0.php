@@ -56,15 +56,15 @@ class Version1_0_0 extends AbstractMigration
                 (11, \'d8ef0814-b88f-4a66-858e-9ab0341f12b5\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.user.roles\', \'ROLE_SYSTEM\', 1, 1, now(), now()),
                 (12, \'35ac315f-3a9d-4627-8aac-b9609e421f5e\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.user.identity\', \'System\', 1, 1, now(), now()),
                 (13, \'44edc068-fa1e-4b8a-bd3a-4f98d348d525\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.user.identity_uuid\', \'df5fd904-aa47-452f-9c4a-d6b52fe5ace4\', 1, 1, now(), now()),
-                (14, \'b8bb00a5-5055-4a3f-8762-908b21c63ef8\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.authentication.host\', \'127.0.0.1\', 1, 1, now(), now()),
-                (15, \'2210d668-9d3f-465c-a9bb-79101c7e76ba\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.identities.host\', \'127.0.0.1\', 1, 1, now(), now()),
-                (16, \'50b1e9c5-b96c-4533-88c5-94ed800e569c\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.cases.host\', \'127.0.0.1\', 1, 1, now(), now()),
-                (17, \'2fb6b34b-9a08-443d-91b9-7172b15537a6\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.services.host\', \'127.0.0.1\', 1, 1, now(), now()),
-                (18, \'70a56725-fe17-4ee9-995c-894fa2f682cd\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.records.host\', \'127.0.0.1\', 1, 1, now(), now()),
-                (19, \'10be5003-cc4e-4945-9444-f0953bfb3762\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.assets.host\', \'127.0.0.1\', 1, 1, now(), now()),
-                (20, \'ffdb061b-4a88-4e02-8567-675ff01d0361\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.cms.host\', \'127.0.0.1\', 1, 1, now(), now()),
-                (21, \'87290bf2-0c01-4df9-940e-2b9987a9792f\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.camunda.host\', \'127.0.0.1\', 1, 1, now(), now()),
-                (22, \'6eb11430-9e99-4064-bee7-bd3be4644780\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.formio.host\', \'127.0.0.1\', 1, 1, now(), now());
+                (14, \'b8bb00a5-5055-4a3f-8762-908b21c63ef8\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.authentication.host\', \'http://127.0.0.1\', 1, 1, now(), now()),
+                (15, \'2210d668-9d3f-465c-a9bb-79101c7e76ba\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.identities.host\', \'http://127.0.0.1\', 1, 1, now(), now()),
+                (16, \'50b1e9c5-b96c-4533-88c5-94ed800e569c\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.cases.host\', \'http://127.0.0.1\', 1, 1, now(), now()),
+                (17, \'2fb6b34b-9a08-443d-91b9-7172b15537a6\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.services.host\', \'http://127.0.0.1\', 1, 1, now(), now()),
+                (18, \'70a56725-fe17-4ee9-995c-894fa2f682cd\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.records.host\', \'http://127.0.0.1\', 1, 1, now(), now()),
+                (19, \'10be5003-cc4e-4945-9444-f0953bfb3762\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.assets.host\', \'http://127.0.0.1\', 1, 1, now(), now()),
+                (20, \'ffdb061b-4a88-4e02-8567-675ff01d0361\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.cms.host\', \'http://127.0.0.1\', 1, 1, now(), now()),
+                (21, \'87290bf2-0c01-4df9-940e-2b9987a9792f\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.camunda.host\', \'http://127.0.0.1/engine-rest\', 1, 1, now(), now()),
+                (22, \'6eb11430-9e99-4064-bee7-bd3be4644780\', \'BusinessUnit\', \'11bec012-a73f-45c1-8d2e-53502fa58c23\', \'ds_api.api.formio.host\', \'http://127.0.0.1\', 1, 1, now(), now());
         ');
 
         $this->addSql('
