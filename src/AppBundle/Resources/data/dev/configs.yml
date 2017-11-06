@@ -67,47 +67,47 @@ items:
     -
         uuid: 987df27e-4dfe-4fbc-929c-c370d26a4d59
         key: ds_api.api.authentication.host
-        value: http://127.0.0.1
+        value: http://api.authentication.ds
 
     -
         uuid: b20344d5-f946-48ba-8a87-4668e594970d
         key: ds_api.api.identities.host
-        value: http://127.0.0.1
+        value: http://api.identities.ds
 
     -
         uuid: 42e6b9d9-661e-4e0e-9de6-df8a650a0a80
         key: ds_api.api.cases.host
-        value: http://127.0.0.1
+        value: http://api.cases.ds
 
     -
         uuid: 1cd23abc-26c2-4dd6-9af7-882fb46028d7
         key: ds_api.api.services.host
-        value: http://127.0.0.1
+        value: http://api.services.ds
 
     -
         uuid: 53875332-580e-4d71-a4dd-591ae2b7487f
         key: ds_api.api.records.host
-        value: http://127.0.0.1
+        value: http://api.records.ds
 
     -
         uuid: 14de0503-e2d9-4043-a199-cbd7f2631171
         key: ds_api.api.assets.host
-        value: http://127.0.0.1
+        value: http://api.assets.ds
 
     -
         uuid: 8ed78060-c52b-476c-ba30-678f4e67e1ea
         key: ds_api.api.cms.host
-        value: http://127.0.0.1
+        value: http://api.cms.ds
 
     -
         uuid: f7a6a548-51b9-45fa-b552-9642ad0dbe1a
         key: ds_api.api.camunda.host
-        value: http://127.0.0.1/engine-rest
+        value: http://api.camunda.ds/engine-rest
 
     -
         uuid: 31e9bc77-a2ff-4458-9346-1d005575ba33
         key: ds_api.api.formio.host
-        value: http://127.0.0.1
+        value: http://api.formio.ds
 
 prototype:
     uuid: ~
