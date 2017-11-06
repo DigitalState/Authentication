@@ -36,7 +36,7 @@ services:
             authentication_php:
                 condition: service_started
         environment:
-            VIRTUAL_HOST: api.authentication.ds
+            - VIRTUAL_HOST
         volumes_from:
             - authentication_php
         volumes:
