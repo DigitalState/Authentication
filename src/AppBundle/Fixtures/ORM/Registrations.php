@@ -23,6 +23,6 @@ class Registrations extends RegistrationFixture implements OrderedFixtureInterfa
      */
     protected function getResource()
     {
-        return __DIR__.'/../../Resources/data/{env}/*/registrations.yml';
+        return '/srv/api-platform/src/AppBundle/Resources/data/{env}/*/registrations.yml';
     }
 }
