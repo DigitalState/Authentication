@@ -27,7 +27,7 @@ items:
     -
         uuid: 37752baf-fb62-4606-87a4-a80967e43ae3
         key: app.registration.organization.owner_uuid
-        value: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+        value: 8acf2710-eec3-4a7a-a665-33f77ba424fa # Corporation Management
 
     -
         uuid: da101a75-a016-4490-a448-4f3de472dca2
