@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Action\Authentication;
+namespace AppBundle\Action\Token;
 
 use AppBundle\Security\Provider\AnonymousProvider;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
