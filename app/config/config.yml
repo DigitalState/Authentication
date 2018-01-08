@@ -81,6 +81,11 @@ fos_user:
     from_email:
         address: '%mailer_user%'
         sender_name: '%mailer_user%'
+    resetting:
+        email:
+            template: AppBundle:Resetting:email.html.twig
+    service:
+        mailer: fos_user.mailer.twig_swift
 
 lexik_jwt_authentication:
     private_key_path: '%jwt_private_key_path%'
@@ -91,9 +96,11 @@ lexik_jwt_authentication:
 swiftmailer:
     transport: '%mailer_transport%'
     host: '%mailer_host%'
+    port: '%mailer_port%'
     username: '%mailer_user%'
     password: '%mailer_password%'
-    spool: { type: memory }
+    spool:
+        type: memory
 
 nelmio_cors:
     defaults:

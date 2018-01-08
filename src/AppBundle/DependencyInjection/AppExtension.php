@@ -19,6 +19,10 @@ class AppExtension extends Extension implements PrependExtensionInterface
     public function prepend(ContainerBuilder $container)
     {
         $container->prependExtensionConfig('app', [
+            'spa' => [
+                'admin' => null,
+                'portal' => null
+            ],
             'registration' => [
                 'individual' => [
                     'owner' => null,
@@ -31,6 +35,15 @@ class AppExtension extends Extension implements PrependExtensionInterface
                     'owner_uuid' => null,
                     'roles' => null,
                     'enabled' => null
+                ]
+            ],
+            'resetting' => [
+                'email' => [
+                    'subject' => null,
+                    'body' => [
+                        'plain' => null,
+                        'html' => null
+                    ]
                 ]
             ]
         ]);

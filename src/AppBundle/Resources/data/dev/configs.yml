@@ -1,5 +1,15 @@
 items:
     -
+        uuid: eae893c8-3ec9-4536-928f-a5a51105dfa7
+        key: app.spa.admin
+        value: admin.ds
+
+    -
+        uuid: 85092edf-6eb9-4879-803a-02ccec76d34d
+        key: app.spa.portal
+        value: portal.ds
+
+    -
         uuid: 20346d3f-5ef2-4aec-a644-210c5e71d662
         key: app.registration.individual.owner
         value: BusinessUnit
@@ -38,6 +48,21 @@ items:
         uuid: 32ae8398-a416-4100-bb37-1674b357bcc9
         key: app.registration.organization.enabled
         value: 1
+
+    -
+        uuid: 4299a71c-e234-4591-a17d-69a9ce5fb484
+        key: app.resetting.email.subject
+        value: app.resetting.email.subject
+
+    -
+        uuid: c044e5de-3ddc-4017-b4da-3a83562dff3a
+        key: app.resetting.email.body.plain
+        value: app.resetting.email.body.plain
+
+    -
+        uuid: 6de0109f-441c-42b1-a641-c4d7ba4213c0
+        key: app.resetting.email.body.html
+        value: app.resetting.email.body.html
 
     -
         uuid: da037c20-59e1-40fb-89bd-c84a2aff6c0b

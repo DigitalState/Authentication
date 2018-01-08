@@ -1,0 +1,15 @@
+{% block subject %}
+    {{ ds_config('app.resetting.email.subject')|trans({ '%username%': user.username }) }}
+{% endblock %}
+
+{% block body_text %}
+    {% set token = confirmationUrl|split('/')|last %}
+    {% set confirmationUrl = ds_config('app.spa.portal') ~ '/reset/' ~ token %}
+    {{ ds_config('app.resetting.email.body.plain')|trans({ '%username%': user.username, '%confirmationUrl%': confirmationUrl }) }}
+{% endblock %}
+
+{% block body_html %}
+    {% set token = confirmationUrl|split('/')|last %}
+    {% set confirmationUrl = ds_config('app.spa.portal') ~ '/reset/' ~ token %}
+    {{ ds_config('app.resetting.email.body.html')|trans({ '%username%': user.username, '%confirmationUrl%': confirmationUrl })|raw }}
+{% endblock %}
