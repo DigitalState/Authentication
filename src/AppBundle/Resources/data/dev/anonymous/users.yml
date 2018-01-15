@@ -4,7 +4,7 @@ items:
         username: anonymous@ds
         email: anonymous@ds
         password: 1
-        owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+        owner_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
         identity_uuid: 9914c48e-a312-49dc-86f0-1a734bc803ef # Anonymous
 
 prototype:
