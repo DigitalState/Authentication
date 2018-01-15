@@ -1,4 +1,29 @@
-items: []
+items:
+    -
+        access: ec08f471-88fc-45bd-9558-c30f5189888c # Any Organization
+        entity_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+        key: user
+        attributes: [BROWSE, READ, EDIT]
+
+    -
+        access: ec08f471-88fc-45bd-9558-c30f5189888c # Any Organization
+        entity_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+        key:
+            - user_uuid
+            - user_created_at
+            - user_username
+            - user_email
+            - user_version
+        attributes: [BROWSE, READ]
+
+    -
+        access: ec08f471-88fc-45bd-9558-c30f5189888c # Any Organization
+        entity_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+        key:
+            - user_username
+            - user_email
+            - user_version
+        attributes: [EDIT]
 
 prototype:
     access: ~
