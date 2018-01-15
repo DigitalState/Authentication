@@ -13,6 +13,7 @@ use Ds\Component\Api\Model\OrganizationPersona;
 use Ds\Component\Entity\Service\EntityService;
 use Ds\Component\Identity\Identity;
 use FOS\UserBundle\Model\UserManagerInterface;
+use LogicException;
 
 /**
  * Class UserService
@@ -62,9 +63,14 @@ class UserService extends EntityService
      *
      * @param \AppBundle\Entity\User $user
      * @return \AppBundle\Entity\User
+     * @throws \LogicException
      */
     public function createIdentity(User $user)
     {
+        if ($user->getIdentityUuid()) {
+            throw new LogicException('Identity already exists.');
+        }
+
         switch ($user->getIdentity()) {
             case Identity::INDIVIDUAL:
                 $identity = new Individual;
