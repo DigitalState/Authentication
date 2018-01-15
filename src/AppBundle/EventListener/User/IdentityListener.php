@@ -42,6 +42,10 @@ class IdentityListener
         $this->userService = $this->container->get('app.service.user');
         //
 
+        if ($user->getIdentityUuid()) {
+            return;
+        }
+
         $this->userService->createIdentity($user);
     }
 }
