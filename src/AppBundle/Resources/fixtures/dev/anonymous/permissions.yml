@@ -1,13 +1,13 @@
 items:
     -
         access: aad25627-2a23-409f-9a72-7f557fb54041 # Any Anonymous
-        entity_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
         key: registration
         attributes: [ADD]
 
     -
         access: aad25627-2a23-409f-9a72-7f557fb54041 # Any Anonymous
-        entity_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
+        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
         key:
             - registration_owner
             - registration_owner_uuid

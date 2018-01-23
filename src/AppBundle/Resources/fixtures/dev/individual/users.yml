@@ -4,7 +4,6 @@ items:
         username: morgan@individual
         email: morgan@individual
         password: 1
-        owner_uuid: b20a40d9-b95b-4462-b8f1-c7453b9b7067 # Portal
         identity_uuid: d0daa7e4-07d1-47e6-93f2-0629adaa3b49 # Morgan
 
 prototype:
@@ -15,6 +14,6 @@ prototype:
     enabled: true
     roles: [ROLE_INDIVIDUAL]
     owner: BusinessUnit
-    owner_uuid: ~
+    owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
     identity: Individual
     identity_uuid: ~

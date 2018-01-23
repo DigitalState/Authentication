@@ -1,13 +1,13 @@
 items:
     -
-        access: ec08f471-88fc-45bd-9558-c30f5189888c # Any Organization
-        entity_uuid: 8acf2710-eec3-4a7a-a665-33f77ba424fa # Corporation Management
+        access: 525734b4-e592-4e33-a51d-3b6f4ae6f05b # Any Individual
+        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
         key: user
         attributes: [BROWSE, READ, EDIT]
 
     -
-        access: ec08f471-88fc-45bd-9558-c30f5189888c # Any Organization
-        entity_uuid: 8acf2710-eec3-4a7a-a665-33f77ba424fa # Corporation Management
+        access: 525734b4-e592-4e33-a51d-3b6f4ae6f05b # Any Individual
+        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
         key:
             - user_uuid
             - user_created_at
@@ -17,8 +17,8 @@ items:
         attributes: [BROWSE, READ]
 
     -
-        access: ec08f471-88fc-45bd-9558-c30f5189888c # Any Organization
-        entity_uuid: 8acf2710-eec3-4a7a-a665-33f77ba424fa # Corporation Management
+        access: 525734b4-e592-4e33-a51d-3b6f4ae6f05b # Any Individual
+        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
         key:
             - user_username
             - user_email

@@ -1,12 +1,11 @@
 items:
     -
         uuid: ec08f471-88fc-45bd-9558-c30f5189888c
-        owner_uuid: 8acf2710-eec3-4a7a-a665-33f77ba424fa # Corporation Management
-        identity_uuid: ~ # Any organization
+        identity_uuid: ~ # Any Organization
 
 prototype:
     uuid: ~
     owner: BusinessUnit
-    owner_uuid: ~
+    owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
     identity: Organization
     identity_uuid: ~

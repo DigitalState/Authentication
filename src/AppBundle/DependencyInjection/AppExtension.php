@@ -69,6 +69,8 @@ class AppExtension extends Extension implements PrependExtensionInterface
         $loader->load('services.yml');
 
         // @todo Move this config -> parameters logic to a common trait in the config component bridge
+        $container->setParameter('ds_config.configs.app.spa.admin', $config['spa']['admin']);
+        $container->setParameter('ds_config.configs.app.spa.portal', $config['spa']['portal']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner_uuid', $config['registration']['individual']['owner_uuid']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner_uuid', $config['registration']['individual']['owner_uuid']);
         $container->setParameter('ds_config.configs.app.registration.individual.roles', $config['registration']['individual']['roles']);

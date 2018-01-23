@@ -23,6 +23,6 @@ class Users extends UserFixture implements OrderedFixtureInterface
      */
     protected function getResource()
     {
-        return '/srv/api-platform/src/AppBundle/Resources/data/{env}/*/users.yml';
+        return '/srv/api-platform/src/AppBundle/Resources/fixtures/{env}/*/users.yml';
     }
 }
