@@ -55,7 +55,8 @@ class RegistrationService extends EntityService
             'enabled' => $this->configService->get($key.'.enabled')
         ];
 
-        $user = $this->userService->getCustomManager()->createUser();
+        $manager = $this->userService->getCustomManager();
+        $user = $manager->createUser();
         $user
             ->setRegistration($registration)
             ->setUsername($registration->getUsername())
@@ -66,7 +67,7 @@ class RegistrationService extends EntityService
             ->setOwnerUuid($configs['owner_uuid'])
             ->setIdentity($registration->getIdentity())
             ->setEnabled($configs['enabled']);
-        $this->userService->getCustomManager()->updateUser($user);
+        $manager->updateUser($user);
 
         $registration->setUser($user);
         $this->manager->persist($registration);
