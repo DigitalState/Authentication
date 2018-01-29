@@ -1,9 +1,9 @@
 parameters:
     database_host: authentication_db
     database_port: 3306
-    database_name: api_platform
-    database_user: api_platform
-    database_password: api_platform
+    database_name: authentication
+    database_user: authentication
+    database_password: authentication
 
     jwt_private_key_path: '/run/secrets/jwt/key'
     jwt_public_key_path: '/run/secrets/jwt/key.pub'
