@@ -3,7 +3,7 @@ items:
         uuid: 4b0237d1-0917-4d8b-af6d-2aa89be336de
         username: system@ds
         email: system@ds
-        password: 1
+        password: system
         owner: System
         owner_uuid: fe1b94ed-783a-48d7-8bf2-2f9cea89f11e # System
         identity_uuid: fe1b94ed-783a-48d7-8bf2-2f9cea89f11e # System
@@ -12,7 +12,7 @@ items:
         uuid: 178fb5a4-2da3-4546-9dc4-f37748bf5652
         username: bpm@ds
         email: bpm@ds
-        password: 1
+        password: bpm
         identity_uuid: 60591cbd-efad-4289-9b7c-a258016e94cb # Bpm
 
 prototype:

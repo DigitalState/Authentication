@@ -3,7 +3,7 @@ items:
         uuid: 336dcc1c-d7dc-46de-9640-e19dc567bd3f
         username: acme@organization
         email: acme@organization
-        password: 1
+        password: acme
         identity_uuid: c9599da5-35a8-494c-9181-975d78be9694 # Acme
 
 prototype:

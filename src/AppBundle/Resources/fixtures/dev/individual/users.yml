@@ -3,7 +3,7 @@ items:
         uuid: 42182fd0-9665-4ba4-9f5c-ec290e23814e
         username: morgan@individual
         email: morgan@individual
-        password: 1
+        password: morgan
         identity_uuid: d0daa7e4-07d1-47e6-93f2-0629adaa3b49 # Morgan
 
 prototype:
