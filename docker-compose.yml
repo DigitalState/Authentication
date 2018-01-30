@@ -14,7 +14,7 @@ services:
         build: .
         depends_on:
             - db
-        command: ['wait-for', 'authentication_db:5432', '--timeout=60', '--', 'docker-app-start']
+        command: ['wait-for', 'authentication_db:${DATABASE_PORT}', '--timeout=60', '--', 'docker-app-start']
         environment:
             SYMFONY_ENV: dev
         volumes:
