@@ -1,6 +1,6 @@
 parameters:
     database_host: authentication_db
-    database_port: 3306
+    database_port: 5432
     database_name: authentication
     database_user: authentication
     database_password: authentication
