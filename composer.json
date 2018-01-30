@@ -30,8 +30,8 @@
         "knplabs/doctrine-behaviors": "~1.1",
         "friendsofsymfony/user-bundle": "~2.0",
         "guzzlehttp/guzzle": "^6.2",
-        "digitalstate/core": "dev-develop",
-        "dunglas/doctrine-json-odm": "0.1.1"
+        "dunglas/doctrine-json-odm": "0.1.1",
+        "digitalstate/core": "dev-develop"
     },
     "require-dev": {
         "api-platform/schema-generator": "^1.2",
