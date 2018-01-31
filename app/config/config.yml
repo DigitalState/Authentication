@@ -23,7 +23,7 @@ framework:
     trusted_hosts: ~
     trusted_proxies: ~
     session:
-        handler_id: ds_session.handler.pdo
+        handler_id: ~
     fragments: ~
     http_method_override: true
     assets: ~
