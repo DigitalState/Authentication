@@ -193,7 +193,6 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
      * @ApiProperty
      * @Serializer\Groups({"user_output", "user_input"})
      * @ORM\Column(name="identity_uuid", type="guid", nullable=true)
-     * @Assert\NotBlank
      * @Assert\Uuid
      */
     protected $identityUuid;
