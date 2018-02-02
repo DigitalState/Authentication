@@ -1,19 +1,19 @@
 items:
     -
-        access: dd780206-652b-42aa-b26d-15f00582d0ed # System
-        entity_uuid: ~ # Any business unit
+        access: f252d974-f8b9-4cc8-8d55-2f8dcedebfe6 # System
+        entity_uuid: ~ # Any BusinessUnit
         key: entity
         attributes: [BROWSE, READ, EDIT, ADD, DELETE]
 
     -
-        access: dd780206-652b-42aa-b26d-15f00582d0ed # System
-        entity_uuid: ~ # Any business unit
+        access: f252d974-f8b9-4cc8-8d55-2f8dcedebfe6 # System
+        entity_uuid: ~ # Any BusinessUnit
         key: property
         attributes: [BROWSE, READ, EDIT]
 
     -
-        access: dd780206-652b-42aa-b26d-15f00582d0ed # System
-        entity_uuid: ~ # Any business unit
+        access: f252d974-f8b9-4cc8-8d55-2f8dcedebfe6 # System
+        entity_uuid: ~ # Any BusinessUnit
         key: custom
         attributes: [BROWSE, READ, EDIT, ADD, DELETE, EXECUTE]
 

@@ -3,7 +3,7 @@ items: []
 prototype:
     uuid: ~
     owner: BusinessUnit
-    owner_uuid: d5de44e0-d727-4f69-a8b3-c3afbf75eda3 # Administration
+    owner_uuid: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
     username: ~
     password: ~
     data: []

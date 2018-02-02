@@ -1,11 +1,10 @@
 items:
     -
-        uuid: cd5ca384-436a-44f5-b5bc-0aeed1a3fe02
+        uuid: f9df049a-fe95-405f-ba7c-734f1a0ce558
         username: anonymous@ds
         email: anonymous@ds
-        password: 1
-        owner_uuid: d5de44e0-d727-4f69-a8b3-c3afbf75eda3 # Administration
-        identity_uuid: 73aab537-f174-4bf9-b986-afedbb23b7bc # Anonymous
+        password: anonymous
+        owner_uuid: e3048503-19e2-4f68-9346-0398bb196748 # Administration
 
 prototype:
     uuid: ~
@@ -13,8 +12,8 @@ prototype:
     email: ~
     password: ~
     enabled: true
-    roles: []
+    roles: [ROLE_ANONYMOUS]
     owner: BusinessUnit
-    owner_uuid: ~
+    owner_uuid: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
     identity: Anonymous
     identity_uuid: ~

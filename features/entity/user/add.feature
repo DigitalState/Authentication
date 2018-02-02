@@ -5,9 +5,9 @@ Feature: Add users
   I should be able to send api requests related to users
 
   Background:
-    Given I am authenticated as a "system" identity
+    Given I am authenticated as the "system" identity
 
-  @createSchema @loadFixtures @dropSchema
+  @createSchema @loadFixtures
   Scenario: Add a user
     When I add "Accept" header equal to "application/json"
     And I add "Content-Type" header equal to "application/json"
@@ -22,9 +22,9 @@ Feature: Add users
           "ROLE_INDIVIDUAL"
       ],
       "owner": "BusinessUnit",
-      "ownerUuid": "14da4a8c-aee1-43b3-bbac-e3e81a853e0e",
+      "ownerUuid": "e3048503-19e2-4f68-9346-0398bb196748",
       "identity": "Individual",
-      "identityUuid": "5daa964e-b9fb-402f-b72e-07ac56803ccd",
+      "identityUuid": "f78c7fd7-5afd-4d72-8a85-0248856dc727",
       "version": 1
     }
     """
@@ -48,12 +48,22 @@ Feature: Add users
     And the JSON node "owner" should exist
     And the JSON node "owner" should be equal to the string "BusinessUnit"
     And the JSON node "ownerUuid" should exist
-    And the JSON node "ownerUuid" should be equal to the string "14da4a8c-aee1-43b3-bbac-e3e81a853e0e"
+    And the JSON node "ownerUuid" should be equal to the string "e3048503-19e2-4f68-9346-0398bb196748"
     And the JSON node "identity" should exist
     And the JSON node "identity" should be equal to the string "Individual"
     And the JSON node "identityUuid" should exist
-    And the JSON node "identityUuid" should be equal to the string "5daa964e-b9fb-402f-b72e-07ac56803ccd"
+    And the JSON node "identityUuid" should be equal to the string "f78c7fd7-5afd-4d72-8a85-0248856dc727"
     And the JSON node "enabled" should exist
     And the JSON node "enabled" should be true
     And the JSON node "version" should exist
     And the JSON node "version" should be equal to the number 1
+
+  @dropSchema
+  Scenario: Read the added user
+    When I add "Accept" header equal to "application/json"
+    And I send a "GET" request to "/users?username=user1@site.com"
+    Then the response status code should be 200
+    And the header "Content-Type" should be equal to "application/json; charset=utf-8"
+    And the response should be in JSON
+    And the response should be a collection
+    And the response collection should count 1 items

@@ -6,8 +6,8 @@ prototype:
     email: ~
     password: ~
     enabled: true
-    roles: []
+    roles: [ROLE_STAFF]
     owner: BusinessUnit
-    owner_uuid: ~
+    owner_uuid: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
     identity: Staff
     identity_uuid: ~

@@ -3,6 +3,6 @@ items: []
 prototype:
     uuid: ~
     owner: BusinessUnit
-    owner_uuid: ~
+    owner_uuid: e3048503-19e2-4f68-9346-0398bb196748 # Administration
     identity: Staff
     identity_uuid: ~
