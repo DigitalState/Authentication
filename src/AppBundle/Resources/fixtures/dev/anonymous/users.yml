@@ -4,7 +4,8 @@ items:
         username: anonymous@ds
         email: anonymous@ds
         password: anonymous
-        owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+        owner: System
+        owner_uuid: fe1b94ed-783a-48d7-8bf2-2f9cea89f11e # System
         identity_uuid: 9914c48e-a312-49dc-86f0-1a734bc803ef # Anonymous
 
 prototype:
@@ -13,7 +14,9 @@ prototype:
     email: ~
     password: ~
     enabled: true
-    roles: [ROLE_ANONYMOUS]
+    roles:
+        - ROLE_ANONYMOUS
+        - d31057f7-066e-4397-8916-38bd39797b6c # Anonymous
     owner: BusinessUnit
     owner_uuid: ~
     identity: Anonymous

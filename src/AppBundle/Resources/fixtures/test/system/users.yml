@@ -4,7 +4,6 @@ items:
         username: system@ds
         email: system@ds
         password: system
-        owner: System
         owner_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
         identity_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
 
@@ -15,7 +14,7 @@ prototype:
     password: ~
     enabled: true
     roles: [ROLE_SYSTEM]
-    owner: BusinessUnit
-    owner_uuid: e3048503-19e2-4f68-9346-0398bb196748 # Administration
+    owner: System
+    owner_uuid: ~
     identity: System
     identity_uuid: ~

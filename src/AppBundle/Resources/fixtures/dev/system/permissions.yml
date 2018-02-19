@@ -1,43 +1,38 @@
 items:
     -
         access: 67e87316-7954-4af1-861d-bcfe5e2e4c87 # System
-        entity_uuid: ~ # Any BusinessUnit
         key: entity
         attributes: [BROWSE, READ, EDIT, ADD, DELETE]
 
     -
         access: 67e87316-7954-4af1-861d-bcfe5e2e4c87 # System
-        entity_uuid: ~ # Any BusinessUnit
         key: property
         attributes: [BROWSE, READ, EDIT]
 
     -
         access: 67e87316-7954-4af1-861d-bcfe5e2e4c87 # System
-        entity_uuid: ~ # Any BusinessUnit
-        key: custom
+        key: generic
         attributes: [BROWSE, READ, EDIT, ADD, DELETE, EXECUTE]
 
     -
         access: 6a98fd12-38bc-4a8c-ad03-e7a0c65ee95f # Bpm
-        entity_uuid: ~ # Any BusinessUnit
         key: entity
         attributes: [BROWSE, READ, EDIT, ADD, DELETE]
 
     -
         access: 6a98fd12-38bc-4a8c-ad03-e7a0c65ee95f # Bpm
-        entity_uuid: ~ # Any BusinessUnit
         key: property
         attributes: [BROWSE, READ, EDIT]
 
     -
         access: 6a98fd12-38bc-4a8c-ad03-e7a0c65ee95f # Bpm
-        entity_uuid: ~ # Any BusinessUnit
-        key: custom
+        key: generic
         attributes: [BROWSE, READ, EDIT, ADD, DELETE, EXECUTE]
 
 prototype:
     access: ~
-    entity: BusinessUnit
+    scope: generic
+    entity: ~
     entity_uuid: ~
     key: ~
     attributes: []

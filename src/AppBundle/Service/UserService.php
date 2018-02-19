@@ -76,9 +76,10 @@ class UserService extends EntityService
                 $identity = new Individual;
                 $identity
                     ->setOwner($user->getOwner())
-                    ->setOwnerUuid($user->getOwnerUuid());
+                    ->setOwnerUuid($user->getOwnerUuid())
+                    ->setPossessor($user->getPossessor())
+                    ->setPossessorUuid($user->getPossessorUuid());
                 $identity = $this->api->get('identities.individual')->create($identity);
-
                 $persona = new IndividualPersona;
                 $persona
                     ->setOwner($user->getOwner())

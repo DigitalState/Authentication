@@ -66,6 +66,7 @@ class RegistrationService extends EntityService
             ->setOwner($configs['owner'])
             ->setOwnerUuid($configs['owner_uuid'])
             ->setIdentity($registration->getIdentity())
+            ->setPossessor($registration->getIdentity())
             ->setEnabled($configs['enabled']);
         $manager->updateUser($user);
 

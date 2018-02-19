@@ -4,7 +4,8 @@ items:
         username: anonymous@ds
         email: anonymous@ds
         password: anonymous
-        owner_uuid: e3048503-19e2-4f68-9346-0398bb196748 # Administration
+        owner: System
+        owner_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
 
 prototype:
     uuid: ~
@@ -15,5 +16,5 @@ prototype:
     roles: [ROLE_ANONYMOUS]
     owner: BusinessUnit
     owner_uuid: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
-    identity: Anonymous
+    possessor: Anonymous
     identity_uuid: ~

@@ -1,13 +1,12 @@
 items:
     -
-        uuid: f252d974-f8b9-4cc8-8d55-2f8dcedebfe6
-        owner: System
+        uuid: 3e45abc2-cda2-4066-b8ce-442804c1d05b
         owner_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
-        identity_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
+        assignee_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
 
 prototype:
     uuid: ~
-    owner: BusinessUnit
-    owner_uuid: e3048503-19e2-4f68-9346-0398bb196748 # Administration
-    identity: System
-    identity_uuid: ~
+    owner: System
+    owner_uuid: ~
+    assignee: System
+    assignee_uuid: ~

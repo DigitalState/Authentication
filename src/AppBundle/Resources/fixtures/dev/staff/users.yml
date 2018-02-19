@@ -4,6 +4,10 @@ items:
         username: admin@gov
         email: admin@gov
         password: admin
+        roles:
+            - ROLE_STAFF
+            - 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
+            - 5ab54dd5-56ed-4e96-bd8b-1d60ab668a75 # Administrator
         identity_uuid: e32f09b7-e1cf-4a91-a0e1-6822bf47a662 # Admin
 
     -
@@ -11,21 +15,11 @@ items:
         username: manager@gov
         email: manager@gov
         password: manager
+        roles:
+            - ROLE_STAFF
+            - 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
+            - f06dd49d-8ad4-437a-beee-387b834ee217 # Manager
         identity_uuid: 47a5a9cb-496f-4db7-8999-489ec404887f # Manager
-
-    -
-        uuid: a84a47a9-60c0-4337-b185-1966aac90373
-        username: agent@gov
-        email: agent@gov
-        password: agent
-        identity_uuid: 9d10157c-f2ce-48fb-a5ab-83faaae952a7 # Agent
-
-    -
-        uuid: 3ff10fe3-4594-4b57-ba16-59130e4409b5
-        username: intern@gov
-        email: intern@gov
-        password: intern
-        identity_uuid: 71f285ba-f994-444c-b9e5-fa813295a0b7 # Intern
 
 prototype:
     uuid: ~
@@ -33,7 +27,9 @@ prototype:
     email: ~
     password: ~
     enabled: true
-    roles: [ROLE_STAFF]
+    roles:
+        - ROLE_STAFF
+        - 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
     owner: BusinessUnit
     owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
     identity: Staff

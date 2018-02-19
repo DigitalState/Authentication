@@ -12,7 +12,9 @@ prototype:
     email: ~
     password: ~
     enabled: true
-    roles: [ROLE_ORGANIZATION]
+    roles:
+        - ROLE_ORGANIZATION
+        - 777b96e7-e183-44f7-b7e4-dc0cb7591f74 # Organization
     owner: BusinessUnit
     owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
     identity: Organization
