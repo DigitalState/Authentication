@@ -24,10 +24,28 @@ business_unit:
         uuid: d46fea94-4b7e-49f9-9f9c-32a2114b3772
 
 config:
+    app.bpm.variables.api_key:
+        value: api_key
+    app.bpm.variables.api_url:
+        value: api_url
+    app.bpm.variables.api_user:
+        value: api_user
+    app.bpm.variables.identity:
+        value: identity
+    app.bpm.variables.identity_uuid:
+        value: identity_uuid
+    app.bpm.variables.scenario_uuid:
+        value: scenario_uuid
+    app.bpm.variables.service_uuid:
+        value: service_uuid
+    app.bpm.variables.start_data:
+        value: start_data
+    app.bpm.variables.submission_uuid:
+        value: submission_uuid
     app.spa.admin:
-        value: http://admin.ds
+        value: http://admin.lab.ds
     app.spa.portal:
-        value: http://portal.ds
+        value: http://portal.lab.ds
     ds_api.api.assets.host:
         value: http://api.assets.ds
     ds_api.api.authentication.host:
