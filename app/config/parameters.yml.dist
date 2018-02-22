@@ -16,6 +16,6 @@ parameters:
     mailer_user: admin@localhost
     mailer_password: ~
 
-    secret: ThisTokenIsNotSoSecretChangeIt
+    secret: secret
 
     cors_allow_origin: '*'
