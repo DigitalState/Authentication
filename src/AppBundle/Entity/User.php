@@ -10,6 +10,7 @@ use Ds\Component\Model\Type\Ownable;
 use Ds\Component\Model\Type\Identitiable;
 use Ds\Component\Model\Type\Versionable;
 use Ds\Component\Model\Attribute\Accessor;
+use Ds\Component\Security\Model\Type\Secured;
 use FOS\UserBundle\Model\User as BaseUser;
 use FOS\UserBundle\Model\UserInterface;
 use Knp\DoctrineBehaviors\Model as Behavior;
@@ -43,7 +44,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORMAssert\UniqueEntity(fields="uuid")
  * @ORMAssert\UniqueEntity(fields="username")
  */
-class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Identitiable, Deletable, Versionable
+class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Identitiable, Deletable, Versionable, Secured
 {
     use Behavior\Timestampable\Timestampable;
     use Behavior\SoftDeletable\SoftDeletable;
