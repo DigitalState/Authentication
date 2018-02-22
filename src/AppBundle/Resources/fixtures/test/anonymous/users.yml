@@ -16,5 +16,5 @@ prototype:
     roles: [ROLE_ANONYMOUS]
     owner: BusinessUnit
     owner_uuid: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
-    possessor: Anonymous
+    identity: Anonymous
     identity_uuid: ~

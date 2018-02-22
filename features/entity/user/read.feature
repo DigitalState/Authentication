@@ -23,9 +23,9 @@ Feature: Read users
     And the JSON node "deletedAt" should exist
     And the JSON node "deletedAt" should be null
     And the JSON node "owner" should exist
-    And the JSON node "owner" should be equal to the string "BusinessUnit"
+    And the JSON node "owner" should be equal to the string "System"
     And the JSON node "ownerUuid" should exist
-    And the JSON node "ownerUuid" should be equal to the string "e3048503-19e2-4f68-9346-0398bb196748"
+    And the JSON node "ownerUuid" should be equal to the string "aa18b644-a503-49fa-8f53-10f4c1f8e3a1"
     And the JSON node "enabled" should exist
     And the JSON node "enabled" should be true
     And the JSON node "version" should exist
