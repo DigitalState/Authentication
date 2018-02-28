@@ -21,6 +21,13 @@ items:
             - f06dd49d-8ad4-437a-beee-387b834ee217 # Manager
         identity_uuid: 47a5a9cb-496f-4db7-8999-489ec404887f # Manager
 
+    -
+        uuid: 6fc979ec-c210-4b10-b344-600f7ecb2aeb
+        username: agent@gov
+        email: agent@gov
+        password: agent
+        identity_uuid: 5449ce65-5df0-440d-aead-21a77907e59a # Agent
+
 prototype:
     uuid: ~
     username: ~
