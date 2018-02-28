@@ -1,11 +1,11 @@
 <?php
 
-namespace AppBundle\Fixture\ORM;
+namespace AppBundle\Fixture;
 
 use AppBundle\Entity\Registration;
 use AppBundle\EventListener\Registration\UserListener;
 use Doctrine\Common\Persistence\ObjectManager;
-use Ds\Component\Database\Fixture\ORM\ResourceFixture;
+use Ds\Component\Database\Fixture\ResourceFixture;
 
 /**
  * Class RegistrationFixture
