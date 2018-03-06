@@ -1,8 +1,8 @@
 items:
     -
         uuid: 85726ec8-7685-4655-ac91-4746ae71c2cc
-        username: system@ds
-        email: system@ds
+        username: system@system.ds
+        email: system@system.ds
         password: system
         owner_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
         identity_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System

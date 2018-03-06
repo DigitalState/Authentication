@@ -1,8 +1,8 @@
 items:
     -
         uuid: f9df049a-fe95-405f-ba7c-734f1a0ce558
-        username: anonymous@ds
-        email: anonymous@ds
+        username: anonymous@anonymous.ds
+        email: anonymous@anonymous.ds
         password: anonymous
         owner: System
         owner_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
