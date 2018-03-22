@@ -37,6 +37,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  * @ORM\Entity(repositoryClass="AppBundle\Repository\RegistrationRepository")
  * @ORM\Table(name="app_registration")
+ * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
  * @ORMAssert\UniqueEntity(fields="uuid")
  * @ORMAssert\UniqueEntity(fields="username")
  */
@@ -157,6 +158,7 @@ class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, 
      * @Serializer\Groups({"registration_output"})
      * @ORM\OneToOne(targetEntity="User", inversedBy="registration")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
     protected $user;
 

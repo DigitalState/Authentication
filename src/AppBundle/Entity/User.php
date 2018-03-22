@@ -41,6 +41,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  * @ORM\Entity
  * @ORM\Table(name="app_user")
+ * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
  * @ORMAssert\UniqueEntity(fields="uuid")
  * @ORMAssert\UniqueEntity(fields="username")
  */
@@ -201,6 +202,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
     /**
      * @var \AppBundle\Entity\Registration
      * @ORM\OneToOne(targetEntity="Registration", mappedBy="user")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
      */
     protected $registration;
 
