@@ -3,7 +3,7 @@ parameters:
 
     discovery_host: api.discovery.ds
 
-    database_host: authentication_db
+    database_host: authentication_database
     database_port: 5432
     database_name: authentication
     database_user: authentication
