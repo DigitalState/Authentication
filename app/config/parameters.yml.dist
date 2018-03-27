@@ -11,6 +11,7 @@ parameters:
 
     redis_host: authentication_redis
     redis_name: 2
+    redis_prefix: ''
 
     jwt_private_key_path: '/run/secrets/jwt/key'
     jwt_public_key_path: '/run/secrets/jwt/key.pub'
