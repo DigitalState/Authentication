@@ -76,16 +76,12 @@ class UserService extends EntityService
                 $identity = new Individual;
                 $identity
                     ->setOwner($user->getOwner())
-                    ->setOwnerUuid($user->getOwnerUuid())
-                    ->setPossessor($user->getPossessor())
-                    ->setPossessorUuid($user->getPossessorUuid());
+                    ->setOwnerUuid($user->getOwnerUuid());
                 $identity = $this->api->get('identities.individual')->create($identity);
                 $persona = new IndividualPersona;
                 $persona
                     ->setOwner($user->getOwner())
                     ->setOwnerUuid($user->getOwnerUuid())
-                    ->setIdentity($user->getRegistration()->getIdentity())
-                    ->setIdentityUuid($identity->getUuid())
                     ->setIndividual($identity)
                     ->setTitle([ // @todo remove hard-coded titles
                         'en' => 'Default',
@@ -106,8 +102,6 @@ class UserService extends EntityService
                 $persona
                     ->setOwner($user->getOwner())
                     ->setOwnerUuid($user->getOwnerUuid())
-                    ->setIdentity($user->getRegistration()->getIdentity())
-                    ->setIdentityUuid($identity->getUuid())
                     ->setOrganization($identity)
                     ->setTitle([ // @todo remove hard-coded titles
                         'en' => 'Default',
