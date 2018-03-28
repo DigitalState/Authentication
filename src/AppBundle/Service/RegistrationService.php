@@ -49,7 +49,7 @@ class RegistrationService extends EntityService
     {
         $key = 'app.registration.'.strtolower($registration->getIdentity());
         $configs = [
-            'roles' => [$this->configService->get($key.'.roles')],
+            'roles' => explode(',', $this->configService->get($key.'.roles')),
             'owner' => $this->configService->get($key.'.owner'),
             'owner_uuid' => $this->configService->get($key.'.owner_uuid'),
             'enabled' => $this->configService->get($key.'.enabled')
