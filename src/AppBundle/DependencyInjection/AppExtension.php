@@ -68,6 +68,8 @@ class AppExtension extends Extension implements PrependExtensionInterface
         $loader->load('serializers.yml');
         $loader->load('services.yml');
 
+        $container->setParameter('ds_log.monolog.processor.app.parameter', $container->getParameter('app'));
+
         // @todo Move this config -> parameters logic to a common trait in the config component bridge
         $container->setParameter('ds_config.configs.app.spa.admin', $config['spa']['admin']);
         $container->setParameter('ds_config.configs.app.spa.portal', $config['spa']['portal']);
