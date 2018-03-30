@@ -67,6 +67,7 @@ class AppExtension extends Extension implements PrependExtensionInterface
         $loader->load('security.yml');
         $loader->load('serializers.yml');
         $loader->load('services.yml');
+        $loader->load('stats.yml');
 
         $container->setParameter('ds_log.monolog.processor.app.parameter', $container->getParameter('app'));
 
