@@ -39,7 +39,7 @@ The following are screenshots from the Portal and Admin UI
 
 ![Portal Individual Signup](./docs/resources/Individual-Signup.png)
 
-
+[![Build Status](https://travis-ci.org/DigitalState/Authentication.svg?branch=develop)](https://travis-ci.org/DigitalState/Authentication)
 
 ## Table of Contents
 
