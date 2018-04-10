@@ -41,6 +41,7 @@ The following are screenshots from the Portal and Admin UI
 
 [![Build Status](https://travis-ci.org/DigitalState/Authentication.svg?branch=develop)](https://travis-ci.org/DigitalState/Authentication)
 [![Coverage Status](https://coveralls.io/repos/github/DigitalState/Authentication/badge.svg?branch=develop)](https://coveralls.io/github/DigitalState/Authentication?branch=develop)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/DigitalState/Authentication/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/DigitalState/Authentication/?branch=develop)
 
 ## Table of Contents
 
