@@ -40,6 +40,7 @@ The following are screenshots from the Portal and Admin UI
 ![Portal Individual Signup](./docs/resources/Individual-Signup.png)
 
 [![Build Status](https://travis-ci.org/DigitalState/Authentication.svg?branch=develop)](https://travis-ci.org/DigitalState/Authentication)
+[![Coverage Status](https://coveralls.io/repos/github/DigitalState/Authentication/badge.svg?branch=develop)](https://coveralls.io/github/DigitalState/Authentication?branch=develop)
 
 ## Table of Contents
 
