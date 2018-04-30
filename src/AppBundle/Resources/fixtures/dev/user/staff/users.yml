@@ -1,43 +1,40 @@
-items:
-    -
-        uuid: 40759f94-3e8b-41a1-8a3c-dd84393da5b9
-        username: admin@staff.ds
-        email: admin@staff.ds
-        password: admin
-        roles:
-            - ROLE_STAFF
-            - 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
-            - 5ab54dd5-56ed-4e96-bd8b-1d60ab668a75 # Administrator
-        identity_uuid: e32f09b7-e1cf-4a91-a0e1-6822bf47a662 # Admin
+fixtures:
+  - uuid: 40759f94-3e8b-41a1-8a3c-dd84393da5b9
+    username: admin@staff.ds
+    email: admin@staff.ds
+    password: admin
+    roles:
+      - ROLE_STAFF
+      - 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
+      - 5ab54dd5-56ed-4e96-bd8b-1d60ab668a75 # Administrator
+    identity_uuid: e32f09b7-e1cf-4a91-a0e1-6822bf47a662 # Admin
 
-    -
-        uuid: 03f8c569-9c5d-43a8-83bb-9cf6c9249e63
-        username: manager@staff.ds
-        email: manager@staff.ds
-        password: manager
-        roles:
-            - ROLE_STAFF
-            - 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
-            - f06dd49d-8ad4-437a-beee-387b834ee217 # Manager
-        identity_uuid: 47a5a9cb-496f-4db7-8999-489ec404887f # Manager
+  - uuid: 03f8c569-9c5d-43a8-83bb-9cf6c9249e63
+    username: manager@staff.ds
+    email: manager@staff.ds
+    password: manager
+    roles:
+      - ROLE_STAFF
+      - 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
+      - f06dd49d-8ad4-437a-beee-387b834ee217 # Manager
+    identity_uuid: 47a5a9cb-496f-4db7-8999-489ec404887f # Manager
 
-    -
-        uuid: 6fc979ec-c210-4b10-b344-600f7ecb2aeb
-        username: agent@staff.ds
-        email: agent@staff.ds
-        password: agent
-        identity_uuid: 5449ce65-5df0-440d-aead-21a77907e59a # Agent
+  - uuid: 6fc979ec-c210-4b10-b344-600f7ecb2aeb
+    username: agent@staff.ds
+    email: agent@staff.ds
+    password: agent
+    identity_uuid: 5449ce65-5df0-440d-aead-21a77907e59a # Agent
 
 prototype:
-    uuid: ~
-    username: ~
-    email: ~
-    password: ~
-    enabled: true
-    roles:
-        - ROLE_STAFF
-        - 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
-    owner: BusinessUnit
-    owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-    identity: Staff
-    identity_uuid: ~
+  uuid: ~
+  username: ~
+  email: ~
+  password: ~
+  enabled: true
+  roles:
+    - ROLE_STAFF
+    - 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
+  owner: BusinessUnit
+  owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+  identity: Staff
+  identity_uuid: ~

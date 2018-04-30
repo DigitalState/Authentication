@@ -1,103 +1,84 @@
-items:
-    -
-        uuid: a0ddf45b-2bae-4df8-9182-444eba12e288
-        key: app.spa.admin
-        value: http://admin.ds
+fixtures:
+  - uuid: a0ddf45b-2bae-4df8-9182-444eba12e288
+    key: app.spa.admin
+    value: http://admin.ds
 
-    -
-        uuid: 8d2e069c-5204-438d-8087-c01e20b895a7
-        key: app.spa.portal
-        value: http://portal.ds
+  - uuid: 8d2e069c-5204-438d-8087-c01e20b895a7
+    key: app.spa.portal
+    value: http://portal.ds
 
-    -
-        uuid: 99cfe26d-5827-4701-8de5-95d9fd1a8624
-        key: app.registration.individual.owner
-        value: BusinessUnit
+  - uuid: 99cfe26d-5827-4701-8de5-95d9fd1a8624
+    key: app.registration.individual.owner
+    value: BusinessUnit
 
-    -
-        uuid: c1f33c03-004d-426e-9db3-123cf66f1d1e
-        key: app.registration.individual.owner_uuid
-        value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
+  - uuid: c1f33c03-004d-426e-9db3-123cf66f1d1e
+    key: app.registration.individual.owner_uuid
+    value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
 
-    -
-        uuid: 67fd45ab-3bfa-4886-b213-80ba85a4f0ce
-        key: app.registration.individual.roles
-        value: ROLE_INDIVIDUAL
+  - uuid: 67fd45ab-3bfa-4886-b213-80ba85a4f0ce
+    key: app.registration.individual.roles
+    value: ROLE_INDIVIDUAL
 
-    -
-        uuid: 9bb8a2fa-5119-404a-a0ce-3c99831b3850
-        key: app.registration.individual.enabled
-        value: 1
+  - uuid: 9bb8a2fa-5119-404a-a0ce-3c99831b3850
+    key: app.registration.individual.enabled
+    value: 1
 
-    -
-        uuid: 19d0a041-c29f-40be-8fd5-aeb72c7a79a9
-        key: app.registration.organization.owner
-        value: BusinessUnit
+  - uuid: 19d0a041-c29f-40be-8fd5-aeb72c7a79a9
+    key: app.registration.organization.owner
+    value: BusinessUnit
 
-    -
-        uuid: f64c4ca7-ad39-49be-94a7-f3708266b970
-        key: app.registration.organization.owner_uuid
-        value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
+  - uuid: f64c4ca7-ad39-49be-94a7-f3708266b970
+    key: app.registration.organization.owner_uuid
+    value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
 
-    -
-        uuid: 6e61e349-57f9-456f-bac9-22fcc554dce0
-        key: app.registration.organization.roles
-        value: ROLE_ORGANIZATION
+  - uuid: 6e61e349-57f9-456f-bac9-22fcc554dce0
+    key: app.registration.organization.roles
+    value: ROLE_ORGANIZATION
 
-    -
-        uuid: 6b401965-98fa-45d5-80f0-c0646fb9d0fc
-        key: app.registration.organization.enabled
-        value: 1
+  - uuid: 6b401965-98fa-45d5-80f0-c0646fb9d0fc
+    key: app.registration.organization.enabled
+    value: 1
 
-    -
-        uuid: 3a27a174-e8c4-4d5c-ac77-3f05f48aaa96
-        key: app.resetting.email.subject
-        value: app.resetting.email.subject
+  - uuid: 3a27a174-e8c4-4d5c-ac77-3f05f48aaa96
+    key: app.resetting.email.subject
+    value: app.resetting.email.subject
 
-    -
-        uuid: ee1b617c-5dac-4f45-8272-2ac99d53cf68
-        key: app.resetting.email.body.plain
-        value: app.resetting.email.body.plain
+  - uuid: ee1b617c-5dac-4f45-8272-2ac99d53cf68
+    key: app.resetting.email.body.plain
+    value: app.resetting.email.body.plain
 
-    -
-        uuid: 381b02e0-9a28-47c2-b3af-39cdc587f138
-        key: app.resetting.email.body.html
-        value: app.resetting.email.body.html
+  - uuid: 381b02e0-9a28-47c2-b3af-39cdc587f138
+    key: app.resetting.email.body.html
+    value: app.resetting.email.body.html
 
-    -
-        uuid: 989d38f4-4476-4fcf-aac6-902903b49b5e
-        key: ds_api.user.username
-        value: system@system.ds
+  - uuid: 989d38f4-4476-4fcf-aac6-902903b49b5e
+    key: ds_api.user.username
+    value: system@system.ds
 
-    -
-        uuid: 42b75ac4-9e18-45ae-87a2-62a955dc431d
-        key: ds_api.user.password
-        value: system
+  - uuid: 42b75ac4-9e18-45ae-87a2-62a955dc431d
+    key: ds_api.user.password
+    value: system
 
-    -
-        uuid: 4ecf51e7-f44f-41c3-8a35-ca9114e78548
-        key: ds_api.user.uuid
-        value: 85726ec8-7685-4655-ac91-4746ae71c2cc # System
+  - uuid: 4ecf51e7-f44f-41c3-8a35-ca9114e78548
+    key: ds_api.user.uuid
+    value: 85726ec8-7685-4655-ac91-4746ae71c2cc # System
 
-    -
-        uuid: 2fa1df27-23d1-4275-bfe8-e3267ef1a33e
-        key: ds_api.user.roles
-        value: ROLE_SYSTEM
+  - uuid: 2fa1df27-23d1-4275-bfe8-e3267ef1a33e
+    key: ds_api.user.roles
+    value: ROLE_SYSTEM
 
-    -
-        uuid: ed2455a2-691a-4f37-b585-3914e03654ce
-        key: ds_api.user.identity
-        value: System
+  - uuid: ed2455a2-691a-4f37-b585-3914e03654ce
+    key: ds_api.user.identity
+    value: System
 
-    -
-        uuid: 530ef066-fa31-4788-ae49-cc5542ce4f14
-        key: ds_api.user.identity_uuid
-        value: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
+  - uuid: 530ef066-fa31-4788-ae49-cc5542ce4f14
+    key: ds_api.user.identity_uuid
+    value: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
 
 prototype:
-    uuid: ~
-    owner: BusinessUnit
-    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
-    key: ~
-    value: ~
-    enabled: true
+  uuid: ~
+  owner: BusinessUnit
+  owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+  key: ~
+  value: ~
+  enabled: true

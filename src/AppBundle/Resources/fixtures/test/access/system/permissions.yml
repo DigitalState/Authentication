@@ -1,23 +1,20 @@
-items:
-    -
-        access: 3e45abc2-cda2-4066-b8ce-442804c1d05b # System
-        key: entity
-        attributes: [BROWSE, READ, EDIT, ADD, DELETE]
+fixtures:
+  - access: 3e45abc2-cda2-4066-b8ce-442804c1d05b # System
+    key: entity
+    attributes: [BROWSE, READ, EDIT, ADD, DELETE]
 
-    -
-        access: 3e45abc2-cda2-4066-b8ce-442804c1d05b # System
-        key: property
-        attributes: [BROWSE, READ, EDIT]
+  - access: 3e45abc2-cda2-4066-b8ce-442804c1d05b # System
+    key: property
+    attributes: [BROWSE, READ, EDIT]
 
-    -
-        access: 3e45abc2-cda2-4066-b8ce-442804c1d05b # System
-        key: generic
-        attributes: [BROWSE, READ, EDIT, ADD, DELETE, EXECUTE]
+  - access: 3e45abc2-cda2-4066-b8ce-442804c1d05b # System
+    key: generic
+    attributes: [BROWSE, READ, EDIT, ADD, DELETE, EXECUTE]
 
 prototype:
-    access: ~
-    scope: generic
-    entity: ~
-    entity_uuid: ~
-    key: ~
-    attributes: []
+  access: ~
+  scope: generic
+  entity: ~
+  entity_uuid: ~
+  key: ~
+  attributes: []

@@ -1,20 +1,20 @@
-items:
-    -
-        uuid: f9df049a-fe95-405f-ba7c-734f1a0ce558
-        username: anonymous@anonymous.ds
-        email: anonymous@anonymous.ds
-        password: anonymous
-        owner: System
-        owner_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
+fixtures:
+  -
+    uuid: f9df049a-fe95-405f-ba7c-734f1a0ce558
+    username: anonymous@anonymous.ds
+    email: anonymous@anonymous.ds
+    password: anonymous
+    owner: System
+    owner_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
 
 prototype:
-    uuid: ~
-    username: ~
-    email: ~
-    password: ~
-    enabled: true
-    roles: [ROLE_ANONYMOUS]
-    owner: BusinessUnit
-    owner_uuid: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
-    identity: Anonymous
-    identity_uuid: ~
+  uuid: ~
+  username: ~
+  email: ~
+  password: ~
+  enabled: true
+  roles: [ROLE_ANONYMOUS]
+  owner: BusinessUnit
+  owner_uuid: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
+  identity: Anonymous
+  identity_uuid: ~

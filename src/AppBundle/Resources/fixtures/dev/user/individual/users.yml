@@ -1,28 +1,26 @@
-items:
-    -
-        uuid: 42182fd0-9665-4ba4-9f5c-ec290e23814e
-        username: morgan@individual.ds
-        email: morgan@individual.ds
-        password: morgan
-        identity_uuid: d0daa7e4-07d1-47e6-93f2-0629adaa3b49 # Morgan
+fixtures:
+  - uuid: 42182fd0-9665-4ba4-9f5c-ec290e23814e
+    username: morgan@individual.ds
+    email: morgan@individual.ds
+    password: morgan
+    identity_uuid: d0daa7e4-07d1-47e6-93f2-0629adaa3b49 # Morgan
 
-    -
-        uuid: ee8f6e17-ebf8-455c-953f-cf5bdb167fe4
-        username: taylor@individual.ds
-        email: taylor@individual.ds
-        password: taylor
-        identity_uuid: f82f2ccb-818b-44d6-b425-823c9899f846 # Taylor
+  - uuid: ee8f6e17-ebf8-455c-953f-cf5bdb167fe4
+    username: taylor@individual.ds
+    email: taylor@individual.ds
+    password: taylor
+    identity_uuid: f82f2ccb-818b-44d6-b425-823c9899f846 # Taylor
 
 prototype:
-    uuid: ~
-    username: ~
-    email: ~
-    password: ~
-    enabled: true
-    roles:
-        - ROLE_INDIVIDUAL
-        - 54d82fc6-8ce7-498e-832f-3598664a9d9d # Individual
-    owner: BusinessUnit
-    owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-    identity: Individual
-    identity_uuid: ~
+  uuid: ~
+  username: ~
+  email: ~
+  password: ~
+  enabled: true
+  roles:
+    - ROLE_INDIVIDUAL
+    - 54d82fc6-8ce7-498e-832f-3598664a9d9d # Individual
+  owner: BusinessUnit
+  owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+  identity: Individual
+  identity_uuid: ~

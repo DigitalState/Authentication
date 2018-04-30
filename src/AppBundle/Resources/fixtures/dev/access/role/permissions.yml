@@ -1,137 +1,123 @@
-items:
-    -
-        access: 04eb0db0-fbf7-44e1-ba2f-dba056443ec1 # Administrator
-        scope: owner
-        entity: BusinessUnit
-        entity_uuid: ~ # Any BusinessUnit
-        key: entity
-        attributes: [BROWSE, READ, EDIT, ADD, DELETE]
+fixtures:
+  - access: 04eb0db0-fbf7-44e1-ba2f-dba056443ec1 # Administrator
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: ~ # Any BusinessUnit
+    key: entity
+    attributes: [BROWSE, READ, EDIT, ADD, DELETE]
 
-    -
-        access: 04eb0db0-fbf7-44e1-ba2f-dba056443ec1 # Administrator
-        scope: owner
-        entity: BusinessUnit
-        entity_uuid: ~ # Any BusinessUnit
-        key: property
-        attributes: [BROWSE, READ, EDIT]
+  - access: 04eb0db0-fbf7-44e1-ba2f-dba056443ec1 # Administrator
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: ~ # Any BusinessUnit
+    key: property
+    attributes: [BROWSE, READ, EDIT]
 
-    -
-        access: 04eb0db0-fbf7-44e1-ba2f-dba056443ec1 # Administrator
-        scope: generic
-        key: generic
-        attributes: [BROWSE, READ, EDIT, ADD, DELETE, EXECUTE]
+  - access: 04eb0db0-fbf7-44e1-ba2f-dba056443ec1 # Administrator
+    scope: generic
+    key: generic
+    attributes: [BROWSE, READ, EDIT, ADD, DELETE, EXECUTE]
 
-    -
-        access: d3e8fa50-c802-4dc2-8792-93e80d3fb888 # Manager
-        scope: owner
-        entity: BusinessUnit
-        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-        key:
-            - user
-            - registration
-        attributes: [EDIT, ADD, DELETE]
+  - access: d3e8fa50-c802-4dc2-8792-93e80d3fb888 # Manager
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key:
+      - user
+      - registration
+    attributes: [EDIT, ADD, DELETE]
 
-    -
-        access: d3e8fa50-c802-4dc2-8792-93e80d3fb888 # Manager
-        scope: owner
-        entity: BusinessUnit
-        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-        key:
-            - user_property
-            - registration_property
-        attributes: [EDIT]
+  - access: d3e8fa50-c802-4dc2-8792-93e80d3fb888 # Manager
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key:
+      - user_property
+      - registration_property
+    attributes: [EDIT]
 
-    -
-        access: 8e2bca9c-dd33-4c66-9d2f-99b37d39edfe # Staff
-        scope: owner
-        entity: BusinessUnit
-        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-        key:
-            - user
-            - user_property
-            - registration
-            - registration_property
-        attributes: [BROWSE, READ]
+  - access: 8e2bca9c-dd33-4c66-9d2f-99b37d39edfe # Staff
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key:
+      - user
+      - user_property
+      - registration
+      - registration_property
+    attributes: [BROWSE, READ]
 
-    -
-        access: 739a122d-611d-4881-b79e-01872f82d4f5 # Individual
-        scope: session
-        key: user
-        attributes: [BROWSE, READ, EDIT]
+  - access: 739a122d-611d-4881-b79e-01872f82d4f5 # Individual
+    scope: session
+    key: user
+    attributes: [BROWSE, READ, EDIT]
 
-    -
-        access: 739a122d-611d-4881-b79e-01872f82d4f5 # Individual
-        scope: session
-        key:
-            - user_uuid
-            - user_created_at
-            - user_username
-            - user_email
-            - user_version
-        attributes: [BROWSE, READ]
+  - access: 739a122d-611d-4881-b79e-01872f82d4f5 # Individual
+    scope: session
+    key:
+      - user_uuid
+      - user_created_at
+      - user_username
+      - user_email
+      - user_version
+    attributes: [BROWSE, READ]
 
-    -
-        access: 739a122d-611d-4881-b79e-01872f82d4f5 # Individual
-        scope: session
-        key:
-            - user_username
-            - user_email
-            - user_version
-        attributes: [EDIT]
+  - access: 739a122d-611d-4881-b79e-01872f82d4f5 # Individual
+    scope: session
+    key:
+      - user_username
+      - user_email
+      - user_version
+    attributes: [EDIT]
 
-    -
-        access: 39e5a2d5-f249-4d2d-b8cf-a1c9a17f6259 # Organization
-        scope: session
-        key: user
-        attributes: [BROWSE, READ, EDIT]
+  - access: 39e5a2d5-f249-4d2d-b8cf-a1c9a17f6259 # Organization
+    scope: session
+    key: user
+    attributes: [BROWSE, READ, EDIT]
 
-    -
-        access: 39e5a2d5-f249-4d2d-b8cf-a1c9a17f6259 # Organization
-        scope: session
-        key:
-            - user_uuid
-            - user_created_at
-            - user_username
-            - user_email
-            - user_version
-        attributes: [BROWSE, READ]
+  - access: 39e5a2d5-f249-4d2d-b8cf-a1c9a17f6259 # Organization
+    scope: session
+    key:
+      - user_uuid
+      - user_created_at
+      - user_username
+      - user_email
+      - user_version
+    attributes: [BROWSE, READ]
 
-    -
-        access: 39e5a2d5-f249-4d2d-b8cf-a1c9a17f6259 # Organization
-        scope: session
-        key:
-            - user_username
-            - user_email
-            - user_version
-        attributes: [EDIT]
+  - access: 39e5a2d5-f249-4d2d-b8cf-a1c9a17f6259 # Organization
+    scope: session
+    key:
+      - user_username
+      - user_email
+      - user_version
+    attributes: [EDIT]
 
-    -
-        access: abdae738-a24f-411c-ac23-03d946a037e0 # Anonymous
-        scope: owner
-        entity: BusinessUnit
-        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-        key: registration
-        attributes: [ADD]
+  - access: abdae738-a24f-411c-ac23-03d946a037e0 # Anonymous
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key: registration
+    attributes: [ADD]
 
-    -
-        access: abdae738-a24f-411c-ac23-03d946a037e0 # Anonymous
-        scope: owner
-        entity: BusinessUnit
-        entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-        key:
-            - registration_owner
-            - registration_owner_uuid
-            - registration_identity
-            - registration_username
-            - registration_password
-            - registration_data
-            - registration_version
-        attributes: [EDIT]
+  - access: abdae738-a24f-411c-ac23-03d946a037e0 # Anonymous
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key:
+      - registration_owner
+      - registration_owner_uuid
+      - registration_identity
+      - registration_username
+      - registration_password
+      - registration_data
+      - registration_version
+    attributes: [EDIT]
 
 prototype:
-    access: ~
-    scope: ~
-    entity: ~
-    entity_uuid: ~
-    key: ~
-    attributes: []
+  access: ~
+  scope: ~
+  entity: ~
+  entity_uuid: ~
+  key: ~
+  attributes: []

@@ -1,31 +1,25 @@
-items:
-    -
-        uuid: 04eb0db0-fbf7-44e1-ba2f-dba056443ec1
-        assignee_uuid: 5ab54dd5-56ed-4e96-bd8b-1d60ab668a75 # Administrator
+fixtures:
+  - uuid: 04eb0db0-fbf7-44e1-ba2f-dba056443ec1
+    assignee_uuid: 5ab54dd5-56ed-4e96-bd8b-1d60ab668a75 # Administrator
 
-    -
-        uuid: d3e8fa50-c802-4dc2-8792-93e80d3fb888
-        assignee_uuid: f06dd49d-8ad4-437a-beee-387b834ee217 # Manager
+  - uuid: d3e8fa50-c802-4dc2-8792-93e80d3fb888
+    assignee_uuid: f06dd49d-8ad4-437a-beee-387b834ee217 # Manager
 
-    -
-        uuid: 8e2bca9c-dd33-4c66-9d2f-99b37d39edfe
-        assignee_uuid: 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
+  - uuid: 8e2bca9c-dd33-4c66-9d2f-99b37d39edfe
+    assignee_uuid: 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
 
-    -
-        uuid: 739a122d-611d-4881-b79e-01872f82d4f5
-        assignee_uuid: 54d82fc6-8ce7-498e-832f-3598664a9d9d # Individual
+  - uuid: 739a122d-611d-4881-b79e-01872f82d4f5
+    assignee_uuid: 54d82fc6-8ce7-498e-832f-3598664a9d9d # Individual
 
-    -
-        uuid: 39e5a2d5-f249-4d2d-b8cf-a1c9a17f6259
-        assignee_uuid: 777b96e7-e183-44f7-b7e4-dc0cb7591f74 # Organization
+  - uuid: 39e5a2d5-f249-4d2d-b8cf-a1c9a17f6259
+    assignee_uuid: 777b96e7-e183-44f7-b7e4-dc0cb7591f74 # Organization
 
-    -
-        uuid: abdae738-a24f-411c-ac23-03d946a037e0
-        assignee_uuid: d31057f7-066e-4397-8916-38bd39797b6c # Anonymous
+  - uuid: abdae738-a24f-411c-ac23-03d946a037e0
+    assignee_uuid: d31057f7-066e-4397-8916-38bd39797b6c # Anonymous
 
 prototype:
-    uuid: ~
-    owner: BusinessUnit
-    owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
-    assignee: Role
-    assignee_uuid: ~
+  uuid: ~
+  owner: BusinessUnit
+  owner_uuid: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+  assignee: Role
+  assignee_uuid: ~

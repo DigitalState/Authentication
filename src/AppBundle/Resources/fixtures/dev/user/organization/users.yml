@@ -1,21 +1,20 @@
-items:
-    -
-        uuid: 336dcc1c-d7dc-46de-9640-e19dc567bd3f
-        username: acme@organization.ds
-        email: acme@organization.ds
-        password: acme
-        identity_uuid: c9599da5-35a8-494c-9181-975d78be9694 # Acme
+fixtures:
+  - uuid: 336dcc1c-d7dc-46de-9640-e19dc567bd3f
+    username: acme@organization.ds
+    email: acme@organization.ds
+    password: acme
+    identity_uuid: c9599da5-35a8-494c-9181-975d78be9694 # Acme
 
 prototype:
-    uuid: ~
-    username: ~
-    email: ~
-    password: ~
-    enabled: true
-    roles:
-        - ROLE_ORGANIZATION
-        - 777b96e7-e183-44f7-b7e4-dc0cb7591f74 # Organization
-    owner: BusinessUnit
-    owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-    identity: Organization
-    identity_uuid: ~
+  uuid: ~
+  username: ~
+  email: ~
+  password: ~
+  enabled: true
+  roles:
+    - ROLE_ORGANIZATION
+    - 777b96e7-e183-44f7-b7e4-dc0cb7591f74 # Organization
+  owner: BusinessUnit
+  owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+  identity: Organization
+  identity_uuid: ~

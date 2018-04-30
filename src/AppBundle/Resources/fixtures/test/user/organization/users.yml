@@ -1,13 +1,13 @@
-items: []
+fixtures: []
 
 prototype:
-    uuid: ~
-    username: ~
-    email: ~
-    password: ~
-    enabled: true
-    roles: [ROLE_ORGANIZATION]
-    owner: BusinessUnit
-    owner_uuid: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
-    identity: Organization
-    identity_uuid: ~
+  uuid: ~
+  username: ~
+  email: ~
+  password: ~
+  enabled: true
+  roles: [ROLE_ORGANIZATION]
+  owner: BusinessUnit
+  owner_uuid: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
+  identity: Organization
+  identity_uuid: ~

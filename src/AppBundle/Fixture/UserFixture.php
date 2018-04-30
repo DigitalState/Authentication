@@ -28,29 +28,22 @@ abstract class UserFixture extends ResourceFixture
         }
 
         $userManager = $this->container->get('fos_user.user_manager');
-        $users = $this->parse($this->getResource());
+        $objects = $this->parse($this->getResource());
 
-        foreach ($users as $user) {
-            $entity = $userManager->createUser();
-            $entity
-                ->setUuid($user['uuid'])
-                ->setUsername($user['username'])
-                ->setEmail($user['email'])
-                ->setPlainPassword($user['password'])
-                ->setRoles($user['roles'])
-                ->setOwner($user['owner'])
-                ->setOwnerUuid($user['owner_uuid'])
-                ->setIdentity($user['identity'])
-                ->setIdentityUuid($user['identity_uuid'])
-                ->setEnabled($user['enabled']);
-            $userManager->updateUser($entity);
+        foreach ($objects as $object) {
+            $user = $userManager->createUser();
+            $user
+                ->setUuid($object->uuid)
+                ->setUsername($object->username)
+                ->setEmail($object->email)
+                ->setPlainPassword($object->password)
+                ->setRoles($object->roles)
+                ->setOwner($object->owner)
+                ->setOwnerUuid($object->owner_uuid)
+                ->setIdentity($object->identity)
+                ->setIdentityUuid($object->identity_uuid)
+                ->setEnabled($object->enabled);
+            $userManager->updateUser($user);
         }
     }
-
-    /**
-     * Get resource
-     *
-     * @return string
-     */
-    abstract protected function getResource();
 }

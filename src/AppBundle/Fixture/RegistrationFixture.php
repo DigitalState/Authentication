@@ -27,26 +27,19 @@ abstract class RegistrationFixture extends ResourceFixture
             }
         }
 
-        $registrations = $this->parse($this->getResource());
+        $objects = $this->parse($this->getResource());
 
-        foreach ($registrations as $registration) {
-            $entity = new Registration;
-            $entity
-                ->setUuid($registration['uuid'])
-                ->setOwner($registration['owner'])
-                ->setOwnerUuid($registration['owner_uuid'])
-                ->setUsername($registration['username'])
-                ->setPassword($registration['password'])
-                ->setData($registration['data']);
-            $manager->persist($entity);
+        foreach ($objects as $object) {
+            $registration = new Registration;
+            $registration
+                ->setUuid($object->uuid)
+                ->setOwner($object->owner)
+                ->setOwnerUuid($object->owner_uuid)
+                ->setUsername($object->username)
+                ->setPassword($object->password)
+                ->setData($object->data);
+            $manager->persist($registration);
             $manager->flush();
         }
     }
-
-    /**
-     * Get resource
-     *
-     * @return string
-     */
-    abstract protected function getResource();
 }
