@@ -8,6 +8,13 @@ services:
     links:
       - database:authentication_database
 
+  rebrow:
+    image: marian/rebrow
+    environment:
+      VIRTUAL_HOST: '${REBROW_VIRTUAL_HOST}'
+    links:
+      - redis:services_redis
+
   php:
     environment:
       SYMFONY_ENV: dev
