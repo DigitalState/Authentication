@@ -11,6 +11,8 @@ use Ds\Component\Model\Type\Identitiable;
 use Ds\Component\Model\Type\Versionable;
 use Ds\Component\Model\Attribute\Accessor;
 use Ds\Component\Security\Model\Type\Secured;
+use Ds\Component\Tenant\Model\Attribute\Accessor as TenantAccessor;
+use Ds\Component\Tenant\Model\Type\Tenantable;
 use FOS\UserBundle\Model\User as BaseUser;
 use FOS\UserBundle\Model\UserInterface;
 use Knp\DoctrineBehaviors\Model as Behavior;
@@ -40,12 +42,33 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     }
  * )
  * @ORM\Entity
- * @ORM\Table(name="app_user")
+ * @ORM\Table(
+ *     name="app_user",
+ *     uniqueConstraints={
+ *        @ORM\UniqueConstraint(columns={"username", "tenant"}),
+ *        @ORM\UniqueConstraint(columns={"username_canonical", "tenant"}),
+ *        @ORM\UniqueConstraint(columns={"email", "tenant"}),
+ *        @ORM\UniqueConstraint(columns={"email_canonical", "tenant"})
+ *     }
+ * )
+ * @ORM\AttributeOverrides({
+ *     @ORM\AttributeOverride(
+ *         name="usernameCanonical",
+ *         column=@ORM\Column(type="string", name="username_canonical", length=180, unique=false)
+ *     ),
+ *     @ORM\AttributeOverride(
+ *         name="emailCanonical",
+ *         column=@ORM\Column(type="string", name="email_canonical", length=180, unique=false)
+ *     )
+ * })
  * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
  * @ORMAssert\UniqueEntity(fields="uuid")
- * @ORMAssert\UniqueEntity(fields="username")
+ * @ORMAssert\UniqueEntity(fields={"username", "tenant"})
+ * @ORMAssert\UniqueEntity(fields={"usernameCanonical", "tenant"})
+ * @ORMAssert\UniqueEntity(fields={"email", "tenant"})
+ * @ORMAssert\UniqueEntity(fields={"emailCanonical", "tenant"})
  */
-class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Identitiable, Deletable, Versionable, Secured
+class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Identitiable, Deletable, Versionable, Tenantable, Secured
 {
     use Behavior\Timestampable\Timestampable;
     use Behavior\SoftDeletable\SoftDeletable;
@@ -59,6 +82,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
     use EntityAccessor\Registration;
     use Accessor\Deleted;
     use Accessor\Version;
+    use TenantAccessor\Tenant;
 
     /**
      * @var integer
@@ -216,6 +240,15 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
      * @Assert\Type("integer")
      */
     protected $version;
+
+    /**
+     * @var string
+     * @ApiProperty(writable=false)
+     * @Serializer\Groups({"user_output"})
+     * @ORM\Column(name="tenant", type="guid")
+     * @Assert\Uuid
+     */
+    protected $tenant;
 
     /**
      * Check if user is user

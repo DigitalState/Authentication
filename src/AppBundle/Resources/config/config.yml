@@ -18,6 +18,7 @@ ds_security:
         user_identity:               { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.identity,          title: app.permissions.user.identity           }
         user_identity_uuid:          { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.identityUuid,      title: app.permissions.user.identity_uuid      }
         user_version:                { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.version,           title: app.permissions.user.version            }
+        user_tenant:                 { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.tenant,            title: app.permissions.user.tenant             }
         registration:                { attributes: [BROWSE, READ, EDIT, ADD, DELETE], entity:   AppBundle\Entity\Registration,           title: app.permissions.registration            }
         registration_property:       { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.*,         title: app.permissions.registration.property   }
         registration_id:             { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.id,        title: app.permissions.registration.id         }
@@ -33,3 +34,4 @@ ds_security:
         registration_data:           { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.data,      title: app.permissions.registration.data       }
         registration_user:           { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.user,      title: app.permissions.registration.user       }
         registration_version:        { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.version,   title: app.permissions.registration.version    }
+        registration_tenant:         { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.tenant,    title: app.permissions.registration.tenant    }

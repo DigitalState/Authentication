@@ -10,6 +10,8 @@ use Ds\Component\Model\Type\Ownable;
 use Ds\Component\Model\Type\Versionable;
 use Ds\Component\Model\Attribute\Accessor;
 use Ds\Component\Security\Model\Type\Secured;
+use Ds\Component\Tenant\Model\Attribute\Accessor as TenantAccessor;
+use Ds\Component\Tenant\Model\Type\Tenantable;
 use Knp\DoctrineBehaviors\Model as Behavior;
 
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -36,12 +38,17 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     }
  * )
  * @ORM\Entity(repositoryClass="AppBundle\Repository\RegistrationRepository")
- * @ORM\Table(name="app_registration")
+ * @ORM\Table(
+ *     name="app_registration",
+ *     uniqueConstraints={
+ *        @ORM\UniqueConstraint(columns={"username", "tenant"})
+ *     }
+ * )
  * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
  * @ORMAssert\UniqueEntity(fields="uuid")
- * @ORMAssert\UniqueEntity(fields="username")
+ * @ORMAssert\UniqueEntity(fields={"username", "tenant"})
  */
-class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, Versionable, Secured
+class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, Versionable, Tenantable, Secured
 {
     use Behavior\Timestampable\Timestampable;
     use Behavior\SoftDeletable\SoftDeletable;
@@ -57,6 +64,7 @@ class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, 
     use EntityAccessor\User;
     use Accessor\Deleted;
     use Accessor\Version;
+    use TenantAccessor\Tenant;
 
     /**
      * @var integer
@@ -120,7 +128,7 @@ class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, 
      * @var string
      * @ApiProperty
      * @Serializer\Groups({"registration_output", "registration_input"})
-     * @ORM\Column(name="username", type="string", length=255, unique=true)
+     * @ORM\Column(name="username", type="string", length=255)
      * @Assert\NotBlank
      * @Assert\Length(min=1, max=255)
      */
@@ -172,4 +180,13 @@ class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, 
      * @Assert\Type("integer")
      */
     protected $version;
+
+    /**
+     * @var string
+     * @ApiProperty(writable=false)
+     * @Serializer\Groups({"registration_output"})
+     * @ORM\Column(name="tenant", type="guid")
+     * @Assert\Uuid
+     */
+    protected $tenant;
 }

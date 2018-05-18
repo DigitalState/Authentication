@@ -42,7 +42,8 @@ abstract class UserFixture extends ResourceFixture
                 ->setOwnerUuid($object->owner_uuid)
                 ->setIdentity($object->identity)
                 ->setIdentityUuid($object->identity_uuid)
-                ->setEnabled($object->enabled);
+                ->setEnabled($object->enabled)
+                ->setTenant($object->tenant);
             $userManager->updateUser($user);
         }
     }

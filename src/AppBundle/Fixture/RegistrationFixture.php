@@ -37,7 +37,8 @@ abstract class RegistrationFixture extends ResourceFixture
                 ->setOwnerUuid($object->owner_uuid)
                 ->setUsername($object->username)
                 ->setPassword($object->password)
-                ->setData($object->data);
+                ->setData($object->data)
+                ->setTenant($object->tenant);
             $manager->persist($registration);
             $manager->flush();
         }

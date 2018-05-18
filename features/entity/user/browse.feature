@@ -1,11 +1,11 @@
-@app @entity @user @browse
+@app @api @entity @user @browse
 Feature: Browse users
   In order to browse users
   As a system identity
   I should be able to send api requests related to users
 
   Background:
-    Given I am authenticated as the "system" identity
+    Given I am authenticated as the "System" identity from the tenant "b6ac25fe-3cd6-4100-a054-6bba2fc9ef18"
 
   @createSchema @loadFixtures
   Scenario: Browse all users

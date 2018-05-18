@@ -1,11 +1,11 @@
-@app @entity @user @add
+@app @api @entity @user @add
 Feature: Add users
   In order to add users
   As a system identity
   I should be able to send api requests related to users
 
   Background:
-    Given I am authenticated as the "system" identity
+    Given I am authenticated as the "System" identity from the tenant "b6ac25fe-3cd6-4100-a054-6bba2fc9ef18"
 
   @createSchema @loadFixtures
   Scenario: Add a user
@@ -32,7 +32,7 @@ Feature: Add users
     And the header "Content-Type" should be equal to "application/json; charset=utf-8"
     And the response should be in JSON
     And the JSON node "id" should exist
-    And the JSON node "id" should be equal to the number 3
+    And the JSON node "id" should be equal to the number 5
     And the JSON node "uuid" should exist
     And the JSON node "createdAt" should exist
     And the JSON node "updatedAt" should exist
@@ -57,6 +57,8 @@ Feature: Add users
     And the JSON node "enabled" should be true
     And the JSON node "version" should exist
     And the JSON node "version" should be equal to the number 1
+    And the JSON node "tenant" should exist
+    And the JSON node "tenant" should be equal to "b6ac25fe-3cd6-4100-a054-6bba2fc9ef18"
 
   @dropSchema
   Scenario: Read the added user
