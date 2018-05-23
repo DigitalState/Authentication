@@ -22,7 +22,7 @@ Feature: Add users
           "ROLE_INDIVIDUAL"
       ],
       "owner": "BusinessUnit",
-      "ownerUuid": "e3048503-19e2-4f68-9346-0398bb196748",
+      "ownerUuid": "83bf8f26-7181-4bed-92f3-3ce5e4c286d7",
       "identity": "Individual",
       "identityUuid": "f78c7fd7-5afd-4d72-8a85-0248856dc727",
       "version": 1
@@ -48,7 +48,7 @@ Feature: Add users
     And the JSON node "owner" should exist
     And the JSON node "owner" should be equal to the string "BusinessUnit"
     And the JSON node "ownerUuid" should exist
-    And the JSON node "ownerUuid" should be equal to the string "e3048503-19e2-4f68-9346-0398bb196748"
+    And the JSON node "ownerUuid" should be equal to the string "83bf8f26-7181-4bed-92f3-3ce5e4c286d7"
     And the JSON node "identity" should exist
     And the JSON node "identity" should be equal to the string "Individual"
     And the JSON node "identityUuid" should exist
