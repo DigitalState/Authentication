@@ -11,7 +11,7 @@ use Ds\Component\Api\Model\IndividualPersona;
 use Ds\Component\Api\Model\Organization;
 use Ds\Component\Api\Model\OrganizationPersona;
 use Ds\Component\Entity\Service\EntityService;
-use Ds\Component\Identity\Identity;
+use Ds\Component\Identity\Model\Identity;
 use FOS\UserBundle\Model\UserManagerInterface;
 use LogicException;
 
@@ -53,7 +53,6 @@ class UserService extends EntityService
     public function __construct(EntityManager $manager, UserManagerInterface $customManager, Api $api, $entity = User::class)
     {
         parent::__construct($manager, $entity);
-
         $this->customManager = $customManager;
         $this->api = $api;
     }

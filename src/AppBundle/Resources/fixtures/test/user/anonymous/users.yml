@@ -21,7 +21,7 @@ prototype:
   email: ~
   password: ~
   enabled: true
-  roles: [ROLE_ANONYMOUS]
+  roles: []
   owner: BusinessUnit
   owner_uuid: ~
   identity: Anonymous

@@ -6,7 +6,7 @@ use AppBundle\Entity\Registration;
 use Doctrine\ORM\EntityManager;
 use Ds\Component\Config\Service\ConfigService;
 use Ds\Component\Entity\Service\EntityService;
-use Ds\Component\Identity\Identity;
+use Ds\Component\Identity\Model\Identity;
 
 /**
  * Class RegistrationService
@@ -49,9 +49,9 @@ class RegistrationService extends EntityService
     {
         $key = 'app.registration.'.strtolower($registration->getIdentity());
         $configs = [
-            'roles' => explode(',', $this->configService->get($key.'.roles')),
-            'owner' => $this->configService->get($key.'.owner'),
-            'owner_uuid' => $this->configService->get($key.'.owner_uuid'),
+            'roles' => $this->configService->get($key.'.roles'),
+            'owner.type' => $this->configService->get($key.'.owner.type'),
+            'owner.uuid' => $this->configService->get($key.'.owner.uuid'),
             'enabled' => $this->configService->get($key.'.enabled')
         ];
 
@@ -63,8 +63,8 @@ class RegistrationService extends EntityService
             ->setEmail($registration->getUsername())
             ->setPlainPassword($registration->getPassword())
             ->setRoles($configs['roles'])
-            ->setOwner($configs['owner'])
-            ->setOwnerUuid($configs['owner_uuid'])
+            ->setOwner($configs['owner.type'])
+            ->setOwnerUuid($configs['owner.uuid'])
             ->setIdentity($registration->getIdentity())
             ->setEnabled($configs['enabled']);
         $manager->updateUser($user);

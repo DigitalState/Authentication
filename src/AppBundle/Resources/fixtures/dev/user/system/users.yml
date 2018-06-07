@@ -19,7 +19,7 @@ prototype:
   email: ~
   password: ~
   enabled: true
-  roles: [ROLE_SYSTEM]
+  roles: []
   owner: System
   owner_uuid: ~
   identity: System

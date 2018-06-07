@@ -6,7 +6,7 @@ prototype:
   email: ~
   password: ~
   enabled: true
-  roles: [ROLE_STAFF]
+  roles: []
   owner: BusinessUnit
   owner_uuid: ~
   identity: Staff

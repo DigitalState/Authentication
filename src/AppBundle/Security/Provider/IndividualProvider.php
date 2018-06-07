@@ -2,7 +2,7 @@
 
 namespace AppBundle\Security\Provider;
 
-use Ds\Component\Identity\Identity;
+use Ds\Component\Identity\Model\Identity;
 use FOS\UserBundle\Security\UserProvider;
 
 /**
@@ -15,9 +15,11 @@ class IndividualProvider extends UserProvider
      */
     protected function findUser($username)
     {
-        return $this->userManager->findUserBy([
+        $user = $this->userManager->findUserBy([
             'username' => $username,
             'identity' => Identity::INDIVIDUAL
         ]);
+
+        return $user;
     }
 }

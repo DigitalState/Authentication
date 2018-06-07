@@ -12,9 +12,7 @@ prototype:
   email: ~
   password: ~
   enabled: true
-  roles:
-    - ROLE_ANONYMOUS
-    - d31057f7-066e-4397-8916-38bd39797b6c # Anonymous
+  roles: []
   owner: BusinessUnit
   owner_uuid: ~
   identity: Anonymous

@@ -17,9 +17,7 @@ prototype:
   email: ~
   password: ~
   enabled: true
-  roles:
-    - ROLE_INDIVIDUAL
-    - 54d82fc6-8ce7-498e-832f-3598664a9d9d # Individual
+  roles: []
   owner: BusinessUnit
   owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
   identity: Individual
