@@ -1,4 +1,24 @@
-fixtures: []
+fixtures:
+  - access: abdae738-a24f-411c-ac23-03d946a037e0 # Anonymous
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key: registration
+    attributes: [ADD]
+
+  - access: abdae738-a24f-411c-ac23-03d946a037e0 # Anonymous
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key:
+      - registration_owner
+      - registration_owner_uuid
+      - registration_identity
+      - registration_username
+      - registration_password
+      - registration_data
+      - registration_version
+    attributes: [EDIT]
 
 prototype:
   access: ~
