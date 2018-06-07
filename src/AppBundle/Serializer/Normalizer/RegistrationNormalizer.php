@@ -50,8 +50,8 @@ class RegistrationNormalizer implements NormalizerInterface, DenormalizerInterfa
         if (Registration::class === $class) {
             if (!array_key_exists('owner', $data) || null === $data['owner']) {
                 $key = 'app.registration.'.strtolower($data['identity']);
-                $data['owner'] = $this->configService->get($key.'.owner');
-                $data['ownerUuid'] = $this->configService->get($key.'.owner_uuid');
+                $data['owner'] = $this->configService->get($key.'.owner.type');
+                $data['ownerUuid'] = $this->configService->get($key.'.owner.uuid');
             }
         }
 

@@ -25,14 +25,18 @@ class AppExtension extends Extension implements PrependExtensionInterface
             ],
             'registration' => [
                 'individual' => [
-                    'owner' => null,
-                    'owner_uuid' => null,
+                    'owner' => [
+                        'type' => null,
+                        'uuid' => null
+                    ],
                     'roles' => null,
                     'enabled' => null
                 ],
                 'organization' => [
-                    'owner' => null,
-                    'owner_uuid' => null,
+                    'owner' => [
+                        'type' => null,
+                        'uuid' => null
+                    ],
                     'roles' => null,
                     'enabled' => null
                 ]
@@ -75,12 +79,12 @@ class AppExtension extends Extension implements PrependExtensionInterface
         // @todo Move this config -> parameters logic to a common trait in the config component bridge
         $container->setParameter('ds_config.configs.app.spa.admin', $config['spa']['admin']);
         $container->setParameter('ds_config.configs.app.spa.portal', $config['spa']['portal']);
-        $container->setParameter('ds_config.configs.app.registration.individual.owner_uuid', $config['registration']['individual']['owner_uuid']);
-        $container->setParameter('ds_config.configs.app.registration.individual.owner_uuid', $config['registration']['individual']['owner_uuid']);
+        $container->setParameter('ds_config.configs.app.registration.individual.owner.type', $config['registration']['individual']['owner']['type']);
+        $container->setParameter('ds_config.configs.app.registration.individual.owner.uuid', $config['registration']['individual']['owner']['uuid']);
         $container->setParameter('ds_config.configs.app.registration.individual.roles', $config['registration']['individual']['roles']);
         $container->setParameter('ds_config.configs.app.registration.individual.enabled', $config['registration']['individual']['enabled']);
-        $container->setParameter('ds_config.configs.app.registration.organization.owner_uuid', $config['registration']['organization']['owner_uuid']);
-        $container->setParameter('ds_config.configs.app.registration.organization.owner_uuid', $config['registration']['organization']['owner_uuid']);
+        $container->setParameter('ds_config.configs.app.registration.organization.owner.type', $config['registration']['organization']['owner']['type']);
+        $container->setParameter('ds_config.configs.app.registration.organization.owner.uuid', $config['registration']['organization']['owner']['uuid']);
         $container->setParameter('ds_config.configs.app.registration.organization.roles', $config['registration']['organization']['roles']);
         $container->setParameter('ds_config.configs.app.registration.organization.enabled', $config['registration']['organization']['enabled']);
     }
