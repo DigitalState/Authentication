@@ -65,7 +65,7 @@ fixtures:
 
   - uuid: b15a1424-1322-4ab2-8938-3bb84966ae4e
     key: ds_api.user.roles
-    value: [ROLE_USER]
+    value: []
 
   - uuid: 4e52d250-a1a0-467f-ab1a-433da46d8b9a
     key: ds_api.user.identity.roles
