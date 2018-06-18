@@ -1,25 +1,25 @@
 services:
-    app.security.provider.anonymous:
-        class: AppBundle\Security\Provider\AnonymousProvider
-        arguments:
-            - '@fos_user.user_manager'
+  app.security.provider.anonymous:
+    class: AppBundle\Security\Provider\AnonymousProvider
+    arguments:
+      - '@fos_user.user_manager'
 
-    app.security.provider.individual:
-        class: AppBundle\Security\Provider\IndividualProvider
-        arguments:
-            - '@fos_user.user_manager'
+  app.security.provider.individual:
+    class: AppBundle\Security\Provider\IndividualProvider
+    arguments:
+      - '@fos_user.user_manager'
 
-    app.security.provider.organization:
-        class: AppBundle\Security\Provider\OrganizationProvider
-        arguments:
-            - '@fos_user.user_manager'
+  app.security.provider.organization:
+    class: AppBundle\Security\Provider\OrganizationProvider
+    arguments:
+      - '@fos_user.user_manager'
 
-    app.security.provider.staff:
-        class: AppBundle\Security\Provider\StaffProvider
-        arguments:
-            - '@fos_user.user_manager'
+  app.security.provider.staff:
+    class: AppBundle\Security\Provider\StaffProvider
+    arguments:
+      - '@fos_user.user_manager'
 
-    app.security.provider.system:
-        class: AppBundle\Security\Provider\SystemProvider
-        arguments:
-            - '@fos_user.user_manager'
+  app.security.provider.system:
+    class: AppBundle\Security\Provider\SystemProvider
+    arguments:
+      - '@fos_user.user_manager'

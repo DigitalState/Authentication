@@ -1,51 +1,81 @@
 services:
-    app.filter.user.search:
-        parent: api_platform.doctrine.orm.search_filter
-        arguments:
-            - { id: exact, uuid: exact, owner: exact, ownerUuid: exact, username: partial, email: partial, identity: exact, identityUuid: exact, roles: partial }
-        tags:
-            - { name: api_platform.filter, id: app.user.search }
+  app.filter.user.search:
+    parent: api_platform.doctrine.orm.search_filter
+    arguments:
+      - id: exact
+        uuid: exact
+        owner: exact
+        ownerUuid: exact
+        username: partial
+        email: partial
+        identity: exact
+        identityUuid: exact
+        roles: partial
+    tags:
+      - { name: api_platform.filter, id: app.user.search }
 
-    app.filter.user.date:
-        parent: api_platform.doctrine.orm.date_filter
-        arguments:
-            - { createdAt: ~, updatedAt: ~, deletedAt: ~, lastLogin: ~ }
-        tags:
-            - { name: api_platform.filter, id: app.user.date }
+  app.filter.user.date:
+    parent: api_platform.doctrine.orm.date_filter
+    arguments:
+      - createdAt: ~
+        updatedAt: ~
+        deletedAt: ~
+        lastLogin: ~
+    tags:
+      - { name: api_platform.filter, id: app.user.date }
 
-    app.filter.user.boolean:
-        parent: api_platform.doctrine.orm.boolean_filter
-        arguments:
-            - { enabled: ~ }
-        tags:
-            - { name: api_platform.filter, id: app.user.boolean }
+  app.filter.user.boolean:
+    parent: api_platform.doctrine.orm.boolean_filter
+    arguments:
+      - enabled: ~
+    tags:
+      - { name: api_platform.filter, id: app.user.boolean }
 
-    app.filter.user.order:
-        parent: api_platform.doctrine.orm.order_filter
-        arguments:
-            - {
-                id: ~, createdAt: ~, updatedAt: ~, deletedAt: ~, owner: ~, username: ~, email: ~, lastLogin: ~, identity: ~, identityUuid: ~ }
-        tags:
-            - { name: api_platform.filter, id: app.user.order }
+  app.filter.user.order:
+    parent: api_platform.doctrine.orm.order_filter
+    arguments:
+      - id: ~
+        createdAt: ~
+        updatedAt: ~
+        deletedAt: ~
+        owner: ~
+        username: ~
+        email: ~
+        lastLogin: ~
+        identity: ~
+        identityUuid: ~
+    tags:
+      - { name: api_platform.filter, id: app.user.order }
 
-    app.filter.registration.search:
-        parent: api_platform.doctrine.orm.search_filter
-        arguments:
-            - { id: exact, uuid: exact, owner: exact, ownerUuid: exact, username: partial, user: exact }
-        tags:
-            - { name: api_platform.filter, id: app.registration.search }
+  app.filter.registration.search:
+    parent: api_platform.doctrine.orm.search_filter
+    arguments:
+      - id: exact
+        uuid: exact
+        owner: exact
+        ownerUuid: exact
+        username: partial
+        user: exact
+    tags:
+      - { name: api_platform.filter, id: app.registration.search }
 
-    app.filter.registration.date:
-        parent: api_platform.doctrine.orm.date_filter
-        arguments:
-            - { createdAt: ~, updatedAt: ~, deletedAt: ~ }
-        tags:
-            - { name: api_platform.filter, id: app.registration.date }
+  app.filter.registration.date:
+    parent: api_platform.doctrine.orm.date_filter
+    arguments:
+      - createdAt: ~
+        updatedAt: ~
+        deletedAt: ~
+    tags:
+      - { name: api_platform.filter, id: app.registration.date }
 
-    app.filter.registration.order:
-        parent: api_platform.doctrine.orm.order_filter
-        arguments:
-            - {
-                id: ~, createdAt: ~, updatedAt: ~, deletedAt: ~, owner: ~, username: ~ }
-        tags:
-            - { name: api_platform.filter, id: app.registration.order }
+  app.filter.registration.order:
+    parent: api_platform.doctrine.orm.order_filter
+    arguments:
+      - id: ~
+        createdAt: ~
+        updatedAt: ~
+        deletedAt: ~
+        owner: ~
+        username: ~
+    tags:
+      - { name: api_platform.filter, id: app.registration.order }
