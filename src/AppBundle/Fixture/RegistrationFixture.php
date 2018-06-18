@@ -17,12 +17,12 @@ abstract class RegistrationFixture extends ResourceFixture
      */
     public function load(ObjectManager $manager)
     {
-        $data = $manager->getClassMetadata(Registration::class);
+        $metadata = $manager->getClassMetadata(Registration::class);
 
-        foreach ($data->entityListeners as $event => $listeners) {
+        foreach ($metadata->entityListeners as $event => $listeners) {
             foreach ($listeners as $key => $listener) {
                 if (UserListener::class === $listener['class']) {
-                    unset($data->entityListeners[$event][$key]);
+                    unset($metadata->entityListeners[$event][$key]);
                 }
             }
         }

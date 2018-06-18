@@ -17,12 +17,12 @@ abstract class UserFixture extends ResourceFixture
      */
     public function load(ObjectManager $manager)
     {
-        $data = $manager->getClassMetadata(User::class);
+        $metadata = $manager->getClassMetadata(User::class);
 
-        foreach ($data->entityListeners as $event => $listeners) {
+        foreach ($metadata->entityListeners as $event => $listeners) {
             foreach ($listeners as $key => $listener) {
                 if (IdentityListener::class === $listener['class']) {
-                    unset($data->entityListeners[$event][$key]);
+                    unset($metadata->entityListeners[$event][$key]);
                 }
             }
         }
