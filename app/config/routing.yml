@@ -1,68 +1,63 @@
 api:
-    resource: .
-    type: api_platform
+  resource: .
+  type: api_platform
 
 ds_health:
-    resource: '@DsHealthBundle/Resources/config/routing.yml'
+  resource: '@DsHealthBundle/Resources/config/routing.yml'
 
 ds_statistic:
-    resource: '@DsStatisticBundle/Resources/config/routing.yml'
+  resource: '@DsStatisticBundle/Resources/config/routing.yml'
 
 ds_security:
-    resource: '@DsSecurityBundle/Resources/config/routing.yml'
-
-app_security_check_system:
-    methods: POST
-    path: /tokens/system
-    defaults: { _controller: FOSUserBundle:Security:check }
+  resource: '@DsSecurityBundle/Resources/config/routing.yml'
 
 app_security_check_staff:
-    methods: POST
-    path: /tokens/staff
-    defaults: { _controller: FOSUserBundle:Security:check }
+  methods: POST
+  path: /tokens/staff
+  defaults: { _controller: FOSUserBundle:Security:check }
 
 app_security_check_organization:
-    methods: POST
-    path: /tokens/organization
-    defaults: { _controller: FOSUserBundle:Security:check }
+  methods: POST
+  path: /tokens/organization
+  defaults: { _controller: FOSUserBundle:Security:check }
 
 app_security_check_individual:
-    methods: POST
-    path: /tokens/individual
-    defaults: { _controller: FOSUserBundle:Security:check }
+  methods: POST
+  path: /tokens/individual
+  defaults: { _controller: FOSUserBundle:Security:check }
 
 app_password_request:
-    methods: POST
-    path: /password/requests
-    defaults: { _controller: FOSUserBundle:Resetting:sendEmail }
+  methods: POST
+  path: /password/requests
+  defaults: { _controller: FOSUserBundle:Resetting:sendEmail }
 
 app_password_reset:
-    methods: POST
-    path: /password/reset/{token}
-    defaults: { _controller: FOSUserBundle:Resetting:reset }
+  methods: POST
+  path: /password/reset/{token}
+  defaults: { _controller: FOSUserBundle:Resetting:reset }
 
 app_action:
-    resource: '@AppBundle/Action/'
-    type: annotation
+  resource: '@AppBundle/Action/'
+  type: annotation
 
 # Routes required to exist by FOSUserBundle, but not used by the application.
 fos_user_resetting_check_email:
-    methods: GET
-    path: /check-email
-    defaults: { _controller: FOSUserBundle:Resetting:checkEmail }
+  methods: GET
+  path: /check-email
+  defaults: { _controller: FOSUserBundle:Resetting:checkEmail }
 
 fos_user_resetting_reset:
-    methods: GET
-    path: /reset/{token}
-    defaults: { _controller: FOSUserBundle:Resetting:reset }
+  methods: GET
+  path: /reset/{token}
+  defaults: { _controller: FOSUserBundle:Resetting:reset }
 
 fos_user_profile_show:
-    methods: GET
-    path: /profile/show
-    defaults: { _controller: FOSUserBundle:Profile:show }
+  methods: GET
+  path: /profile/show
+  defaults: { _controller: FOSUserBundle:Profile:show }
 
 fos_user_security_logout:
-    methods: GET
-    path: /logout
-    defaults: { _controller: FOSUserBundle:Security:logout }
+  methods: GET
+  path: /logout
+  defaults: { _controller: FOSUserBundle:Security:logout }
 #
