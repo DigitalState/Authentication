@@ -19,7 +19,7 @@ security:
       pattern: ^/(_(profiler|wdt)|css|images|js)/
       security: false
     system:
-      pattern: ^/system
+      pattern: ^/system/
       stateless: true
       provider: ds_system
       http_basic: ~
@@ -81,7 +81,7 @@ security:
           - lexik_jwt_authentication.jwt_token_authenticator
 
   access_control:
-    - { path: ^/system,               role: ROLE_SYSTEM }
+    - { path: ^/system/,              role: ROLE_SYSTEM }
     - { path: ^/tokens/anonymous,     role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/tokens/individual,    role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/tokens/organization,  role: IS_AUTHENTICATED_ANONYMOUSLY }
