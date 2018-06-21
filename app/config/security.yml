@@ -3,40 +3,33 @@ security:
     FOS\UserBundle\Model\UserInterface: bcrypt
 
   providers:
-    app_security_provider_anonymous:
+    app_anonymous:
       id: app.security.provider.anonymous
-    app_security_provider_individual:
+    app_individual:
       id: app.security.provider.individual
-    app_security_provider_organization:
+    app_organization:
       id: app.security.provider.organization
-    app_security_provider_staff:
+    app_staff:
       id: app.security.provider.staff
-    app_security_provider_system:
+    app_system:
       id: app.security.provider.system
 
   firewalls:
     dev:
       pattern: ^/(_(profiler|wdt)|css|images|js)/
       security: false
-    security_check_system:
-      pattern: ^/tokens/system
+    system:
+      pattern: ^/system
+      stateless: true
+      provider: ds_system
+      http_basic: ~
+    security_check_individual:
+      pattern: ^/tokens/individual
       stateless: true
       anonymous: true
-      provider: app_security_provider_system
+      provider: app_individual
       form_login:
-        check_path: app_security_check_system
-        username_parameter: username
-        password_parameter: password
-        success_handler: lexik_jwt_authentication.handler.authentication_success
-        failure_handler: lexik_jwt_authentication.handler.authentication_failure
-        require_previous_session: false
-    security_check_staff:
-      pattern: ^/tokens/staff
-      stateless: true
-      anonymous: true
-      provider: app_security_provider_staff
-      form_login:
-        check_path: app_security_check_staff
+        check_path: app_security_check_individual
         username_parameter: username
         password_parameter: password
         success_handler: lexik_jwt_authentication.handler.authentication_success
@@ -46,7 +39,7 @@ security:
       pattern: ^/tokens/organization
       stateless: true
       anonymous: true
-      provider: app_security_provider_organization
+      provider: app_organization
       form_login:
         check_path: app_security_check_organization
         username_parameter: username
@@ -54,41 +47,53 @@ security:
         success_handler: lexik_jwt_authentication.handler.authentication_success
         failure_handler: lexik_jwt_authentication.handler.authentication_failure
         require_previous_session: false
-    security_check_individual:
-      pattern: ^/tokens/individual
+    security_check_staff:
+      pattern: ^/tokens/staff
       stateless: true
       anonymous: true
-      provider: app_security_provider_individual
+      provider: app_staff
       form_login:
-        check_path: app_security_check_individual
+        check_path: app_security_check_staff
         username_parameter: username
         password_parameter: password
         success_handler: lexik_jwt_authentication.handler.authentication_success
         failure_handler: lexik_jwt_authentication.handler.authentication_failure
         require_previous_session: false
-    main:
+    security_check_system:
+      pattern: ^/tokens/system
+      stateless: true
+      anonymous: true
+      provider: app_system
+      form_login:
+        check_path: app_security_check_system
+        username_parameter: username
+        password_parameter: password
+        success_handler: lexik_jwt_authentication.handler.authentication_success
+        failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        require_previous_session: false
+    api:
       pattern: ^/
       stateless: true
       anonymous: true
-      provider: jwt
+      provider: ds_security
       guard:
         authenticators:
           - lexik_jwt_authentication.jwt_token_authenticator
 
   access_control:
-    - { path: ^/health,               role: IS_AUTHENTICATED_FULLY }
+    - { path: ^/system,               role: ROLE_SYSTEM }
+    - { path: ^/tokens/anonymous,     role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/tokens/individual,    role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/tokens/organization,  role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/tokens/staff,         role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/tokens/system,        role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/registration,         role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/password/requests,    role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/password/reset,       role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/permissions,          role: IS_AUTHENTICATED_FULLY }
     - { path: ^/accesses,             role: IS_AUTHENTICATED_FULLY }
     - { path: ^/configs,              role: IS_AUTHENTICATED_FULLY }
     - { path: ^/users,                role: IS_AUTHENTICATED_FULLY }
-    - { path: ^/registration,         role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/tokens/system,        role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/tokens/staff,         role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/tokens/organization,  role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/tokens/individual,    role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/tokens/anonymous,     role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/password/requests,    role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/password/reset,       role: IS_AUTHENTICATED_ANONYMOUSLY }
     # Routes required to exist by FOSUserBundle, but not used by the application.
     - { path: ^/check-email,          role: ROLE_NO_ACCESS }
     - { path: ^/reset,                role: ROLE_NO_ACCESS }

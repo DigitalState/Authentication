@@ -15,7 +15,7 @@ class Registrations extends RegistrationFixture implements OrderedFixtureInterfa
      */
     public function getOrder()
     {
-        return 10;
+        return 20;
     }
 
     /**

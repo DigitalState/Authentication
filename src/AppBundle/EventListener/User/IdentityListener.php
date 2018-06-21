@@ -3,7 +3,6 @@
 namespace AppBundle\EventListener\User;
 
 use AppBundle\Entity\User;
-
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

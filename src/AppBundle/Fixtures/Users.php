@@ -15,7 +15,7 @@ class Users extends UserFixture implements OrderedFixtureInterface
      */
     public function getOrder()
     {
-        return 10;
+        return 20;
     }
 
     /**
