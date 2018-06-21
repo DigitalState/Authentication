@@ -21,11 +21,12 @@ class Version1_0_0 extends AbstractMigration
     {
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
-        // Schema
+        // Entity schema
         $this->addSql('CREATE SEQUENCE ds_config_id_seq INCREMENT BY 1 MINVALUE 1 START 22');
         $this->addSql('CREATE SEQUENCE ds_parameter_id_seq INCREMENT BY 1 MINVALUE 1 START 2');
         $this->addSql('CREATE SEQUENCE ds_access_id_seq INCREMENT BY 1 MINVALUE 1 START 3');
         $this->addSql('CREATE SEQUENCE ds_access_permission_id_seq INCREMENT BY 1 MINVALUE 1 START 7');
+        $this->addSql('CREATE SEQUENCE ds_tenant_id_seq INCREMENT BY 1 MINVALUE 1 START 2');
         $this->addSql('CREATE SEQUENCE app_registration_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE app_user_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE ds_config (id INT NOT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, "key" VARCHAR(255) NOT NULL, value JSON DEFAULT NULL, enabled BOOLEAN NOT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
@@ -37,6 +38,8 @@ class Version1_0_0 extends AbstractMigration
         $this->addSql('CREATE UNIQUE INDEX UNIQ_A76F41DCD17F50A6 ON ds_access (uuid)');
         $this->addSql('CREATE TABLE ds_access_permission (id INT NOT NULL, access_id INT DEFAULT NULL, scope VARCHAR(255) DEFAULT NULL, entity VARCHAR(255) DEFAULT NULL, entity_uuid UUID DEFAULT NULL, "key" VARCHAR(255) NOT NULL, attributes JSON NOT NULL, tenant UUID NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX IDX_D46DD4D04FEA67CF ON ds_access_permission (access_id)');
+        $this->addSql('CREATE TABLE ds_tenant (id INT NOT NULL, uuid UUID NOT NULL, data JSON NOT NULL, version INT DEFAULT 1 NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE UNIQUE INDEX UNIQ_EF5FAEEAD17F50A6 ON ds_tenant (uuid)');
         $this->addSql('CREATE TABLE app_registration (id INT NOT NULL, user_id INT DEFAULT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, username VARCHAR(255) NOT NULL, identity VARCHAR(255) DEFAULT NULL, data JSON NOT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, deleted_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26D17F50A6 ON app_registration (uuid)');
         $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26A76ED395 ON app_registration (user_id)');
@@ -52,6 +55,7 @@ class Version1_0_0 extends AbstractMigration
         $this->addSql('ALTER TABLE ds_access_permission ADD CONSTRAINT FK_D46DD4D04FEA67CF FOREIGN KEY (access_id) REFERENCES ds_access (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE app_registration ADD CONSTRAINT FK_A026BD26A76ED395 FOREIGN KEY (user_id) REFERENCES app_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
 
+        // Custom schema
         $this->addSql('CREATE TABLE ds_session (id VARCHAR(128) NOT NULL PRIMARY KEY, data BYTEA NOT NULL, time INTEGER NOT NULL, lifetime INTEGER NOT NULL)');
 
         // Data
@@ -60,11 +64,16 @@ class Version1_0_0 extends AbstractMigration
 
         $this->addSql('
             INSERT INTO 
-                app_user (id, username, username_canonical, email, email_canonical, enabled, salt, password, last_login, confirmation_token, password_requested_at, roles, uuid, owner, owner_uuid, identity, identity_uuid, version, tenant, created_at, updated_at, deleted_at)
+                ds_parameter (id, key, value, enabled)
             VALUES 
-                (1, \'system@system.ds\', \'system@system.ds\', \'system@system.ds\', \'system@system.ds\', true, NULL, \''.password_hash($data['user']['system']['password'], PASSWORD_BCRYPT).'\', NULL, NULL, NULL, \'a:1:{i:0;s:0:"";}\', \''.$data['user']['system']['uuid'].'\', \'System\', \''.$data['identity']['system']['uuid'].'\', \'System\', \''.$data['identity']['system']['uuid'].'\', 1, \''.$data['tenant']['uuid'].'\', now(), now(), NULL),
-                (2, \'anonymous@anonymous.ds\', \'anonymous@anonymous.ds\', \'anonymous@anonymous.ds\', \'anonymous@anonymous.ds\', true, NULL, \''.password_hash($data['user']['anonymous']['password'], PASSWORD_BCRYPT).'\', NULL, NULL, NULL, \'a:1:{i:0;s:0:"";}\', \''.$data['user']['anonymous']['uuid'].'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'Anonymous\', NULL, 1, \''.$data['tenant']['uuid'].'\', now(), now(), NULL),
-                (3, \'admin@staff.ds\', \'admin@staff.ds\', \'admin@staff.ds\', \'admin@staff.ds\', true, NULL, \''.password_hash($data['user']['admin']['password'], PASSWORD_BCRYPT).'\', NULL, NULL, NULL, \'a:1:{i:0;s:0:"";}\', \''.$data['user']['admin']['uuid'].'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'Staff\', \''.$data['identity']['admin']['uuid'].'\', 1, \''.$data['tenant']['uuid'].'\', now(), now(), NULL);
+                (1, \'ds_tenant.tenant.default\', \'"'.$data['tenant']['uuid'].'"\', true);
+        ');
+
+        $this->addSql('
+            INSERT INTO 
+                ds_tenant (id, uuid, data, created_at, updated_at)
+            VALUES 
+                (1, \''.$data['tenant']['uuid'].'\', \'{}\', now(), now());
         ');
 
         $this->addSql('
@@ -96,13 +105,6 @@ class Version1_0_0 extends AbstractMigration
 
         $this->addSql('
             INSERT INTO 
-                ds_parameter (id, key, value, enabled)
-            VALUES 
-                (1, \'ds_tenant.tenant.default\', \'"'.$data['tenant']['uuid'].'"\', true);
-        ');
-
-        $this->addSql('
-            INSERT INTO 
                 ds_access (id, uuid, owner, owner_uuid, assignee, assignee_uuid, version, tenant, created_at, updated_at)
             VALUES 
                 (1, \''.Uuid::uuid4()->toString().'\', \'System\', \''.$data['identity']['system']['uuid'].'\', \'System\', \''.$data['identity']['system']['uuid'].'\', 1, \''.$data['tenant']['uuid'].'\', now(), now()),
@@ -120,6 +122,15 @@ class Version1_0_0 extends AbstractMigration
                 (5, 2, \'generic\', NULL, NULL, \'property\', \'["BROWSE","READ","EDIT"]\', \''.$data['tenant']['uuid'].'\'),
                 (6, 2, \'generic\', NULL, NULL, \'generic\', \'["BROWSE","READ","EDIT","ADD","DELETE","EXECUTE"]\', \''.$data['tenant']['uuid'].'\');
         ');
+
+        $this->addSql('
+            INSERT INTO 
+                app_user (id, username, username_canonical, email, email_canonical, enabled, salt, password, last_login, confirmation_token, password_requested_at, roles, uuid, owner, owner_uuid, identity, identity_uuid, version, tenant, created_at, updated_at, deleted_at)
+            VALUES 
+                (1, \'system@system.ds\', \'system@system.ds\', \'system@system.ds\', \'system@system.ds\', true, NULL, \''.password_hash($data['user']['system']['password'], PASSWORD_BCRYPT).'\', NULL, NULL, NULL, \'a:1:{i:0;s:0:"";}\', \''.$data['user']['system']['uuid'].'\', \'System\', \''.$data['identity']['system']['uuid'].'\', \'System\', \''.$data['identity']['system']['uuid'].'\', 1, \''.$data['tenant']['uuid'].'\', now(), now(), NULL),
+                (2, \'anonymous@anonymous.ds\', \'anonymous@anonymous.ds\', \'anonymous@anonymous.ds\', \'anonymous@anonymous.ds\', true, NULL, \''.password_hash($data['user']['anonymous']['password'], PASSWORD_BCRYPT).'\', NULL, NULL, NULL, \'a:1:{i:0;s:0:"";}\', \''.$data['user']['anonymous']['uuid'].'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'Anonymous\', NULL, 1, \''.$data['tenant']['uuid'].'\', now(), now(), NULL),
+                (3, \'admin@staff.ds\', \'admin@staff.ds\', \'admin@staff.ds\', \'admin@staff.ds\', true, NULL, \''.password_hash($data['user']['admin']['password'], PASSWORD_BCRYPT).'\', NULL, NULL, NULL, \'a:1:{i:0;s:0:"";}\', \''.$data['user']['admin']['uuid'].'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'Staff\', \''.$data['identity']['admin']['uuid'].'\', 1, \''.$data['tenant']['uuid'].'\', now(), now(), NULL);
+        ');
     }
 
     /**
@@ -131,22 +142,25 @@ class Version1_0_0 extends AbstractMigration
     {
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'postgresql', 'Migration can only be executed safely on \'postgresql\'.');
 
-        // Schema
+        // Entity schema
         $this->addSql('ALTER TABLE ds_access_permission DROP CONSTRAINT FK_D46DD4D04FEA67CF');
         $this->addSql('ALTER TABLE app_registration DROP CONSTRAINT FK_A026BD26A76ED395');
         $this->addSql('DROP SEQUENCE ds_config_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE ds_parameter_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE ds_access_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE ds_access_permission_id_seq CASCADE');
+        $this->addSql('DROP SEQUENCE ds_tenant_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE app_registration_id_seq CASCADE');
         $this->addSql('DROP SEQUENCE app_user_id_seq CASCADE');
         $this->addSql('DROP TABLE ds_config');
         $this->addSql('DROP TABLE ds_parameter');
         $this->addSql('DROP TABLE ds_access');
         $this->addSql('DROP TABLE ds_access_permission');
+        $this->addSql('DROP TABLE ds_tenant');
         $this->addSql('DROP TABLE app_registration');
         $this->addSql('DROP TABLE app_user');
 
+        // Custom schema
         $this->addSql('DROP TABLE ds_session');
     }
 }
