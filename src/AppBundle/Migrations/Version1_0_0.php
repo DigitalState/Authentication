@@ -66,8 +66,8 @@ class Version1_0_0 extends AbstractMigration
             INSERT INTO 
                 ds_parameter (id, key, value, enabled)
             VALUES 
-                (1, \'ds_system.user.username\', \'"system"\', true),
-                (2, \'ds_system.user.password\', \'"password"\', true),
+                (1, \'ds_system.user.username\', \'"'.$data['system']['username'].'"\', true),
+                (2, \'ds_system.user.password\', \'"'.$data['system']['password'].'"\', true),
                 (3, \'ds_tenant.tenant.default\', \'"'.$data['tenant']['uuid'].'"\', true);
         ');
 
@@ -95,7 +95,7 @@ class Version1_0_0 extends AbstractMigration
                 (11, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.resetting.email.subject\', \'"app.resetting.email.subject"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
                 (12, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.resetting.email.body.plain\', \'"app.resetting.email.body.plain"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
                 (13, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.resetting.email.body.html\', \'"app.resetting.email.body.html"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                (14, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.username\', \'"system@system.ds"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                (14, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.username\', \'"'.$data['user']['system']['username'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
                 (15, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.password\', \'"'.$data['user']['system']['password'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
                 (16, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.uuid\', \'"'.$data['user']['system']['uuid'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
                 (17, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.roles\', \'[]\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
