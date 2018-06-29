@@ -87,9 +87,9 @@ security:
     - { path: ^/tokens/organization,  role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/tokens/staff,         role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/tokens/system,        role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/registration,         role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/password/requests,    role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/password/reset,       role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/registration,         role: IS_AUTHENTICATED_FULLY }
+    - { path: ^/password/requests,    role: IS_AUTHENTICATED_FULLY }
+    - { path: ^/password/reset,       role: IS_AUTHENTICATED_FULLY }
     - { path: ^/permissions,          role: IS_AUTHENTICATED_FULLY }
     - { path: ^/accesses,             role: IS_AUTHENTICATED_FULLY }
     - { path: ^/configs,              role: IS_AUTHENTICATED_FULLY }
