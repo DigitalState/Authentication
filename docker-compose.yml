@@ -18,7 +18,7 @@ services:
       - redis_data:/data:rw
 
   php:
-    image: 'digitalstate/authentication:${IMAGE_TAG}'
+    build: .
     depends_on:
       - database
     command: ['wait-for', 'authentication_database:${DATABASE_PORT}', '--timeout=60', '--', 'docker-app-start']
