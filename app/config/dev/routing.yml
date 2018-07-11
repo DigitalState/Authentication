@@ -16,7 +16,8 @@ _base:
 ds_debug:
   resource: '@DsDebugBundle/Resources/config/routing.yml'
 
-app_security_check_system:
+app_auth_system_check:
   methods: POST
-  path: /tokens/system
-  defaults: { _controller: FOSUserBundle:Security:check }
+  path: /auth/system
+  defaults:
+    _controller: FOSUserBundle:Security:check

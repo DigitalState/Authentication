@@ -12,3 +12,7 @@ services:
     arguments:
       - '@app.service.user'
       - '@ds_config.service.config'
+
+  app.service.oauth:
+    class: AppBundle\Service\OAuthService
+    parent: ds_entity.service.entity

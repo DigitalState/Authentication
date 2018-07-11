@@ -31,27 +31,30 @@ class AppKernel extends Kernel
 //            new Dunglas\DoctrineJsonOdm\Bundle\DunglasDoctrineJsonOdmBundle,
             new FOS\UserBundle\FOSUserBundle,
             new Snc\RedisBundle\SncRedisBundle,
-            new Ds\Component\Api\Bridge\Symfony\Bundle\DsApiBundle,
-            new Ds\Component\Cache\Bridge\Symfony\Bundle\DsCacheBundle,
-            new Ds\Component\Config\Bridge\Symfony\Bundle\DsConfigBundle,
+            new Http\HttplugBundle\HttplugBundle,
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle,
+            new Ds\Component\Api\DsApiBundle,
+            new Ds\Component\Bpm\DsBpmBundle,
+            new Ds\Component\Cache\DsCacheBundle,
+            new Ds\Component\Config\DsConfigBundle,
             new Ds\Component\Discovery\DsDiscoveryBundle,
-            new Ds\Component\Entity\Bridge\Symfony\Bundle\DsEntityBundle,
+            new Ds\Component\Entity\DsEntityBundle,
             new Ds\Component\Health\DsHealthBundle,
-            new Ds\Component\Identity\Bridge\Symfony\Bundle\DsIdentityBundle,
-            new Ds\Component\Locale\Bridge\Symfony\Bundle\DsLocaleBundle,
-            new Ds\Component\Log\Bridge\Symfony\Bundle\DsLogBundle,
-            new Ds\Component\Resolver\Bridge\Symfony\Bundle\DsResolverBundle,
-            new Ds\Component\Security\Bridge\Symfony\Bundle\DsSecurityBundle,
-            new Ds\Component\Session\Bridge\Symfony\Bundle\DsSessionBundle,
-            new Ds\Component\Statistic\Bridge\Symfony\Bundle\DsStatisticBundle,
+            new Ds\Component\Identity\DsIdentityBundle,
+            new Ds\Component\Locale\DsLocaleBundle,
+            new Ds\Component\Log\DsLogBundle,
+            new Ds\Component\Resolver\DsResolverBundle,
+            new Ds\Component\Security\DsSecurityBundle,
+            new Ds\Component\Session\DsSessionBundle,
+            new Ds\Component\Statistic\DsStatisticBundle,
             new Ds\Component\System\DsSystemBundle,
             new Ds\Component\Tenant\DsTenantBundle,
-            new Ds\Component\Translation\Bridge\Symfony\Bundle\DsTranslationBundle,
+            new Ds\Component\Translation\DsTranslationBundle,
             new AppBundle\AppBundle,
         ];
 
         if (in_array($this->getEnvironment(), ['prod'], true)) {
-            $bundles[] = new Ds\Component\Exception\Bridge\Symfony\Bundle\DsExceptionBundle;
+            $bundles[] = new Ds\Component\Exception\DsExceptionBundle;
         }
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
@@ -60,8 +63,8 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle;
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle;
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle;
-            $bundles[] = new Ds\Component\Debug\Bridge\Symfony\Bundle\DsDebugBundle;
-            $bundles[] = new Ds\Component\Identity\Bridge\Symfony\TestBundle\DsIdentityTestBundle;
+            $bundles[] = new Ds\Component\Debug\DsDebugBundle;
+            $bundles[] = new Ds\Component\Identity\Test\DsIdentityTestBundle;
         }
 
         return $bundles;

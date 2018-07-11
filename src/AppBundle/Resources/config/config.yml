@@ -17,8 +17,24 @@ ds_security:
     user_owner_uuid:             { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.ownerUuid,         title: app.permissions.user.owner_uuid         }
     user_identity:               { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.identity,          title: app.permissions.user.identity           }
     user_identity_uuid:          { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.identityUuid,      title: app.permissions.user.identity_uuid      }
+    user_oauths:                 { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.oAuths,            title: app.permissions.user.oauths             }
     user_version:                { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.version,           title: app.permissions.user.version            }
     user_tenant:                 { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\User.tenant,            title: app.permissions.user.tenant             }
+    oauth:                       { attributes: [BROWSE, READ, EDIT, ADD, DELETE], entity:   AppBundle\Entity\OAuth,                  title: app.permissions.oauth                   }
+    oauth_property:              { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.*,                title: app.permissions.oauth.property          }
+    oauth_id:                    { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.id,               title: app.permissions.oauth.id                }
+    oauth_uuid:                  { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.uuid,             title: app.permissions.oauth.uuid              }
+    oauth_created_at:            { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.createdAt,        title: app.permissions.oauth.createdAt         }
+    oauth_updated_at:            { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.updatedAt,        title: app.permissions.oauth.updatedAt         }
+    oauth_deleted_at:            { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.deletedAt,        title: app.permissions.oauth.deletedAt         }
+    oauth_owner:                 { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.owner,            title: app.permissions.oauth.owner             }
+    oauth_owner_uuid:            { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.ownerUuid,        title: app.permissions.oauth.ownerUuid         }
+    oauth_user:                  { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.user,             title: app.permissions.oauth.user              }
+    oauth_type:                  { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.type,             title: app.permissions.oauth.type              }
+    oauth_identifier:            { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.identifier,       title: app.permissions.oauth.identifier        }
+    oauth_token:                 { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.token,            title: app.permissions.oauth.token             }
+    oauth_version:               { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.version,          title: app.permissions.oauth.version           }
+    oauth_tenant:                { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\OAuth.tenant,           title: app.permissions.oauth.tenant            }
     registration:                { attributes: [BROWSE, READ, EDIT, ADD, DELETE], entity:   AppBundle\Entity\Registration,           title: app.permissions.registration            }
     registration_property:       { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.*,         title: app.permissions.registration.property   }
     registration_id:             { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.id,        title: app.permissions.registration.id         }
@@ -34,4 +50,4 @@ ds_security:
     registration_data:           { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.data,      title: app.permissions.registration.data       }
     registration_user:           { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.user,      title: app.permissions.registration.user       }
     registration_version:        { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.version,   title: app.permissions.registration.version    }
-    registration_tenant:         { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.tenant,    title: app.permissions.registration.tenant    }
+    registration_tenant:         { attributes: [BROWSE, READ, EDIT],              property: AppBundle\Entity\Registration.tenant,    title: app.permissions.registration.tenant     }

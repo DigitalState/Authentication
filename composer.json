@@ -4,6 +4,7 @@
     "type": "project",
     "description": "The DigitalState Authentication Api",
     "homepage": "https://digitalstate.ca",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": { "": "src/" },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
@@ -30,6 +31,9 @@
         "knplabs/doctrine-behaviors": "~1.1",
         "friendsofsymfony/user-bundle": "~2.0",
         "dunglas/doctrine-json-odm": "0.1.1",
+        "php-http/guzzle6-adapter": "^1.2@dev",
+        "php-http/httplug-bundle": "^1.0@dev",
+        "hwi/oauth-bundle": "^0.6.0@dev",
         "digitalstate/core": "dev-develop"
     },
     "require-dev": {

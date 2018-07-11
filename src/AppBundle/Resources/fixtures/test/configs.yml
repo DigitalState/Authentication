@@ -11,6 +11,54 @@ fixtures:
     value: http://portal.ds
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
+  - uuid: 31347f65-fd62-4973-b7d4-88224bb6d283
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.oauth.individual.owner.type
+    value: BusinessUnit
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 8d0a40e1-eb9e-4d22-989b-a2875d852339
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.oauth.individual.owner.uuid
+    value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: b09c0b6a-8050-4c94-ae15-2a314a12681e
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.oauth.individual.roles
+    value: []
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 62bac78c-1d30-495c-b7a6-27d4f7595e31
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.oauth.individual.enabled
+    value: true
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 25971a29-bf9a-47d8-a775-ecffb90e0a52
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.oauth.organization.owner.type
+    value: BusinessUnit
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: d0ebb1e0-f121-4c1c-82a4-bf43a4113f46
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.oauth.organization.owner.uuid
+    value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: af5eade9-b243-4f34-acc4-a8b530ad9796
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.oauth.organization.roles
+    value: []
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 7b53c97f-16c7-4318-a5ea-30ba413e9993
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.oauth.organization.enabled
+    value: true
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
   - uuid: 99cfe26d-5827-4701-8de5-95d9fd1a8624
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.registration.individual.owner.type
@@ -135,6 +183,54 @@ fixtures:
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
     key: app.spa.portal
     value: http://portal.ds
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 0415c34c-7b7f-4972-be8f-9f86b638ce5d
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.oauth.individual.owner.type
+    value: BusinessUnit
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 41d830e9-1d66-4e50-bb94-df24e17ff5e3
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.oauth.individual.owner.uuid
+    value: 6e9c30e2-ce82-4d32-a60a-b0c6b0a1474e # Backoffice
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 0a5d3408-ba8d-4f61-b868-a83158ae7bc6
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.oauth.individual.roles
+    value: []
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 8c62be98-9664-45e8-a611-dec4721778d0
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.oauth.individual.enabled
+    value: true
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: ef79315a-927d-4c44-be12-8bd6085402b0
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.oauth.organization.owner.type
+    value: BusinessUnit
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: c0d31f91-a142-4288-8bab-9109c0006484
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.oauth.organization.owner.uuid
+    value: 6e9c30e2-ce82-4d32-a60a-b0c6b0a1474e # Backoffice
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 7ff38029-6828-4fb5-9d45-9fe214533d0d
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.oauth.organization.roles
+    value: []
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 00606ffe-760c-4431-8823-4184ac246074
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.oauth.organization.enabled
+    value: true
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
   - uuid: e6ba5ba1-a342-45e1-99a8-20b9cce2d9a4

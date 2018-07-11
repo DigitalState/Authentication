@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Attribute\Accessor as EntityAccessor;
+use Doctrine\Common\Collections\ArrayCollection;
 use Ds\Component\Model\Type\Deletable;
 use Ds\Component\Model\Type\Identifiable;
 use Ds\Component\Model\Type\Uuidentifiable;
@@ -75,6 +76,7 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
 
     use Accessor\Id;
     use Accessor\Uuid;
+    use EntityAccessor\OAuths;
     use Accessor\Owner;
     use Accessor\OwnerUuid;
     use Accessor\Identity;
@@ -149,6 +151,15 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
      * @Assert\Regex("/^.+@.+$/")
      */
     protected $email;
+
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @ApiProperty(writable=false)
+     * @Serializer\Groups({"user_output"})
+     * @ORM\OneToMany(targetEntity="OAuth", mappedBy="user")
+     * @ORM\Cache(usage="NONSTRICT_READ_WRITE")
+     */
+    protected $oauths;
 
     /**
      * @var boolean
@@ -259,5 +270,14 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
     public function isUser(UserInterface $user = null)
     {
         return $user instanceof self && $user->id === $this->id;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->oauths = new ArrayCollection;
     }
 }

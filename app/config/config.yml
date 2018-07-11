@@ -134,6 +134,42 @@ dunglas_action:
   directories:
     - '%kernel.root_dir%/../src/*Bundle/Action'
 
+hwi_oauth:
+  firewall_names:
+    - oauth_organization
+    - oauth_individual
+  fosub:
+    username_iterations: 30
+    properties: []
+  resource_owners:
+    # The resource owner names below are being prefixed and duplicated in order to make them unique.
+    # Even thought resource owners are reusable across firewalls, there seems to be a bug with the
+    # route configuration found in each firewalls. Despite configuring unique routes for each firewalls, HWI
+    # always takes the first route chronologically configured for a given resource owner, regardless
+    # of which firewall we are in.
+    individual/github:
+      type: github
+      client_id: '%integration_github_id%'
+      client_secret: '%integration_github_secret%'
+      scope: user:email
+    individual/twitter:
+      type: twitter
+      client_id: '%integration_twitter_id%'
+      client_secret: '%integration_twitter_secret%'
+      options:
+        include_email: true
+    organization/github:
+      type: github
+      client_id: '%integration_github_id%'
+      client_secret: '%integration_github_secret%'
+      scope: user:email
+    organization/twitter:
+      type: twitter
+      client_id: '%integration_twitter_id%'
+      client_secret: '%integration_twitter_secret%'
+      options:
+        include_email: true
+
 api_platform:
   title: Authentication
   description: The DigitalState Authentication Api

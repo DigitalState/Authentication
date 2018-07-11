@@ -2,44 +2,6 @@ api:
   resource: .
   type: api_platform
 
-ds_health:
-  resource: '@DsHealthBundle/Resources/config/routing.yml'
-
-ds_statistic:
-  resource: '@DsStatisticBundle/Resources/config/routing.yml'
-
-ds_security:
-  resource: '@DsSecurityBundle/Resources/config/routing.yml'
-
-app_security_check_staff:
-  methods: POST
-  path: /tokens/staff
-  defaults: { _controller: FOSUserBundle:Security:check }
-
-app_security_check_organization:
-  methods: POST
-  path: /tokens/organization
-  defaults: { _controller: FOSUserBundle:Security:check }
-
-app_security_check_individual:
-  methods: POST
-  path: /tokens/individual
-  defaults: { _controller: FOSUserBundle:Security:check }
-
-app_password_request:
-  methods: POST
-  path: /password/requests
-  defaults: { _controller: FOSUserBundle:Resetting:sendEmail }
-
-app_password_reset:
-  methods: POST
-  path: /password/reset/{token}
-  defaults: { _controller: FOSUserBundle:Resetting:reset }
-
-app_action:
-  resource: '@AppBundle/Action/'
-  type: annotation
-
 # Routes required to exist by FOSUserBundle, but not used by the application.
 fos_user_resetting_check_email:
   methods: GET
@@ -61,3 +23,65 @@ fos_user_security_logout:
   path: /logout
   defaults: { _controller: FOSUserBundle:Security:logout }
 #
+
+ds_health:
+  resource: '@DsHealthBundle/Resources/config/routing.yml'
+
+ds_statistic:
+  resource: '@DsStatisticBundle/Resources/config/routing.yml'
+
+ds_security:
+  resource: '@DsSecurityBundle/Resources/config/routing.yml'
+
+app_auth_staff_check:
+  methods: POST
+  path: /auth/staff
+  defaults:
+    _controller: FOSUserBundle:Security:check
+
+app_auth_organization_check:
+  methods: POST
+  path: /auth/organization
+  defaults:
+    _controller: FOSUserBundle:Security:check
+
+app_auth_individual_check:
+  methods: POST
+  path: /auth/individual
+  defaults:
+    _controller: FOSUserBundle:Security:check
+
+app_oauth_service:
+  path: /oauth/{service}/login
+  defaults:
+    _controller: HWIOAuthBundle:Connect:redirectToService
+  requirements:
+    service: '[a-z]+\/[a-z]+'
+
+app_oauth_organization_github_check:
+  path: /oauth/organization/github
+
+app_oauth_organization_twitter_check:
+  path: /oauth/organization/twitter
+
+app_oauth_individual_github_check:
+  path: /oauth/individual/github
+
+app_oauth_individual_twitter_check:
+  path: /oauth/individual/twitter
+
+app_password_request:
+  methods: POST
+  path: /password/requests
+  defaults:
+    _controller: FOSUserBundle:Resetting:sendEmail
+
+app_password_reset:
+  methods: POST
+  path: /password/reset/{token}
+  defaults:
+    _controller: FOSUserBundle:Resetting:reset
+
+app_action:
+  resource: '@AppBundle/Action/'
+  type: annotation

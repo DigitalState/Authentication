@@ -41,7 +41,7 @@ class AnonymousAction
      * Token
      *
      * @Method("POST")
-     * @Route(path="/tokens/anonymous")
+     * @Route(path="/auth/anonymous")
      */
     public function post()
     {
