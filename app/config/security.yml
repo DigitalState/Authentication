@@ -112,11 +112,7 @@ security:
 
   access_control:
     - { path: ^/system/,              role: ROLE_SYSTEM }
-    - { path: ^/auth/anonymous,       role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/auth/individual,      role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/auth/organization,    role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/auth/staff,           role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/auth/system,          role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/auth,                 role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/oauth,                role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/registration,         role: IS_AUTHENTICATED_FULLY }
     - { path: ^/password/requests,    role: IS_AUTHENTICATED_FULLY }
