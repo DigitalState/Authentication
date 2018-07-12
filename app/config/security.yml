@@ -112,13 +112,14 @@ security:
 
   access_control:
     - { path: ^/system/,              role: ROLE_SYSTEM }
+    - { path: ^/meta,                 role: IS_AUTHENTICATED_FULLY }
     - { path: ^/auth,                 role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/oauth,                role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/registration,         role: IS_AUTHENTICATED_FULLY }
     - { path: ^/password/requests,    role: IS_AUTHENTICATED_FULLY }
     - { path: ^/password/reset,       role: IS_AUTHENTICATED_FULLY }
-    - { path: ^/permissions,          role: IS_AUTHENTICATED_FULLY }
     - { path: ^/accesses,             role: IS_AUTHENTICATED_FULLY }
+    - { path: ^/permissions,          role: IS_AUTHENTICATED_FULLY }
     - { path: ^/configs,              role: IS_AUTHENTICATED_FULLY }
     - { path: ^/users,                role: IS_AUTHENTICATED_FULLY }
     # Routes required to exist by FOSUserBundle, but not used by the application.
