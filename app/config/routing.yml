@@ -61,11 +61,17 @@ app_oauth_service:
 app_oauth_organization_github_check:
   path: /oauth/organization/github
 
+app_oauth_organization_google_check:
+  path: /oauth/organization/google
+
 app_oauth_organization_twitter_check:
   path: /oauth/organization/twitter
 
 app_oauth_individual_github_check:
   path: /oauth/individual/github
+
+app_oauth_individual_google_check:
+  path: /oauth/individual/google
 
 app_oauth_individual_twitter_check:
   path: /oauth/individual/twitter

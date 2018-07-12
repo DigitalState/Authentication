@@ -78,6 +78,7 @@ security:
       oauth:
         resource_owners:
           organization/github: app_oauth_organization_github_check
+          organization/google: app_oauth_organization_google_check
           organization/twitter: app_oauth_organization_twitter_check
         login_path: /oauth/organization
         check_path: /oauth/organization
@@ -92,6 +93,7 @@ security:
       oauth:
         resource_owners:
           individual/github: app_oauth_individual_github_check
+          individual/google: app_oauth_individual_google_check
           individual/twitter: app_oauth_individual_twitter_check
         login_path: /oauth/individual
         check_path: /oauth/individual
@@ -115,6 +117,7 @@ security:
     - { path: ^/auth/organization,    role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/auth/staff,           role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/auth/system,          role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/oauth,                role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/registration,         role: IS_AUTHENTICATED_FULLY }
     - { path: ^/password/requests,    role: IS_AUTHENTICATED_FULLY }
     - { path: ^/password/reset,       role: IS_AUTHENTICATED_FULLY }

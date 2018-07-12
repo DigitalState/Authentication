@@ -24,5 +24,7 @@ parameters:
   system_password: '$2y$12$eRsfIkAoZjP8zjsy9znbGOKjKgrjp8.riM3cRZ3f5xepZsioE3UYO'
   integration_github_id: id
   integration_github_secret: secret
+  integration_google_id: id
+  integration_google_secret: secret
   integration_twitter_id: id
   integration_twitter_secret: secret

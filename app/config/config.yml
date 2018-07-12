@@ -152,6 +152,11 @@ hwi_oauth:
       client_id: '%integration_github_id%'
       client_secret: '%integration_github_secret%'
       scope: user:email
+    individual/google:
+      type: google
+      client_id: '%integration_google_id%'
+      client_secret: '%integration_google_secret%'
+      scope: email profile
     individual/twitter:
       type: twitter
       client_id: '%integration_twitter_id%'
@@ -163,6 +168,11 @@ hwi_oauth:
       client_id: '%integration_github_id%'
       client_secret: '%integration_github_secret%'
       scope: user:email
+    organization/google:
+      type: google
+      client_id: '%integration_google_id%'
+      client_secret: '%integration_google_secret%'
+      scope: email profile
     organization/twitter:
       type: twitter
       client_id: '%integration_twitter_id%'
