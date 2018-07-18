@@ -23,19 +23,19 @@ fixtures:
     value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
-  - uuid: cd18012e-aefa-4200-b982-fd00b10362c6
+  - uuid: b265e25f-fd0d-46c1-8146-32f4576c8192
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.registration.individual.data.github
     value: '{}'
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
-  - uuid: e4e7e5f8-22d5-45ae-a4ee-3f4c4e7e6e06
+  - uuid: d2b95611-1142-4af8-9453-eb3cb3f0642d
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.registration.individual.data.google
     value: '{}'
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
-  - uuid: 19067fb3-3ae4-4176-86e1-fb953e09ad68
+  - uuid: b0a7fcf4-42a4-4b9b-af71-a1d5be5eb623
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.registration.individual.data.twitter
     value: '{}'
@@ -65,19 +65,19 @@ fixtures:
     value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
-  - uuid: bc9d2604-eefc-46b8-afb7-afc621ee8b32
+  - uuid: 51dc9ec2-5aec-4915-b040-79ee1839b509
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.registration.organization.data.github
     value: '{}'
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
-  - uuid: d4819eee-6b49-4cf0-aecb-99b6ecc5b659
+  - uuid: f82be093-a34c-4f3f-9451-11f5bf133310
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.registration.organization.data.google
     value: '{}'
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
-  - uuid: 0db218f9-4678-45e5-9121-c18b503f58e8
+  - uuid: 8855ea34-35c5-4424-8a5b-5c451ad1bc16
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.registration.organization.data.twitter
     value: '{}'
@@ -185,21 +185,21 @@ fixtures:
     value: 6e9c30e2-ce82-4d32-a60a-b0c6b0a1474e # Backoffice
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
-  - uuid: 25b0f75c-c163-47b4-9c12-b35be1570c3f
+  - uuid: 1202abd1-3748-4a43-ab8c-c6f5f59d73a1
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
-    key: app.registration.organization.data.github
+    key: app.registration.individual.data.github
     value: '{}'
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
-  - uuid: ae6d68e9-3aa8-42ba-85fd-a54c15d70880
+  - uuid: f2bcc05b-8dc5-41a2-8b8b-fbd8b6482175
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
-    key: app.registration.organization.data.google
+    key: app.registration.individual.data.google
     value: '{}'
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
-  - uuid: 252652dd-b505-49a7-bd46-d3325dffae97
+  - uuid: 6a0b2d6b-f5d4-40f7-965f-ed9c03d68548
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
-    key: app.registration.organization.data.twitter
+    key: app.registration.individual.data.twitter
     value: '{}'
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
@@ -227,19 +227,19 @@ fixtures:
     value: 6e9c30e2-ce82-4d32-a60a-b0c6b0a1474e # Backoffice
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
-  - uuid: 7dd17b35-cf5e-4693-8670-9322ae62fc2e
+  - uuid: da66000b-4d47-4bf7-a64b-e13f9611a147
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
     key: app.registration.organization.data.github
     value: '{}'
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
-  - uuid: ee0eaeb7-a657-4491-adbf-55841dc60a47
+  - uuid: 36995d41-6acb-470d-814b-75663a0cf8f2
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
     key: app.registration.organization.data.google
     value: '{}'
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
-  - uuid: 35e7b2d2-c5b3-4b7b-9cdd-8caf7c8407ad
+  - uuid: 6c22f8be-e513-40a3-9884-1165a9f5aeaf
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
     key: app.registration.organization.data.twitter
     value: '{}'
