@@ -30,6 +30,7 @@ services:
       - '@fos_user.user_manager'
       - []
       - '@app.service.oauth'
+      - '@app.service.registration'
       - '@ds_config.service.config'
 
   app.security.provider.oauth.organization:
@@ -38,4 +39,5 @@ services:
       - '@fos_user.user_manager'
       - []
       - '@app.service.oauth'
+      - '@app.service.registration'
       - '@ds_config.service.config'

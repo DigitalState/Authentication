@@ -5,30 +5,6 @@ objects:
   - key: app.spa.portal
     value: '%config.app.spa.portal.value%'
 
-  - key: app.oauth.individual.owner
-    value: BusinessUnit
-
-  - key: app.oauth.individual.owner_uuid
-    value: '%business_unit.administration.uuid%'
-
-  - key: app.oauth.individual.roles
-    value: []
-
-  - key: app.oauth.individual.enabled
-    value: true
-
-  - key: app.oauth.organization.owner
-    value: BusinessUnit
-
-  - key: app.oauth.organization.owner_uuid
-    value: '%business_unit.administration.uuid%'
-
-  - key: app.oauth.organization.roles
-    value: []
-
-  - key: app.oauth.organization.enabled
-    value: true
-
   - key: app.registration.individual.owner
     value: BusinessUnit
 

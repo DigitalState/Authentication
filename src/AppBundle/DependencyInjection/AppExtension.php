@@ -23,24 +23,6 @@ class AppExtension extends Extension implements PrependExtensionInterface
                 'admin' => null,
                 'portal' => null
             ],
-            'oauth' => [
-                'individual' => [
-                    'owner' => [
-                        'type' => null,
-                        'uuid' => null
-                    ],
-                    'roles' => null,
-                    'enabled' => null
-                ],
-                'organization' => [
-                    'owner' => [
-                        'type' => null,
-                        'uuid' => null
-                    ],
-                    'roles' => null,
-                    'enabled' => null
-                ]
-            ],
             'registration' => [
                 'individual' => [
                     'owner' => [
@@ -97,14 +79,6 @@ class AppExtension extends Extension implements PrependExtensionInterface
         // @todo Move this config -> parameters logic to a common trait in the config component bridge
         $container->setParameter('ds_config.configs.app.spa.admin', $config['spa']['admin']);
         $container->setParameter('ds_config.configs.app.spa.portal', $config['spa']['portal']);
-        $container->setParameter('ds_config.configs.app.oauth.individual.owner.type', $config['oauth']['individual']['owner']['type']);
-        $container->setParameter('ds_config.configs.app.oauth.individual.owner.uuid', $config['oauth']['individual']['owner']['uuid']);
-        $container->setParameter('ds_config.configs.app.oauth.individual.roles', $config['oauth']['individual']['roles']);
-        $container->setParameter('ds_config.configs.app.oauth.individual.enabled', $config['oauth']['individual']['enabled']);
-        $container->setParameter('ds_config.configs.app.oauth.organization.owner.type', $config['oauth']['organization']['owner']['type']);
-        $container->setParameter('ds_config.configs.app.oauth.organization.owner.uuid', $config['oauth']['organization']['owner']['uuid']);
-        $container->setParameter('ds_config.configs.app.oauth.organization.roles', $config['oauth']['organization']['roles']);
-        $container->setParameter('ds_config.configs.app.oauth.organization.enabled', $config['oauth']['organization']['enabled']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner.type', $config['registration']['individual']['owner']['type']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner.uuid', $config['registration']['individual']['owner']['uuid']);
         $container->setParameter('ds_config.configs.app.registration.individual.roles', $config['registration']['individual']['roles']);

@@ -3,9 +3,10 @@
 namespace AppBundle\Security\Provider\OAuth;
 
 use AppBundle\Entity\OAuth;
-use AppBundle\Entity\User;
 use AppBundle\Service\OAuthService;
+use AppBundle\Service\RegistrationService;
 use Ds\Component\Config\Service\ConfigService;
+use Ds\Component\Identity\Model\Identity;
 use Exception;
 use FOS\UserBundle\Model\UserManagerInterface;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
@@ -24,6 +25,11 @@ class OrganizationProvider extends FOSUBUserProvider
     protected $oAuthService;
 
     /**
+     * @var \AppBundle\Service\RegistrationService
+     */
+    protected $registrationService;
+
+    /**
      * @var \Ds\Component\Config\Service\ConfigService
      */
     protected $configService;
@@ -34,12 +40,14 @@ class OrganizationProvider extends FOSUBUserProvider
      * @param \FOS\UserBundle\Model\UserManagerInterface $userManager
      * @param array $properties
      * @param \AppBundle\Service\OAuthService $oAuthService
+     * @param \AppBundle\Service\RegistrationService $registrationService
      * @param \Ds\Component\Config\Service\ConfigService $configService
      */
-    public function __construct(UserManagerInterface $userManager, array $properties, OAuthService $oAuthService, ConfigService $configService)
+    public function __construct(UserManagerInterface $userManager, array $properties, OAuthService $oAuthService, RegistrationService $registrationService, ConfigService $configService)
     {
         parent::__construct($userManager, $properties);
         $this->oAuthService = $oAuthService;
+        $this->registrationService = $registrationService;
         $this->configService = $configService;
     }
 
@@ -69,26 +77,26 @@ class OrganizationProvider extends FOSUBUserProvider
                 throw new AccountNotLinkedException('Username is not available.');
             }
 
-            $user = new User;
-            $user
-                ->setUsername($response->getResourceOwner()->getName().'/'.$response->getUsername())
-                ->setEmail($response->getEmail())
-                ->setPlainPassword(sha1(uniqid().microtime()))
-                ->setRoles([])
-                ->setOwner($this->configService->get('app.oauth.organization.owner.type'))
-                ->setOwnerUuid($this->configService->get('app.oauth.organization.owner.uuid'))
-                ->setIdentity('Organization')
-                ->setIdentityUuid('c9599da5-35a8-494c-9181-975d78be9694')
-                ->setEnabled($this->configService->get('app.oauth.organization.enabled'));
-            $this->userManager->updateUser($user);
+            $registration = $this->registrationService->createInstance();
+            $registration
+                ->setOwner($this->configService->get('app.registration.organization.owner.type'))
+                ->setOwnerUuid($this->configService->get('app.registration.organization.owner.uuid'))
+                ->setIdentity(Identity::ORGANIZATION)
+                ->setUsername($email)
+                ->setPassword(sha1(uniqid().microtime()))
+                ->setData([]);
+            $manager = $this->registrationService->getManager();
+            $manager->persist($registration);
+            $manager->flush();
+            $user = $registration->getUser();
             $oAuth = new OAuth;
             $oAuth
                 ->setUser($user)
                 ->setType($response->getResourceOwner()->getName())
                 ->setIdentifier($response->getUsername())
                 ->setToken($response->getAccessToken())
-                ->setOwner($this->configService->get('app.oauth.organization.owner.type'))
-                ->setOwnerUuid($this->configService->get('app.oauth.organization.owner.uuid'));
+                ->setOwner($registration->getOwner())
+                ->setOwnerUuid($registration->getOwnerUuid());
         }
 
         $manager = $this->oAuthService->getManager();

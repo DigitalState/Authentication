@@ -7,38 +7,6 @@ fixtures:
     key: app.spa.portal
     value: http://portal.ds
 
-  - uuid: 4edf8256-4052-46d3-8182-ea04bc99622f
-    key: app.oauth.individual.owner.type
-    value: BusinessUnit
-
-  - uuid: 3b582d12-1d70-4f6d-83ad-0c8d7eee8f3a
-    key: app.oauth.individual.owner.uuid
-    value: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-
-  - uuid: 59ee4354-44ff-4ec6-8ddd-980b261211df
-    key: app.oauth.individual.roles
-    value: [54d82fc6-8ce7-498e-832f-3598664a9d9d]
-
-  - uuid: bb5f7b5a-215a-4457-b09a-d973132001e4
-    key: app.oauth.individual.enabled
-    value: true
-
-  - uuid: 5e9ba25e-f292-44c9-827f-bd4c85d3a165
-    key: app.oauth.organization.owner.type
-    value: BusinessUnit
-
-  - uuid: 76dad719-2317-4978-ad4e-df125276acaf
-    key: app.oauth.organization.owner.uuid
-    value: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
-
-  - uuid: b6c204ad-3a7f-4c2e-881f-f3607fe56a14
-    key: app.oauth.organization.roles
-    value: [777b96e7-e183-44f7-b7e4-dc0cb7591f74]
-
-  - uuid: 17a317cc-3fd2-4f16-a393-ae2dc9743738
-    key: app.oauth.organization.enabled
-    value: true
-
   - uuid: 20346d3f-5ef2-4aec-a644-210c5e71d662
     key: app.registration.individual.owner.type
     value: BusinessUnit
