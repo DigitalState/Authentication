@@ -23,6 +23,24 @@ fixtures:
     value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
+  - uuid: cd18012e-aefa-4200-b982-fd00b10362c6
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.individual.data.github
+    value: '{}'
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: e4e7e5f8-22d5-45ae-a4ee-3f4c4e7e6e06
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.individual.data.google
+    value: '{}'
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 19067fb3-3ae4-4176-86e1-fb953e09ad68
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.individual.data.twitter
+    value: '{}'
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
   - uuid: 67fd45ab-3bfa-4886-b213-80ba85a4f0ce
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.registration.individual.roles
@@ -45,6 +63,24 @@ fixtures:
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.registration.organization.owner.uuid
     value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: bc9d2604-eefc-46b8-afb7-afc621ee8b32
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.organization.data.github
+    value: '{}'
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: d4819eee-6b49-4cf0-aecb-99b6ecc5b659
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.organization.data.google
+    value: '{}'
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 0db218f9-4678-45e5-9121-c18b503f58e8
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.organization.data.twitter
+    value: '{}'
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
   - uuid: 6e61e349-57f9-456f-bac9-22fcc554dce0
@@ -149,6 +185,24 @@ fixtures:
     value: 6e9c30e2-ce82-4d32-a60a-b0c6b0a1474e # Backoffice
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
+  - uuid: 25b0f75c-c163-47b4-9c12-b35be1570c3f
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.data.github
+    value: '{}'
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: ae6d68e9-3aa8-42ba-85fd-a54c15d70880
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.data.google
+    value: '{}'
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 252652dd-b505-49a7-bd46-d3325dffae97
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.data.twitter
+    value: '{}'
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
   - uuid: d176735a-a0b1-466a-8459-25d1109d4906
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
     key: app.registration.individual.roles
@@ -171,6 +225,24 @@ fixtures:
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
     key: app.registration.organization.owner.uuid
     value: 6e9c30e2-ce82-4d32-a60a-b0c6b0a1474e # Backoffice
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 7dd17b35-cf5e-4693-8670-9322ae62fc2e
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.data.github
+    value: '{}'
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: ee0eaeb7-a657-4491-adbf-55841dc60a47
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.data.google
+    value: '{}'
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 35e7b2d2-c5b3-4b7b-9cdd-8caf7c8407ad
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.data.twitter
+    value: '{}'
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
   - uuid: db1c5755-4694-459c-96f2-d802c64e4097

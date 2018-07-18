@@ -77,6 +77,24 @@ class OrganizationProvider extends FOSUBUserProvider
                 throw new AccountNotLinkedException('Username is not available.');
             }
 
+            $owner = substr($response->getResourceOwner()->getName(), 13);
+            $data = [
+                '%email%' => $response->getEmail(),
+                '%firstName%' => $response->getFirstName(),
+                '%lastName%' => $response->getLastName()
+            ];
+
+            switch ($owner) {
+                case 'github':
+                    break;
+
+                case 'google':
+                    break;
+
+                case 'twitter':
+                    break;
+            }
+
             $registration = $this->registrationService->createInstance();
             $registration
                 ->setOwner($this->configService->get('app.registration.organization.owner.type'))
@@ -84,7 +102,7 @@ class OrganizationProvider extends FOSUBUserProvider
                 ->setIdentity(Identity::ORGANIZATION)
                 ->setUsername($email)
                 ->setPassword(sha1(uniqid().microtime()))
-                ->setData([]);
+                ->setData(json_decode(strtr($this->configService->get('app.registration.organization.data.'.$owner), $data), true));
             $manager = $this->registrationService->getManager();
             $manager->persist($registration);
             $manager->flush();

@@ -29,6 +29,11 @@ class AppExtension extends Extension implements PrependExtensionInterface
                         'type' => null,
                         'uuid' => null
                     ],
+                    'data' => [
+                        'github' => '{}',
+                        'google' => '{}',
+                        'twitter' => '{}'
+                    ],
                     'roles' => null,
                     'enabled' => null
                 ],
@@ -36,6 +41,11 @@ class AppExtension extends Extension implements PrependExtensionInterface
                     'owner' => [
                         'type' => null,
                         'uuid' => null
+                    ],
+                    'data' => [
+                        'github' => '{}',
+                        'google' => '{}',
+                        'twitter' => '{}'
                     ],
                     'roles' => null,
                     'enabled' => null
@@ -81,10 +91,16 @@ class AppExtension extends Extension implements PrependExtensionInterface
         $container->setParameter('ds_config.configs.app.spa.portal', $config['spa']['portal']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner.type', $config['registration']['individual']['owner']['type']);
         $container->setParameter('ds_config.configs.app.registration.individual.owner.uuid', $config['registration']['individual']['owner']['uuid']);
+        $container->setParameter('ds_config.configs.app.registration.individual.data.github', $config['registration']['individual']['data']['github']);
+        $container->setParameter('ds_config.configs.app.registration.individual.data.google', $config['registration']['individual']['data']['google']);
+        $container->setParameter('ds_config.configs.app.registration.individual.data.twitter', $config['registration']['individual']['data']['twitter']);
         $container->setParameter('ds_config.configs.app.registration.individual.roles', $config['registration']['individual']['roles']);
         $container->setParameter('ds_config.configs.app.registration.individual.enabled', $config['registration']['individual']['enabled']);
         $container->setParameter('ds_config.configs.app.registration.organization.owner.type', $config['registration']['organization']['owner']['type']);
         $container->setParameter('ds_config.configs.app.registration.organization.owner.uuid', $config['registration']['organization']['owner']['uuid']);
+        $container->setParameter('ds_config.configs.app.registration.organization.data.github', $config['registration']['organization']['data']['github']);
+        $container->setParameter('ds_config.configs.app.registration.organization.data.google', $config['registration']['organization']['data']['google']);
+        $container->setParameter('ds_config.configs.app.registration.organization.data.twitter', $config['registration']['organization']['data']['twitter']);
         $container->setParameter('ds_config.configs.app.registration.organization.roles', $config['registration']['organization']['roles']);
         $container->setParameter('ds_config.configs.app.registration.organization.enabled', $config['registration']['organization']['enabled']);
     }

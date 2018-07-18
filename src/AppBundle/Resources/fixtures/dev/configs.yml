@@ -15,6 +15,18 @@ fixtures:
     key: app.registration.individual.owner.uuid
     value: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
 
+  - uuid: 76811366-39e6-4e1a-a326-b931c26c81a0
+    key: app.registration.individual.data.github
+    value: '{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }'
+
+  - uuid: b60003aa-a71a-409b-bfb5-b1227e1b4f61
+    key: app.registration.individual.data.google
+    value: '{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }'
+
+  - uuid: d38b06d0-d296-4058-9a8b-a07b9ccd831f
+    key: app.registration.individual.data.twitter
+    value: '{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }'
+
   - uuid: 19367aa4-9893-4162-ace5-9b56cb266e6a
     key: app.registration.individual.roles
     value: [54d82fc6-8ce7-498e-832f-3598664a9d9d]
@@ -30,6 +42,18 @@ fixtures:
   - uuid: 37752baf-fb62-4606-87a4-a80967e43ae3
     key: app.registration.organization.owner.uuid
     value: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+
+  - uuid: 190910d6-d5b6-4cae-8206-d0789fa56115
+    key: app.registration.organization.data.github
+    value: '{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }'
+
+  - uuid: a94f720d-22c5-497d-a1b0-a379d867a61d
+    key: app.registration.organization.data.google
+    value: '{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }'
+
+  - uuid: ced03fc3-6dfe-4b65-9648-52e2edaa7d5e
+    key: app.registration.organization.data.twitter
+    value: '{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }'
 
   - uuid: da101a75-a016-4490-a448-4f3de472dca2
     key: app.registration.organization.roles
