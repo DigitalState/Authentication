@@ -52,7 +52,7 @@ app_auth_individual_check:
     _controller: FOSUserBundle:Security:check
 
 app_oauth_service:
-  path: /oauth/{service}/login
+  path: /oauth/{service}/redirect
   defaults:
     _controller: HWIOAuthBundle:Connect:redirectToService
   requirements:
