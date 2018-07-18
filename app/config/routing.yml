@@ -54,7 +54,7 @@ app_auth_individual_check:
 app_oauth_service:
   path: /oauth/{service}/redirect
   defaults:
-    _controller: HWIOAuthBundle:Connect:redirectToService
+    _controller: AppBundle:OAuth/Connect:redirectToService
   requirements:
     service: '[a-z]+\/[a-z]+'
 
