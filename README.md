@@ -24,11 +24,11 @@ It uses the [JWT](https://jwt.io/introduction/) open standard, which enables a w
 6. [Password Recovery](documentation/password_recovery.md)
 7. [OAuth](documentation/oauth.md)
 
+Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation)
+
 ## Reference
 
 1. [Api](reference/api.md)
-
-Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation)
 
 ## Contributing
 
