@@ -1,5 +1,7 @@
 # Api
 
+The DigitalState Authentication microservice api endpoints available.
+
 ## Table of Contents
 
 - [System](api/system.md)

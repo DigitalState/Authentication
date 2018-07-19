@@ -1,5 +1,7 @@
 # Config
 
+The DigitalState Authentication microservice configurations available.
+
 ## Table of Contents
 
 - [app.spa.admin](#appspaadmin)
