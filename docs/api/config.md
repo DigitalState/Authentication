@@ -3,8 +3,8 @@
 ## Table of Contents
 
 - [GET /configs](#get-configs)
-- [GET /configs/{uuid}](#get-/configs/uuid)
-- [PUT /configs/{uuid}](#put-/configs/uuid)
+- [GET /configs/{uuid}](#get-configsuuid)
+- [PUT /configs/{uuid}](#put-configsuuid)
 
 ## GET /configs
 
