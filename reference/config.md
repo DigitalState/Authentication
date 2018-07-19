@@ -38,7 +38,8 @@ The DigitalState Authentication microservice configurations registry.
 
 ## App/Spa/Admin
 
-__Key:__ app.spa.admin
+__Key:__ `app.spa.admin`
+
 __Description:__ The admin spa url.
 
 ## app.spa.portal
