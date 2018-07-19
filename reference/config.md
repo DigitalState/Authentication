@@ -4,6 +4,12 @@ The DigitalState Authentication microservice configurations available.
 
 ## Table of Contents
 
+- app
+  - spa
+    - admin
+    - portal
+
+
 - [app.spa.admin](#appspaadmin)
 - [app.spa.portal](#appspaportal)
 - [app.registration.individual.owner.type](#appregistrationindividualownertype)
