@@ -1,8 +1,9 @@
-# Authentication
-
 [![Build Status](https://travis-ci.org/DigitalState/Authentication.svg?branch=develop)](https://travis-ci.org/DigitalState/Authentication)
 [![Coverage Status](https://coveralls.io/repos/github/DigitalState/Authentication/badge.svg?branch=develop)](https://coveralls.io/github/DigitalState/Authentication?branch=develop)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/DigitalState/Authentication/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/DigitalState/Authentication/?branch=develop)
+
+
+# Authentication
 
 The DigitalState Authentication microservice provides centralized authentication capabilities for users.
 
@@ -17,18 +18,18 @@ It uses the [JWT](https://jwt.io/introduction/) open standard, which enables a w
 
 ## Documentation
 
-1. [JWT](documentation/jwt.md)
-2. [User Management](documentation/user_management.md)
-3. [Registration](documentation/registration.md)
-4. [Login](documentation/login.md)
-6. [Password Recovery](documentation/password_recovery.md)
-7. [OAuth](documentation/oauth.md)
+- [JWT](documentation/jwt.md)
+- [User Management](documentation/user_management.md)
+- [Registration](documentation/registration.md)
+- [Login](documentation/login.md)
+- [Password Recovery](documentation/password_recovery.md)
+- [OAuth](documentation/oauth.md)
 
 Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation)
 
 ## Reference
 
-1. [Api](reference/api.md)
+- [Api](reference/api.md)
 
 ## Contributing
 
