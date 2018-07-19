@@ -12,6 +12,12 @@ This endpoint returns a system jwt token.
 
 __POST__ /auth/system
 
+```
+x-www-form-urlencoded
+username: system@system.ds
+password: ********
+```
+
 ### Response
 
 ```json
