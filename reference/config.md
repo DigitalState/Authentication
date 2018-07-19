@@ -29,9 +29,12 @@ The DigitalState Authentication microservice configurations available.
         - [twitter](#appregistrationorganizationdatatwitter)
       - [roles](#appregistrationorganizationroles)
       - [enabled](#appregistrationorganizationenabled)
-- [app.resetting.email.subject](#appresettingemailsubject)
-- [app.resetting.email.body.plain](#appresettingemailbodyplain)
-- [app.resetting.email.body.html](#appresettingemailbodyhtml)
+  - resetting
+    - email
+      - [subject](#appresettingemailsubject)
+      - body
+        - [plain](#appresettingemailbodyplain)
+        - [html](#appresettingemailbodyhtml)
 
 ## app.spa.admin
 
