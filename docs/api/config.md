@@ -12,7 +12,7 @@ This endpoint returns the list of configurations.
 
 ### Request
 
-`GET /configs`
+__GET__ /configs
 
 ### Response
 
@@ -43,7 +43,7 @@ This endpoint returns a specific configuration.
 
 ### Request
 
-`GET /configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
+__GET__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
 ### Response
 
@@ -69,7 +69,7 @@ This endpoint edits a specific configuration.
 
 ### Request
 
-`PUT /configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
+__PUT__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
 ```
 {
