@@ -1,43 +1,8 @@
 # Authentication
 
-The Authentication microservice provide centralized login cpabilities for "users" which have a assoication with a Identity.
+The DigitalState Authentication microservice provides centralized authentication capabilities for users.
 
-Authentication preforms the following functions:
-
-1. Login / Logout
-1. JWT Issueing / Management
-1. User Management
-1. Password Recovery
-
-The Authentication microservice managers "users" which are the accounts that are used to login as a Individual, Organization, and Staffer.  
-
-No personal data about an identity is or should be stored in the Authentication microservice.
-
-## Screenshots
-
-The following are screenshots from the Portal and Admin UI
-
-### Admin
-
-![Admin Login](./docs/resources/Admin-Login.png)
-
----
-
-![Admin User List](./docs/resources/Admin-Users-List.png)
-
----
-
-![Admin User View](./docs/resources/Admin-Users-View.png)
-
----
-
-### Portal (Individuals)
-
-![Portal Individual Login](./docs/resources/Individual-Login.png)
-
----
-
-![Portal Individual Signup](./docs/resources/Individual-Signup.png)
+It uses the [JWT](https://jwt.io/introduction/) open standard, which defines a self-contained way for securely transferring user identity and claims information within the DigitalState microservices architecture.
 
 [![Build Status](https://travis-ci.org/DigitalState/Authentication.svg?branch=develop)](https://travis-ci.org/DigitalState/Authentication)
 [![Coverage Status](https://coveralls.io/repos/github/DigitalState/Authentication/badge.svg?branch=develop)](https://coveralls.io/github/DigitalState/Authentication?branch=develop)
@@ -51,10 +16,12 @@ The following are screenshots from the Portal and Admin UI
 
 ## Documentation
 
-1. [LDAP/Active Directory Integration](./docs/ldap.md)
-1. [Social Media Login Integration](./docs/social_media.md)
-1. Swap Authentication microservice with a third-party authentication system (Cloud, Gluu, Keycloak, etc)
-1. JWT Sctructure and Details
+1. [JWT](docs/jwt.md)
+2. [User Management](docs/user_management.md)
+3. [Registration](docs/registration.md)
+4. [Login](docs/login.md)
+6. [Password Recovery](docs/password_recovery.md)
+7. [OAuth](docs/oauth.md)
 
 Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation)
 
