@@ -4,40 +4,41 @@ The DigitalState Authentication microservice configurations registry.
 
 ## Table of Contents
 
-- app
-  - spa
-    - [admin](#appspaadmin)
-    - [portal](#appspaportal)
-  - registration
-    - individual
-      - owner
-        - [type](#appregistrationindividualownertype)
-        - [uuid](#appregistrationindividualowneruuid)
-      - data
-        - [github](#appregistrationindividualdatagithub)
-        - [google](#appregistrationindividualdatagoogle)
-        - [twitter](#appregistrationindividualdatatwitter)
-      - [roles](#appregistrationindividualroles)
-      - [enabled](#appregistrationindividualenabled)
-    - organization
-      - owner
-        - [type](#appregistrationorganizationownertype)
-        - [uuid](#appregistrationorganizationowneruuid)
-      - data
-        - [github](#appregistrationorganizationdatagithub)
-        - [google](#appregistrationorganizationdatagoogle)
-        - [twitter](#appregistrationorganizationdatatwitter)
-      - [roles](#appregistrationorganizationroles)
-      - [enabled](#appregistrationorganizationenabled)
-  - resetting
-    - email
-      - [subject](#appresettingemailsubject)
-      - body
-        - [plain](#appresettingemailbodyplain)
-        - [html](#appresettingemailbodyhtml)
+- App
+  - Spa
+    - [Admin](#appspaadmin)
+    - [Portal](#appspaportal)
+  - Registration
+    - Individual
+      - Owner
+        - [Type](#appregistrationindividualownertype)
+        - [UUID](#appregistrationindividualowneruuid)
+      - Data
+        - [Github](#appregistrationindividualdatagithub)
+        - [Google](#appregistrationindividualdatagoogle)
+        - [Twitter](#appregistrationindividualdatatwitter)
+      - [Roles](#appregistrationindividualroles)
+      - [Enabled](#appregistrationindividualenabled)
+    - Organization
+      - Owner
+        - [Type](#appregistrationorganizationownertype)
+        - [UUID](#appregistrationorganizationowneruuid)
+      - Data
+        - [Github](#appregistrationorganizationdatagithub)
+        - [Google](#appregistrationorganizationdatagoogle)
+        - [Twitter](#appregistrationorganizationdatatwitter)
+      - [Roles](#appregistrationorganizationroles)
+      - [Enabled](#appregistrationorganizationenabled)
+  - Resetting
+    - Email
+      - [Subject](#appresettingemailsubject)
+      - Body
+        - [Plain](#appresettingemailbodyplain)
+        - [Html](#appresettingemailbodyhtml)
 
-## app.spa.admin
+## App/Spa/Admin
 
+__Key:__ app.spa.admin
 __Description:__ The admin spa url.
 
 ## app.spa.portal
