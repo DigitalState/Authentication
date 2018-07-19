@@ -11,18 +11,22 @@ It uses the [JWT](https://jwt.io/introduction/) open standard, which enables a w
 ## Table of Contents
 
 - [Documentation](#documentation)
+- [Reference](#reference)
 - [Contributing](#contributing)
 - [Credits](#credits)
 
 ## Documentation
 
-1. [JWT](docs/jwt.md)
-2. [User Management](docs/user_management.md)
-3. [Registration](docs/registration.md)
-4. [Login](docs/login.md)
-6. [Password Recovery](docs/password_recovery.md)
-7. [OAuth](docs/oauth.md)
-8. [Api](docs/api.md)
+1. [JWT](documentation/jwt.md)
+2. [User Management](documentation/user_management.md)
+3. [Registration](documentation/registration.md)
+4. [Login](documentation/login.md)
+6. [Password Recovery](documentation/password_recovery.md)
+7. [OAuth](documentation/oauth.md)
+
+## Reference
+
+1. [Api](reference/api.md)
 
 Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation)
 
