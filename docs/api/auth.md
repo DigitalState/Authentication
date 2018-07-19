@@ -10,7 +10,7 @@
 
 ## POST /auth/system
 
-This endpoint returns a system jwt token.
+This endpoint returns a system JWT token.
 
 ### Request
 
@@ -65,7 +65,7 @@ Decoded token:
 
 ## POST /auth/staff
 
-This endpoint returns a staff jwt token.
+This endpoint returns a staff JWT token.
 
 ### Request
 
@@ -122,7 +122,7 @@ Decoded token:
 
 ## POST /auth/individual
 
-This endpoint returns an individual jwt token.
+This endpoint returns an individual JWT token.
 
 ### Request
 
@@ -179,7 +179,7 @@ Decoded token:
 
 ## POST /auth/organization
 
-This endpoint returns an organization jwt token.
+This endpoint returns an organization JWT token.
 
 ### Request
 
@@ -234,7 +234,7 @@ Decoded token:
 
 ## POST /auth/anonymous
 
-This endpoint returns an anonymous jwt token.
+This endpoint returns an anonymous JWT token.
 
 ### Request
 
