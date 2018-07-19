@@ -3,6 +3,10 @@
 ## Table of Contents
 
 - [POST /auth/system](#post-authsystem)
+- [POST /auth/staff](#post-authstaff)
+- [POST /auth/individual](#post-authindividual)
+- [POST /auth/organization](#post-authorganization)
+- [POST /auth/anonymous](#post-authanonymous)
 
 ## POST /auth/system
 
