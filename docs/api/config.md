@@ -2,9 +2,19 @@
 
 ## Table of Contents
 
-- [Get /configs](#get-configs)
+- [GET List](#get-list)
+- [GET Item](#get-list)
+- [PUT Item](#put-list)
 
-*GET* /configs
+## GET List
+
+Retrieve a list of configs.
+
+### Request
+
+`GET /configs`
+
+### Response
 
 ```
 [
@@ -27,7 +37,15 @@
 ]
 ```
 
-*GET* /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
+## GET Item
+
+Retrieve a single config.
+
+### Request
+
+`GET /configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
+
+### Response
 
 ```
 {
