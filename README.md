@@ -2,7 +2,7 @@
 
 The DigitalState Authentication microservice provides centralized authentication capabilities for users.
 
-It uses the [JWT](https://jwt.io/introduction/) open standard, which defines a self-contained way for securely transferring user identity and claims information within the DigitalState microservices architecture.
+It uses the [JWT](https://jwt.io/introduction/) open standard, which enables a way to securely transfer user identity and claims information within the DigitalState microservices architecture.
 
 [![Build Status](https://travis-ci.org/DigitalState/Authentication.svg?branch=develop)](https://travis-ci.org/DigitalState/Authentication)
 [![Coverage Status](https://coveralls.io/repos/github/DigitalState/Authentication/badge.svg?branch=develop)](https://coveralls.io/github/DigitalState/Authentication?branch=develop)
@@ -22,6 +22,7 @@ It uses the [JWT](https://jwt.io/introduction/) open standard, which defines a s
 4. [Login](docs/login.md)
 6. [Password Recovery](docs/password_recovery.md)
 7. [OAuth](docs/oauth.md)
+8. [Api](docs/api.md)
 
 Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation)
 
