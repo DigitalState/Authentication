@@ -216,7 +216,9 @@ Decoded token:
   ],
   "username": "acme@organization.ds",
   "identity": {
-    "roles": [],
+    "roles": [
+      "777b96e7-e183-44f7-b7e4-dc0cb7591f74"
+    ],
     "type": "Organization",
     "uuid": "c9599da5-35a8-494c-9181-975d78be9694"
   },
