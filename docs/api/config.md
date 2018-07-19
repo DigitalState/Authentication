@@ -16,7 +16,7 @@ __GET__ /configs
 
 ### Response
 
-```
+```json
 [
   {
     "id": 1,
@@ -47,7 +47,7 @@ __GET__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
 ### Response
 
-```
+```json
 {
   "id": 1,
   "uuid": "20346d3f-5ef2-4aec-a644-210c5e71d662",
@@ -71,7 +71,7 @@ This endpoint edits a specific configuration.
 
 __PUT__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
-```
+```json
 {
   "enabled": false,
   "version": 1
