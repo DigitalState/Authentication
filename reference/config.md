@@ -1,6 +1,6 @@
 # Config
 
-The DigitalState Authentication microservice configurations available.
+The DigitalState Authentication microservice configurations registry.
 
 ## Table of Contents
 
@@ -38,13 +38,23 @@ The DigitalState Authentication microservice configurations available.
 
 ## app.spa.admin
 
+__Description:__ The admin spa url.
+
 ## app.spa.portal
+
+__Description:__ The portal spa url.
 
 ## app.registration.individual.owner.type
 
+__Description:__ The default owner type when an individual registers.
+
 ## app.registration.individual.owner.uuid
 
+__Description:__ The default owner UUID when an individual registers.
+
 ## app.registration.individual.data.github
+
+__Description:__ The template used for identity data when an individual registers.
 
 ## app.registration.individual.data.google
 
