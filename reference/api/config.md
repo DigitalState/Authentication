@@ -10,12 +10,20 @@
 
 This endpoint returns the list of configurations.
 
+### Headers
+
+Authorization: Bearer ********
+Content-Type: application/json
+Accept: application/json
+
 ### Example
 
 *Request*
+
 __GET__ /configs
 
 *Response*
+
 ```json
 [
   {
@@ -44,9 +52,11 @@ This endpoint returns a specific configuration.
 ### Example
 
 *Request*
+
 __GET__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
 *Response*
+
 ```json
 {
   "id": 1,
@@ -70,6 +80,7 @@ This endpoint edits a specific configuration.
 ### Example
 
 *Request*
+
 __PUT__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
 ```json
@@ -80,6 +91,7 @@ __PUT__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 ```
 
 *Response*
+
 ```json
 {
   "id": 1,
