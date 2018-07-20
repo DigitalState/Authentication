@@ -10,12 +10,12 @@
 
 This endpoint returns the list of configurations.
 
-### Request
+### Example
 
+*Request*
 __GET__ /configs
 
-### Response
-
+*Response*
 ```json
 [
   {
@@ -41,12 +41,12 @@ __GET__ /configs
 
 This endpoint returns a specific configuration.
 
-### Request
+### Example
 
+*Request*
 __GET__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
-### Response
-
+*Response*
 ```json
 {
   "id": 1,
@@ -67,8 +67,9 @@ __GET__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
 This endpoint edits a specific configuration.
 
-### Request
+### Example
 
+*Request*
 __PUT__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
 ```json
@@ -78,8 +79,7 @@ __PUT__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 }
 ```
 
-### Response
-
+*Response*
 ```json
 {
   "id": 1,
