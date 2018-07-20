@@ -61,11 +61,11 @@ A JSON array of objects. Each object contains the following properties:
 
 #### Request
 
-*Method*
+*Method:*
 
 __GET__ /configs
 
-*Headers*
+*Headers:*
 
 ```yaml
 Accept: application/json
@@ -73,11 +73,11 @@ Accept: application/json
 
 #### Response
 
-*Code*
+*Code:*
 
 `200 Successful`
 
-*Body*
+*Body:*
 
 ```json
 [
@@ -154,11 +154,11 @@ The config with the given uuid does not exist.
 
 #### Request
 
-*Method*
+*Method:*
 
 __GET__ `/configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
 
-*Headers*
+*Headers:*
 
 ```yaml
 Accept: application/json
@@ -166,11 +166,11 @@ Accept: application/json
 
 #### Response
 
-*Code*
+*Code:*
 
 `200 Successful`
 
-*Body*
+*Body:*
 
 ```json
 {
@@ -246,17 +246,17 @@ There were some validation errors.
 
 #### Request
 
-*Method*
+*Method:*
 
 __PUT__ `/configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
 
-*Headers*
+*Headers:*
 
 ```yaml
 Accept: application/json
 ```
 
-*Body*
+*Body:*
 
 ```json
 {
@@ -267,11 +267,11 @@ Accept: application/json
 
 #### Response
 
-*Code*
+*Code:*
 
 `201 Created`
 
-*Body*
+*Body:*
 
 ```json
 {
