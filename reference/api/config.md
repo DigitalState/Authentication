@@ -10,15 +10,15 @@
 
 This endpoint returns the list of configurations.
 
-__Uri:__ /configs
+__Uri:__ `/configs`
 
 __Headers:__
 
-| Name | Values |
-| ---- | ------ |
-| Authorization | Bearer ******** |
-| Content-Type | application/json |
-| Accept | application/json |
+```
+Authorization: Bearer ********
+Content-Type: application/json
+Accept: application/json
+```
 
 ### Example
 
