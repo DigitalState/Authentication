@@ -12,9 +12,14 @@ This endpoint returns the list of configurations.
 
 ### Headers
 
-Authorization: Bearer ********
-Content-Type: application/json
-Accept: application/json
+<dl>
+  <dt>Authorization</dt>
+  <dd>Bearer ********</dd>
+  <dt>Content-Type</dt>
+  <dd>application/json</dd>
+  <dt>Accept</dt>
+  <dd>application/json</dd>
+</dl>
 
 ### Example
 
