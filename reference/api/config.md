@@ -10,8 +10,10 @@
 
 This endpoint returns the list of configurations.
 
-| Header | Options |
-| ------ | ------- |
+__Uri:__ /configs
+
+__Headers:__
+
 | Authorization | Bearer ******** |
 | Content-Type | application/json |
 | Accept | application/json |
