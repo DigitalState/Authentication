@@ -16,18 +16,22 @@ GET `/configs`
 
 ### Parameters
 
+#### Query
+
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| id | integer | Restrict to configs with the given id. | 1 |
-| uuid | string | Restrict to configs with the given uuid. | 21046af5-26e7-4a05-bfd8-38c0d9aa0302 |
-| owner | string | Restrict to configs with the given owner. | BusinessUnit |
-| ownerUuid | string | Restrict to configs with the given owner uuid. | 5809b2e4-3ab1-4ed5-a419-04e6f3d05959 |
-| key | string | Restrict to configs with the given key. | app.registration.individual.owner.type |
-| createdAt[before] | string | Restrict to configs created before the given date. | 2018-07-20T13:19:30.181Z |
-| createdAt[after] | string | Restrict to configs created after the given date. | 2018-07-20T13:19:30.181Z |
-| updatedAt[before] | string | Restrict to configs update before the given date. | 2018-07-20T13:19:30.181Z |
-| updatedAt[after] | string | Restrict to configs created after the given date. | 2018-07-20T13:19:30.181Z |
-| enabled | boolean | Restrict to configs with given enabled status. | true |
+| id | integer | Filter configs by the given id. | 1 |
+| uuid | string | Filter configs by the given uuid. | 21046af5-26e7-4a05-bfd8-38c0d9aa0302 |
+| owner | string | Filter configs by the given owner. | BusinessUnit |
+| ownerUuid | string | Filter configs by the given owner uuid. | 5809b2e4-3ab1-4ed5-a419-04e6f3d05959 |
+| key | string | Filter configs by the given key. | app.registration.individual.owner.type |
+| createdAt[before] | string | Filter configs that were created before the given date. | 2018-07-20T13:19:30.181Z |
+| createdAt[after] | string | Filter configs that were created after the given date. | 2018-07-20T13:19:30.181Z |
+| updatedAt[before] | string | Filter configs that were updated before the given date. | 2018-07-20T13:19:30.181Z |
+| updatedAt[after] | string | Filter configs that were updated after the given date. | 2018-07-20T13:19:30.181Z |
+| enabled | boolean | Filter configs by given enabled status. | true |
+| page | integer | The current page in the pagination. __Default: 1.__ | 1 |
+| limit | integer | The number of items per page. __Default: 10.__ | 25 |
 
 ### Response
 
@@ -105,6 +109,8 @@ This endpoint returns a specific configuration.
 GET `/configs/{uuid}`
 
 ### Parameters
+
+#### Path
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
