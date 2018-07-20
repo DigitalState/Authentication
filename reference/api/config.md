@@ -2,6 +2,8 @@
 
 The config api endpoints allow authorized users to read and modify application configurations.
 
+For the full list of available
+
 ## Table of Contents
 
 - [Get List](#get-list)
@@ -22,18 +24,18 @@ GET `/configs`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| id | integer | Filter configs by the given id. | 1 |
-| uuid | string | Filter configs by the given uuid. | 20346d3f-5ef2-4aec-a644-210c5e71d662 |
-| owner | string | Filter configs by the given owner. | BusinessUnit |
-| ownerUuid | string | Filter configs by the given owner uuid. | c11c546e-bd01-47cf-97da-e25388357b5a |
-| key | string | Filter configs by the given key. | app.registration.individual.owner.type |
-| createdAt[before] | string | Filter configs that were created before the given date. | 2018-07-20T13:19:30.181Z |
-| createdAt[after] | string | Filter configs that were created after the given date. | 2018-07-20T13:19:30.181Z |
-| updatedAt[before] | string | Filter configs that were updated before the given date. | 2018-07-20T13:19:30.181Z |
-| updatedAt[after] | string | Filter configs that were updated after the given date. | 2018-07-20T13:19:30.181Z |
-| enabled | boolean | Filter configs by given enabled status. | true |
-| page | integer | The current page in the pagination. Default: 1. | 1 |
-| limit | integer | The number of items per page. Default: 10. | 25 |
+| id | integer | Filter configs by the given id. | `1` |
+| uuid | string | Filter configs by the given uuid. | `20346d3f-5ef2-4aec-a644-210c5e71d662` |
+| owner | string | Filter configs by the given owner. | `BusinessUnit` |
+| ownerUuid | string | Filter configs by the given owner uuid. | `c11c546e-bd01-47cf-97da-e25388357b5a` |
+| key | string | Filter configs by the given key. | `app.registration.individual.owner.type` |
+| createdAt[before] | string | Filter configs that were created before the given date. | `2018-07-20T13:19:30.181Z` |
+| createdAt[after] | string | Filter configs that were created after the given date. | `2018-07-20T13:19:30.181Z` |
+| updatedAt[before] | string | Filter configs that were updated before the given date. | `2018-07-20T13:19:30.181Z` |
+| updatedAt[after] | string | Filter configs that were updated after the given date. | `2018-07-20T13:19:30.181Z` |
+| enabled | boolean | Filter configs by given enabled status. | `true` |
+| page | integer | The current page in the pagination. Default: `1`. | `1` |
+| limit | integer | The number of items per page. Default: `10`. | `25` |
 
 ### Response
 
@@ -75,7 +77,7 @@ Accept: application/json
 
 *Code*
 
-200 Successful
+`200 Successful`
 
 *Body*
 
@@ -124,7 +126,7 @@ GET `/configs/{uuid}`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The uuid of the config. __Required.__ | 20346d3f-5ef2-4aec-a644-210c5e71d662 |
+| uuid | string | The uuid of the config. __Required.__ | `20346d3f-5ef2-4aec-a644-210c5e71d662` |
 
 ### Response
 
@@ -167,7 +169,7 @@ Accept: application/json
 
 *Code*
 
-200 Successful
+`200 Successful`
 
 *Body*
 
@@ -201,7 +203,7 @@ PUT `/configs/{uuid}`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The uuid of the config. __Required.__ | 20346d3f-5ef2-4aec-a644-210c5e71d662 |
+| uuid | string | The uuid of the config. __Required.__ | `20346d3f-5ef2-4aec-a644-210c5e71d662` |
 
 #### Body
 
@@ -209,13 +211,13 @@ A JSON object that contains the following properties:
 
 | Name | Value | Description | Example |
 | ---- | ----- | ----------- | ------- |
-| uuid | string | The config uuid. __Optional.__ | d8fdec77-7816-45e6-a2d8-e75d38c5637a |
-| owner | string | The config owner. __Required.__ | BusinessUnit |
-| ownerUuid | string | The config owner uuid. __Required.__ | c11c546e-bd01-47cf-97da-e25388357b5a |
-| key | string | The config key. This value is unique. __Required.__ | app.registration.individual.owner.type |
-| value | mixed | The config value. This value may be an array, object, integer, boolean or string. __Required.__ | BusinessUnit |
+| uuid | string | The config uuid. __Optional.__ | `d8fdec77-7816-45e6-a2d8-e75d38c5637a` |
+| owner | string | The config owner. __Required.__ | `BusinessUnit` |
+| ownerUuid | string | The config owner uuid. __Required.__ | `c11c546e-bd01-47cf-97da-e25388357b5a` |
+| key | string | The config key. This value is unique. __Required.__ | `app.registration.individual.owner.type` |
+| value | mixed | The config value. This value may be an array, object, integer, boolean or string. __Required.__ | `BusinessUnit` |
 | enabled | boolean | Whether the config is enabled or not. __Required.__ | true |
-| version | integer | The config version. This value is used for optimistic locking. __Required.__ | 1 |
+| version | integer | The config version. This value is used for optimistic locking. __Required.__ | `1` |
 
 ### Response
 
