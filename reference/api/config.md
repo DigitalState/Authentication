@@ -2,7 +2,7 @@
 
 The config api endpoints allow authorized users to read and modify application configurations.
 
-The complete list of configs available can be found [here](../reference/config.md).
+The complete list of configs available can be found [here](../config.md).
 
 ## Table of Contents
 
