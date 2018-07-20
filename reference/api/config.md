@@ -10,7 +10,9 @@
 
 This endpoint returns the list of configurations.
 
-__Uri:__ `/configs`
+__Endpoint:__
+
+`/configs`
 
 __Headers:__
 
