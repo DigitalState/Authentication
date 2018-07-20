@@ -65,6 +65,8 @@ A JSON array of objects. Each object contains the following properties:
 
 #### Request
 
+*Method*
+
 __GET__ /configs
 
 *Headers*
@@ -157,6 +159,8 @@ A JSON object that contains the following properties:
 
 #### Request
 
+*Method*
+
 __GET__ `/configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
 
 *Headers*
@@ -246,11 +250,13 @@ A JSON object that contains the following properties:
 
 ### Example
 
-*Request*
+#### Request
+
+*Method*
 
 __PUT__ `/configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
 
-*Header*
+*Headers*
 
 ```yaml
 Accept: application/json
@@ -265,7 +271,13 @@ Accept: application/json
 }
 ```
 
-*Response*
+#### Response
+
+*Code*
+
+`201 Created`
+
+*Body*
 
 ```json
 {
