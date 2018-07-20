@@ -246,7 +246,7 @@ A JSON object that contains the following properties:
 
 *Request*
 
-__PUT__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
+__PUT__ `/configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
 
 *Header*
 
