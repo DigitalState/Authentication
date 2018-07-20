@@ -2,13 +2,18 @@
 
 ## Table of Contents
 
-- [GET /configs](#get-configs)
-- [GET /configs/{uuid}](#get-configsuuid)
-- [PUT /configs/{uuid}](#put-configsuuid)
+- [Get List](#get-list)
+  GET /configs
+- [Get](#get)
+  GET /configs/{uuid}
+- [Update](#update)
+  PUT /configs/{uuid}
 
-## GET /configs
+## Get List
 
 This endpoint returns the list of configurations.
+
+### Request
 
 #### Endpoint
 
@@ -17,7 +22,9 @@ This endpoint returns the list of configurations.
 #### Headers
 
 Authorization: Bearer ********
+
 Content-Type: application/json
+
 Accept: application/json
 
 #### Response
@@ -40,9 +47,7 @@ Accept: application/json
     "owner": "string",
     "ownerUuid": "string",
     "key": "string",
-    "value": [
-      "string"
-    ],
+    "value": json,
     "enabled": true,
     "version": 0,
     "tenant": "string"
