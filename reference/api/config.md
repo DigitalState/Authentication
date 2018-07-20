@@ -3,10 +3,15 @@
 ## Table of Contents
 
 - [Get List](#get-list)
+
   GET /configs
+
 - [Get](#get)
+
   GET /configs/{uuid}
+
 - [Update](#update)
+
   PUT /configs/{uuid}
 
 ## Get List
