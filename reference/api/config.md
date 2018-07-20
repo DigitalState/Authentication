@@ -10,16 +10,11 @@
 
 This endpoint returns the list of configurations.
 
-### Headers
-
-<dl>
-  <dt>Authorization</dt>
-  <dd>Bearer ********</dd>
-  <dt>Content-Type</dt>
-  <dd>application/json</dd>
-  <dt>Accept</dt>
-  <dd>application/json</dd>
-</dl>
+| Header | Options |
+| ------ | ------- |
+| Authorization | Bearer ******** |
+| Content-Type | application/json |
+| Accept | application/json |
 
 ### Example
 
