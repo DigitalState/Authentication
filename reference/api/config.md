@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Get List](#get-list)
-- [Get](#get)
+- [Get Item](#get-item)
 - [Update](#update)
 
 ## Get List
@@ -31,7 +31,7 @@ GET `/configs`
 
 ### Response
 
-A JSON array of config objects. Each config object contains the following properties:
+A JSON array of objects. Each object represents a config and contains the following properties:
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
@@ -51,7 +51,7 @@ A JSON array of config objects. Each config object contains the following proper
 
 | Code | Type | Description |
 | ---- | ----- | ----------- |
-| 200 | application/json | Successful |
+| 200 | application/json | Successful request. |
 
 ### Example
 
@@ -96,15 +96,54 @@ Accept: application/json
 ]
 ```
 
-## GET /configs/{uuid}
+## GET Item
 
 This endpoint returns a specific configuration.
+
+### Method
+
+GET `/configs/{uuid}`
+
+### Parameters
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| uuid | string | The uuid of the config. | 21046af5-26e7-4a05-bfd8-38c0d9aa0302 |
+
+### Response
+
+A JSON object that represents a config and contains the following properties:
+
+| Name | Value | Description |
+| ---- | ----- | ----------- |
+| id | integer | The config id. |
+| uuid | string | The config uuid. |
+| createdAt | string | The date the config was created on. |
+| updatedAt | string | The date the config was update at. |
+| owner | string | The config owner. |
+| ownerUuid | string | The config owner uuid. |
+| key | string | The config key. This value is unique. |
+| value | mixed | The config value. This value may be an array, object, integer, boolean or string. |
+| enabled | boolean | Whether the config is enabled or not. |
+| version | integer | The config version. This value is used for optimistic locking. |
+| tenant | string | The config tenant uuid. |
+
+### Codes
+
+| Code | Type | Description |
+| ---- | ----- | ----------- |
+| 200 | application/json | Successful request. |
+| 404 | application/json | Config with given uuid does not exist. |
 
 ### Example
 
 *Request*
 
 __GET__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
+
+```
+Accept: application/json
+```
 
 *Response*
 
