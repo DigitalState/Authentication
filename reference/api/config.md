@@ -59,6 +59,10 @@ A JSON array of config objects. Each config object contains the following proper
 
 __GET__ /configs
 
+```
+Accept: application/json
+```
+
 *Response*
 
 ```json
@@ -77,7 +81,17 @@ __GET__ /configs
     "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
   },
   {
-    ...
+    "id": 2,
+    "uuid": "1547893c-5873-40b5-8c45-e6cd08bee82e",
+    "createdAt": "2018-07-18T19:20:18+00:00",
+    "updatedAt": "2018-07-18T19:20:18+00:00",
+    "owner": "BusinessUnit",
+    "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
+    "key": "app.registration.individual.owner.uuid",
+    "value": "a9d68bf7-5000-49fe-8b00-33dde235b327",
+    "enabled": true,
+    "version": 1,
+    "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
   }
 ]
 ```
