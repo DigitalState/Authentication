@@ -23,6 +23,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
+ *     shortName="Oauth",
  *     attributes={
  *         "normalization_context"={
  *             "groups"={"oauth_output"}
