@@ -10,16 +10,44 @@
 
 This endpoint returns the list of configurations.
 
-__Endpoint:__
+#### Endpoint
 
 `/configs`
 
-__Headers:__
+#### Headers
 
-```
 Authorization: Bearer ********
 Content-Type: application/json
 Accept: application/json
+
+#### Response
+
+##### Code
+
+200
+403
+404
+
+##### Body
+
+```json
+[
+  {
+    "id": 0,
+    "uuid": "string",
+    "createdAt": "2018-07-20T13:19:30.181Z",
+    "updatedAt": "2018-07-20T13:19:30.181Z",
+    "owner": "string",
+    "ownerUuid": "string",
+    "key": "string",
+    "value": [
+      "string"
+    ],
+    "enabled": true,
+    "version": 0,
+    "tenant": "string"
+  }
+]
 ```
 
 ### Example
