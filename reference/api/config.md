@@ -14,6 +14,8 @@ __Uri:__ /configs
 
 __Headers:__
 
+| Name | Values |
+| ---- | ------ |
 | Authorization | Bearer ******** |
 | Content-Type | application/json |
 | Accept | application/json |
