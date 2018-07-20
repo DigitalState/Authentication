@@ -275,7 +275,7 @@ Accept: application/json
   "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
   "key": "app.registration.individual.owner.type",
   "value": "BusinessUnit",
-  "enabled": true,
+  "enabled": false,
   "version": 2,
   "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
 }
