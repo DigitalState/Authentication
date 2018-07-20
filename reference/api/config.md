@@ -16,7 +16,7 @@ GET `/configs`
 
 ### Parameters
 
-#### Query
+#### Query Parameters
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
@@ -110,11 +110,11 @@ GET `/configs/{uuid}`
 
 ### Parameters
 
-#### Path
+#### Path Parameters
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The uuid of the config. | 21046af5-26e7-4a05-bfd8-38c0d9aa0302 |
+| uuid | string | The uuid of the config. __Required.__ | 21046af5-26e7-4a05-bfd8-38c0d9aa0302 |
 
 ### Response
 
