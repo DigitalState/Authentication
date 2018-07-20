@@ -4,7 +4,7 @@
 
 - [Get List](#get-list)
 - [Get Item](#get-item)
-- [Update](#update)
+- [Update Item](#update-item)
 
 ## Get List
 
@@ -21,9 +21,9 @@ GET `/configs`
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | id | integer | Filter configs by the given id. | 1 |
-| uuid | string | Filter configs by the given uuid. | 21046af5-26e7-4a05-bfd8-38c0d9aa0302 |
+| uuid | string | Filter configs by the given uuid. | 20346d3f-5ef2-4aec-a644-210c5e71d662 |
 | owner | string | Filter configs by the given owner. | BusinessUnit |
-| ownerUuid | string | Filter configs by the given owner uuid. | 5809b2e4-3ab1-4ed5-a419-04e6f3d05959 |
+| ownerUuid | string | Filter configs by the given owner uuid. | c11c546e-bd01-47cf-97da-e25388357b5a |
 | key | string | Filter configs by the given key. | app.registration.individual.owner.type |
 | createdAt[before] | string | Filter configs that were created before the given date. | 2018-07-20T13:19:30.181Z |
 | createdAt[after] | string | Filter configs that were created after the given date. | 2018-07-20T13:19:30.181Z |
@@ -35,7 +35,7 @@ GET `/configs`
 
 ### Response
 
-A JSON array of objects. Each object represents a config and contains the following properties:
+A JSON array of objects. Each object contains the following properties:
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
@@ -59,15 +59,23 @@ A JSON array of objects. Each object represents a config and contains the follow
 
 ### Example
 
-*Request*
+#### Request
 
 __GET__ /configs
 
-```
+*Headers*
+
+```yaml
 Accept: application/json
 ```
 
-*Response*
+#### Response
+
+*Code*
+
+200 Successful
+
+*Body*
 
 ```json
 [
@@ -114,11 +122,11 @@ GET `/configs/{uuid}`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The uuid of the config. __Required.__ | 21046af5-26e7-4a05-bfd8-38c0d9aa0302 |
+| uuid | string | The uuid of the config. __Required.__ | 20346d3f-5ef2-4aec-a644-210c5e71d662 |
 
 ### Response
 
-A JSON object that represents a config and contains the following properties:
+A JSON object that contains the following properties:
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
@@ -143,15 +151,23 @@ A JSON object that represents a config and contains the following properties:
 
 ### Example
 
-*Request*
+#### Request
 
 __GET__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
 
-```
+*Headers*
+
+```yaml
 Accept: application/json
 ```
 
-*Response*
+#### Response
+
+*Code*
+
+200 Successful
+
+*Body*
 
 ```json
 {
@@ -169,15 +185,74 @@ Accept: application/json
 }
 ```
 
-### PUT /configs/{uuid}
+## Update Item
 
 This endpoint edits a specific configuration.
+
+### Method
+
+PUT `/configs/{uuid}`
+
+### Parameters
+
+#### Path Parameters
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| uuid | string | The uuid of the config. __Required.__ | 20346d3f-5ef2-4aec-a644-210c5e71d662 |
+
+#### Body
+
+A JSON object that contains the following properties:
+
+| Name | Value | Description | Example |
+| ---- | ----- | ----------- | ------- |
+| uuid | string | The config uuid. __Optional.__ | d8fdec77-7816-45e6-a2d8-e75d38c5637a |
+| owner | string | The config owner. __Required.__ | BusinessUnit |
+| ownerUuid | string | The config owner uuid. __Required.__ | c11c546e-bd01-47cf-97da-e25388357b5a |
+| key | string | The config key. This value is unique. __Required.__ | app.registration.individual.owner.type |
+| value | mixed | The config value. This value may be an array, object, integer, boolean or string. __Required.__ | BusinessUnit |
+| enabled | boolean | Whether the config is enabled or not. __Required.__ | true |
+| version | integer | The config version. This value is used for optimistic locking. __Required.__ | 1 |
+
+### Response
+
+A JSON object that contains the following properties:
+
+| Name | Value | Description |
+| ---- | ----- | ----------- |
+| id | integer | The config id. |
+| uuid | string | The config uuid. |
+| createdAt | string | The date the config was created on. |
+| updatedAt | string | The date the config was update at. |
+| owner | string | The config owner. |
+| ownerUuid | string | The config owner uuid. |
+| key | string | The config key. This value is unique. |
+| value | mixed | The config value. This value may be an array, object, integer, boolean or string. |
+| enabled | boolean | Whether the config is enabled or not. |
+| version | integer | The config version. This value is used for optimistic locking. |
+| tenant | string | The config tenant uuid. |
+
+### Codes
+
+| Code | Type | Description |
+| ---- | ----- | ----------- |
+| 201 | application/json | Successful request. Item was updated. |
+| 400 | application/json | Validation errors. |
 
 ### Example
 
 *Request*
 
 __PUT__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
+
+*Header*
+
+```yaml
+Accept: application/json
+```
+
+*Body*
 
 ```json
 {
@@ -193,12 +268,12 @@ __PUT__ /configs/20346d3f-5ef2-4aec-a644-210c5e71d662
   "id": 1,
   "uuid": "20346d3f-5ef2-4aec-a644-210c5e71d662",
   "createdAt": "2018-07-18T19:20:18+00:00",
-  "updatedAt": "2018-07-18T19:20:18+00:00",
+  "updatedAt": "2018-07-19T19:21:29+00:00",
   "owner": "BusinessUnit",
   "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
   "key": "app.registration.individual.owner.type",
   "value": "BusinessUnit",
-  "enabled": false,
+  "enabled": true,
   "version": 2,
   "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
 }
