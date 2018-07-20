@@ -1,10 +1,12 @@
 # Config
 
+The config api endpoints allow authorized users to read and modify application configurations.
+
 ## Table of Contents
 
 - [Get List](#get-list)
 - [Get Item](#get-item)
-- [Update Item](#update-item)
+- [Edit Item](#edit-item)
 
 ## Get List
 
@@ -185,7 +187,7 @@ Accept: application/json
 }
 ```
 
-## Update Item
+## Edit Item
 
 This endpoint edits a specific configuration.
 
