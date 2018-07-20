@@ -3,62 +3,55 @@
 ## Table of Contents
 
 - [Get List](#get-list)
-
-  GET /configs
-
 - [Get](#get)
-
-  GET /configs/{uuid}
-
 - [Update](#update)
-
-  PUT /configs/{uuid}
 
 ## Get List
 
 This endpoint returns the list of configurations.
 
-### Request
+### Method
 
-#### Endpoint
+GET `/configs`
 
-`/configs`
+### Parameters
 
-#### Headers
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| id | integer | Restrict to configs with the given id. | 1 |
+| uuid | string | Restrict to configs with the given uuid. | 21046af5-26e7-4a05-bfd8-38c0d9aa0302 |
+| owner | string | Restrict to configs with the given owner. | BusinessUnit |
+| ownerUuid | string | Restrict to configs with the given owner uuid. | 5809b2e4-3ab1-4ed5-a419-04e6f3d05959 |
+| key | string | Restrict to configs with the given key. | app.registration.individual.owner.type |
+| createdAt[before] | string | Restrict to configs created before the given date. | 2018-07-20T13:19:30.181Z |
+| createdAt[after] | string | Restrict to configs created after the given date. | 2018-07-20T13:19:30.181Z |
+| updatedAt[before] | string | Restrict to configs update before the given date. | 2018-07-20T13:19:30.181Z |
+| updatedAt[after] | string | Restrict to configs created after the given date. | 2018-07-20T13:19:30.181Z |
+| enabled | boolean | Restrict to configs with given enabled status. | true |
 
-Authorization: Bearer ********
+### Response
 
-Content-Type: application/json
+A JSON array of config objects. Each config object contains the following properties:
 
-Accept: application/json
+| Name | Value | Description |
+| ---- | ----- | ----------- |
+| id | integer | The config id. |
+| uuid | string | The config uuid. |
+| createdAt | string | The date the config was created on. |
+| updatedAt | string | The date the config was update at. |
+| owner | string | The config owner. |
+| ownerUuid | string | The config owner uuid. |
+| key | string | The config key. This value is unique. |
+| value | mixed | The config value. This value may be an array, object, integer, boolean or string. |
+| enabled | boolean | Whether the config is enabled or not. |
+| version | integer | The config version. This value is used for optimistic locking. |
+| tenant | string | The config tenant uuid. |
 
-#### Response
+### Codes
 
-##### Code
-
-200
-403
-404
-
-##### Body
-
-```json
-[
-  {
-    "id": 0,
-    "uuid": "string",
-    "createdAt": "2018-07-20T13:19:30.181Z",
-    "updatedAt": "2018-07-20T13:19:30.181Z",
-    "owner": "string",
-    "ownerUuid": "string",
-    "key": "string",
-    "value": json,
-    "enabled": true,
-    "version": 0,
-    "tenant": "string"
-  }
-]
-```
+| Code | Type | Description |
+| ---- | ----- | ----------- |
+| 200 | application/json | Successful |
 
 ### Example
 
