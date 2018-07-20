@@ -39,6 +39,8 @@ GET `/configs`
 
 ### Response
 
+#### 200 OK
+
 A JSON array of objects. Each object contains the following properties:
 
 | Name | Value | Description |
@@ -54,12 +56,6 @@ A JSON array of objects. Each object contains the following properties:
 | enabled | boolean | Whether the config is enabled or not. |
 | version | integer | The config version. This value is used for optimistic locking. |
 | tenant | string | The config tenant uuid. |
-
-### Codes
-
-| Code | Type | Description |
-| ---- | ----- | ----------- |
-| 200 | application/json | Successful request. |
 
 ### Example
 
@@ -132,6 +128,8 @@ GET `/configs/{uuid}`
 
 ### Response
 
+#### 200 OK
+
 A JSON object that contains the following properties:
 
 | Name | Value | Description |
@@ -148,12 +146,9 @@ A JSON object that contains the following properties:
 | version | integer | The config version. This value is used for optimistic locking. |
 | tenant | string | The config tenant uuid. |
 
-### Codes
+#### 404 OK
 
-| Code | Type | Description |
-| ---- | ----- | ----------- |
-| 200 | application/json | Successful request. |
-| 404 | application/json | Config with given uuid does not exist. |
+The config with the given uuid does not exist.
 
 ### Example
 
@@ -225,6 +220,8 @@ A JSON object that contains the following properties:
 
 ### Response
 
+#### 201 Created
+
 A JSON object that contains the following properties:
 
 | Name | Value | Description |
@@ -241,12 +238,9 @@ A JSON object that contains the following properties:
 | version | integer | The config version. This value is used for optimistic locking. |
 | tenant | string | The config tenant uuid. |
 
-### Codes
+#### 400 Bad Request
 
-| Code | Type | Description |
-| ---- | ----- | ----------- |
-| 201 | application/json | Successful request. Item was updated. |
-| 400 | application/json | Validation errors. |
+There were some validation errors.
 
 ### Example
 
