@@ -30,8 +30,8 @@ GET `/configs`
 | updatedAt[before] | string | Filter configs that were updated before the given date. | 2018-07-20T13:19:30.181Z |
 | updatedAt[after] | string | Filter configs that were updated after the given date. | 2018-07-20T13:19:30.181Z |
 | enabled | boolean | Filter configs by given enabled status. | true |
-| page | integer | The current page in the pagination. __Default: 1.__ | 1 |
-| limit | integer | The number of items per page. __Default: 10.__ | 25 |
+| page | integer | The current page in the pagination. Default: 1. | 1 |
+| limit | integer | The number of items per page. Default: 10. | 25 |
 
 ### Response
 
