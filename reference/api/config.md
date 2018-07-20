@@ -146,7 +146,7 @@ A JSON object that contains the following properties:
 | version | integer | The config version. This value is used for optimistic locking. |
 | tenant | string | The config tenant uuid. |
 
-#### 404 OK
+#### 404 Not Found
 
 The config with the given uuid does not exist.
 
