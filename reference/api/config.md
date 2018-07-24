@@ -220,7 +220,7 @@ A JSON object that contains the following properties:
 
 ### Response
 
-#### 201 Created
+#### 200 OK
 
 A JSON object that contains the following properties:
 
@@ -269,7 +269,7 @@ Accept: application/json
 
 *Code:*
 
-`201 Created`
+`200 OK`
 
 *Body:*
 
