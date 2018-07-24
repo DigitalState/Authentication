@@ -96,18 +96,14 @@ Accept: application/json
         "entity": "BusinessUnit",
         "entityUuid": "a9d68bf7-5000-49fe-8b00-33dde235b327",
         "key": "registration",
-        "attributes": [
-          "ADD"
-        ]
+        "attributes": ["ADD"]
       },
       {
         "scope": "owner",
         "entity": "BusinessUnit",
         "entityUuid": "a9d68bf7-5000-49fe-8b00-33dde235b327",
         "key": "registration_owner",
-        "attributes": [
-          "EDIT"
-        ]
+        "attributes": ["EDIT"]
       }
     ],
     "version": 1,
@@ -128,24 +124,14 @@ Accept: application/json
         "entity": "BusinessUnit",
         "entityUuid": null,
         "key": "entity",
-        "attributes": [
-          "BROWSE",
-          "READ",
-          "EDIT",
-          "ADD",
-          "DELETE"
-        ]
+        "attributes": ["BROWSE", "READ", "EDIT", "ADD", "DELETE"]
       },
       {
         "scope": "owner",
         "entity": "BusinessUnit",
         "entityUuid": null,
         "key": "property",
-        "attributes": [
-          "BROWSE",
-          "READ",
-          "EDIT"
-        ]
+        "attributes": ["BROWSE", "READ", "EDIT"]
       }
     ],
     "version": 1,
@@ -232,18 +218,14 @@ Accept: application/json
       "entity": "BusinessUnit",
       "entityUuid": "a9d68bf7-5000-49fe-8b00-33dde235b327",
       "key": "registration",
-      "attributes": [
-        "ADD"
-      ]
+      "attributes": ["ADD"]
     },
     {
       "scope": "owner",
       "entity": "BusinessUnit",
       "entityUuid": "a9d68bf7-5000-49fe-8b00-33dde235b327",
       "key": "registration_owner",
-      "attributes": [
-        "EDIT"
-      ]
+      "attributes": ["EDIT"]
     }
   ],
   "version": 1,
@@ -329,13 +311,7 @@ Accept: application/json
       "entity": "BusinessUnit",
       "entityUuid": null,
       "key": "entity",
-      "attributes": [
-        "BROWSE",
-        "READ",
-        "EDIT",
-        "ADD",
-        "DELETE"
-      ]
+      "attributes": ["BROWSE", "READ", "EDIT", "ADD", "DELETE"]
     }
   ],
   "version": 1
@@ -366,13 +342,7 @@ Accept: application/json
       "entity": "BusinessUnit",
       "entityUuid": null,
       "key": "entity",
-      "attributes": [
-        "BROWSE",
-        "READ",
-        "EDIT",
-        "ADD",
-        "DELETE"
-      ]
+      "attributes": ["BROWSE", "READ", "EDIT", "ADD", "DELETE"]
     }
   ],
   "version": 1,
