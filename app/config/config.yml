@@ -63,7 +63,7 @@ knp_doctrine_behaviors:
   sluggable: false
   sortable: false
   timestampable: true
-  translatable: false
+  translatable: true
   tree: false
 
 snc_redis:
