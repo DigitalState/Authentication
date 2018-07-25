@@ -1,4 +1,4 @@
-@app @api @entity @user @delete
+@api @user @delete
 Feature: Delete users
   In order to delete users
   As a system identity

@@ -1,4 +1,4 @@
-@app @api @entity @user @browse
+@api @user @browse
 Feature: Browse users
   In order to browse users
   As a system identity

@@ -1,4 +1,4 @@
-@app @api @entity @user @edit
+@api @user @edit
 Feature: Edit users
   In order to edit users
   As a system identity

@@ -1,4 +1,4 @@
-@app @api @entity @user @add
+@api @user @add
 Feature: Add users
   In order to add users
   As a system identity

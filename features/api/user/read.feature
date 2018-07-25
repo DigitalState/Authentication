@@ -1,4 +1,4 @@
-@app @api @entity @user @read
+@api @user @read
 Feature: Read users
   In order to read users
   As a system identity
