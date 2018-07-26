@@ -25,6 +25,7 @@ fixtures:
     key:
       - user
       - registration
+      - metadata
     attributes: [EDIT, ADD, DELETE]
 
   - access: d3e8fa50-c802-4dc2-8792-93e80d3fb888 # Manager
@@ -34,6 +35,7 @@ fixtures:
     key:
       - user_property
       - registration_property
+      - metadata_property
     attributes: [EDIT]
 
   - access: 8e2bca9c-dd33-4c66-9d2f-99b37d39edfe # Staff
@@ -45,6 +47,8 @@ fixtures:
       - user_property
       - registration
       - registration_property
+      - metadata
+      - metadata_property
     attributes: [BROWSE, READ]
 
   - access: 739a122d-611d-4881-b79e-01872f82d4f5 # Individual
