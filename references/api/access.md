@@ -24,7 +24,7 @@ GET `/accesses`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| id | integer | Filter access cards by the given id. __Optional.__ | `?id=1`<br>`?id[]=1&id[]=2` |
+| id | integer | Filter access cards by the given id. __Optional.__ | `id=1`<br>`id[]=1&id[]=2` |
 | uuid | string | Filter access cards by the given uuid. __Optional.__ | `04eb0db0-fbf7-44e1-ba2f-dba056443ec1` |
 | owner | string | Filter access cards by the given owner. __Optional.__ | `BusinessUnit` |
 | ownerUuid | string | Filter access cards by the given owner uuid. __Optional.__ | `c11c546e-bd01-47cf-97da-e25388357b5a` |
