@@ -28,14 +28,14 @@ GET `/accesses`
 | uuid | string | Filter access cards by the given uuid. __Optional.__ | `uuid=04eb0db0-fbf7-44e1-ba2f-dba056443ec1`<br><br>`uuid[]=04eb0db0-fbf7-44e1-ba2f-dba056443ec1&uuid[]=d3e8fa50-c802-4dc2-8792-93e80d3fb888` |
 | owner | string | Filter access cards by the given owner. __Optional.__ | `owner=BusinessUnit`<br><br>`owner[]=BusinessUnit&owner[]=Staff` |
 | ownerUuid | string | Filter access cards by the given owner uuid. __Optional.__ | `ownerUuid=c11c546e-bd01-47cf-97da-e25388357b5a`<br><br>`ownerUuid[]=c11c546e-bd01-47cf-97da-e25388357b5a&ownerUuid[]=a9d68bf7-5000-49fe-8b00-33dde235b327` |
-| assignee | string | Filter access cards by the given assignee. __Optional.__ | `Staff` |
-| assigneeUuid | string | Filter access cards by the given assignee uuid. __Optional.__ | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
-| createdAt[before] | string | Filter access cards that were created before the given date. __Optional.__ | `2018-07-20T13:19:30.181Z` |
-| createdAt[after] | string | Filter access cards that were created after the given date. __Optional.__ | `2018-07-20T13:19:30.181Z` |
-| updatedAt[before] | string | Filter access cards that were updated before the given date. __Optional.__ | `2018-07-20T13:19:30.181Z` |
-| updatedAt[after] | string | Filter access cards that were updated after the given date. __Optional.__ | `2018-07-20T13:19:30.181Z` |
-| page | integer | The current page in the pagination. __Optional.__ Default: `1`. | `1` |
-| limit | integer | The number of items per page. __Optional.__ Default: `10`. | `25` |
+| assignee | string | Filter access cards by the given assignee. __Optional.__ | `assignee=Staff`<br><br>`assignee[]=Individual&assignee[]=Organization` |
+| assigneeUuid | string | Filter access cards by the given assignee uuid. __Optional.__ | `assigneeUuid=5ab54dd5-56ed-4e96-bd8b-1d60ab668a75`<br><br>`assigneeUuid[]=5ab54dd5-56ed-4e96-bd8b-1d60ab668a75&assigneeUuid[]=f06dd49d-8ad4-437a-beee-387b834ee217` |
+| createdAt[before] | string | Filter access cards that were created before the given date. __Optional.__ | `createdAt[before]=2018-07-20T13:19:30.181Z` |
+| createdAt[after] | string | Filter access cards that were created after the given date. __Optional.__ | `createdAt[after]2018-07-20T13:19:30.181Z` |
+| updatedAt[before] | string | Filter access cards that were updated before the given date. __Optional.__ | `updatedAt[before]=2018-07-20T13:19:30.181Z` |
+| updatedAt[after] | string | Filter access cards that were updated after the given date. __Optional.__ | `updatedAt[after]=2018-07-20T13:19:30.181Z` |
+| page | integer | The current page in the pagination. __Optional.__ Default: `1`. | `page=1` |
+| limit | integer | The number of items per page. __Optional.__ Default: `10`. | `limit=25` |
 
 ### Response
 
