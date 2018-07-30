@@ -34,3 +34,5 @@ config:
     value: http://admin.lab.ds
   app.spa.portal:
     value: http://portal.lab.ds
+  app.spa.portal.oauth.success:
+    value: http://portal.lab.ds/oauth/success

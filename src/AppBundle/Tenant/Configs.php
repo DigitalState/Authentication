@@ -37,6 +37,7 @@ class Configs implements Loader
         $yml = strtr($yml, [
             '%config.app.spa.admin.value%' => $data['config']['app.spa.admin']['value'],
             '%config.app.spa.portal.value%' => $data['config']['app.spa.portal']['value'],
+            '%config.app.spa.portal.oauth.success.value%' => $data['config']['app.spa.portal.oauth.success']['value'],
             '%business_unit.administration.uuid%' => $data['business_unit']['administration']['uuid'],
             '%tenant.uuid%' => $data['tenant']['uuid']
         ]);

@@ -23,8 +23,25 @@ class ConnectController extends HWIConnectController
             throw new NotFoundHttpException($e->getMessage(), $e);
         }
 
+        $url = parse_url($authorizationUrl);
+        parse_str($url['query'], $url['query']);
+        $success = $this->get('ds_config.service.config')->get('app.spa.portal.oauth.success');
         $tenant = $this->get('ds_tenant.service.tenant')->getContext();
-        $authorizationUrl .= urlencode('?tenant='.$tenant);
+        $url['query']['redirect_uri'] = $success.'?tenant='.urlencode($tenant).'&service='.urlencode($service);
+        $url['query'] = http_build_query($url['query']);
+        $authorizationUrl = (function(array $url) {
+            $scheme = isset($url['scheme']) ? $url['scheme'] . '://' : '';
+            $host = isset($url['host']) ? $url['host'] : '';
+            $port = isset($url['port']) ? ':' . $url['port'] : '';
+            $user = isset($url['user']) ? $url['user'] : '';
+            $pass = isset($url['pass']) ? ':' . $url['pass']  : '';
+            $pass = ($user || $pass) ? "$pass@" : '';
+            $path = isset($url['path']) ? $url['path'] : '';
+            $query = isset($url['query']) ? '?' . $url['query'] : '';
+            $fragment = isset($url['fragment']) ? '#' . $url['fragment'] : '';
+
+            return "$scheme$user$pass$host$port$path$query$fragment";
+        })($url);
 
         // Check for a return path and store it before redirect
         if ($request->hasSession()) {
