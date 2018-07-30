@@ -28,7 +28,7 @@ GET `/configs`
 | uuid | string | Filter configs by the given uuid. __Optional.__ | `uuid=20346d3f-5ef2-4aec-a644-210c5e71d662`<br><br>`uuid[]=20346d3f-5ef2-4aec-a644-210c5e71d662&uuid[]=1547893c-5873-40b5-8c45-e6cd08bee82e` |
 | owner | string | Filter configs by the given owner. __Optional.__ | `owner=BusinessUnit`<br><br>`owner[]=BusinessUnit&owner[]=Staff` |
 | ownerUuid | string | Filter configs by the given owner uuid. __Optional.__ | `ownerUuid=c11c546e-bd01-47cf-97da-e25388357b5a`<br><br>`ownerUuid[]=c11c546e-bd01-47cf-97da-e25388357b5a&ownerUuid[]=a9d68bf7-5000-49fe-8b00-33dde235b327` |
-| key | string | Filter configs by the given key. __Optional.__ | `key=app.registration.individual.owner.type`<br><br>`key[]=app.registration.individual.owner.type&key[]=app.registration.individual.owner.uuid` |
+| key | string | Filter configs by the given key. __Optional.__ | `key=app.registration.individual.owner.type`<br><br>`key[]=app.registration.individual.owner.type&#8203;&key[]=app.registration.individual.owner.uuid` |
 | createdAt[before] | string | Filter configs that were created before the given date. __Optional.__ | `createdAt[before]=2018-07-20T13:19:30.181Z` |
 | createdAt[after] | string | Filter configs that were created after the given date. __Optional.__ | `createdAt[after]=2018-07-20T13:19:30.181Z` |
 | updatedAt[before] | string | Filter configs that were updated before the given date. __Optional.__ | `updatedAt[before]=2018-07-20T13:19:30.181Z` |
