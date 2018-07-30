@@ -25,8 +25,8 @@ GET `/accesses`
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | id | integer | Filter access cards by the given id. __Optional.__ | `id=1`<br><br>`id[]=1&id[]=2` |
-| uuid | string | Filter access cards by the given uuid. __Optional.__ | `uuid=04eb0db0-fbf7-44e1-ba2f-dba056443ec1`<br><br>`uuid[]=04eb0db0-fbf7-44e1-ba2f-dba056443ec1&uuid=d3e8fa50-c802-4dc2-8792-93e80d3fb888` |
-| owner | string | Filter access cards by the given owner. __Optional.__ | `BusinessUnit` |
+| uuid | string | Filter access cards by the given uuid. __Optional.__ | `uuid=04eb0db0-fbf7-44e1-ba2f-dba056443ec1`<br><br>`uuid[]=04eb0db0-fbf7-44e1-ba2f-dba056443ec1&uuid[]=d3e8fa50-c802-4dc2-8792-93e80d3fb888` |
+| owner | string | Filter access cards by the given owner. __Optional.__ | `owner=BusinessUnit`<br><br>`owner[]=BusinessUnit&owner[]=Staff` |
 | ownerUuid | string | Filter access cards by the given owner uuid. __Optional.__ | `c11c546e-bd01-47cf-97da-e25388357b5a` |
 | assignee | string | Filter access cards by the given assignee. __Optional.__ | `Staff` |
 | assigneeUuid | string | Filter access cards by the given assignee uuid. __Optional.__ | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
