@@ -249,12 +249,12 @@ A JSON object that contains the following properties:
 
 | Name | Value | Description | Example |
 | ---- | ----- | ----------- | ------- |
-| uuid | string | The access card uuid. __Optional.__ | `9e360407-28b1-4112-8adc-3522093d59a6` |
+| uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `9e360407-28b1-4112-8adc-3522093d59a6` |
 | owner | string | The access card owner. __Required.__ | `BusinessUnit` |
-| ownerUuid | string | The access card owner uuid. __Required.__ | `c11c546e-bd01-47cf-97da-e25388357b5a` |
+| ownerUuid | string | The access card owner uuid. __Optional.__ Default: `null`. | `c11c546e-bd01-47cf-97da-e25388357b5a` |
 | assignee | string | The access card assignee. __Required.__ | `BusinessUnit` |
-| assigneeUuid | string | The access card assignee uuid. __Required.__ | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
-| permissions | array | The access card granted permissions. __Optional.__ |
+| assigneeUuid | string | The access card assignee uuid. __Optional.__ Default: `null`. | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
+| permissions | array | The access card granted permissions. __Optional.__ Default: `[]`. |
 | version | integer | The access card version. This value is used for optimistic locking. __Required.__ | `1` |
 
 ### Response
@@ -370,12 +370,12 @@ A JSON object that contains the following properties:
 
 | Name | Value | Description | Example |
 | ---- | ----- | ----------- | ------- |
-| uuid | string | The access card uuid. __Optional.__ | `9e360407-28b1-4112-8adc-3522093d59a6` |
+| uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `9e360407-28b1-4112-8adc-3522093d59a6` |
 | owner | string | The access card owner. __Required.__ | `BusinessUnit` |
-| ownerUuid | string | The access card owner uuid. __Required.__ | `c11c546e-bd01-47cf-97da-e25388357b5a` |
+| ownerUuid | string | The access card owner uuid. __Optional.__ Default: `null`. | `c11c546e-bd01-47cf-97da-e25388357b5a` |
 | assignee | string | The access card assignee. __Required.__ | `BusinessUnit` |
-| assigneeUuid | string | The access card assignee uuid. __Required.__ | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
-| permissions | array | The access card granted permissions. __Optional.__ |
+| assigneeUuid | string | The access card assignee uuid. __Optional.__ Default: `null`. | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
+| permissions | array | The access card granted permissions. __Optional.__ Default: `[]`. |
 | version | integer | The access card version. This value is used for optimistic locking. __Required.__ | `1` |
 
 ### Response
