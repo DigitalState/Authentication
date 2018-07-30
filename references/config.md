@@ -12,6 +12,7 @@ The DigitalState Authentication microservice configurations registry.
 | ---- | ---- | ----------- | ------- |
 | `app.spa.admin` | string | The admin spa url. | `http://admin.lab.ds` |
 | `app.spa.portal` | string | The portal spa url. | `http://portal.lab.ds` |
+| `app.spa.portal.oauth.success` | string | The oauth success portal spa url. | `http://portal.lab.ds/oauth/success` |
 | `app.registration.individual.owner.type` | string | The default owner type when an individual registers. | `BusinessUnit` |
 | `app.registration.individual.owner.uuid` | string | The default owner UUID when an individual registers. | `a9d68bf7-5000-49fe-8b00-33dde235b327` |
 | `app.registration.individual.data.github` | string | The template used for identity data when an individual registers through Github. | `{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }` |
