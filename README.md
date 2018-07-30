@@ -13,7 +13,7 @@ It also provides a variety of features such as user management, self-registratio
 ## Table of Contents
 
 - [Documentation](#documentation)
-- [Reference](#reference)
+- [References](#references)
 - [Contributing](#contributing)
 - [Credits](#credits)
 
@@ -28,10 +28,10 @@ It also provides a variety of features such as user management, self-registratio
 
 Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation)
 
-## Reference
+## References
 
-- [Api](reference/api.md)
-- [Config](reference/config.md)
+- [Api](references/api.md)
+- [Config](references/config.md)
 
 ## Contributing
 
