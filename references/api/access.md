@@ -254,7 +254,7 @@ A JSON object that contains the following properties:
 | ownerUuid | string | The access card owner uuid. __Required.__ | `c11c546e-bd01-47cf-97da-e25388357b5a` |
 | assignee | string | The access card assignee. __Required.__ | `BusinessUnit` |
 | assigneeUuid | string | The access card assignee uuid. __Required.__ | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
-| permissions | array | The access card granted permissions. |
+| permissions | array | The access card granted permissions. __Optional.__ |
 | version | integer | The access card version. This value is used for optimistic locking. __Required.__ | `1` |
 
 ### Response
@@ -375,7 +375,7 @@ A JSON object that contains the following properties:
 | ownerUuid | string | The access card owner uuid. __Required.__ | `c11c546e-bd01-47cf-97da-e25388357b5a` |
 | assignee | string | The access card assignee. __Required.__ | `BusinessUnit` |
 | assigneeUuid | string | The access card assignee uuid. __Required.__ | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
-| permissions | array | The access card granted permissions. |
+| permissions | array | The access card granted permissions. __Optional.__ |
 | version | integer | The access card version. This value is used for optimistic locking. __Required.__ | `1` |
 
 ### Response
@@ -464,3 +464,46 @@ Accept: application/json
   "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
 }
 ```
+
+## Delete Item
+
+This endpoint deletes a specific access card from the list.
+
+### Method
+
+DELETE `/accesses/{uuid}`
+
+### Parameters
+
+#### Path Parameters
+
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
+| uuid | string | The uuid of the access card. __Required.__ | `abdae738-a24f-411c-ac23-03d946a037e0` |
+
+### Response
+
+#### 204 No Content
+
+The request was successful and returns no content.
+
+### Example
+
+#### Request
+
+*Method:*
+
+__DELETE__ `/accesses/abdae738-a24f-411c-ac23-03d946a037e0`
+
+#### Response
+
+*Code:*
+
+`204 No Content`
+
+*Body:*
+
+```
+
+```
+
