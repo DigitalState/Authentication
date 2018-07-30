@@ -2,7 +2,7 @@
 
 The access api endpoints allow authorized users to read, modify and delete access cards.
 
-For more information about the architecture and core concepts of access cards, you may consult the Security component [ACL documentation](https://github.com/DigitalState/Core/blob/develop/documentation/security/acl.md).
+For more information about the architecture and core concepts of access cards, you may consult the [Security component documentation](https://github.com/DigitalState/Core/blob/develop/documentation/security/acl.md).
 
 ## Table of Contents
 
