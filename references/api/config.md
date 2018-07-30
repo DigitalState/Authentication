@@ -24,18 +24,18 @@ GET `/configs`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| id | integer | Filter configs by the given id. | `1` |
-| uuid | string | Filter configs by the given uuid. | `20346d3f-5ef2-4aec-a644-210c5e71d662` |
-| owner | string | Filter configs by the given owner. | `BusinessUnit` |
-| ownerUuid | string | Filter configs by the given owner uuid. | `c11c546e-bd01-47cf-97da-e25388357b5a` |
-| key | string | Filter configs by the given key. | `app.registration.individual.owner.type` |
-| createdAt[before] | string | Filter configs that were created before the given date. | `2018-07-20T13:19:30.181Z` |
-| createdAt[after] | string | Filter configs that were created after the given date. | `2018-07-20T13:19:30.181Z` |
-| updatedAt[before] | string | Filter configs that were updated before the given date. | `2018-07-20T13:19:30.181Z` |
-| updatedAt[after] | string | Filter configs that were updated after the given date. | `2018-07-20T13:19:30.181Z` |
-| enabled | boolean | Filter configs by given enabled status. | `true` |
-| page | integer | The current page in the pagination. Default: `1`. | `1` |
-| limit | integer | The number of items per page. Default: `10`. | `25` |
+| id | integer | Filter configs by the given id. __Optional.__ | `id=1`<br><br>`id[]=1&id[]=2` |
+| uuid | string | Filter configs by the given uuid. __Optional.__ | `uuid=20346d3f-5ef2-4aec-a644-210c5e71d662`<br><br>`uuid[]=20346d3f-5ef2-4aec-a644-210c5e71d662&uuid[]=1547893c-5873-40b5-8c45-e6cd08bee82e` |
+| owner | string | Filter configs by the given owner. __Optional.__ | `owner=BusinessUnit`<br><br>`owner[]=BusinessUnit&owner[]=Staff` |
+| ownerUuid | string | Filter configs by the given owner uuid. __Optional.__ | `ownerUuid=c11c546e-bd01-47cf-97da-e25388357b5a`<br><br>`ownerUuid[]=c11c546e-bd01-47cf-97da-e25388357b5a&ownerUuid[]=a9d68bf7-5000-49fe-8b00-33dde235b327` |
+| key | string | Filter configs by the given key. __Optional.__ | `key=app.registration.individual.owner.type`<br><br>`key[]=app.registration.individual.owner.type&key[]=app.registration.individual.owner.uuid` |
+| createdAt[before] | string | Filter configs that were created before the given date. __Optional.__ | `createdAt[before]=2018-07-20T13:19:30.181Z` |
+| createdAt[after] | string | Filter configs that were created after the given date. __Optional.__ | `createdAt[after]=2018-07-20T13:19:30.181Z` |
+| updatedAt[before] | string | Filter configs that were updated before the given date. __Optional.__ | `updatedAt[before]=2018-07-20T13:19:30.181Z` |
+| updatedAt[after] | string | Filter configs that were updated after the given date. __Optional.__ | `updatedAt[after]=2018-07-20T13:19:30.181Z` |
+| enabled | boolean | Filter configs by given enabled status. __Optional.__ | `enabled=true` |
+| page | integer | The current page in the pagination. __Optional.__ Default: `1`. | `page=2` |
+| limit | integer | The number of items per page. __Optional.__ Default: `10`. | `limit=25` |
 
 ### Response
 
