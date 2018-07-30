@@ -77,7 +77,7 @@ Accept: application/json
 
 *Code:*
 
-`200 Successful`
+`200 OK`
 
 *Body:*
 
@@ -200,7 +200,7 @@ Accept: application/json
 
 *Code:*
 
-`200 Successful`
+`200 OK`
 
 *Body:*
 
