@@ -34,7 +34,7 @@ GET `/accesses`
 | createdAt[after] | string | Filter access cards that were created after the given date. __Optional.__ | `createdAt[after]2018-07-20T13:19:30.181Z` |
 | updatedAt[before] | string | Filter access cards that were updated before the given date. __Optional.__ | `updatedAt[before]=2018-07-20T13:19:30.181Z` |
 | updatedAt[after] | string | Filter access cards that were updated after the given date. __Optional.__ | `updatedAt[after]=2018-07-20T13:19:30.181Z` |
-| page | integer | The current page in the pagination. __Optional.__ Default: `1`. | `page=1` |
+| page | integer | The current page in the pagination. __Optional.__ Default: `1`. | `page=2` |
 | limit | integer | The number of items per page. __Optional.__ Default: `10`. | `limit=25` |
 
 ### Response
