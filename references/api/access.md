@@ -6,8 +6,8 @@ The access api endpoints allow authorized users to read, modify and delete acces
 
 - [Get List](#get-list)
 - [Get Item](#get-item)
-- [Edit Item](#edit-item)
 - [Add Item](#add-item)
+- [Edit Item](#edit-item)
 - [Delete Item](#delete-item)
 
 ## Get List
@@ -226,6 +226,121 @@ Accept: application/json
       "entityUuid": "a9d68bf7-5000-49fe-8b00-33dde235b327",
       "key": "registration_owner",
       "attributes": ["EDIT"]
+    }
+  ],
+  "version": 1,
+  "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+}
+```
+
+## Add Item
+
+This endpoint adds an access card to the list.
+
+### Method
+
+POST `/accesses`
+
+### Parameters
+
+#### Body
+
+A JSON object that contains the following properties:
+
+| Name | Value | Description | Example |
+| ---- | ----- | ----------- | ------- |
+| uuid | string | The access card uuid. __Optional.__ | `9e360407-28b1-4112-8adc-3522093d59a6` |
+| owner | string | The access card owner. __Required.__ | `BusinessUnit` |
+| ownerUuid | string | The access card owner uuid. __Required.__ | `c11c546e-bd01-47cf-97da-e25388357b5a` |
+| assignee | string | The access card assignee. __Required.__ | `BusinessUnit` |
+| assigneeUuid | string | The access card assignee uuid. __Required.__ | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
+| permissions | array | The access card granted permissions. |
+| version | integer | The access card version. This value is used for optimistic locking. __Required.__ | `1` |
+
+### Response
+
+#### 200 OK
+
+A JSON object that contains the following properties:
+
+| Name | Value | Description |
+| ---- | ----- | ----------- |
+| id | integer | The access card id. |
+| uuid | string | The access card uuid. |
+| createdAt | string | The date the access card was created on. |
+| updatedAt | string | The date the access card was update at. |
+| owner | string | The access card owner. |
+| ownerUuid | string | The access card owner uuid. |
+| assignee | string | The access card assignee. |
+| assigneeUuid | string | The access card assignee uuid. |
+| permissions | array | The access card granted permissions. |
+| version | integer | The config version. This value is used for optimistic locking. |
+| tenant | string | The config tenant uuid. |
+
+#### 400 Bad Request
+
+There were some validation errors.
+
+### Example
+
+#### Request
+
+*Method:*
+
+__POST__ `/accesses`
+
+*Headers:*
+
+```yaml
+Accept: application/json
+```
+
+*Body:*
+
+```json
+{
+  "owner": "BusinessUnit",
+  "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
+  "assignee": "Anonymous",
+  "assigneeUuid": null,
+  "permissions": [
+    {
+      "scope": "owner",
+      "entity": "BusinessUnit",
+      "entityUuid": null,
+      "key": "entity",
+      "attributes": ["BROWSE", "READ", "EDIT", "ADD", "DELETE"]
+    }
+  ],
+  "version": 1
+}
+```
+
+#### Response
+
+*Code:*
+
+`200 OK`
+
+*Body:*
+
+```json
+{
+  "id": 59,
+  "uuid": "abdae738-a24f-411c-ac23-03d946a037e0",
+  "createdAt": "2018-07-19T12:08:30+00:00",
+  "updatedAt": "2018-07-19T12:08:30+00:00",
+  "owner": "BusinessUnit",
+  "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
+  "assignee": "Anonymous",
+  "assigneeUuid": null,
+  "permissions": [
+    {
+      "scope": "owner",
+      "entity": "BusinessUnit",
+      "entityUuid": null,
+      "key": "entity",
+      "attributes": ["BROWSE", "READ", "EDIT", "ADD", "DELETE"]
     }
   ],
   "version": 1,
