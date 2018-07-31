@@ -213,7 +213,7 @@ A JSON object that contains the following properties:
 | uuid | string | The metadata resource uuid. __Optional.__ Default: auto-generated. | `cf687347-6bba-4137-b180-9f581f5cba84` |
 | owner | string | The metadata resource owner. __Required.__ | `BusinessUnit` |
 | ownerUuid | string | The metadata resource owner uuid. __Optional.__ Default: `null`. | `c11c546e-bd01-47cf-97da-e25388357b5a` |
-| title | object | The metadata resource title. __Required.__ | `{ "en": "OAuth Providers"}` |
+| title | object | The metadata resource title. __Required.__ | `{ "en": "OAuth Providers" }` |
 | slug | string | The metadata resource slug. This value is unique. __Required.__ | `oauth-providers` |
 | type | string | The metadata resource type. __Required.__ | `authentication` |
 | data | json | The metadata resource data. __Optional.__ Default: `{}` | `["Github", "Google", "Twitter"]` |
