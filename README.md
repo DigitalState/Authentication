@@ -39,4 +39,4 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Credits
 
-This work has been developed by DigitalState.io
+This work has been developed by [DigitalState.io](http://digitalstate.io)
