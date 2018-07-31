@@ -14,7 +14,7 @@ For more information about the architecture and core concepts of metadata resour
 
 ## Get List
 
-This endpoint returns the list of metadata resource.
+This endpoint returns the list of metadata resources.
 
 ### Method
 
