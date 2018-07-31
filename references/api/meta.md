@@ -1,3 +1,0 @@
-# Meta
-
-## Table of Contents

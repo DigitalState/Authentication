@@ -45,8 +45,8 @@ GET `/accesses`
 
 A JSON array of objects. Each object contains the following properties:
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | id | integer | The access card id. |
 | uuid | string | The access card uuid. |
 | createdAt | string | The date the access card was created on. |
@@ -56,8 +56,8 @@ A JSON array of objects. Each object contains the following properties:
 | assignee | string | The access card assignee. |
 | assigneeUuid | string | The access card assignee uuid. |
 | permissions | array | The access card granted permissions. |
-| version | integer | The config version. This value is used for optimistic locking. |
-| tenant | string | The config tenant uuid. |
+| version | integer | The access card version. This value is used for optimistic locking. |
+| tenant | string | The access card tenant uuid. |
 
 ### Example
 
@@ -164,8 +164,8 @@ GET `/accesses/{uuid}`
 
 A JSON object that contains the following properties:
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | id | integer | The access card id. |
 | uuid | string | The access card uuid. |
 | createdAt | string | The date the access card was created on. |
@@ -175,8 +175,8 @@ A JSON object that contains the following properties:
 | assignee | string | The access card assignee. |
 | assigneeUuid | string | The access card assignee uuid. |
 | permissions | array | The access card granted permissions. |
-| version | integer | The config version. This value is used for optimistic locking. |
-| tenant | string | The config tenant uuid. |
+| version | integer | The access card version. This value is used for optimistic locking. |
+| tenant | string | The access card tenant uuid. |
 
 #### 404 Not Found
 
@@ -249,8 +249,8 @@ POST `/accesses`
 
 A JSON object that contains the following properties:
 
-| Name | Value | Description | Example |
-| ---- | ----- | ----------- | ------- |
+| Name | Type | Description | Example |
+| ---- | ---- | ----------- | ------- |
 | uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `9e360407-28b1-4112-8adc-3522093d59a6` |
 | owner | string | The access card owner. __Required.__ | `BusinessUnit` |
 | ownerUuid | string | The access card owner uuid. __Optional.__ Default: `null`. | `c11c546e-bd01-47cf-97da-e25388357b5a` |
@@ -265,8 +265,8 @@ A JSON object that contains the following properties:
 
 A JSON object that contains the following properties:
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | id | integer | The access card id. |
 | uuid | string | The access card uuid. |
 | createdAt | string | The date the access card was created on. |
@@ -328,7 +328,7 @@ Accept: application/json
 
 ```json
 {
-  "id": 59,
+  "id": 1,
   "uuid": "abdae738-a24f-411c-ac23-03d946a037e0",
   "createdAt": "2018-07-19T12:08:30+00:00",
   "updatedAt": "2018-07-19T12:08:30+00:00",
@@ -370,7 +370,7 @@ PUT `/accesses/{uuid}`
 
 A JSON object that contains the following properties:
 
-| Name | Value | Description | Example |
+| Name | Type | Description | Example |
 | ---- | ----- | ----------- | ------- |
 | uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `9e360407-28b1-4112-8adc-3522093d59a6` |
 | owner | string | The access card owner. __Required.__ | `BusinessUnit` |
@@ -386,8 +386,8 @@ A JSON object that contains the following properties:
 
 A JSON object that contains the following properties:
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | id | integer | The access card id. |
 | uuid | string | The access card uuid. |
 | createdAt | string | The date the access card was created on. |
@@ -445,7 +445,7 @@ Accept: application/json
 
 ```json
 {
-  "id": 59,
+  "id": 1,
   "uuid": "abdae738-a24f-411c-ac23-03d946a037e0",
   "createdAt": "2018-07-18T19:20:17+00:00",
   "updatedAt": "2018-07-19T12:08:30+00:00",

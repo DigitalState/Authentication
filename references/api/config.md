@@ -43,8 +43,8 @@ GET `/configs`
 
 A JSON array of objects. Each object contains the following properties:
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | id | integer | The config id. |
 | uuid | string | The config uuid. |
 | createdAt | string | The date the config was created on. |
@@ -132,8 +132,8 @@ GET `/configs/{uuid}`
 
 A JSON object that contains the following properties:
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | id | integer | The config id. |
 | uuid | string | The config uuid. |
 | createdAt | string | The date the config was created on. |
@@ -224,8 +224,8 @@ A JSON object that contains the following properties:
 
 A JSON object that contains the following properties:
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | id | integer | The config id. |
 | uuid | string | The config uuid. |
 | createdAt | string | The date the config was created on. |

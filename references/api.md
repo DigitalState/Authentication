@@ -5,7 +5,7 @@ The DigitalState Authentication microservice api endpoints available.
 ## Table of Contents
 
 - [System](api/system.md)
-- [Meta](api/meta.md)
+- [Metadata](api/metadata.md)
 - [Config](api/config.md)
 - [Access](api/access.md)
 - [Statistic](api/statistic.md)
