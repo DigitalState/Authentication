@@ -9,7 +9,7 @@ The DigitalState Authentication microservice configurations registry.
 ## Configurations
 
 | Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
+| :--- | :--- | :---------- | :------ |
 | `app.spa.admin` | string | The admin spa url. | `http://admin.lab.ds` |
 | `app.spa.portal` | string | The portal spa url. | `http://portal.lab.ds` |
 | `app.spa.portal.oauth.success` | string | The oauth success portal spa url. | `http://portal.lab.ds/oauth/success` |
