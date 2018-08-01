@@ -25,10 +25,10 @@ GET `/configs`
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | id | integer | Filter configs by the given id. __Optional.__ | `id=1`<br><br>`id[]=1&id[]=2` |
-| uuid | string | Filter configs by the given uuid. __Optional.__ | `uuid=20346d3f-5ef2-4aec-a644-210c5e71d662`<br><br>`uuid[]=20346d3f-5ef2-4aec-a644-210c5e71d662&uuid[]=1547893c-5873-40b5-8c45-e6cd08bee82e` |
+| uuid | string | Filter configs by the given uuid. __Optional.__ | `uuid=1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77`<br><br>`uuid[]=1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77&uuid[]=25569e61-ff21-4128-8ef1-dd77e0a85f5a` |
 | owner | string | Filter configs by the given owner. __Optional.__ | `owner=BusinessUnit`<br><br>`owner[]=BusinessUnit&owner[]=Staff` |
-| ownerUuid | string | Filter configs by the given owner uuid. __Optional.__ | `ownerUuid=c11c546e-bd01-47cf-97da-e25388357b5a`<br><br>`ownerUuid[]=c11c546e-bd01-47cf-97da-e25388357b5a&ownerUuid[]=a9d68bf7-5000-49fe-8b00-33dde235b327` |
-| key | string | Filter configs by the given key. __Optional.__ | `key=app.registration.individual.owner.type`<br><br>`key[]=app.registration.individual.owner.type&`<br>`key[]=app.registration.individual.owner.uuid` |
+| ownerUuid | string | Filter configs by the given owner uuid. __Optional.__ | `ownerUuid=5f4108bb-fa74-4c93-9bb1-9e37d9302640`<br><br>`ownerUuid[]=5f4108bb-fa74-4c93-9bb1-9e37d9302640&ownerUuid[]=0092e830-e411-47cf-b7ef-c19cc79ba8cb` |
+| key | string | Filter configs by the given key. __Optional.__ | `key=app.mail.host`<br><br>`key[]=app.mail.host&key[]=app.mail.post` |
 | createdAt[before] | string | Filter configs that were created before the given date. __Optional.__ | `createdAt[before]=2018-07-20T13:19:30.181Z` |
 | createdAt[after] | string | Filter configs that were created after the given date. __Optional.__ | `createdAt[after]=2018-07-20T13:19:30.181Z` |
 | updatedAt[before] | string | Filter configs that were updated before the given date. __Optional.__ | `updatedAt[before]=2018-07-20T13:19:30.181Z` |
@@ -83,29 +83,29 @@ Accept: application/json
 [
   {
     "id": 1,
-    "uuid": "20346d3f-5ef2-4aec-a644-210c5e71d662",
+    "uuid": "1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77",
     "createdAt": "2018-07-18T19:20:18+00:00",
     "updatedAt": "2018-07-18T19:20:18+00:00",
     "owner": "BusinessUnit",
-    "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-    "key": "app.registration.individual.owner.type",
-    "value": "BusinessUnit",
+    "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+    "key": "app.mail.host",
+    "value": "localhost",
     "enabled": true,
     "version": 1,
-    "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+    "tenant": "d928b020-94f6-4928-a510-04fc49d5a174"
   },
   {
     "id": 2,
-    "uuid": "1547893c-5873-40b5-8c45-e6cd08bee82e",
+    "uuid": "25569e61-ff21-4128-8ef1-dd77e0a85f5a",
     "createdAt": "2018-07-18T19:20:18+00:00",
     "updatedAt": "2018-07-18T19:20:18+00:00",
     "owner": "BusinessUnit",
-    "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-    "key": "app.registration.individual.owner.uuid",
-    "value": "a9d68bf7-5000-49fe-8b00-33dde235b327",
+    "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+    "key": "app.mail.port",
+    "value": 25,
     "enabled": true,
     "version": 1,
-    "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+    "tenant": "d928b020-94f6-4928-a510-04fc49d5a174"
   }
 ]
 ```
@@ -124,7 +124,7 @@ GET `/configs/{uuid}`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The uuid of the config. __Required.__ | `20346d3f-5ef2-4aec-a644-210c5e71d662` |
+| uuid | string | The uuid of the config. __Required.__ | `1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77` |
 
 ### Response
 
@@ -156,7 +156,7 @@ The config with the given uuid does not exist.
 
 *Method:*
 
-__GET__ `/configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
+__GET__ `/configs/1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77`
 
 *Headers:*
 
@@ -175,16 +175,16 @@ Accept: application/json
 ```json
 {
   "id": 1,
-  "uuid": "20346d3f-5ef2-4aec-a644-210c5e71d662",
+  "uuid": "1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77",
   "createdAt": "2018-07-18T19:20:18+00:00",
   "updatedAt": "2018-07-18T19:20:18+00:00",
   "owner": "BusinessUnit",
-  "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-  "key": "app.registration.individual.owner.type",
-  "value": "BusinessUnit",
+  "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+  "key": "app.mail.host",
+  "value": "localhost",
   "enabled": true,
   "version": 1,
-  "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+  "tenant": "d928b020-94f6-4928-a510-04fc49d5a174"
 }
 ```
 
@@ -202,7 +202,7 @@ PUT `/configs/{uuid}`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The uuid of the config. __Required.__ | `20346d3f-5ef2-4aec-a644-210c5e71d662` |
+| uuid | string | The uuid of the config. __Required.__ | `1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77` |
 
 #### Body
 
@@ -210,11 +210,11 @@ A JSON object that contains the following properties:
 
 | Name | Value | Description | Example |
 | ---- | ----- | ----------- | ------- |
-| uuid | string | The config uuid. __Optional.__ | `d8fdec77-7816-45e6-a2d8-e75d38c5637a` |
+| uuid | string | The config uuid. __Optional.__ | `1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77` |
 | owner | string | The config owner. __Required.__ | `BusinessUnit` |
-| ownerUuid | string | The config owner uuid. __Required.__ | `c11c546e-bd01-47cf-97da-e25388357b5a` |
-| key | string | The config key. This value is unique. __Required.__ | `app.registration.individual.owner.type` |
-| value | mixed | The config value. This value may be an array, object, integer, boolean or string. __Required.__ | `BusinessUnit` |
+| ownerUuid | string | The config owner uuid. __Required.__ | `5f4108bb-fa74-4c93-9bb1-9e37d9302640` |
+| key | string | The config key. This value is unique. __Required.__ | `app.mail.host` |
+| value | mixed | The config value. This value may be an array, object, integer, boolean or string. __Required.__ | `localhost` |
 | enabled | boolean | Whether the config is enabled or not. __Required.__ | true |
 | version | integer | The config version. This value is used for optimistic locking. __Required.__ | `1` |
 
@@ -248,7 +248,7 @@ There were some validation errors.
 
 *Method:*
 
-__PUT__ `/configs/20346d3f-5ef2-4aec-a644-210c5e71d662`
+__PUT__ `/configs/1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77`
 
 *Headers:*
 
@@ -276,15 +276,15 @@ Accept: application/json
 ```json
 {
   "id": 1,
-  "uuid": "20346d3f-5ef2-4aec-a644-210c5e71d662",
+  "uuid": "1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77",
   "createdAt": "2018-07-18T19:20:18+00:00",
   "updatedAt": "2018-07-19T19:21:29+00:00",
   "owner": "BusinessUnit",
-  "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-  "key": "app.registration.individual.owner.type",
-  "value": "BusinessUnit",
+  "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+  "key": "app.mail.host",
+  "value": "localhost",
   "enabled": false,
   "version": 2,
-  "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+  "tenant": "d928b020-94f6-4928-a510-04fc49d5a174"
 }
 ```
