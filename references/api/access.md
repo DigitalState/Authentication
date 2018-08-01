@@ -25,7 +25,7 @@ GET `/accesses`
 #### Query Parameters
 
 | Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
+| :--- | :--- | :---------- | :------ |
 | id | integer | Filter access cards by the given id. __Optional.__ | `id=1`<br><br>`id[]=1&id[]=2` |
 | uuid | string | Filter access cards by the given uuid. __Optional.__ | `uuid=dc719883-c593-42e5-8aee-5d9367525273`<br><br>`uuid[]=dc719883-c593-42e5-8aee-5d9367525273&uuid[]=242e3829-9345-469a-a612-f6c432e0b4b1` |
 | owner | string | Filter access cards by the given owner. __Optional.__ | `owner=BusinessUnit`<br><br>`owner[]=BusinessUnit&owner[]=Staff` |
@@ -46,7 +46,7 @@ GET `/accesses`
 A JSON array of objects. Each object contains the following properties:
 
 | Name | Type | Description |
-| ---- | ---- | ----------- |
+| :--- | :--- | :---------- |
 | id | integer | The access card id. |
 | uuid | string | The access card uuid. |
 | createdAt | string | The date the access card was created on. |
@@ -141,7 +141,7 @@ GET `/accesses/{uuid}`
 #### Path Parameters
 
 | Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
+| :--- | :--- | :---------- | :------ |
 | uuid | string | The uuid of the access card. __Required.__ | `dc719883-c593-42e5-8aee-5d9367525273` |
 
 ### Response
@@ -151,7 +151,7 @@ GET `/accesses/{uuid}`
 A JSON object that contains the following properties:
 
 | Name | Type | Description |
-| ---- | ---- | ----------- |
+| :--- | :--- | :---------- |
 | id | integer | The access card id. |
 | uuid | string | The access card uuid. |
 | createdAt | string | The date the access card was created on. |
@@ -229,7 +229,7 @@ POST `/accesses`
 A JSON object that contains the following properties:
 
 | Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
+| :--- | :--- | :---------- | :------ |
 | uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `dc719883-c593-42e5-8aee-5d9367525273` |
 | owner | string | The access card owner. __Required.__ | `BusinessUnit` |
 | ownerUuid | string | The access card owner uuid. __Optional.__ Default: `null`. | `5f4108bb-fa74-4c93-9bb1-9e37d9302640` |
@@ -245,7 +245,7 @@ A JSON object that contains the following properties:
 A JSON object that contains the following properties:
 
 | Name | Type | Description |
-| ---- | ---- | ----------- |
+| :--- | :--- | :---------- |
 | id | integer | The access card id. |
 | uuid | string | The access card uuid. |
 | createdAt | string | The date the access card was created on. |
@@ -342,7 +342,7 @@ PUT `/accesses/{uuid}`
 #### Path Parameters
 
 | Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
+| :--- | :--- | :---------- | :------ |
 | uuid | string | The uuid of the access card. __Required.__ | `dc719883-c593-42e5-8aee-5d9367525273` |
 
 #### Body
@@ -350,7 +350,7 @@ PUT `/accesses/{uuid}`
 A JSON object that contains the following properties:
 
 | Name | Type | Description | Example |
-| ---- | ----- | ----------- | ------- |
+| :--- | :---- | :---------- | :------ |
 | uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `dc719883-c593-42e5-8aee-5d9367525273` |
 | owner | string | The access card owner. __Required.__ | `BusinessUnit` |
 | ownerUuid | string | The access card owner uuid. __Optional.__ Default: `null`. | `5f4108bb-fa74-4c93-9bb1-9e37d9302640` |
@@ -366,7 +366,7 @@ A JSON object that contains the following properties:
 A JSON object that contains the following properties:
 
 | Name | Type | Description |
-| ---- | ---- | ----------- |
+| :--- | :--- | :---------- |
 | id | integer | The access card id. |
 | uuid | string | The access card uuid. |
 | createdAt | string | The date the access card was created on. |
@@ -459,7 +459,7 @@ DELETE `/accesses/{uuid}`
 #### Path Parameters
 
 | Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
+| :--- | :--- | :---------- | :------ |
 | uuid | string | The uuid of the access card. __Required.__ | `dc719883-c593-42e5-8aee-5d9367525273` |
 
 ### Response
@@ -487,4 +487,3 @@ __DELETE__ `/accesses/dc719883-c593-42e5-8aee-5d9367525273`
 ```
 
 ```
-

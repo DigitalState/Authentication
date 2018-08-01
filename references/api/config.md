@@ -23,7 +23,7 @@ GET `/configs`
 #### Query Parameters
 
 | Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
+| :--- | :--- | :---------- | :------ |
 | id | integer | Filter configs by the given id. __Optional.__ | `id=1`<br><br>`id[]=1&id[]=2` |
 | uuid | string | Filter configs by the given uuid. __Optional.__ | `uuid=1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77`<br><br>`uuid[]=1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77&uuid[]=25569e61-ff21-4128-8ef1-dd77e0a85f5a` |
 | owner | string | Filter configs by the given owner. __Optional.__ | `owner=BusinessUnit`<br><br>`owner[]=BusinessUnit&owner[]=Staff` |
@@ -44,7 +44,7 @@ GET `/configs`
 A JSON array of objects. Each object contains the following properties:
 
 | Name | Type | Description |
-| ---- | ---- | ----------- |
+| :--- | :--- | :---------- |
 | id | integer | The config id. |
 | uuid | string | The config uuid. |
 | createdAt | string | The date the config was created on. |
@@ -123,7 +123,7 @@ GET `/configs/{uuid}`
 #### Path Parameters
 
 | Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
+| :--- | :--- | :---------- | :------ |
 | uuid | string | The uuid of the config. __Required.__ | `1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77` |
 
 ### Response
@@ -133,7 +133,7 @@ GET `/configs/{uuid}`
 A JSON object that contains the following properties:
 
 | Name | Type | Description |
-| ---- | ---- | ----------- |
+| :--- | :--- | :---------- |
 | id | integer | The config id. |
 | uuid | string | The config uuid. |
 | createdAt | string | The date the config was created on. |
@@ -201,7 +201,7 @@ PUT `/configs/{uuid}`
 #### Path Parameters
 
 | Name | Type | Description | Example |
-| ---- | ---- | ----------- | ------- |
+| :--- | :--- | :---------- | :------ |
 | uuid | string | The uuid of the config. __Required.__ | `1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77` |
 
 #### Body
@@ -209,7 +209,7 @@ PUT `/configs/{uuid}`
 A JSON object that contains the following properties:
 
 | Name | Value | Description | Example |
-| ---- | ----- | ----------- | ------- |
+| :--- | :---- | :---------- | :------ |
 | uuid | string | The config uuid. __Optional.__ | `1f0a13f5-7705-4b2d-b454-aa4d9ddb9c77` |
 | owner | string | The config owner. __Required.__ | `BusinessUnit` |
 | ownerUuid | string | The config owner uuid. __Required.__ | `5f4108bb-fa74-4c93-9bb1-9e37d9302640` |
@@ -225,7 +225,7 @@ A JSON object that contains the following properties:
 A JSON object that contains the following properties:
 
 | Name | Type | Description |
-| ---- | ---- | ----------- |
+| :--- | :--- | :---------- |
 | id | integer | The config id. |
 | uuid | string | The config uuid. |
 | createdAt | string | The date the config was created on. |
