@@ -27,11 +27,11 @@ GET `/accesses`
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
 | id | integer | Filter access cards by the given id. __Optional.__ | `id=1`<br><br>`id[]=1&id[]=2` |
-| uuid | string | Filter access cards by the given uuid. __Optional.__ | `uuid=d3e8fa50-c802-4dc2-8792-93e80d3fb888`<br><br>`uuid[]=d3e8fa50-c802-4dc2-8792-93e80d3fb888&uuid[]=8e2bca9c-dd33-4c66-9d2f-99b37d39edfe` |
+| uuid | string | Filter access cards by the given uuid. __Optional.__ | `uuid=dc719883-c593-42e5-8aee-5d9367525273`<br><br>`uuid[]=dc719883-c593-42e5-8aee-5d9367525273&uuid[]=242e3829-9345-469a-a612-f6c432e0b4b1` |
 | owner | string | Filter access cards by the given owner. __Optional.__ | `owner=BusinessUnit`<br><br>`owner[]=BusinessUnit&owner[]=Staff` |
-| ownerUuid | string | Filter access cards by the given owner uuid. __Optional.__ | `ownerUuid=c11c546e-bd01-47cf-97da-e25388357b5a`<br><br>`ownerUuid[]=c11c546e-bd01-47cf-97da-e25388357b5a&ownerUuid[]=a9d68bf7-5000-49fe-8b00-33dde235b327` |
+| ownerUuid | string | Filter access cards by the given owner uuid. __Optional.__ | `ownerUuid=5f4108bb-fa74-4c93-9bb1-9e37d9302640`<br><br>`ownerUuid[]=5f4108bb-fa74-4c93-9bb1-9e37d9302640&ownerUuid[]=0092e830-e411-47cf-b7ef-c19cc79ba8cb` |
 | assignee | string | Filter access cards by the given assignee. __Optional.__ | `assignee=Staff`<br><br>`assignee[]=Individual&assignee[]=Organization` |
-| assigneeUuid | string | Filter access cards by the given assignee uuid. __Optional.__ | `assigneeUuid=f06dd49d-8ad4-437a-beee-387b834ee217`<br><br>`assigneeUuid[]=f06dd49d-8ad4-437a-beee-387b834ee217&assigneeUuid[]=3e64bbd1-4d00-47e7-a35e-92691f5a6018` |
+| assigneeUuid | string | Filter access cards by the given assignee uuid. __Optional.__ | `assigneeUuid=c8c17ac2-3c41-491d-888c-459f13b97d3c`<br><br>`assigneeUuid[]=c8c17ac2-3c41-491d-888c-459f13b97d3c&assigneeUuid[]=54be68f2-1043-4614-846b-6a1638abae4e` |
 | createdAt[before] | string | Filter access cards that were created before the given date. __Optional.__ | `createdAt[before]=2018-07-20T13:19:30.181Z` |
 | createdAt[after] | string | Filter access cards that were created after the given date. __Optional.__ | `createdAt[after]2018-07-20T13:19:30.181Z` |
 | updatedAt[before] | string | Filter access cards that were updated before the given date. __Optional.__ | `updatedAt[before]=2018-07-20T13:19:30.181Z` |
@@ -85,45 +85,45 @@ Accept: application/json
 [
   {
     "id": 1,
-    "uuid": "d3e8fa50-c802-4dc2-8792-93e80d3fb888",
+    "uuid": "dc719883-c593-42e5-8aee-5d9367525273",
     "createdAt": "2018-07-31T14:57:10+00:00",
     "updatedAt": "2018-07-31T14:57:10+00:00",
     "owner": "BusinessUnit",
-    "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-    "assignee": "Role",
-    "assigneeUuid": "f06dd49d-8ad4-437a-beee-387b834ee217",
+    "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+    "assignee": "Staff",
+    "assigneeUuid": "c8c17ac2-3c41-491d-888c-459f13b97d3c",
     "permissions": [
       {
         "scope": "owner",
         "entity": "BusinessUnit",
-        "entityUuid": "a9d68bf7-5000-49fe-8b00-33dde235b327",
-        "key": "user",
-        "attributes": ["EDIT", "ADD", "DELETE"]
+        "entityUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+        "key": "config",
+        "attributes": ["EDIT"]
       }
     ],
     "version": 1,
-    "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+    "tenant": "d928b020-94f6-4928-a510-04fc49d5a174"
   },
   {
     "id": 2,
-    "uuid": "8e2bca9c-dd33-4c66-9d2f-99b37d39edfe",
+    "uuid": "242e3829-9345-469a-a612-f6c432e0b4b1",
     "createdAt": "2018-07-31T14:57:10+00:00",
     "updatedAt": "2018-07-31T14:57:10+00:00",
     "owner": "BusinessUnit",
-    "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-    "assignee": "Role",
-    "assigneeUuid": "3e64bbd1-4d00-47e7-a35e-92691f5a6018",
+    "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+    "assignee": "Staff",
+    "assigneeUuid": "54be68f2-1043-4614-846b-6a1638abae4e",
     "permissions": [
       {
         "scope": "owner",
         "entity": "BusinessUnit",
-        "entityUuid": "a9d68bf7-5000-49fe-8b00-33dde235b327",
-        "key": "user",
+        "entityUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+        "key": "config",
         "attributes": ["BROWSE", "READ"]
       }
     ],
     "version": 1,
-    "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+    "tenant": "d928b020-94f6-4928-a510-04fc49d5a174"
   }
 ]
 ```
@@ -142,7 +142,7 @@ GET `/accesses/{uuid}`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The uuid of the access card. __Required.__ | `d3e8fa50-c802-4dc2-8792-93e80d3fb888` |
+| uuid | string | The uuid of the access card. __Required.__ | `dc719883-c593-42e5-8aee-5d9367525273` |
 
 ### Response
 
@@ -174,7 +174,7 @@ The access card with the given uuid does not exist.
 
 *Method:*
 
-__GET__ `/accesses/d3e8fa50-c802-4dc2-8792-93e80d3fb888`
+__GET__ `/accesses/dc719883-c593-42e5-8aee-5d9367525273`
 
 *Headers:*
 
@@ -193,24 +193,24 @@ Accept: application/json
 ```json
 {
   "id": 1,
-  "uuid": "d3e8fa50-c802-4dc2-8792-93e80d3fb888",
+  "uuid": "dc719883-c593-42e5-8aee-5d9367525273",
   "createdAt": "2018-07-31T14:57:10+00:00",
   "updatedAt": "2018-07-31T14:57:10+00:00",
   "owner": "BusinessUnit",
-  "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-  "assignee": "Role",
-  "assigneeUuid": "f06dd49d-8ad4-437a-beee-387b834ee217",
+  "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+  "assignee": "Staff",
+  "assigneeUuid": "c8c17ac2-3c41-491d-888c-459f13b97d3c",
   "permissions": [
     {
       "scope": "owner",
       "entity": "BusinessUnit",
-      "entityUuid": "a9d68bf7-5000-49fe-8b00-33dde235b327",
-      "key": "user",
-      "attributes": ["EDIT", "ADD", "DELETE"]
+      "entityUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+      "key": "config",
+      "attributes": ["EDIT"]
     }
   ],
   "version": 1,
-  "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+  "tenant": "d928b020-94f6-4928-a510-04fc49d5a174"
 }
 ```
 
@@ -230,11 +230,11 @@ A JSON object that contains the following properties:
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `56079ab0-0f24-42fa-aa34-9c9d775935d0` |
+| uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `dc719883-c593-42e5-8aee-5d9367525273` |
 | owner | string | The access card owner. __Required.__ | `BusinessUnit` |
-| ownerUuid | string | The access card owner uuid. __Optional.__ Default: `null`. | `c11c546e-bd01-47cf-97da-e25388357b5a` |
+| ownerUuid | string | The access card owner uuid. __Optional.__ Default: `null`. | `5f4108bb-fa74-4c93-9bb1-9e37d9302640` |
 | assignee | string | The access card assignee. __Required.__ | `BusinessUnit` |
-| assigneeUuid | string | The access card assignee uuid. __Optional.__ Default: `null`. | `5ab54dd5-56ed-4e96-bd8b-1d60ab668a75` |
+| assigneeUuid | string | The access card assignee uuid. __Optional.__ Default: `null`. | `c8c17ac2-3c41-491d-888c-459f13b97d3c` |
 | permissions | array | The access card granted permissions. __Optional.__ Default: `[]`. |
 | version | integer | The access card version. This value is used for optimistic locking. __Required.__ | `1` |
 
@@ -281,16 +281,16 @@ Accept: application/json
 ```json
 {
   "owner": "BusinessUnit",
-  "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-  "assignee": "Anonymous",
-  "assigneeUuid": null,
+  "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+  "assignee": "Staff",
+  "assigneeUuid": "c8c17ac2-3c41-491d-888c-459f13b97d3c"",
   "permissions": [
     {
       "scope": "owner",
       "entity": "BusinessUnit",
-      "entityUuid": null,
-      "key": "registration",
-      "attributes": ["ADD"]
+      "entityUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+      "key": "config",
+      "attributes": ["EDIT"]
     }
   ],
   "version": 1
@@ -308,24 +308,24 @@ Accept: application/json
 ```json
 {
   "id": 1,
-  "uuid": "56079ab0-0f24-42fa-aa34-9c9d775935d0",
+  "uuid": "dc719883-c593-42e5-8aee-5d9367525273",
   "createdAt": "2018-07-19T12:08:30+00:00",
   "updatedAt": "2018-07-19T12:08:30+00:00",
   "owner": "BusinessUnit",
-  "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-  "assignee": "Anonymous",
-  "assigneeUuid": null,
+  "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+  "assignee": "Staff",
+  "assigneeUuid": "c8c17ac2-3c41-491d-888c-459f13b97d3c"",
   "permissions": [
     {
       "scope": "owner",
       "entity": "BusinessUnit",
-      "entityUuid": null,
-      "key": "registration",
-      "attributes": ["ADD"]
+      "entityUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+      "key": "config",
+      "attributes": ["EDIT"]
     }
   ],
   "version": 1,
-  "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+  "tenant": "d928b020-94f6-4928-a510-04fc49d5a174"
 }
 ```
 
@@ -343,7 +343,7 @@ PUT `/accesses/{uuid}`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The uuid of the access card. __Required.__ | `d3e8fa50-c802-4dc2-8792-93e80d3fb888` |
+| uuid | string | The uuid of the access card. __Required.__ | `dc719883-c593-42e5-8aee-5d9367525273` |
 
 #### Body
 
@@ -351,11 +351,11 @@ A JSON object that contains the following properties:
 
 | Name | Type | Description | Example |
 | ---- | ----- | ----------- | ------- |
-| uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `d3e8fa50-c802-4dc2-8792-93e80d3fb888` |
+| uuid | string | The access card uuid. __Optional.__ Default: auto-generated. | `dc719883-c593-42e5-8aee-5d9367525273` |
 | owner | string | The access card owner. __Required.__ | `BusinessUnit` |
-| ownerUuid | string | The access card owner uuid. __Optional.__ Default: `null`. | `c11c546e-bd01-47cf-97da-e25388357b5a` |
+| ownerUuid | string | The access card owner uuid. __Optional.__ Default: `null`. | `5f4108bb-fa74-4c93-9bb1-9e37d9302640` |
 | assignee | string | The access card assignee. __Required.__ | `BusinessUnit` |
-| assigneeUuid | string | The access card assignee uuid. __Optional.__ Default: `null`. | `f06dd49d-8ad4-437a-beee-387b834ee217` |
+| assigneeUuid | string | The access card assignee uuid. __Optional.__ Default: `null`. | `c8c17ac2-3c41-491d-888c-459f13b97d3c` |
 | permissions | array | The access card granted permissions. __Optional.__ Default: `[]`. |
 | version | integer | The access card version. This value is used for optimistic locking. __Required.__ | `1` |
 
@@ -389,7 +389,7 @@ There were some validation errors.
 
 *Method:*
 
-__PUT__ `/accesses/d3e8fa50-c802-4dc2-8792-93e80d3fb888`
+__PUT__ `/accesses/dc719883-c593-42e5-8aee-5d9367525273`
 
 *Headers:*
 
@@ -405,9 +405,9 @@ Accept: application/json
     {
       "scope": "owner",
       "entity": "BusinessUnit",
-      "entityUuid": null,
-      "key": "user",
-      "attributes": ["BROWSE", "READ", "EDIT", "ADD", "DELETE"]
+      "entityUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+      "key": "config",
+      "attributes": ["BROWSE", "READ"]
     }
   ],
   "version": 1
@@ -425,24 +425,24 @@ Accept: application/json
 ```json
 {
   "id": 1,
-  "uuid": "d3e8fa50-c802-4dc2-8792-93e80d3fb888",
+  "uuid": "dc719883-c593-42e5-8aee-5d9367525273",
   "createdAt": "2018-07-31T14:57:10+00:00",
   "updatedAt": "2018-08-01T12:30:15+00:00",
   "owner": "BusinessUnit",
-  "ownerUuid": "c11c546e-bd01-47cf-97da-e25388357b5a",
-  "assignee": "Role",
-  "assigneeUuid": "f06dd49d-8ad4-437a-beee-387b834ee217",
+  "ownerUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640",
+  "assignee": "Staff",
+  "assigneeUuid": "c8c17ac2-3c41-491d-888c-459f13b97d3c",
   "permissions": [
     {
       "scope": "owner",
       "entity": "BusinessUnit",
-      "entityUuid": null,
-      "key": "user",
-      "attributes": ["BROWSE", "READ", "EDIT", "ADD", "DELETE"]
+      "entityUuid": "5f4108bb-fa74-4c93-9bb1-9e37d9302640"",
+      "key": "config",
+      "attributes": ["BROWSE", "READ"]
     }
   ],
   "version": 1,
-  "tenant": "e5a2120d-6bf7-4c58-a900-bac1e55e986b"
+  "tenant": "d928b020-94f6-4928-a510-04fc49d5a174"
 }
 ```
 
@@ -460,7 +460,7 @@ DELETE `/accesses/{uuid}`
 
 | Name | Type | Description | Example |
 | ---- | ---- | ----------- | ------- |
-| uuid | string | The uuid of the access card. __Required.__ | `d3e8fa50-c802-4dc2-8792-93e80d3fb888` |
+| uuid | string | The uuid of the access card. __Required.__ | `dc719883-c593-42e5-8aee-5d9367525273` |
 
 ### Response
 
@@ -474,7 +474,7 @@ The request was successful and returns no content.
 
 *Method:*
 
-__DELETE__ `/accesses/d3e8fa50-c802-4dc2-8792-93e80d3fb888`
+__DELETE__ `/accesses/dc719883-c593-42e5-8aee-5d9367525273`
 
 #### Response
 
