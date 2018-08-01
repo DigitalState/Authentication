@@ -31,7 +31,8 @@ Further documentation can be found in the [Documentation Repository](https://git
 ## References
 
 - [Api](references/api.md)
-- [Config](references/config.md)
+- [Configurations](references/configurations.md)
+- [Permissions](references/permissions.md)
 
 ## Contributing
 
