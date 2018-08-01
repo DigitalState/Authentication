@@ -1,6 +1,6 @@
 # Api
 
-The DigitalState Authentication microservice api endpoints available.
+The DigitalState Authentication microservice api endpoints.
 
 ## Table of Contents
 

@@ -1,6 +1,6 @@
 # Permissions
 
-The DigitalState Authentication microservice available permissions.
+The DigitalState Authentication microservice permissions.
 
 ## Table of Contents
 
