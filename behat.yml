@@ -19,6 +19,7 @@ default:
         - Ds\Component\Database\Test\Context\MigrationContext
         - Ds\Component\Database\Test\Context\FixtureContext
         - Ds\Component\Http\Test\Context\JsonContext
+
   extensions:
     Behat\Symfony2Extension:
       kernel:
