@@ -7,7 +7,7 @@ Feature: Read users
   Background:
     Given I am authenticated as the "System" identity from the tenant "b6ac25fe-3cd6-4100-a054-6bba2fc9ef18"
 
-  @createSchema @loadFixtures @dropSchema
+  @upMigrations @loadFixtures @downMigrations
   Scenario: Read a user
     When I add "Accept" header equal to "application/json"
     And I send a "GET" request to "/users/f9df049a-fe95-405f-ba7c-734f1a0ce558"

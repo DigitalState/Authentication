@@ -7,8 +7,8 @@ Feature: Browse accesses
   Background:
     Given I am authenticated as the "System" identity from the tenant "b6ac25fe-3cd6-4100-a054-6bba2fc9ef18"
 
-  @createSchema @loadFixtures @dropSchema
-  Scenario: Browse all permissions
+  @upMigrations @loadFixtures @downMigrations
+  Scenario: Browse all accesses
     When I add "Accept" header equal to "application/json"
     And I send a "GET" request to "/accesses"
     Then the response status code should be 200
