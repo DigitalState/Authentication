@@ -1,6 +1,7 @@
 parameters:
   app: authentication
   discovery_host: api.discovery.ds
+  discovery_credential: ~
   database_host: authentication_database
   database_port: 5432
   database_name: authentication
