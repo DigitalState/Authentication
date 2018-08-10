@@ -7,9 +7,9 @@ parameters:
   database_name: authentication
   database_user: authentication
   database_password: authentication
-  redis_host: authentication_redis
-  redis_name: 2
-  redis_prefix: ''
+  cache_host: authentication_cache
+  cache_name: 2
+  cache_prefix: ''
   jwt_private_key_path: '%kernel.root_dir%/../var/jwt/key'
   jwt_public_key_path: '%kernel.root_dir%/../var/jwt/key.pub'
   jwt_key_pass_phrase: ''
