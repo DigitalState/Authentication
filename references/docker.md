@@ -1,0 +1,24 @@
+# Docker
+
+The DigitalState Authentication microservice docker information.
+
+## Table of Contents
+
+- [Environment Variables](#environment-variables)
+
+## Environment Variables
+
+| Name | Description | Default |
+| :--- | :---------- | :------ |
+| `COMPOSE_PROJECT_NAME` | The docker-compose project name. This is used to properly namespace docker containers in th event where you are running multiple instances of the platform on the same machine. | `dsauthentication` |
+| `NETWORK` | The docker network name. | `dsproxy_default` |
+| `DIRECTORY` | The base directory the docker-compose files are located. This is used to properly configure base paths for DockerForWindows and DockerForMac machines. | `.` |
+| `IMAGE_TAG` | The dockerhub image tag to pull for dev, stag and prod environments. | `0.8.0` |
+| `API_HOST` | The virtual host for the api container. This value gets registered with the proxy. | `api.authentication.ds` |
+| `DATABASE_HOST` | The database host. | `authentication_database` |
+| `DATABASE_PORT` | The database port. | `5432` |
+| `DATABASE_NAME` | the database name. | `authentication` |
+| `DATABASE_USERNAME` | The database username. | `authentication` |
+| `DATABASE_PASSWORD` | The database password. | `authentication` |
+| `DATABASE_UI_HOST` | The virtual host for the database ui container. | `ui.database.authentication.ds` |
+| `CACHE_UI_HOST` | The vritual host for the cache ui container. | `ui.cache.authentication.ds` |
