@@ -1,0 +1,25 @@
+objects:
+  - uuid: '%user.system.uuid%'
+    username: system@system.ds
+    email: system@system.ds
+    password: '%user.system.password%'
+    identity: System
+
+  - uuid: '%user.admin.uuid%'
+    username: admin@staff.ds
+    email: admin@staff.ds
+    password: '%user.admin.password%'
+    identity: Staff
+
+prototype:
+  uuid: ~
+  username: ~
+  email: ~
+  password: ~
+  enabled: true
+  roles: []
+  owner: BusinessUnit
+  owner_uuid: '%business_unit.administration.uuid%'
+  identity: ~
+  identity_uuid: ~
+  tenant: '%tenant.uuid%'

@@ -1,0 +1,204 @@
+imports:
+  - { resource: parameters.yml }
+  - { resource: security.yml }
+  - { resource: services.yml }
+
+parameters:
+  locale: en
+
+framework:
+  #esi: ~
+  translator: { fallbacks: ['%locale%'] }
+  secret: '%secret%'
+  router:
+    resource: '%kernel.root_dir%/config/routing.yml'
+    strict_requirements: ~
+  form: ~
+  csrf_protection: false
+  validation: { enable_annotations: true }
+  serializer: { enable_annotations: true }
+  templating:
+    engines: ['twig']
+  default_locale: '%locale%'
+  trusted_hosts: ~
+  trusted_proxies: ~
+  session:
+    handler_id: ~
+  fragments: ~
+  http_method_override: true
+  assets: ~
+  php_errors:
+    log: true
+
+twig:
+  debug: '%kernel.debug%'
+  strict_variables: '%kernel.debug%'
+
+doctrine:
+  dbal:
+    driver: pdo_pgsql
+    host: '%database_host%'
+    port: '%database_port%'
+    dbname: '%database_name%'
+    user: '%database_user%'
+    password: '%database_password%'
+    charset:  UTF8
+  orm:
+    auto_generate_proxy_classes: '%kernel.debug%'
+    naming_strategy: doctrine.orm.naming_strategy.underscore
+    auto_mapping: true
+    second_level_cache:
+      enabled: false
+
+doctrine_migrations:
+  dir_name: '%kernel.root_dir%/../src/AppBundle/Migrations'
+  namespace: AppBundle\Migrations
+  table_name: app_migration
+  name: Application Migrations
+
+knp_doctrine_behaviors:
+  blameable: false
+  geocodable: false
+  loggable: false
+  sluggable: false
+  sortable: false
+  timestampable: true
+  translatable: true
+  tree: false
+
+snc_redis:
+  clients:
+    default:
+      type: predis
+      alias: default
+      dsn: 'redis://%cache_host%/%cache_name%'
+      logging: '%kernel.debug%'
+    doctrine:
+      type: predis
+      alias: doctrine
+      dsn: 'redis://%cache_host%/%cache_name%'
+      logging: '%kernel.debug%'
+  doctrine:
+    metadata_cache:
+      client: doctrine
+      entity_manager: default
+      namespace: '%cache_prefix%doctrine:metadata:'
+    result_cache:
+      client: doctrine
+      entity_manager: default
+      namespace: '%cache_prefix%doctrine:result:'
+    query_cache:
+      client: doctrine
+      entity_manager: default
+      namespace: '%cache_prefix%doctrine:query:'
+
+fos_user:
+  db_driver: orm
+  firewall_name: main
+  user_class: AppBundle\Entity\User
+  from_email:
+    address: '%mailer_user%'
+    sender_name: '%mailer_user%'
+  resetting:
+    email:
+      template: AppBundle:Resetting:email.html.twig
+  service:
+    mailer: fos_user.mailer.twig_swift
+
+lexik_jwt_authentication:
+  private_key_path: '%jwt_private_key_path%'
+  public_key_path: '%jwt_public_key_path%'
+  pass_phrase: '%jwt_key_pass_phrase%'
+  token_ttl: '%jwt_token_ttl%'
+
+swiftmailer:
+  transport: '%mailer_transport%'
+  host: '%mailer_host%'
+  port: '%mailer_port%'
+  username: '%mailer_user%'
+  password: '%mailer_password%'
+  spool:
+    type: memory
+
+nelmio_cors:
+  defaults:
+    allow_origin: ['%cors_allow_origin%']
+    allow_methods: ['POST', 'PUT', 'GET', 'DELETE', 'OPTIONS']
+    allow_headers: ['content-type', 'authorization']
+    expose_headers: ['link']
+    max_age: 3600
+  paths:
+    '^/': ~
+
+dunglas_action:
+  directories:
+    - '%kernel.root_dir%/../src/*Bundle/Action'
+
+hwi_oauth:
+  firewall_names:
+    - oauth_organization
+    - oauth_individual
+  fosub:
+    username_iterations: 30
+    properties: []
+  resource_owners:
+    # The resource owner names below are being prefixed and duplicated in order to make them unique.
+    # Even thought resource owners are reusable across firewalls, there seems to be a bug with the
+    # route configuration found in each firewalls. Despite configuring unique routes for each firewalls, HWI
+    # always takes the first route chronologically configured for a given resource owner, regardless
+    # of which firewall we are in.
+    individual/github:
+      type: github
+      client_id: '%integration_github_id%'
+      client_secret: '%integration_github_secret%'
+      scope: user:email
+    individual/google:
+      type: google
+      client_id: '%integration_google_id%'
+      client_secret: '%integration_google_secret%'
+      scope: email profile
+    individual/twitter:
+      type: twitter
+      client_id: '%integration_twitter_id%'
+      client_secret: '%integration_twitter_secret%'
+      options:
+        include_email: true
+    organization/github:
+      type: github
+      client_id: '%integration_github_id%'
+      client_secret: '%integration_github_secret%'
+      scope: user:email
+    organization/google:
+      type: google
+      client_id: '%integration_google_id%'
+      client_secret: '%integration_google_secret%'
+      scope: email profile
+    organization/twitter:
+      type: twitter
+      client_id: '%integration_twitter_id%'
+      client_secret: '%integration_twitter_secret%'
+      options:
+        include_email: true
+
+api_platform:
+  title: Authentication
+  description: The DigitalState Authentication Api
+  version: 1.0.0
+  default_operation_path_resolver: api_platform.operation_path_resolver.dash
+  eager_loading:
+    force_eager: false
+  collection:
+    pagination:
+      items_per_page: 10
+      client_items_per_page: true
+      items_per_page_parameter_name: limit
+  enable_fos_user: true
+  enable_swagger: false
+  enable_swagger_ui: false
+
+ds_entity:
+  behavior:
+    uuidentifiable: true
+
+ds_security:
+  acl: true

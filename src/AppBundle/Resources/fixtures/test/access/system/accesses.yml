@@ -1,0 +1,18 @@
+fixtures:
+  - uuid: 3e45abc2-cda2-4066-b8ce-442804c1d05b
+    owner_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
+    assignee_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: a9ba18e2-aecf-4e63-a5f9-a828e4461d65
+    owner_uuid: 571c4b5f-532e-48ac-aa6a-8099d57d9088 # System
+    assignee_uuid: 571c4b5f-532e-48ac-aa6a-8099d57d9088 # System
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+prototype:
+  uuid: ~
+  owner: System
+  owner_uuid: ~
+  assignee: System
+  assignee_uuid: ~
+  tenant: ~

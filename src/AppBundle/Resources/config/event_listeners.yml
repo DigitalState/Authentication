@@ -1,0 +1,22 @@
+services:
+  app.event_listener.registration.user:
+    class: AppBundle\EventListener\Registration\UserListener
+    arguments:
+      - '@service_container'
+    tags:
+      - { name: doctrine.orm.entity_listener, entity: AppBundle\Entity\Registration, event: postPersist }
+
+  app.event_listener.user.identity:
+    class: AppBundle\EventListener\User\IdentityListener
+    arguments:
+      - '@service_container'
+    tags:
+      - { name: doctrine.orm.entity_listener, entity: AppBundle\Entity\User, event: postPersist }
+
+  app.event_listener.resetting:
+    class: AppBundle\EventListener\ResettingListener
+    arguments:
+      - '@service_container'
+      - '@request_stack'
+    tags:
+      - { name: kernel.event_subscriber }

@@ -1,0 +1,12 @@
+services:
+  app.repository.registration:
+    class: AppBundle\Repository\RegistrationRepository
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments:
+      - AppBundle\Entity\Registration
+
+  app.repository.oauth:
+    class: AppBundle\Repository\OAuthRepository
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments:
+      - AppBundle\Entity\OAuth
