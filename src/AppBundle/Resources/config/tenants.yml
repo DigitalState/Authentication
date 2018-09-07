@@ -1,22 +1,43 @@
 services:
-  app.tenant.accesses:
-    class: AppBundle\Tenant\Accesses
+  app.tenant.loader.access:
+    class: AppBundle\Tenant\Loader\AccessLoader
     arguments:
       - '@ds_security.service.access'
       - '@ds_security.service.permission'
     tags:
       - { name: ds_tenant.loader }
 
-  app.tenant.configs:
-    class: AppBundle\Tenant\Configs
+  app.tenant.loader.config:
+    class: AppBundle\Tenant\Loader\ConfigLoader
     arguments:
       - '@ds_config.service.config'
     tags:
       - { name: ds_tenant.loader }
 
-  app.tenant.users:
-    class: AppBundle\Tenant\Users
+  app.tenant.loader.user:
+    class: AppBundle\Tenant\Loader\UserLoader
     arguments:
       - '@app.service.user'
     tags:
       - { name: ds_tenant.loader }
+
+  app.tenant.unloader.oauth:
+    class: AppBundle\Tenant\Unloader\OAuthUnloader
+    arguments:
+      - '@doctrine.orm.entity_manager'
+    tags:
+      - { name: ds_tenant.unloader, priority: -1 }
+
+  app.tenant.unloader.registration:
+    class: AppBundle\Tenant\Unloader\RegistrationUnloader
+    arguments:
+      - '@doctrine.orm.entity_manager'
+    tags:
+      - { name: ds_tenant.unloader, priority: -1 }
+
+  app.tenant.unloader.user:
+    class: AppBundle\Tenant\Unloader\UserUnloader
+    arguments:
+      - '@doctrine.orm.entity_manager'
+    tags:
+      - { name: ds_tenant.unloader }

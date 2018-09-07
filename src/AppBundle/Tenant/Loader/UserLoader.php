@@ -1,17 +1,18 @@
 <?php
 
-namespace AppBundle\Tenant;
+namespace AppBundle\Tenant\Loader;
 
 use AppBundle\Entity\User;
 use AppBundle\EventListener\User\IdentityListener;
 use AppBundle\Service\UserService;
+use Ds\Component\Tenant\Entity\Tenant;
 use Ds\Component\Tenant\Loader\Loader;
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * Class Users
+ * Class UserLoader
  */
-class Users implements Loader
+class UserLoader implements Loader
 {
     /**
      * @var \AppBundle\Service\UserService
@@ -31,7 +32,7 @@ class Users implements Loader
     /**
      * {@inheritdoc}
      */
-    public function load(array $data)
+    public function load(Tenant $tenant)
     {
         $metadata = $this->userService->getManager()->getClassMetadata(User::class);
 
@@ -47,12 +48,12 @@ class Users implements Loader
 
         // @todo Figure out how symfony does parameter binding and use the same technique
         $yml = strtr($yml, [
-            '%user.system.uuid%' => $data['user']['system']['uuid'],
-            '%user.system.password%' => $data['user']['system']['password'],
-            '%user.admin.uuid%' => $data['user']['admin']['uuid'],
-            '%user.admin.password%' => $data['user']['admin']['password'],
-            '%business_unit.administration.uuid%' => $data['business_unit']['administration']['uuid'],
-            '%tenant.uuid%' => $data['tenant']['uuid']
+            '%user.system.uuid%' => $tenant->getData()['user']['system']['uuid'],
+            '%user.system.password%' => $tenant->getData()['user']['system']['password'],
+            '%user.admin.uuid%' => $tenant->getData()['user']['admin']['uuid'],
+            '%user.admin.password%' => $tenant->getData()['user']['admin']['password'],
+            '%business_unit.administration.uuid%' => $tenant->getData()['business_unit']['administration']['uuid'],
+            '%tenant.uuid%' => $tenant->getUuid()
         ]);
 
         $users = Yaml::parse($yml, YAML::PARSE_OBJECT_FOR_MAP);
