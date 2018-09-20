@@ -17,7 +17,7 @@ __POST__ `/oauth/{identity}/{authenticator}/redirect`
 #### Path Parameters
 
 | Name | Type | Description |
-| :--- | :--- | :---------- | :------ |
+| :--- | :--- | :---------- |
 | identity | string | The identity type. __Required.__ Possible values: `individual`, `organization` |
 | authenticator | string | The third-party authenticator. __Required.__ Possible values: `github`, `google`, `twitter` |
 
