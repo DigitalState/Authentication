@@ -205,7 +205,7 @@ __POST__ `/auth/individual`
 #### Form urlencoded
 
 | Name | Type | Description |
-| :--- | :--- | :---------- | :------ |
+| :--- | :--- | :---------- |
 | username | string | The individual identity username. __Required.__ |
 | password | string | The individual identity password. __Required.__ |
 
