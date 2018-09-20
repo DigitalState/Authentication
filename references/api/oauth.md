@@ -2,9 +2,9 @@
 
 ## Table of Contents
 
-- [POST /oauth/{identity}/{authenticator}/redirect](#oauthidentityauthenticatorredirect)
+- [POST /oauth/{identity}/{authenticator}/redirect](#login-using-third-party-authenticator)
 
-## Login as system identity
+## Login using third-party authenticator
 
 This endpoint returns a system identity JWT token.
 
