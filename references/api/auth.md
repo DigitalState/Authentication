@@ -21,7 +21,7 @@ __POST__ `/auth/system`
 #### Form urlencoded
 
 | Name | Type | Description |
-| :--- | :--- | :---------- | :------ |
+| :--- | :--- | :---------- |
 | username | string | The system identity username. __Required.__ |
 | password | string | The system identity password. __Required.__ |
 
@@ -112,7 +112,7 @@ __POST__ `/auth/staff`
 #### Form urlencoded
 
 | Name | Type | Description |
-| :--- | :--- | :---------- | :------ |
+| :--- | :--- | :---------- |
 | username | string | The staff identity username. __Required.__ |
 | password | string | The staff identity password. __Required.__ |
 
@@ -298,7 +298,7 @@ __POST__ `/auth/organization`
 #### Form urlencoded
 
 | Name | Type | Description |
-| :--- | :--- | :---------- | :------ |
+| :--- | :--- | :---------- |
 | username | string | The organization identity username. __Required.__ |
 | password | string | The organization identity password. __Required.__ |
 
