@@ -1,10 +1,11 @@
-# Config
+# Configurations
 
 The DigitalState Authentication microservice configurations registry.
 
 ## Table of Contents
 
 - [Configurations](#configurations)
+- [Parameters](#parameters)
 
 ## Configurations
 
@@ -30,3 +31,9 @@ The DigitalState Authentication microservice configurations registry.
 | `app.resetting.email.subject` | string | The subject of the email sent when a user is requesting a password reset. | `Password Reset` |
 | `app.resetting.email.body.plain` | string | The plain text body of the email sent when a user is requesting a password reset. | `You have requested...` |
 | `app.resetting.email.body.html` | string | The html body of the email sent when a user is requesting a password reset. | `<b>You have requested...</b>` |
+
+## Parameters
+
+| Name | Type | Description | Example |
+| :--- | :--- | :---------- | :------ |
+| - | - | - | - |

@@ -2,27 +2,76 @@
 
 ## Table of Contents
 
-- [POST /auth/system](#post-authsystem)
-- [POST /auth/staff](#post-authstaff)
-- [POST /auth/individual](#post-authindividual)
-- [POST /auth/organization](#post-authorganization)
-- [POST /auth/anonymous](#post-authanonymous)
+- [POST /auth/system](#login-as-system-identity)
+- [POST /auth/staff](#login-as-staff-identity)
+- [POST /auth/individual](#login-as-individual-identity)
+- [POST /auth/organization](#login-as-organization-identity)
+- [POST /auth/anonymous](#login-as-anonymous-identity)
 
-## POST /auth/system
+## Login as system identity
 
-This endpoint returns a system JWT token.
+This endpoint returns a system identity JWT token.
 
-### Request
+### Method
 
-__POST__ /auth/system
+__POST__ `/auth/system`
 
-```
-x-www-form-urlencoded
-username: system@system.ds
-password: ********
-```
+### Parameters
+
+#### Form urlencoded
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| username | string | The system identity username. __Required.__ |
+| password | string | The system identity password. __Required.__ |
 
 ### Response
+
+#### 200 OK
+
+The request was successful and returns a JSON object that contains the following properties:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| token | string | The JWT token. |
+
+#### 401 Unauthorized
+
+The request was unsuccessful and and returns a JSON object that contains the following properties:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| code | string | The error code. |
+| message | string | The error message. |
+
+### Example
+
+#### Request
+
+*Method:*
+
+__POST__ `/auth/system`
+
+*Headers:*
+
+```yaml
+Accept: application/json
+```
+
+*Form urlencoded:*
+
+```json
+username: system@system.ds
+password: system
+```
+
+#### Response
+
+*Code:*
+
+`200 OK`
+
+*Body:*
 
 ```json
 {
@@ -30,16 +79,8 @@ password: ********
 }
 ```
 
-Decoded token:
+Decoded payload:
 
-*Header*
-```
-{
-  "alg": "RS256"
-}
-```
-
-*Payload*
 ```
 {
   "roles": [
@@ -58,26 +99,70 @@ Decoded token:
 }
 ```
 
-*Signature*
-```
-********
-```
+## Login as staff identity
 
-## POST /auth/staff
+This endpoint returns a staff identity JWT token.
 
-This endpoint returns a staff JWT token.
+### Method
 
-### Request
+__POST__ `/auth/staff`
 
-__POST__ /auth/system
+### Parameters
 
-```
-x-www-form-urlencoded
-username: admin@staff.ds
-password: ********
-```
+#### Form urlencoded
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| username | string | The staff identity username. __Required.__ |
+| password | string | The staff identity password. __Required.__ |
 
 ### Response
+
+#### 200 OK
+
+The request was successful and returns a JSON object that contains the following properties:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| token | string | The JWT token. |
+
+#### 401 Unauthorized
+
+The request was unsuccessful and and returns a JSON object that contains the following properties:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| code | string | The error code. |
+| message | string | The error message. |
+
+### Example
+
+#### Request
+
+*Method:*
+
+__POST__ `/auth/staff`
+
+*Headers:*
+
+```yaml
+Accept: application/json
+```
+
+*Form urlencoded:*
+
+```json
+username: admin@staff.ds
+password: admin
+```
+
+#### Response
+
+*Code:*
+
+`200 OK`
+
+*Body:*
 
 ```json
 {
@@ -85,16 +170,8 @@ password: ********
 }
 ```
 
-Decoded token:
+Decoded payload:
 
-*Header*
-```
-{
-  "alg": "RS256"
-}
-```
-
-*Payload*
 ```
 {
   "roles": [
@@ -115,26 +192,70 @@ Decoded token:
 }
 ```
 
-*Signature*
-```
-********
-```
+## Login as individual identity
 
-## POST /auth/individual
+This endpoint returns a individual identity JWT token.
 
-This endpoint returns an individual JWT token.
+### Method
 
-### Request
+__POST__ `/auth/individual`
 
-__POST__ /auth/individual
+### Parameters
 
-```
-x-www-form-urlencoded
-username: morgan@individual.ds
-password: ********
-```
+#### Form urlencoded
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| username | string | The individual identity username. __Required.__ |
+| password | string | The individual identity password. __Required.__ |
 
 ### Response
+
+#### 200 OK
+
+The request was successful and returns a JSON object that contains the following properties:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| token | string | The JWT token. |
+
+#### 401 Unauthorized
+
+The request was unsuccessful and and returns a JSON object that contains the following properties:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| code | string | The error code. |
+| message | string | The error message. |
+
+### Example
+
+#### Request
+
+*Method:*
+
+__POST__ `/auth/individual`
+
+*Headers:*
+
+```yaml
+Accept: application/json
+```
+
+*Form urlencoded:*
+
+```json
+username: morgan@individual.ds
+password: morgan
+```
+
+#### Response
+
+*Code:*
+
+`200 OK`
+
+*Body:*
 
 ```json
 {
@@ -142,16 +263,8 @@ password: ********
 }
 ```
 
-Decoded token:
+Decoded payload:
 
-*Header*
-```
-{
-  "alg": "RS256"
-}
-```
-
-*Payload*
 ```
 {
   "roles": [
@@ -172,26 +285,70 @@ Decoded token:
 }
 ```
 
-*Signature*
-```
-********
-```
+## Login as organization identity
 
-## POST /auth/organization
+This endpoint returns a organization identity JWT token.
 
-This endpoint returns an organization JWT token.
+### Method
 
-### Request
+__POST__ `/auth/organization`
 
-__POST__ /auth/organization
+### Parameters
 
-```
-x-www-form-urlencoded
-username: acme@organization.ds
-password: ********
-```
+#### Form urlencoded
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| username | string | The organization identity username. __Required.__ |
+| password | string | The organization identity password. __Required.__ |
 
 ### Response
+
+#### 200 OK
+
+The request was successful and returns a JSON object that contains the following properties:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| token | string | The JWT token. |
+
+#### 401 Unauthorized
+
+The request was unsuccessful and and returns a JSON object that contains the following properties:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| code | string | The error code. |
+| message | string | The error message. |
+
+### Example
+
+#### Request
+
+*Method:*
+
+__POST__ `/auth/organization`
+
+*Headers:*
+
+```yaml
+Accept: application/json
+```
+
+*Form urlencoded:*
+
+```json
+username: acme@organization.ds
+password: acme
+```
+
+#### Response
+
+*Code:*
+
+`200 OK`
+
+*Body:*
 
 ```json
 {
@@ -199,16 +356,8 @@ password: ********
 }
 ```
 
-Decoded token:
+Decoded payload:
 
-*Header*
-```
-{
-  "alg": "RS256"
-}
-```
-
-*Payload*
 ```
 {
   "roles": [
@@ -229,20 +378,45 @@ Decoded token:
 }
 ```
 
-*Signature*
-```
-********
-```
+## Login as anonymous identity
 
-## POST /auth/anonymous
+This endpoint returns a anonymous identity JWT token.
 
-This endpoint returns an anonymous JWT token.
+### Method
 
-### Request
-
-__POST__ /auth/anonymous
+__POST__ `/auth/anonymous`
 
 ### Response
+
+#### 200 OK
+
+The request was successful and returns a JSON object that contains the following properties:
+
+| Name | Type | Description |
+| :--- | :--- | :---------- |
+| token | string | The JWT token. |
+
+### Example
+
+#### Request
+
+*Method:*
+
+__POST__ `/auth/anonymous`
+
+*Headers:*
+
+```yaml
+Accept: application/json
+```
+
+#### Response
+
+*Code:*
+
+`200 OK`
+
+*Body:*
 
 ```json
 {
@@ -250,16 +424,8 @@ __POST__ /auth/anonymous
 }
 ```
 
-Decoded token:
+Decoded payload:
 
-*Header*
-```
-{
-  "alg": "RS256"
-}
-```
-
-*Payload*
 ```
 {
   "roles": [
@@ -276,9 +442,4 @@ Decoded token:
   "iat": 1532025603,
   "exp": 1532112003
 }
-```
-
-*Signature*
-```
-********
 ```
