@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [POST /oauth/{identity}/{authenticator}/redirect](#login-using-third-party-authenticator)
+- [GET /oauth/{identity}/{authenticator}/redirect](#login-using-third-party-authenticator)
 
 ## Login using third-party authenticator
 
@@ -10,7 +10,7 @@ This endpoint returns a system identity JWT token.
 
 ### Method
 
-__POST__ `/oauth/{identity}/{authenticator}/redirect`
+__GET__ `/oauth/{identity}/{authenticator}/redirect`
 
 ### Parameters
 
@@ -18,8 +18,8 @@ __POST__ `/oauth/{identity}/{authenticator}/redirect`
 
 | Name | Type | Description |
 | :--- | :--- | :---------- |
-| identity | string | The identity type. __Required.__ Possible values: `individual`, `organization` |
-| authenticator | string | The third-party authenticator. __Required.__ Possible values: `github`, `google`, `twitter` |
+| identity | string | The identity type. __Required.__ Possible values: `individual`, `organization`. |
+| authenticator | string | The third-party authenticator. __Required.__ Possible values: `github`, `google`, `twitter`. |
 
 ### Response
 
@@ -46,7 +46,7 @@ The request was unsuccessful and and returns a JSON object that contains the fol
 
 *Method:*
 
-__POST__ `/oauth/individual/github/redirect`
+__GET__ `/oauth/individual/github/redirect`
 
 #### Response
 
