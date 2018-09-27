@@ -4,14 +4,19 @@ namespace AppBundle\Migrations;
 
 use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
+use Ds\Component\Container\Attribute;
 use Ramsey\Uuid\Uuid;
+use stdClass;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\Yaml\Yaml;
 
 /**
  * Class Version1_0_0
  */
-class Version1_0_0 extends AbstractMigration
+class Version1_0_0 extends AbstractMigration implements ContainerAwareInterface
 {
+    use Attribute\Container;
+
     /**
      * Up
      *
@@ -20,6 +25,7 @@ class Version1_0_0 extends AbstractMigration
     public function up(Schema $schema)
     {
         $platform = $this->connection->getDatabasePlatform()->getName();
+        $cipherService = $this->container->get('ds_encryption.service.cipher');
 
         switch ($platform) {
             case 'postgresql':
@@ -34,10 +40,10 @@ class Version1_0_0 extends AbstractMigration
                 $this->addSql('CREATE SEQUENCE app_user_oauth_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
                 $this->addSql('CREATE SEQUENCE app_registration_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
                 $this->addSql('CREATE SEQUENCE app_user_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-                $this->addSql('CREATE TABLE ds_config (id INT NOT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, "key" VARCHAR(255) NOT NULL, value JSON DEFAULT NULL, enabled BOOLEAN NOT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
+                $this->addSql('CREATE TABLE ds_config (id INT NOT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, "key" VARCHAR(255) NOT NULL, value JSON DEFAULT NULL, encrypted BOOLEAN NOT NULL, enabled BOOLEAN NOT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_758C45F4D17F50A6 ON ds_config (uuid)');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_758C45F48A90ABA94E59C462 ON ds_config (key, tenant)');
-                $this->addSql('CREATE TABLE ds_parameter (id INT NOT NULL, "key" VARCHAR(255) NOT NULL, value JSON DEFAULT NULL, enabled BOOLEAN NOT NULL, PRIMARY KEY(id))');
+                $this->addSql('CREATE TABLE ds_parameter (id INT NOT NULL, "key" VARCHAR(255) NOT NULL, value JSON DEFAULT NULL, encrypted BOOLEAN NOT NULL, enabled BOOLEAN NOT NULL, PRIMARY KEY(id))');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_B3C0FD91F48571EB ON ds_parameter ("key")');
                 $this->addSql('CREATE TABLE ds_metadata (id INT NOT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, slug VARCHAR(255) NOT NULL, type VARCHAR(255) DEFAULT NULL, data JSON NOT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, deleted_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_11290F17D17F50A6 ON ds_metadata (uuid)');
@@ -55,10 +61,6 @@ class Version1_0_0 extends AbstractMigration
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_B00328E0D17F50A6 ON app_user_oauth (uuid)');
                 $this->addSql('CREATE INDEX IDX_B00328E0A76ED395 ON app_user_oauth (user_id)');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_B00328E08CDE5729772E836A4E59C462 ON app_user_oauth (type, identifier, tenant)');
-                $this->addSql('CREATE TABLE app_registration (id INT NOT NULL, user_id INT DEFAULT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, username VARCHAR(255) NOT NULL, identity VARCHAR(255) DEFAULT NULL, data JSON NOT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, deleted_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
-                $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26D17F50A6 ON app_registration (uuid)');
-                $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26A76ED395 ON app_registration (user_id)');
-                $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26F85E06774E59C462 ON app_registration (username, tenant)');
                 $this->addSql('CREATE TABLE app_user (id INT NOT NULL, username VARCHAR(180) NOT NULL, email VARCHAR(180) NOT NULL, enabled BOOLEAN NOT NULL, salt VARCHAR(255) DEFAULT NULL, password VARCHAR(255) NOT NULL, last_login TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, confirmation_token VARCHAR(180) DEFAULT NULL, password_requested_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, roles TEXT NOT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, identity VARCHAR(255) DEFAULT NULL, identity_uuid UUID DEFAULT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, username_canonical VARCHAR(180) NOT NULL, email_canonical VARCHAR(180) NOT NULL, deleted_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_88BDF3E9C05FB297 ON app_user (confirmation_token)');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_88BDF3E9D17F50A6 ON app_user (uuid)');
@@ -67,6 +69,10 @@ class Version1_0_0 extends AbstractMigration
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_88BDF3E9E7927C744E59C462 ON app_user (email, tenant)');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_88BDF3E9A0D96FBF4E59C462 ON app_user (email_canonical, tenant)');
                 $this->addSql('COMMENT ON COLUMN app_user.roles IS \'(DC2Type:array)\'');
+                $this->addSql('CREATE TABLE app_registration (id INT NOT NULL, user_id INT DEFAULT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, username VARCHAR(255) NOT NULL, identity VARCHAR(255) DEFAULT NULL, data JSON NOT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, deleted_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
+                $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26D17F50A6 ON app_registration (uuid)');
+                $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26A76ED395 ON app_registration (user_id)');
+                $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26F85E06774E59C462 ON app_registration (username, tenant)');
                 $this->addSql('ALTER TABLE ds_metadata_trans ADD CONSTRAINT FK_A6447E202C2AC5D3 FOREIGN KEY (translatable_id) REFERENCES ds_metadata (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
                 $this->addSql('ALTER TABLE ds_access_permission ADD CONSTRAINT FK_D46DD4D04FEA67CF FOREIGN KEY (access_id) REFERENCES ds_access (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
                 $this->addSql('ALTER TABLE app_user_oauth ADD CONSTRAINT FK_B00328E0A76ED395 FOREIGN KEY (user_id) REFERENCES app_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
@@ -81,52 +87,52 @@ class Version1_0_0 extends AbstractMigration
 
                 $this->addSql('
                     INSERT INTO 
-                        ds_parameter (id, key, value, enabled)
+                        ds_parameter (id, key, value, encrypted, enabled)
                     VALUES 
-                        (1, \'ds_system.user.username\', \'"'.$data['system']['username'].'"\', true),
-                        (2, \'ds_system.user.password\', \'"'.$data['system']['password'].'"\', true),
-                        (3, \'ds_tenant.tenant.default\', \'"'.$data['tenant']['uuid'].'"\', true);
+                        (1, \'ds_system.user.username\', \'"'.$data['system']['username'].'"\', false, true),
+                        (2, \'ds_system.user.password\', \'"'.$cipherService->encrypt($data['system']['password']).'"\', true, true),
+                        (3, \'ds_tenant.tenant.default\', \'"'.$data['tenant']['uuid'].'"\', false, true);
                 ');
 
                 $this->addSql('
                     INSERT INTO 
                         ds_tenant (id, uuid, data, created_at, updated_at)
                     VALUES 
-                        (1, \''.$data['tenant']['uuid'].'\', \'{}\', now(), now());
+                        (1, \''.$data['tenant']['uuid'].'\', \'"'.$cipherService->encrypt(new stdClass).'"\', now(), now());
                 ');
 
                 $this->addSql('
                     INSERT INTO 
-                        ds_config (id, uuid, owner, owner_uuid, key, value, enabled, version, tenant, created_at, updated_at)
+                        ds_config (id, uuid, owner, owner_uuid, key, value, encrypted, enabled, version, tenant, created_at, updated_at)
                     VALUES 
-                        (1, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.spa.admin\', \'"'.$data['config']['app.spa.admin']['value'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (2, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.spa.portal\', \'"'.$data['config']['app.spa.portal']['value'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (3, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.spa.portal.oauth.success\', \'"'.$data['config']['app.spa.portal.oauth.success']['value'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (4, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.owner.type\', \'"BusinessUnit"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (5, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.owner.uuid\', \'"'.$data['business_unit']['administration']['uuid'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (6, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.data.github\', \'"{}"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (7, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.data.google\', \'"{}"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (8, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.data.twitter\', \'"{}"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (9, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.roles\', \'[]\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (10, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.enabled\', \'true\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (11, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.owner.type\', \'"BusinessUnit"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (12, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.owner.uuid\', \'"'.$data['business_unit']['administration']['uuid'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (13, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.data.github\', \'"{}"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (14, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.data.google\', \'"{}"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (15, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.data.twitter\', \'"{}"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (16, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.roles\', \'[]\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (17, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.enabled\', \'true\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (18, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.resetting.email.subject\', \'"app.resetting.email.subject"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (19, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.resetting.email.body.plain\', \'"app.resetting.email.body.plain"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (20, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.resetting.email.body.html\', \'"app.resetting.email.body.html"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (21, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.username\', \'"'.$data['user']['system']['username'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (22, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.password\', \'"'.$data['user']['system']['password'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (23, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.uuid\', \'"'.$data['user']['system']['uuid'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (24, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.roles\', \'[]\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (25, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.identity.roles\', \'[]\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (26, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.identity.type\', \'"System"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (27, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.identity.uuid\', \'"'.$data['identity']['system']['uuid'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
-                        (28, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.tenant\', \'"'.$data['tenant']['uuid'].'"\', true, 1, \''.$data['tenant']['uuid'].'\', now(), now());
+                        (1, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.spa.admin\', \'"'.$data['config']['app.spa.admin']['value'].'"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (2, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.spa.portal\', \'"'.$data['config']['app.spa.portal']['value'].'"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (3, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.spa.portal.oauth.success\', \'"'.$data['config']['app.spa.portal.oauth.success']['value'].'"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (4, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.owner.type\', \'"BusinessUnit"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (5, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.owner.uuid\', \'"'.$data['business_unit']['administration']['uuid'].'"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (6, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.data.github\', \'"{}"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (7, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.data.google\', \'"{}"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (8, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.data.twitter\', \'"{}"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (9, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.roles\', \'[]\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (10, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.individual.enabled\', \'true\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (11, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.owner.type\', \'"BusinessUnit"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (12, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.owner.uuid\', \'"'.$data['business_unit']['administration']['uuid'].'"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (13, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.data.github\', \'"{}"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (14, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.data.google\', \'"{}"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (15, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.data.twitter\', \'"{}"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (16, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.roles\', \'[]\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (17, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.registration.organization.enabled\', \'true\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (18, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.resetting.email.subject\', \'"app.resetting.email.subject"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (19, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.resetting.email.body.plain\', \'"app.resetting.email.body.plain"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (20, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'app.resetting.email.body.html\', \'"app.resetting.email.body.html"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (21, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.username\', \'"'.$data['user']['system']['username'].'"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (22, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.password\', \'"'.$cipherService->encrypt($data['user']['system']['password']).'"\', true, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (23, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.uuid\', \'"'.$data['user']['system']['uuid'].'"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (24, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.roles\', \'[]\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (25, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.identity.roles\', \'[]\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (26, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.identity.type\', \'"System"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (27, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.identity.uuid\', \'"'.$data['identity']['system']['uuid'].'"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now()),
+                        (28, \''.Uuid::uuid4()->toString().'\', \'BusinessUnit\', \''.$data['business_unit']['administration']['uuid'].'\', \'ds_api.user.tenant\', \'"'.$data['tenant']['uuid'].'"\', false, true, 1, \''.$data['tenant']['uuid'].'\', now(), now());
                 ');
 
                 $this->addSql('

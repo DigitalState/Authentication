@@ -34,6 +34,7 @@
         "php-http/guzzle6-adapter": "^1.2@dev",
         "php-http/httplug-bundle": "^1.0@dev",
         "hwi/oauth-bundle": "^0.6.0@dev",
+        "defuse/php-encryption": "^2.2",
         "digitalstate/core": "dev-develop"
     },
     "require-dev": {
