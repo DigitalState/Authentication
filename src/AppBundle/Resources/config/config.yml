@@ -1,3 +1,26 @@
+ds_config:
+  configs:
+    - { key: app.spa.admin,                               encrypt: false,  title: app.configs.spa.admin                              }
+    - { key: app.spa.portal,                              encrypt: false,  title: app.configs.spa.portal                             }
+    - { key: app.spa.portal.oauth.success,                encrypt: false,  title: app.configs.spa.portal.oauth.success               }
+    - { key: app.registration.individual.owner.type,      encrypt: false,  title: app.configs.registration.individual.owner.type     }
+    - { key: app.registration.individual.owner.uuid,      encrypt: false,  title: app.configs.registration.individual.owner.uuid     }
+    - { key: app.registration.individual.data.github,     encrypt: false,  title: app.configs.registration.individual.data.github    }
+    - { key: app.registration.individual.data.google,     encrypt: false,  title: app.configs.registration.individual.data.google    }
+    - { key: app.registration.individual.data.twitter,    encrypt: false,  title: app.configs.registration.individual.data.twitter   }
+    - { key: app.registration.individual.roles,           encrypt: false,  title: app.configs.registration.individual.roles          }
+    - { key: app.registration.individual.enabled,         encrypt: false,  title: app.configs.registration.individual.enabled        }
+    - { key: app.registration.organization.owner.type,    encrypt: false,  title: app.configs.registration.organization.owner.type   }
+    - { key: app.registration.organization.owner.uuid,    encrypt: false,  title: app.configs.registration.organization.owner.uuid   }
+    - { key: app.registration.organization.data.github,   encrypt: false,  title: app.configs.registration.organization.data.github  }
+    - { key: app.registration.organization.data.google,   encrypt: false,  title: app.configs.registration.organization.data.google  }
+    - { key: app.registration.organization.data.twitter,  encrypt: false,  title: app.configs.registration.organization.data.twitter }
+    - { key: app.registration.organization.roles,         encrypt: false,  title: app.configs.registration.organization.roles        }
+    - { key: app.registration.organization.enabled,       encrypt: false,  title: app.configs.registration.organization.enabled      }
+    - { key: app.resetting.email.subject,                 encrypt: false,  title: app.configs.resetting.email.subject                }
+    - { key: app.resetting.email.body.plain,              encrypt: false,  title: app.configs.resetting.email.body.plain             }
+    - { key: app.resetting.email.body.html,               encrypt: false,  title: app.configs.resetting.email.body.html              }
+
 ds_security:
   permissions:
     user:                        { attributes: [BROWSE, READ, EDIT, ADD, DELETE], entity:   AppBundle\Entity\User,                   title: app.permissions.user                    }

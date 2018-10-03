@@ -29,12 +29,13 @@ abstract class OAuthFixture extends ResourceFixture
         $objects = $this->parse($this->getResource());
 
         foreach ($objects as $object) {
+            $user = $manager->getRepository(User::class)->findOneBy(['uuid' => $object->user]);
             $oAuth = new OAuth;
             $oAuth
                 ->setUuid($object->uuid)
                 ->setOwner($object->owner)
                 ->setOwnerUuid($object->owner_uuid)
-                ->setUser($manager->getRepository(User::class)->findOneBy(['uuid' => $object->user]))
+                ->setUser($user)
                 ->setType($object->type)
                 ->setIdentifier($object->identifier)
                 ->setToken($object->token)
