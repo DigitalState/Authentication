@@ -329,5 +329,4 @@ prototype:
   owner_uuid: ~
   key: ~
   value: ~
-  enabled: true
   tenant: ~
