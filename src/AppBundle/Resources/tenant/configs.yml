@@ -8,10 +8,10 @@ objects:
   - key: app.spa.portal.oauth.success
     value: '%config.app.spa.portal.oauth.success.value%'
 
-  - key: app.registration.individual.owner
+  - key: app.registration.individual.owner.type
     value: BusinessUnit
 
-  - key: app.registration.individual.owner_uuid
+  - key: app.registration.individual.owner.uuid
     value: '%business_unit.administration.uuid%'
 
   - key: app.registration.organization.data.github
@@ -29,10 +29,10 @@ objects:
   - key: app.registration.individual.enabled
     value: true
 
-  - key: app.registration.organization.owner
+  - key: app.registration.organization.owner.type
     value: BusinessUnit
 
-  - key: app.registration.organization.owner_uuid
+  - key: app.registration.organization.owner.uuid
     value: '%business_unit.administration.uuid%'
 
   - key: app.registration.organization.roles
