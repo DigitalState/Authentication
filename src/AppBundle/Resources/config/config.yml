@@ -17,6 +17,13 @@ ds_config:
     - { key: app.registration.organization.data.twitter,  encrypt: false,  title: app.configs.registration.organization.data.twitter }
     - { key: app.registration.organization.roles,         encrypt: false,  title: app.configs.registration.organization.roles        }
     - { key: app.registration.organization.enabled,       encrypt: false,  title: app.configs.registration.organization.enabled      }
+    - { key: app.registration.staff.owner.type,           encrypt: false,  title: app.configs.registration.staff.owner.type          }
+    - { key: app.registration.staff.owner.uuid,           encrypt: false,  title: app.configs.registration.staff.owner.uuid          }
+    - { key: app.registration.staff.data.github,          encrypt: false,  title: app.configs.registration.staff.data.github         }
+    - { key: app.registration.staff.data.google,          encrypt: false,  title: app.configs.registration.staff.data.google         }
+    - { key: app.registration.staff.data.twitter,         encrypt: false,  title: app.configs.registration.staff.data.twitter        }
+    - { key: app.registration.staff.roles,                encrypt: false,  title: app.configs.registration.staff.roles               }
+    - { key: app.registration.staff.enabled,              encrypt: false,  title: app.configs.registration.staff.enabled             }
     - { key: app.resetting.email.subject,                 encrypt: false,  title: app.configs.resetting.email.subject                }
     - { key: app.resetting.email.body.plain,              encrypt: false,  title: app.configs.resetting.email.body.plain             }
     - { key: app.resetting.email.body.html,               encrypt: false,  title: app.configs.resetting.email.body.html              }

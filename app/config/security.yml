@@ -71,6 +71,21 @@ security:
         success_handler: lexik_jwt_authentication.handler.authentication_success
         failure_handler: lexik_jwt_authentication.handler.authentication_failure
         require_previous_session: false
+    oauth_individual:
+      pattern: ^/oauth/individual
+      stateless: true
+      anonymous: true
+      oauth:
+        resource_owners:
+          individual/github: app_oauth_individual_github_check
+          individual/google: app_oauth_individual_google_check
+          individual/twitter: app_oauth_individual_twitter_check
+        login_path: /oauth/individual
+        check_path: /oauth/individual
+        oauth_user_provider:
+          service: app.security.provider.oauth.individual
+        success_handler: lexik_jwt_authentication.handler.authentication_success
+        failure_handler: lexik_jwt_authentication.handler.authentication_failure
     oauth_organization:
       pattern: ^/oauth/organization
       stateless: true
@@ -86,19 +101,19 @@ security:
           service: app.security.provider.oauth.organization
         success_handler: lexik_jwt_authentication.handler.authentication_success
         failure_handler: lexik_jwt_authentication.handler.authentication_failure
-    oauth_individual:
-      pattern: ^/oauth/individual
+    oauth_staff:
+      pattern: ^/oauth/staff
       stateless: true
       anonymous: true
       oauth:
         resource_owners:
-          individual/github: app_oauth_individual_github_check
-          individual/google: app_oauth_individual_google_check
-          individual/twitter: app_oauth_individual_twitter_check
-        login_path: /oauth/individual
-        check_path: /oauth/individual
+          staff/github: app_oauth_staff_github_check
+          staff/google: app_oauth_staff_google_check
+          staff/twitter: app_oauth_staff_twitter_check
+        login_path: /oauth/staff
+        check_path: /oauth/staff
         oauth_user_provider:
-          service: app.security.provider.oauth.individual
+          service: app.security.provider.oauth.staff
         success_handler: lexik_jwt_authentication.handler.authentication_success
         failure_handler: lexik_jwt_authentication.handler.authentication_failure
     api:
