@@ -138,6 +138,7 @@ hwi_oauth:
   firewall_names:
     - oauth_organization
     - oauth_individual
+    - oauth_staff
   fosub:
     username_iterations: 30
     properties: []
