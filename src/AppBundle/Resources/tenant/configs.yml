@@ -5,8 +5,8 @@ objects:
   - key: app.spa.portal
     value: '%config.app.spa.portal.value%'
 
-  - key: app.spa.portal.oauth.success
-    value: '%config.app.spa.portal.oauth.success.value%'
+  - key: app.spa.portal.oauth
+    value: '%config.app.spa.portal.oauth.value%'
 
   - key: app.registration.individual.owner.type
     value: BusinessUnit

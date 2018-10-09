@@ -8,8 +8,8 @@ fixtures:
     value: http://portal.ds
 
   - uuid: 91ce3267-0a56-446d-b298-a28ca537a0a1
-    key: app.spa.portal.oauth.success
-    value: http://portal.ds/oauth/success
+    key: app.spa.portal.oauth
+    value: http://portal.ds/oauth
 
   - uuid: 20346d3f-5ef2-4aec-a644-210c5e71d662
     key: app.registration.individual.owner.type
