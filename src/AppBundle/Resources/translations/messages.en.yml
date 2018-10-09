@@ -1,7 +1,7 @@
 app:
-    resetting:
-        email:
-            subject: Reset Password
-            body:
-                plain: To reset your password, please visit %confirmationUrl%
-                html: <p>To reset your password, please visit %confirmationUrl%</p>
+  resetting:
+    email:
+      subject: Reset Password
+      body:
+        plain: To reset your password, please visit %confirmationUrl%
+        html: <p>To reset your password, please visit %confirmationUrl%</p>

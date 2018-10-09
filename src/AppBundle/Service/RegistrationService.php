@@ -34,7 +34,6 @@ class RegistrationService extends EntityService
     public function __construct(EntityManager $manager, UserService $userService, ConfigService $configService, $entity = Registration::class)
     {
         parent::__construct($manager, $entity);
-
         $this->userService = $userService;
         $this->configService = $configService;
     }

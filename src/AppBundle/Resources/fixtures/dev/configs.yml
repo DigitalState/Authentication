@@ -3,13 +3,17 @@ fixtures:
     key: app.spa.admin
     value: http://admin.ds
 
+  - uuid: 177dd785-e247-459f-a9b2-16e202511d4d
+    key: app.spa.admin.oauth
+    value: http://admin.ds/oauth
+
   - uuid: 85092edf-6eb9-4879-803a-02ccec76d34d
     key: app.spa.portal
     value: http://portal.ds
 
   - uuid: 91ce3267-0a56-446d-b298-a28ca537a0a1
-    key: app.spa.portal.oauth.success
-    value: http://portal.ds/oauth/success
+    key: app.spa.portal.oauth
+    value: http://portal.ds/oauth
 
   - uuid: 20346d3f-5ef2-4aec-a644-210c5e71d662
     key: app.registration.individual.owner.type
@@ -66,6 +70,34 @@ fixtures:
   - uuid: 32ae8398-a416-4100-bb37-1674b357bcc9
     key: app.registration.organization.enabled
     value: true
+
+  - uuid: 203911ea-b74d-4ada-b28a-7ccf9bacc6ea
+    key: app.registration.staff.owner.type
+    value: BusinessUnit
+
+  - uuid: 9939d48b-e6c1-4955-8205-bde6db7692fe
+    key: app.registration.staff.owner.uuid
+    value: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+
+  - uuid: dee4cac6-5496-4045-8c70-d6b0aecd35c4
+    key: app.registration.staff.data.github
+    value: '{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }'
+
+  - uuid: faee4c2c-ae87-48db-93e0-9f99ada8e72b
+    key: app.registration.staff.data.google
+    value: '{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }'
+
+  - uuid: ea8e7ac1-650c-4ea1-a5c2-69bcdb00e856
+    key: app.registration.staff.data.twitter
+    value: '{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }'
+
+  - uuid: 363dc127-9d31-46d5-83a7-9caa88730cbd
+    key: app.registration.staff.roles
+    value: [777b96e7-e183-44f7-b7e4-dc0cb7591f74]
+
+  - uuid: ecf07c0e-1341-4e84-8fa3-bcc31fa00ef8
+    key: app.registration.staff.enabled
+    value: false
 
   - uuid: 4299a71c-e234-4591-a17d-69a9ce5fb484
     key: app.resetting.email.subject

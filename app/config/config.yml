@@ -138,6 +138,7 @@ hwi_oauth:
   firewall_names:
     - oauth_organization
     - oauth_individual
+    - oauth_staff
   fosub:
     username_iterations: 30
     properties: []
@@ -174,6 +175,22 @@ hwi_oauth:
       client_secret: '%integration_google_secret%'
       scope: email profile
     organization/twitter:
+      type: twitter
+      client_id: '%integration_twitter_id%'
+      client_secret: '%integration_twitter_secret%'
+      options:
+        include_email: true
+    staff/github:
+      type: github
+      client_id: '%integration_github_id%'
+      client_secret: '%integration_github_secret%'
+      scope: user:email
+    staff/google:
+      type: google
+      client_id: '%integration_google_id%'
+      client_secret: '%integration_google_secret%'
+      scope: email profile
+    staff/twitter:
       type: twitter
       client_id: '%integration_twitter_id%'
       client_secret: '%integration_twitter_secret%'
