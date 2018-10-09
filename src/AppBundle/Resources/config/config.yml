@@ -1,8 +1,9 @@
 ds_config:
   configs:
     - { key: app.spa.admin,                               encrypt: false,  title: app.configs.spa.admin                              }
+    - { key: app.spa.admin.oauth,                         encrypt: false,  title: app.configs.spa.admin.oauth                        }
     - { key: app.spa.portal,                              encrypt: false,  title: app.configs.spa.portal                             }
-    - { key: app.spa.portal.oauth.success,                encrypt: false,  title: app.configs.spa.portal.oauth.success               }
+    - { key: app.spa.portal.oauth,                        encrypt: false,  title: app.configs.spa.portal.oauth                       }
     - { key: app.registration.individual.owner.type,      encrypt: false,  title: app.configs.registration.individual.owner.type     }
     - { key: app.registration.individual.owner.uuid,      encrypt: false,  title: app.configs.registration.individual.owner.uuid     }
     - { key: app.registration.individual.data.github,     encrypt: false,  title: app.configs.registration.individual.data.github    }

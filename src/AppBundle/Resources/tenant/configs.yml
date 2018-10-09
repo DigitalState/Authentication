@@ -2,6 +2,9 @@ objects:
   - key: app.spa.admin
     value: '%config.app.spa.admin.value%'
 
+  - key: app.spa.admin.oauth
+    value: '%config.app.spa.admin.oauth.value%'
+
   - key: app.spa.portal
     value: '%config.app.spa.portal.value%'
 

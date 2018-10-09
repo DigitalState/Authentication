@@ -3,6 +3,10 @@ fixtures:
     key: app.spa.admin
     value: http://admin.ds
 
+  - uuid: 177dd785-e247-459f-a9b2-16e202511d4d
+    key: app.spa.admin.oauth
+    value: http://admin.ds/oauth
+
   - uuid: 85092edf-6eb9-4879-803a-02ccec76d34d
     key: app.spa.portal
     value: http://portal.ds

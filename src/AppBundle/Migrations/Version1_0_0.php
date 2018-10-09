@@ -30,7 +30,7 @@ class Version1_0_0 extends AbstractMigration implements ContainerAwareInterface
         switch ($platform) {
             case 'postgresql':
                 // Schema
-                $this->addSql('CREATE SEQUENCE ds_config_id_seq INCREMENT BY 1 MINVALUE 1 START 36');
+                $this->addSql('CREATE SEQUENCE ds_config_id_seq INCREMENT BY 1 MINVALUE 1 START 37');
                 $this->addSql('CREATE SEQUENCE ds_parameter_id_seq INCREMENT BY 1 MINVALUE 1 START 4');
                 $this->addSql('CREATE SEQUENCE ds_metadata_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
                 $this->addSql('CREATE SEQUENCE ds_metadata_trans_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
@@ -165,12 +165,16 @@ class Version1_0_0 extends AbstractMigration implements ContainerAwareInterface
                         'value' => serialize($data['config']['app.spa.admin']['value'])
                     ],
                     [
+                        'key' => 'app.spa.admin.oauth',
+                        'value' => serialize($data['config']['app.spa.admin.oauth']['value'])
+                    ],
+                    [
                         'key' => 'app.spa.portal',
                         'value' => serialize($data['config']['app.spa.portal']['value'])
                     ],
                     [
-                        'key' => 'app.spa.portal.oauth.success',
-                        'value' => serialize($data['config']['app.spa.portal.oauth.success']['value'])
+                        'key' => 'app.spa.portal.oauth',
+                        'value' => serialize($data['config']['app.spa.portal.oauth']['value'])
                     ],
                     [
                         'key' => 'app.registration.individual.owner.type',

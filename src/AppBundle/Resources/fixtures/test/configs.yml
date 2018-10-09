@@ -5,6 +5,12 @@ fixtures:
     value: http://admin.ds
     tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
 
+  - uuid: 2703f916-b8fe-4226-a902-71f266c71daf
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.spa.admin.oauth
+    value: http://admin.ds/oauth
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
   - uuid: 8d2e069c-5204-438d-8087-c01e20b895a7
     owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
     key: app.spa.portal
@@ -213,6 +219,12 @@ fixtures:
     owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
     key: app.spa.admin
     value: http://admin.ds
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 20090646-35ee-47c4-86f6-1a63258440c4
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.spa.admin.oauth
+    value: http://admin.ds/oauth
     tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
 
   - uuid: 9ef957bc-d639-48ca-90e9-ddaf692c214b

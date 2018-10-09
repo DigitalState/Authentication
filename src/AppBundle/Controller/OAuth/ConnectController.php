@@ -25,7 +25,13 @@ class ConnectController extends HWIConnectController
 
         $url = parse_url($authorizationUrl);
         parse_str($url['query'], $url['query']);
-        $oauth = $this->get('ds_config.service.config')->get('app.spa.portal.oauth');
+
+        if (strpos($service, 'staff/') === 0) {
+            $oauth = $this->get('ds_config.service.config')->get('app.spa.admin.oauth');
+        } else {
+            $oauth = $this->get('ds_config.service.config')->get('app.spa.portal.oauth');
+        }
+
         $tenant = $this->get('ds_tenant.service.tenant')->getContext();
         $url['query']['redirect_uri'] = $oauth.'?tenant='.urlencode($tenant).'&service='.urlencode($service);
         $url['query'] = http_build_query($url['query']);

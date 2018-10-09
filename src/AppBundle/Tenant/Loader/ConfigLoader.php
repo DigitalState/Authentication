@@ -37,6 +37,7 @@ class ConfigLoader implements Loader
         // @todo Figure out how symfony does parameter binding and use the same technique
         $yml = strtr($yml, [
             '%config.app.spa.admin.value%' => $tenant->getData()['config']['app.spa.admin']['value'],
+            '%config.app.spa.admin.oauth.value%' => $tenant->getData()['config']['app.spa.admin.oauth']['value'],
             '%config.app.spa.portal.value%' => $tenant->getData()['config']['app.spa.portal']['value'],
             '%config.app.spa.portal.oauth.value%' => $tenant->getData()['config']['app.spa.portal.oauth']['value'],
             '%business_unit.administration.uuid%' => $tenant->getData()['business_unit']['administration']['uuid'],
