@@ -38,6 +38,7 @@ class ConfigLoader implements Loader
         $yml = strtr($yml, [
             '%config.app.spa.admin.value%' => $tenant->getData()['config']['app.spa.admin']['value'],
             '%config.app.spa.portal.value%' => $tenant->getData()['config']['app.spa.portal']['value'],
+            '%config.app.spa.portal.oauth.value%' => $tenant->getData()['config']['app.spa.portal.oauth']['value'],
             '%business_unit.administration.uuid%' => $tenant->getData()['business_unit']['administration']['uuid'],
             '%tenant.uuid%' => $tenant->getUuid()
         ]);
