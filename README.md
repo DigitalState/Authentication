@@ -25,9 +25,8 @@ It also provides a variety of features such as user management, self-registratio
 - [Registration](documentation/registration.md)
 - [Login](documentation/login.md)
 - [Password Recovery](documentation/password_recovery.md)
-- [OAuth](documentation/oauth.md)
 
-Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation)
+Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation).
 
 ## References
 
