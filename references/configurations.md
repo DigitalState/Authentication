@@ -12,8 +12,9 @@ The DigitalState Authentication microservice configurations registry.
 | Name | Type | Description | Example |
 | :--- | :--- | :---------- | :------ |
 | `app.spa.admin` | string | The admin spa url. | `http://admin.lab.ds` |
+| `app.spa.admin.oauth` | string | The oauth callback admin spa url. | `http://admin.lab.ds/oauth` |
 | `app.spa.portal` | string | The portal spa url. | `http://portal.lab.ds` |
-| `app.spa.portal.oauth.success` | string | The oauth success portal spa url. | `http://portal.lab.ds/oauth/success` |
+| `app.spa.portal.oauth` | string | The oauth callback portal spa url. | `http://portal.lab.ds/oauth` |
 | `app.registration.individual.owner.type` | string | The default owner type when an individual registers. | `BusinessUnit` |
 | `app.registration.individual.owner.uuid` | string | The default owner UUID when an individual registers. | `a9d68bf7-5000-49fe-8b00-33dde235b327` |
 | `app.registration.individual.data.github` | string | The template used for identity data when an individual registers through Github. | `{ "email": "%email%", "firstName": "%firstName%", "lastName": "%lastName%" }` |
@@ -36,4 +37,4 @@ The DigitalState Authentication microservice configurations registry.
 
 | Name | Type | Description | Example |
 | :--- | :--- | :---------- | :------ |
-| - | - | - | - |
+| `ds_tenant.tenant.default` | string | The uuid of the tenant used by default | `d928b020-94f6-4928-a510-04fc49d5a174` |

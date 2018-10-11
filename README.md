@@ -20,10 +20,10 @@ It also provides a variety of features such as user management, self-registratio
 
 ## Documentation
 
-- [JWT](documentation/jwt.md)
 - [User Management](documentation/user_management.md)
 - [Registration](documentation/registration.md)
 - [Login](documentation/login.md)
+- [Third-party Login](documentation/third_party_login.md)
 - [Password Recovery](documentation/password_recovery.md)
 
 Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation).
