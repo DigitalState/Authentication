@@ -1,8 +1,6 @@
 # Third-party Login
 
-The Authentication microservice supports third-party authentication through oAuth.
-
-This means a user may opt to login through a preferred third-party instead of going through the normal registration process.
+The Authentication microservice supports third-party authentication through oAuth. This means a user may opt to login through a preferred third-party instead of going through the normal registration process.
 
 It is recommended to read the [normal login documention](login.md) before reading this documentation.
 
