@@ -1,6 +1,8 @@
 # Login
 
-Then Authentication microservice allows users to authenticate themselves using their designated credentials, if they are are already registered users. For documentation on how to register, consult the [registration](registration.md) page.
+Then Authentication microservice allows registered users to authenticate themselves using their designated credentials.
+
+For documentation on how to register, consult the [registration](registration.md) page.
 
 ## Table of Contents
 
@@ -10,9 +12,9 @@ Then Authentication microservice allows users to authenticate themselves using t
 
 ## Preface
 
-The majority of endpoints available on the DigitalState Api are protected by a JWT-based firewall. This means a JWT token must be provided along side every HTTP requests for them to be processed.
+The majority of endpoints available on the DigitalState Api are protected by a JWT-based firewall. This means a JWT token must be provided along side every HTTP requests for them to be processed, otherwise a `401` HTTP response will be returned.
 
-When issuing an HTTP request, the JWT token is to be passed via the `Authorization` HTTP header, otherwise a `401` HTTP response will be returned. For example:
+When issuing an HTTP request, the JWT token is to be passed via the `Authorization` HTTP header. For example:
 
 #### Request
 
