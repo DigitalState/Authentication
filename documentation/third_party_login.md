@@ -42,7 +42,7 @@ GET `/oauth/individual/{third-party}/redirect`
 
 Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured portal oAuth url](../references/configurations.md).
 
-A one-time usage code is passed, if the login was successful. This code can then be used to obtain a JWT token from the Authentication microservice.
+A one-time usage code is passed along, if the login was successful. This code can then be used to obtain a JWT token from the Authentication microservice.
 
 #### Request
 
@@ -81,7 +81,7 @@ GET `/oauth/organization/{third-party}/redirect`
 
 Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured portal oAuth url](../references/configurations.md).
 
-A one-time usage code is passed, if the login was successful. This code can then be used to obtain a JWT token from the Authentication microservice.
+A one-time usage code is passed along, if the login was successful. This code can then be used to obtain a JWT token from the Authentication microservice.
 
 #### Request
 
@@ -120,7 +120,7 @@ GET `/oauth/staff/{third-party}/redirect`
 
 Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured admin oAuth url](../references/configurations.md).
 
-A one-time usage code is passed, if the login was successful. This code can then be used to obtain a JWT token from the Authentication microservice.
+A one-time usage code is passed along, if the login was successful. This code can then be used to obtain a JWT token from the Authentication microservice.
 
 #### Request
 
