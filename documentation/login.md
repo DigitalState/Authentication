@@ -2,7 +2,7 @@
 
 Then Authentication microservice allows registered users to authenticate themselves using their designated credentials.
 
-For documentation on how to register, consult the [registration](registration.md) page.
+For documentation on how to register, consult the [registration documentation](registration.md).
 
 ## Table of Contents
 
