@@ -12,7 +12,9 @@ It is recommended to read the [normal login documention](login.md) before readin
 
 ## Login Flow
 
-On first login, the Authentication microservice will detect a new user has logged in and will be registered accordingly using third-party information. On subsequent login, the user will go through as normal.
+On first login, the Authentication microservice will detect a new user has logged in and will be registered accordingly using third-party information.
+
+On subsequent login, the user will simply go through as usual.
 
 ## Supported Third-parties
 
@@ -24,7 +26,7 @@ The following third-party authentication methods are currently supported:
 
 ## Obtaining a JWT token
 
-An authentication endpoint is available for each type of users: individual, organization and staff.
+An authentication endpoint is available for each type of users: [individual](#individual), [organization](#organization) and [staff](#staff).
 
 ### Individual
 
@@ -38,7 +40,7 @@ GET `/oauth/individual/{third-party}/redirect`
 
 #### Response
 
-Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured oAuth url](../references/configurations).
+Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured portal oAuth url](../references/configurations.md).
 
 A code is passed to the configured oAuth url, which can be used to obtain a JWT token from the Authentication microservice.
 
@@ -85,7 +87,7 @@ GET `/oauth/organization/{third-party}/redirect`
 
 #### Response
 
-Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured oAuth url](../references/configurations).
+Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured portal oAuth url](../references/configurations.md).
 
 A code is passed to the configured oAuth url, which can be used to obtain a JWT token from the Authentication microservice.
 
