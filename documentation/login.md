@@ -6,11 +6,11 @@ For documentation on how to register, consult the [registration documentation](r
 
 ## Table of Contents
 
-- [Preface](#preface)
+- [Security Firewall](#security-firewall)
 - [Obtaining a JWT token](#obtaining-a-jwt-token)
 - [JWT Structure](#jwt-structure)
 
-## Preface
+## Security Firewall
 
 The majority of endpoints available on the DigitalState Api are protected by a JWT-based firewall. This means a JWT token must be provided along side every HTTP requests for them to be processed, otherwise a `401` HTTP response will be returned.
 
