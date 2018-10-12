@@ -53,7 +53,6 @@ POST `/oauth/individual/{third-party}?code={code}`
 _Headers:_
 
 ```
-Content-Type: application/json
 Accept: application/json
 ```
 
@@ -92,7 +91,6 @@ POST `/oauth/organization/{third-party}?code={code}`
 _Headers:_
 
 ```
-Content-Type: application/json
 Accept: application/json
 ```
 
@@ -131,7 +129,6 @@ POST `/oauth/staff/{third-party}?code={code}`
 _Headers:_
 
 ```
-Content-Type: application/json
 Accept: application/json
 ```
 
