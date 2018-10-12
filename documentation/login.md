@@ -184,7 +184,7 @@ _Body:_
 
 ## JWT Structure
 
-The JWT token is structured into 3 sections: the header, the payload and finally the signature.
+The JWT token is structured into 3 sections: the [header](#header), the [payload](#payload) and the [signature](#signature).
 
 ### Header
 
