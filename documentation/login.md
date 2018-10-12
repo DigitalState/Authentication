@@ -1,10 +1,12 @@
 # Login
 
+Then Authentication microservice allows users to authenticate themselves using their designated credentials, if they are are already registered users. For documentation on how to register, consult the [registration](registration.md) page.
+
 ## Table of Contents
 
 - [Preface](#preface)
 - [Obtaining a JWT token](#obtaining-a-jwt-token)
-- [Structure of a JWT token](#structure-of-a-jwt-token)
+- [JWT Structure](#jwt-structure)
 
 ## Preface
 
@@ -42,14 +44,6 @@ _Body:_
 ```
 
 ## Obtaining a JWT token
-
-The Authentication microservice is charge of issuing JWT tokens to users wishing to login.
-
-It is possible to obtain a JWT Token by one of two methods: providing a username and password combination to the auth endpoint or login in through a supported oAuth third-party authenticator.
-
-### Username/password authentication
-
-Then Authentication microservice allows you to authenticate yourself using the proper credentials, if you are already a registered user. For documentation on how to register, consult the [registration](registration.md) page.
 
 An authentication endpoint is available for each type of users: individual, organization, staff and anonymous.
 
@@ -186,162 +180,7 @@ _Body:_
 }
 ```
 
-### Third-party authentication
-
-The Authentication microservice also supports third-party authentication through oAuth.
-
-This means a user may opt to login through a preferred third-party instead of going through the normal registration process.
-
-On first login, the Authentication microservice will detect a new user has logged in and will be registered accordingly using third-party information. On subsequent login, the user will go through as normal.
-
-The following third-party authentication methods are currently supported:
-
-- Github
-- Google
-- Twitter
-
-### Individual
-
-An endpoint is available for individuals who wish to authenticate via a third-party.
-
-#### Request
-
-_Method:_
-
-GET `/oauth/individual/{third-party}/redirect`
-
-#### Response
-
-Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured oAuth url](../references/configurations).
-
-A code is passed to the configured oAuth url, which can be used to obtain a JWT token from the Authentication microservice.
-
-#### Request
-
-_Method:_
-
-POST `/oauth/organization/github`
-
-_Headers:_
-
-```
-Content-Type: application/json
-Accept: application/json
-```
-
-_Body:_
-
-```
-{
-  "code": "129085890324893"
-}
-```
-
-#### Response
-
-_Body:_
-
-```
-{
-  "token": "eyJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJST0xF[...].Ds34hb80MfOZfViFx0wI[...]"
-}
-```
-
-### Organization
-
-An endpoint is available for organizations who wish to authenticate via a third-party.
-
-#### Request
-
-_Method:_
-
-GET `/oauth/organization/{third-party}/redirect`
-
-#### Response
-
-Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured oAuth url](../references/configurations).
-
-A code is passed to the configured oAuth url, which can be used to obtain a JWT token from the Authentication microservice.
-
-#### Request
-
-_Method:_
-
-POST `/oauth/organization/github`
-
-_Headers:_
-
-```
-Content-Type: application/json
-Accept: application/json
-```
-
-_Body:_
-
-```
-{
-  "code": "129085890324893"
-}
-```
-
-#### Response
-
-_Body:_
-
-```
-{
-  "token": "eyJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJST0xF[...].Ds34hb80MfOZfViFx0wI[...]"
-}
-```
-
-### Staff
-
-An endpoint is available for staff members who wish to authenticate via a third-party.
-
-#### Request
-
-_Method:_
-
-GET `/oauth/staff/{third-party}/redirect`
-
-#### Response
-
-Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured oAuth url](../references/configurations).
-
-A code is passed to the configured oAuth url, which can be used to obtain a JWT token from the Authentication microservice.
-
-#### Request
-
-_Method:_
-
-POST `/oauth/organization/github`
-
-_Headers:_
-
-```
-Content-Type: application/json
-Accept: application/json
-```
-
-_Body:_
-
-```
-{
-  "code": "129085890324893"
-}
-```
-
-#### Response
-
-_Body:_
-
-```
-{
-  "token": "eyJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJST0xF[...].Ds34hb80MfOZfViFx0wI[...]"
-}
-```
-
-## Structure of a JWT token
+## JWT Structure
 
 The JWT token is structured into 3 sections: the header, the payload and finally the signature.
 
