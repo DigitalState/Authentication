@@ -12,7 +12,7 @@ For documentation on how to register, consult the [registration documentation](r
 
 ## Security Firewall
 
-The majority of endpoints available on the DigitalState Api are protected by a JWT-based firewall. This means a JWT token must be provided along side every HTTP requests for them to be processed, otherwise a `401` HTTP response will be returned.
+The majority of endpoints available on the DigitalState Api are protected by a JWT-based security firewall. This means a JWT token must be provided along side every HTTP requests for them to be processed, otherwise a `401` HTTP response will be returned.
 
 When issuing an HTTP request, the JWT token is to be passed via the `Authorization` HTTP header. For example:
 
@@ -153,9 +153,9 @@ _Body:_
 
 ### Anonymous
 
-As mentioned previously, the majority of endpoints available on the DigitalState Api are protected by a JWT-based firewall. This includes endpoints that would normally appear to be public at first glance, for example: the list of available services located on the Services microservice or general informational pages located on the CMS microservice.
+As mentioned previously, the majority of endpoints available on the DigitalState Api are protected by a JWT-based security firewall. This includes endpoints that would normally appear to be public at first glance, for example: the list of available services located on the Services microservice or general informational pages located on the CMS microservice.
 
-A JWT token of type `anonymous` is required even when requesting the most basic of information from a microservice api. This convention has been adopted for a more streamlined approach to security where everything passes through the JWT firewall in place.
+A JWT token of type `anonymous` is required even when requesting the most basic of information from a microservice api. This convention has been adopted for a more streamlined approach to security where everything passes through the JWT security firewall.
 
 An endpoint is available for anonymous users who wish to anonymously authenticate.
 
