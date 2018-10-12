@@ -42,27 +42,19 @@ GET `/oauth/individual/{third-party}/redirect`
 
 Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured portal oAuth url](../references/configurations.md).
 
-A code is passed to the configured oAuth url, which can be used to obtain a JWT token from the Authentication microservice.
+A one-time usage code is passed, if the login was successful. This code can then be used to obtain a JWT token from the Authentication microservice.
 
 #### Request
 
 _Method:_
 
-POST `/oauth/organization/github`
+POST `/oauth/individual/{third-party}?code={code}`
 
 _Headers:_
 
 ```
 Content-Type: application/json
 Accept: application/json
-```
-
-_Body:_
-
-```
-{
-  "code": "129085890324893"
-}
 ```
 
 #### Response
@@ -89,27 +81,19 @@ GET `/oauth/organization/{third-party}/redirect`
 
 Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured portal oAuth url](../references/configurations.md).
 
-A code is passed to the configured oAuth url, which can be used to obtain a JWT token from the Authentication microservice.
+A one-time usage code is passed, if the login was successful. This code can then be used to obtain a JWT token from the Authentication microservice.
 
 #### Request
 
 _Method:_
 
-POST `/oauth/organization/github`
+POST `/oauth/organization/{third-party}?code={code}`
 
 _Headers:_
 
 ```
 Content-Type: application/json
 Accept: application/json
-```
-
-_Body:_
-
-```
-{
-  "code": "129085890324893"
-}
 ```
 
 #### Response
@@ -134,29 +118,21 @@ GET `/oauth/staff/{third-party}/redirect`
 
 #### Response
 
-Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured oAuth url](../references/configurations).
+Generally, a third-party login screen will be presented, followed by a grant screen, to eventually be redirected back to the [configured admin oAuth url](../references/configurations.md).
 
-A code is passed to the configured oAuth url, which can be used to obtain a JWT token from the Authentication microservice.
+A one-time usage code is passed, if the login was successful. This code can then be used to obtain a JWT token from the Authentication microservice.
 
 #### Request
 
 _Method:_
 
-POST `/oauth/organization/github`
+POST `/oauth/staff/{third-party}?code={code}`
 
 _Headers:_
 
 ```
 Content-Type: application/json
 Accept: application/json
-```
-
-_Body:_
-
-```
-{
-  "code": "129085890324893"
-}
 ```
 
 #### Response
