@@ -47,7 +47,7 @@ _Body:_
 
 ## Obtaining a JWT token
 
-An authentication endpoint is available for each type of users: individual, organization, staff and anonymous.
+An authentication endpoint is available for each type of users: [individual](#individual), [organization](#organization), [staff](#staff) and [anonymous](#anonymous).
 
 ### Individual
 
