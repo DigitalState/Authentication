@@ -90,7 +90,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'ds_system.user.password',
-                        'value' => $cipherService->encrypt($data['system']['password'])
+                        'value' => $cipherService->encrypt(serialize($data['system']['password']))
                     ],
                     [
                         'key' => 'ds_tenant.tenant.default',
@@ -134,7 +134,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'ds_api.user.password',
-                        'value' => $cipherService->encrypt($data['user']['system']['password'])
+                        'value' => $cipherService->encrypt(serialize($data['user']['system']['password']))
                     ],
                     [
                         'key' => 'ds_api.user.uuid',
