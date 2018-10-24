@@ -3,6 +3,7 @@
 ## 0.13.2 ()
 
 - Bug [Migration] Fix serialization bug for parameter and config migration
+- Bug [Migration] Fix sequence start values
 
 ## 0.13.1 (2018-10-19)
 
