@@ -48,6 +48,8 @@ class UserLoader implements Loader
 
         // @todo Figure out how symfony does parameter binding and use the same technique
         $yml = strtr($yml, [
+            '%identity.system.uuid%' => $tenant->getData()['identity']['system']['uuid'],
+            '%identity.admin.uuid%' => $tenant->getData()['identity']['admin']['uuid'],
             '%user.system.uuid%' => $tenant->getData()['user']['system']['uuid'],
             '%user.system.password%' => $tenant->getData()['user']['system']['password'],
             '%user.admin.uuid%' => $tenant->getData()['user']['admin']['uuid'],

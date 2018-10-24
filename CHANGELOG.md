@@ -4,6 +4,7 @@
 
 - Bug [Migration] Fix serialization bug for parameter and config migration
 - Bug [Migration] Fix sequence start values
+- Bug [Tenant] Fix missing base data in tenant loaders
 
 ## 0.13.1 (2018-10-19)
 
