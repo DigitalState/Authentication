@@ -370,6 +370,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     [
                         'username' => 'system@system.ds',
                         'password' => password_hash($data['user']['system']['password'], PASSWORD_BCRYPT),
+                        'roles' => serialize([]),
                         'uuid' => $data['user']['system']['uuid'],
                         'owner' => 'System',
                         'owner_uuid' => $data['identity']['system']['uuid'],
@@ -379,6 +380,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     [
                         'username' => 'anonymous@anonymous.ds',
                         'password' => password_hash($data['user']['anonymous']['password'], PASSWORD_BCRYPT),
+                        'roles' => serialize([]),
                         'uuid' => $data['user']['anonymous']['uuid'],
                         'owner' => 'BusinessUnit',
                         'owner_uuid' => $data['business_unit']['administration']['uuid'],
@@ -388,6 +390,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     [
                         'username' => 'admin@staff.ds',
                         'password' => password_hash($data['user']['admin']['password'], PASSWORD_BCRYPT),
+                        'roles' => serialize([]),
                         'uuid' => $data['user']['admin']['uuid'],
                         'owner' => 'BusinessUnit',
                         'owner_uuid' => $data['business_unit']['administration']['uuid'],
@@ -410,7 +413,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                         'NULL',
                         'NULL',
                         'NULL',
-                        $this->connection->quote('a:1:{i:0;s:0:"";}'),
+                        $this->connection->quote($user['roles']),
                         $this->connection->quote($user['uuid']),
                         $this->connection->quote($user['owner']),
                         $this->connection->quote($user['owner_uuid']),
