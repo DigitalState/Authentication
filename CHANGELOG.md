@@ -2,6 +2,7 @@
 
 ## 0.13.2 ()
 
+- Feature [Core] Upgrade digitalstate/core dependency to 0.13.2
 - Bug [Migration] Fix serialization bug for parameter and config migration
 - Bug [Migration] Fix sequence start values
 - Bug [Tenant] Fix missing base data in tenant loaders
