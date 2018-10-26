@@ -186,15 +186,15 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'app.registration.individual.data.github',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.individual.data.google',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.individual.data.twitter',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.individual.roles',
@@ -214,15 +214,15 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'app.registration.organization.data.github',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.organization.data.google',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.organization.data.twitter',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.organization.roles',
@@ -242,15 +242,15 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'app.registration.staff.data.github',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.staff.data.google',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.staff.data.twitter',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.staff.roles',
