@@ -3,13 +3,23 @@ objects:
     username: system@system.ds
     email: system@system.ds
     password: '%user.system.password%'
+    owner: System
+    owner_uuid: '%identity.system.uuid%'
     identity: System
+    identity_uuid: '%identity.system.uuid%'
+
+  - uuid: '%user.anonymous.uuid%'
+    username: anonymous@anonymous.ds
+    email: anonymous@anonymous.ds
+    password: '%user.anonymous.password%'
+    identity: Anonymous
 
   - uuid: '%user.admin.uuid%'
     username: admin@staff.ds
     email: admin@staff.ds
     password: '%user.admin.password%'
     identity: Staff
+    identity_uuid: '%identity.admin.uuid%'
 
 prototype:
   uuid: ~

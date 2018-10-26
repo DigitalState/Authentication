@@ -39,7 +39,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                 $this->addSql('CREATE SEQUENCE ds_tenant_id_seq INCREMENT BY 1 MINVALUE 1 START 2');
                 $this->addSql('CREATE SEQUENCE app_user_oauth_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
                 $this->addSql('CREATE SEQUENCE app_registration_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-                $this->addSql('CREATE SEQUENCE app_user_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
+                $this->addSql('CREATE SEQUENCE app_user_id_seq INCREMENT BY 1 MINVALUE 1 START 4');
                 $this->addSql('CREATE TABLE ds_config (id INT NOT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, "key" VARCHAR(255) NOT NULL, value TEXT DEFAULT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_758C45F4D17F50A6 ON ds_config (uuid)');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_758C45F48A90ABA94E59C462 ON ds_config (key, tenant)');
@@ -80,7 +80,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                 $this->addSql('CREATE TABLE ds_session (id VARCHAR(128) NOT NULL PRIMARY KEY, data BYTEA NOT NULL, time INTEGER NOT NULL, lifetime INTEGER NOT NULL)');
 
                 // Data
-                $yml = file_get_contents('/srv/api-platform/src/AppBundle/Resources/migrations/1_0_0.yml');
+                $yml = file_get_contents('/srv/api-platform/src/AppBundle/Resources/migrations/0_13_0.yml');
                 $data = Yaml::parse($yml);
                 $i = 0;
                 $parameters = [
@@ -90,7 +90,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'ds_system.user.password',
-                        'value' => $cipherService->encrypt($data['system']['password'])
+                        'value' => $cipherService->encrypt(serialize($data['system']['password']))
                     ],
                     [
                         'key' => 'ds_tenant.tenant.default',
@@ -134,7 +134,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'ds_api.user.password',
-                        'value' => $cipherService->encrypt($data['user']['system']['password'])
+                        'value' => $cipherService->encrypt(serialize($data['user']['system']['password']))
                     ],
                     [
                         'key' => 'ds_api.user.uuid',
@@ -186,15 +186,15 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'app.registration.individual.data.github',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.individual.data.google',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.individual.data.twitter',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.individual.roles',
@@ -214,15 +214,15 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'app.registration.organization.data.github',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.organization.data.google',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.organization.data.twitter',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.organization.roles',
@@ -242,15 +242,15 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     ],
                     [
                         'key' => 'app.registration.staff.data.github',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.staff.data.google',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.staff.data.twitter',
-                        'value' => serialize(new stdClass)
+                        'value' => serialize('{}')
                     ],
                     [
                         'key' => 'app.registration.staff.roles',
@@ -370,6 +370,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     [
                         'username' => 'system@system.ds',
                         'password' => password_hash($data['user']['system']['password'], PASSWORD_BCRYPT),
+                        'roles' => serialize([]),
                         'uuid' => $data['user']['system']['uuid'],
                         'owner' => 'System',
                         'owner_uuid' => $data['identity']['system']['uuid'],
@@ -379,6 +380,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     [
                         'username' => 'anonymous@anonymous.ds',
                         'password' => password_hash($data['user']['anonymous']['password'], PASSWORD_BCRYPT),
+                        'roles' => serialize([]),
                         'uuid' => $data['user']['anonymous']['uuid'],
                         'owner' => 'BusinessUnit',
                         'owner_uuid' => $data['business_unit']['administration']['uuid'],
@@ -388,6 +390,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                     [
                         'username' => 'admin@staff.ds',
                         'password' => password_hash($data['user']['admin']['password'], PASSWORD_BCRYPT),
+                        'roles' => serialize([]),
                         'uuid' => $data['user']['admin']['uuid'],
                         'owner' => 'BusinessUnit',
                         'owner_uuid' => $data['business_unit']['administration']['uuid'],
@@ -410,7 +413,7 @@ class Version0_13_0 extends AbstractMigration implements ContainerAwareInterface
                         'NULL',
                         'NULL',
                         'NULL',
-                        $this->connection->quote('a:1:{i:0;s:0:"";}'),
+                        $this->connection->quote($user['roles']),
                         $this->connection->quote($user['uuid']),
                         $this->connection->quote($user['owner']),
                         $this->connection->quote($user['owner_uuid']),
