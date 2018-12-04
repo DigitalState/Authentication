@@ -1,10 +1,6 @@
 # Authentication
 
-The DigitalState Authentication microservice provides centralized authentication capabilities for users.
-
-It uses the [JWT](https://jwt.io/introduction/) open standard, which enables a way to securely transfer user identity and claims information within the DigitalState microservices architecture.
-
-It also provides a variety of features such as user management, self-registration, oauth login and password recovery.
+The DigitalState Authentication Microservice
 
 [![Build Status](https://travis-ci.org/DigitalState/Authentication.svg?branch=develop)](https://travis-ci.org/DigitalState/Authentication)
 [![Coverage Status](https://coveralls.io/repos/github/DigitalState/Authentication/badge.svg?branch=develop)](https://coveralls.io/github/DigitalState/Authentication?branch=develop)
@@ -20,20 +16,14 @@ It also provides a variety of features such as user management, self-registratio
 
 ## Documentation
 
-- [User Management](documentation/user_management.md)
-- [Registration](documentation/registration.md)
-- [Login](documentation/login.md)
-- [Third-party Login](documentation/third_party_login.md)
-- [Password Recovery](documentation/password_recovery.md)
-
 Further documentation can be found in the [Documentation Repository](https://github.com/DigitalState/Documentation).
 
 ## References
 
-- [Api](references/api.md)
-- [Configurations](references/configurations.md)
-- [Permissions](references/permissions.md)
-- [Docker](references/docker.md)
+- [Api](reference/api.md)
+- [Configurations](reference/configurations.md)
+- [Permissions](reference/permissions.md)
+- [Docker](reference/docker.md)
 
 ## Contributing
 

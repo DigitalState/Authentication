@@ -1,3 +1,0 @@
-# User
-
-## Table of Contents
