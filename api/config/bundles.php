@@ -6,6 +6,7 @@ return [
     Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle::class => ['all' => true],
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['all' => true],
     Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],
+    FOS\UserBundle\FOSUserBundle::class => ['all' => true],
     Ds\Component\Acl\DsAclBundle::class => ['all' => true],
     Ds\Component\Api\DsApiBundle::class => ['all' => true],
     Ds\Component\Bpm\DsBpmBundle::class => ['all' => true],

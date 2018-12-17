@@ -8,12 +8,65 @@ services:
     public: false
 
   App\:
-    resource: ../src/{Fixtures}
+    resource: ../src/{Controller,EventListener,Fixture,Repository,Security,Service,Stat,Tenant}
 
   App\Controller\:
     resource: ../src/Controller
     tags: [controller.service_arguments]
 
-  App\Fixtures\:
-    resource: ../src/Fixtures
+  App\EventListener\Registration\UserListener:
+    tags:
+      - { name: doctrine.orm.entity_listener, entity: App\Entity\Registration, event: postPersist }
+
+  App\EventListener\User\IdentityListener:
+    tags:
+      - { name: doctrine.orm.entity_listener, entity: App\Entity\User, event: postPersist }
+
+  App\EventListener\ResettingListener:
+    tags:
+      - { name: kernel.event_subscriber }
+
+  App\Fixture\:
+    resource: ../src/Fixture
     tags: [doctrine.fixture.orm]
+
+  App\Repository\RegistrationRepository:
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments:
+      - App\Entity\Registration
+
+#  App\Serializer\Normalizer\RegistrationNormalizer:
+#    class: App\Serializer\Normalizer\RegistrationNormalizer
+#    decorates: ds_security.serializer.normalizer.acl.property
+#    arguments:
+#      - '@app.serializer.normalizer.registration.inner'
+#
+#  App\Serializer\Normalizer\RegistrationJsonldNormalizer:
+#    class: App\Serializer\Normalizer\RegistrationNormalizer
+#    decorates: ds_security.serializer.jsonld.normalizer.acl.property
+#    arguments:
+#      - '@app.serializer.jsonld.normalizer.registration.inner'
+
+  App\Stat\Registration\CountStat:
+    tags:
+      - { name: ds_statistic.stat, alias: registration.count }
+
+  App\Tenant\Loader\AccessLoader:
+    tags:
+      - { name: ds_tenant.loader }
+
+  App\Tenant\Loader\ConfigLoader:
+    tags:
+      - { name: ds_tenant.loader }
+
+  App\Tenant\Loader\UserLoader:
+    tags:
+      - { name: ds_tenant.loader }
+
+  App\Tenant\Unloader\RegistrationUnloader:
+    tags:
+      - { name: ds_tenant.unloader, priority: -1 }
+
+  App\Tenant\Unloader\UserUnloader:
+    tags:
+      - { name: ds_tenant.unloader }

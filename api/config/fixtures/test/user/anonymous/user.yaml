@@ -1,0 +1,29 @@
+objects:
+  - uuid: f9df049a-fe95-405f-ba7c-734f1a0ce558
+    username: anonymous@anonymous.ds
+    email: anonymous@anonymous.ds
+    password: anonymous
+    owner: System
+    owner_uuid: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 0f642313-3a79-4920-abb7-380e815514a6
+    username: anonymous@anonymous.ds
+    email: anonymous@anonymous.ds
+    password: anonymous
+    owner: System
+    owner_uuid: 571c4b5f-532e-48ac-aa6a-8099d57d9088 # System
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+prototype:
+  uuid: ~
+  username: ~
+  email: ~
+  password: ~
+  enabled: true
+  roles: []
+  owner: BusinessUnit
+  owner_uuid: ~
+  identity: Anonymous
+  identity_uuid: ~
+  tenant: ~
