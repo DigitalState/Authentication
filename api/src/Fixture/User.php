@@ -32,15 +32,6 @@ trait User
             }
         }
 
-        $connection = $manager->getConnection();
-        $platform = $connection->getDatabasePlatform()->getName();
-
-        switch ($platform) {
-            case 'postgresql':
-                $connection->exec('ALTER SEQUENCE app_user_id_seq RESTART WITH 1');
-                break;
-        }
-
         $userManager = $this->container->get('fos_user.user_manager');
         $objects = $this->parse($this->getResource());
 
