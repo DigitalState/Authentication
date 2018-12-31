@@ -2,6 +2,7 @@
 
 namespace App\Fixture;
 
+use App\EventListener\Entity\User\IdentityListener;
 use Doctrine\Common\Persistence\ObjectManager;
 use Ds\Component\Database\Fixture\Yaml;
 
@@ -22,18 +23,22 @@ trait User
      */
     public function load(ObjectManager $manager)
     {
-        $metadata = $manager->getClassMetadata(User::class);
+        $events = $manager->getEventManager()->getListeners();
 
-        foreach ($metadata->entityListeners as $event => $listeners) {
-            foreach ($listeners as $key => $listener) {
-                if (IdentityListener::class === $listener['class']) {
-                    unset($metadata->entityListeners[$event][$key]);
+        foreach ($events as $event => $listeners) {
+            foreach ($listeners as $listener) {
+                if (!is_object($listener)) {
+                    continue;
+                }
+
+                if ($listener instanceof IdentityListener) {
+                    $listener->setEnabled(false);
                 }
             }
         }
 
         $userManager = $this->container->get('fos_user.user_manager');
-        $objects = $this->parse($this->getResource());
+        $objects = $this->parse($this->path);
 
         foreach ($objects as $object) {
             $user = $userManager->createUser();

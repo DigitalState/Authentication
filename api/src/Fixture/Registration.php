@@ -3,6 +3,7 @@
 namespace App\Fixture;
 
 use App\Entity\Registration as RegistrationEntity;
+use App\EventListener\Entity\Registration\UserListener;
 use Doctrine\Common\Persistence\ObjectManager;
 use Ds\Component\Database\Fixture\Yaml;
 
@@ -23,17 +24,21 @@ trait Registration
      */
     public function load(ObjectManager $manager)
     {
-        $metadata = $manager->getClassMetadata(Registration::class);
+        $events = $manager->getEventManager()->getListeners();
 
-        foreach ($metadata->entityListeners as $event => $listeners) {
-            foreach ($listeners as $key => $listener) {
-                if (UserListener::class === $listener['class']) {
-                    unset($metadata->entityListeners[$event][$key]);
+        foreach ($events as $event => $listeners) {
+            foreach ($listeners as $listener) {
+                if (!is_object($listener)) {
+                    continue;
+                }
+
+                if ($listener instanceof UserListener) {
+                    $listener->setEnabled(false);
                 }
             }
         }
 
-        $objects = $this->parse($this->getResource());
+        $objects = $this->parse($this->path);
 
         foreach ($objects as $object) {
             $registration = new RegistrationEntity;
