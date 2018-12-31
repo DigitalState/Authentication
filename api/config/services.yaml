@@ -14,13 +14,13 @@ services:
     resource: ../src/Controller
     tags: [controller.service_arguments]
 
-  App\EventListener\Registration\UserListener:
+  App\EventListener\Entity\Registration\UserListener:
     tags:
-      - { name: doctrine.orm.entity_listener, entity: App\Entity\Registration, event: postPersist }
+      - { name: doctrine.event_listener, event: postPersist }
 
-  App\EventListener\User\IdentityListener:
+  App\EventListener\Entity\User\IdentityListener:
     tags:
-      - { name: doctrine.orm.entity_listener, entity: App\Entity\User, event: postPersist }
+      - { name: doctrine.event_listener, event: postPersist }
 
   App\EventListener\ResettingListener:
     tags:
@@ -34,6 +34,12 @@ services:
     factory: ['@doctrine.orm.default_entity_manager', getRepository]
     arguments:
       - App\Entity\Registration
+
+  App\Service\RegistrationService:
+    public: true # Used by registration user event listener
+
+  App\Service\UserService:
+    public: true # Used by user identity event listener
 
 #  App\Serializer\Normalizer\RegistrationNormalizer:
 #    class: App\Serializer\Normalizer\RegistrationNormalizer
