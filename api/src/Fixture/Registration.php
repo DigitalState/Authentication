@@ -51,7 +51,8 @@ trait Registration
                 ->setData($object->data)
                 ->setTenant($object->tenant);
             $manager->persist($registration);
-            $manager->flush();
         }
+
+        $manager->flush();
     }
 }
