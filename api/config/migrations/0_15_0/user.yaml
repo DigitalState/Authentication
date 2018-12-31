@@ -1,0 +1,37 @@
+objects:
+  - uuid: '%user.system.uuid%'
+    username: system@system.ds
+    password: '%user.system.password%'
+    owner: System
+    owner_uuid: '%identity.system.uuid%'
+    identity: System
+    identity_uuid: '%identity.system.uuid%'
+
+  - uuid: '%user.anonymous.uuid%'
+    username: anonymous@anonymous.ds
+    password: '%user.anonymous.password%'
+    owner: BusinessUnit
+    owner_uuid: '%business_unit.administration.uuid%'
+    identity: Anonymous
+    identity_uuid: ~
+
+  - uuid: '%user.admin.uuid%'
+    username: admin@staff.ds
+    password: '%user.system.password%'
+    owner: BusinessUnit
+    owner_uuid: '%business_unit.administration.uuid%'
+    identity: Staff
+    identity_uuid: '%identity.admin.uuid%'
+
+prototype:
+  uuid: ~
+  username: ~
+  password: ~
+  roles: []
+  owner: BusinessUnit
+  owner_uuid: ~
+  identity: ~
+  identity_uuid: ~
+  enabled: true
+  version: 1
+  tenant: '%tenant.uuid%'

@@ -81,10 +81,15 @@ final class Version0_15_0 extends AbstractMigration implements ContainerAwareInt
         $this->parameter->setContainer($this->container)->up($schema, Objects::parseFile(static::DIRECTORY.'/0_15_0/system/parameter.yaml', $parameters));
         $this->tenant->up($schema, Objects::parseFile(static::DIRECTORY.'/0_15_0/system/tenant.yaml', $parameters));
 
+        $users = Objects::parseFile(static::DIRECTORY.'/0_15_0/user.yaml', $parameters);
+
+        $sequences['app_registration_id_seq'] = 1;
+        $sequences['app_user_id_seq'] = 1 + count($users);
+
         switch ($this->platform->getName()) {
             case 'postgresql':
-                $this->addSql('CREATE SEQUENCE app_registration_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-                $this->addSql('CREATE SEQUENCE app_user_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
+                $this->addSql('CREATE SEQUENCE app_registration_id_seq INCREMENT BY 1 MINVALUE 1 START '.$sequences['app_registration_id_seq']);
+                $this->addSql('CREATE SEQUENCE app_user_id_seq INCREMENT BY 1 MINVALUE 1 START '.$sequences['app_user_id_seq']);
                 $this->addSql('CREATE TABLE app_registration (id INT NOT NULL, user_id INT DEFAULT NULL, uuid UUID NOT NULL, "owner" VARCHAR(255) DEFAULT NULL, owner_uuid UUID DEFAULT NULL, username VARCHAR(255) NOT NULL, identity VARCHAR(255) DEFAULT NULL, data JSON NOT NULL, version INT DEFAULT 1 NOT NULL, tenant UUID NOT NULL, deleted_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, PRIMARY KEY(id))');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26D17F50A6 ON app_registration (uuid)');
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_A026BD26A76ED395 ON app_registration (user_id)');
@@ -99,6 +104,37 @@ final class Version0_15_0 extends AbstractMigration implements ContainerAwareInt
                 $this->addSql('CREATE UNIQUE INDEX UNIQ_88BDF3E9A0D96FBF4E59C462 ON app_user (email_canonical, tenant)');
                 $this->addSql('COMMENT ON COLUMN app_user.roles IS \'(DC2Type:array)\'');
                 $this->addSql('ALTER TABLE app_registration ADD CONSTRAINT FK_A026BD26A76ED395 FOREIGN KEY (user_id) REFERENCES app_user (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+
+                $i = 0;
+
+                foreach ($users as $user) {
+                    $this->addSql(sprintf(
+                        'INSERT INTO app_user (id, username, username_canonical, email, email_canonical, enabled, salt, password, last_login, confirmation_token, password_requested_at, roles, uuid, owner, owner_uuid, identity, identity_uuid, version, tenant, created_at, updated_at, deleted_at) VALUES (%d, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %d, %s, %s, %s, %s);',
+                        ++$i,
+                        $this->connection->quote($user->username),
+                        $this->connection->quote($user->username),
+                        $this->connection->quote($user->username),
+                        $this->connection->quote($user->username),
+                        $user->enabled ? 'true' : 'false',
+                        'NULL',
+                        $this->connection->quote(password_hash($user->password, PASSWORD_BCRYPT)),
+                        'NULL',
+                        'NULL',
+                        'NULL',
+                        $this->connection->quote(serialize($user->roles)),
+                        $this->connection->quote($user->uuid),
+                        $this->connection->quote($user->owner),
+                        $this->connection->quote($user->owner_uuid),
+                        $this->connection->quote($user->identity),
+                        null === $user->identity_uuid ? 'NULL' : $this->connection->quote($user->identity_uuid),
+                        $user->version,
+                        $this->connection->quote($user->tenant),
+                        'now()',
+                        'now()',
+                        'NULL'
+                    ));
+                }
+
                 break;
 
             default:
