@@ -1,4 +1,101 @@
-objects: []
+objects:
+  - access: 4b68ee36-5df3-4117-aaef-92bbe81cc1d6 # Administrator
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: ~ # Any BusinessUnit
+    key: entity
+    attributes: [BROWSE, READ, EDIT, ADD, DELETE]
+
+  - access: 4b68ee36-5df3-4117-aaef-92bbe81cc1d6 # Administrator
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: ~ # Any BusinessUnit
+    key: property
+    attributes: [BROWSE, READ, EDIT]
+
+  - access: 4b68ee36-5df3-4117-aaef-92bbe81cc1d6 # Administrator
+    scope: generic
+    key: generic
+    attributes: [BROWSE, READ, EDIT, ADD, DELETE, EXECUTE]
+
+  - access: 0f76ebe0-72fd-41b2-8c98-594baf38f3ec # Manager
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key:
+      - user
+      - registration
+      - metadata
+    attributes: [EDIT, ADD, DELETE]
+
+  - access: 0f76ebe0-72fd-41b2-8c98-594baf38f3ec # Manager
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key:
+      - user_property
+      - registration_property
+      - metadata_property
+    attributes: [EDIT]
+
+  - access: e0d55330-0364-4a73-9f11-15c5b05fc482 # Staff
+    scope: owner
+    entity: BusinessUnit
+    entity_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+    key:
+      - user
+      - user_property
+      - registration
+      - registration_property
+      - metadata
+      - metadata_property
+    attributes: [BROWSE, READ]
+
+  - access: 275c9d22-cef5-4de2-891f-a6bf61bb31e4 # Individual
+    scope: session
+    key: user
+    attributes: [BROWSE, READ, EDIT]
+
+  - access: 275c9d22-cef5-4de2-891f-a6bf61bb31e4 # Individual
+    scope: session
+    key:
+      - user_uuid
+      - user_created_at
+      - user_username
+      - user_email
+      - user_version
+    attributes: [BROWSE, READ]
+
+  - access: 275c9d22-cef5-4de2-891f-a6bf61bb31e4 # Individual
+    scope: session
+    key:
+      - user_username
+      - user_email
+      - user_version
+    attributes: [EDIT]
+
+  - access: 4f36a122-51d9-499c-a50a-2eb5abd46bf9 # Organization
+    scope: session
+    key: user
+    attributes: [BROWSE, READ, EDIT]
+
+  - access: 4f36a122-51d9-499c-a50a-2eb5abd46bf9 # Organization
+    scope: session
+    key:
+      - user_uuid
+      - user_created_at
+      - user_username
+      - user_email
+      - user_version
+    attributes: [BROWSE, READ]
+
+  - access: 4f36a122-51d9-499c-a50a-2eb5abd46bf9 # Organization
+    scope: session
+    key:
+      - user_username
+      - user_email
+      - user_version
+    attributes: [EDIT]
 
 prototype:
   access: ~

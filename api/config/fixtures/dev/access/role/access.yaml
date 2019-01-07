@@ -1,4 +1,18 @@
-objects: []
+objects:
+  - uuid: 4b68ee36-5df3-4117-aaef-92bbe81cc1d6
+    assignee_uuid: 5ab54dd5-56ed-4e96-bd8b-1d60ab668a75 # Administrator
+
+  - uuid: 0f76ebe0-72fd-41b2-8c98-594baf38f3ec
+    assignee_uuid: f06dd49d-8ad4-437a-beee-387b834ee217 # Manager
+
+  - uuid: e0d55330-0364-4a73-9f11-15c5b05fc482
+    assignee_uuid: 3e64bbd1-4d00-47e7-a35e-92691f5a6018 # Staff
+
+  - uuid: 275c9d22-cef5-4de2-891f-a6bf61bb31e4
+    assignee_uuid: 54d82fc6-8ce7-498e-832f-3598664a9d9d # Individual
+
+  - uuid: 4f36a122-51d9-499c-a50a-2eb5abd46bf9
+    assignee_uuid: 777b96e7-e183-44f7-b7e4-dc0cb7591f74 # Organization
 
 prototype:
   uuid: ~
