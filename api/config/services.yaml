@@ -57,7 +57,7 @@ services:
     tags:
       - { name: ds_statistic.stat, alias: registration.count }
 
-  App\Tenant\Loader\AccessLoader:
+  App\Tenant\Loader\AclLoader:
     tags:
       - { name: ds_tenant.loader }
 

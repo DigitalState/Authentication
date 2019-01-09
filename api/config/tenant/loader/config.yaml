@@ -1,9 +1,9 @@
 objects:
   - key: app.spa.admin
-    value: '%config.app.spa.admin.value%'
+    value: '%config["app.spa.admin"].value%'
 
   - key: app.spa.portal
-    value: '%config.app.spa.portal.value%'
+    value: '%config["app.spa.portal"].value%'
 
   - key: app.registration.individual.owner.type
     value: BusinessUnit
