@@ -1,4 +1,55 @@
 objects:
+  - key: app.spa.admin
+    value: http://admin.ds
+
+  - key: app.spa.portal
+    value: http://portal.ds
+
+  - key: app.registration.individual.owner.type
+    value: BusinessUnit
+
+  - key: app.registration.individual.owner.uuid
+    value: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+
+  - key: app.registration.individual.roles
+    value: [54d82fc6-8ce7-498e-832f-3598664a9d9d]
+
+  - key: app.registration.individual.enabled
+    value: true
+
+  - key: app.registration.organization.owner.type
+    value: BusinessUnit
+
+  - key: app.registration.organization.owner.uuid
+    value: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
+
+  - key: app.registration.organization.roles
+    value: [777b96e7-e183-44f7-b7e4-dc0cb7591f74]
+
+  - key: app.registration.organization.enabled
+    value: true
+
+  - key: app.registration.staff.owner.type
+    value: BusinessUnit
+
+  - key: app.registration.staff.owner.uuid
+    value: c11c546e-bd01-47cf-97da-e25388357b5a # Administration
+
+  - key: app.registration.staff.roles
+    value: [3e64bbd1-4d00-47e7-a35e-92691f5a6018]
+
+  - key: app.registration.staff.enabled
+    value: false
+
+  - key: app.resetting.email.subject
+    value: app.resetting.email.subject
+
+  - key: app.resetting.email.body.plain
+    value: app.resetting.email.body.plain
+
+  - key: app.resetting.email.body.html
+    value: app.resetting.email.body.html
+
   - uuid: 8665bc3d-830a-4899-9ed1-67402a1ec536
     key: ds_api.user.username
     value: system@system.ds
