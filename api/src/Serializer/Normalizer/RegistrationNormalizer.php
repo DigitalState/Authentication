@@ -4,7 +4,7 @@ namespace App\Serializer\Normalizer;
 
 use App\Entity\Registration;
 use Ds\Component\Config\Service\ConfigService;
-use Ds\Component\Security\Serializer\Normalizer\Acl\PropertyNormalizer;
+use Ds\Component\Acl\Serializer\Normalizer\Property\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Component\Serializer\SerializerAwareInterface;
@@ -16,7 +16,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 final class RegistrationNormalizer implements NormalizerInterface, DenormalizerInterface, SerializerAwareInterface
 {
     /**
-     * @var \Ds\Component\Security\Serializer\Normalizer\Acl\PropertyNormalizer
+     * @var \Ds\Component\Acl\Serializer\Normalizer\Property\AbstractNormalizer
      */
     private $decorated;
 
@@ -33,10 +33,10 @@ final class RegistrationNormalizer implements NormalizerInterface, DenormalizerI
     /**
      * Constructor
      *
-     * @param \Ds\Component\Security\Serializer\Normalizer\Acl\PropertyNormalizer $decorated
+     * @param \Ds\Component\Acl\Serializer\Normalizer\Property\AbstractNormalizer $decorated
      * @param \Ds\Component\Config\Service\ConfigService $configService
      */
-    public function __construct(PropertyNormalizer $decorated, ConfigService $configService)
+    public function __construct(AbstractNormalizer $decorated, ConfigService $configService)
     {
         $this->decorated = $decorated;
         $this->configService = $configService;
@@ -48,6 +48,7 @@ final class RegistrationNormalizer implements NormalizerInterface, DenormalizerI
     public function denormalize($data, $class, $format = null, array $context = [])
     {
         if (Registration::class === $class) {
+
             if (!array_key_exists('owner', $data) || null === $data['owner']) {
                 $key = 'app.registration.'.strtolower($data['identity']);
                 $data['owner'] = $this->configService->get($key.'.owner.type');

@@ -41,17 +41,17 @@ services:
   App\Service\UserService:
     public: true # Used by user identity event listener
 
-#  App\Serializer\Normalizer\RegistrationNormalizer:
-#    class: App\Serializer\Normalizer\RegistrationNormalizer
-#    decorates: ds_security.serializer.normalizer.acl.property
-#    arguments:
-#      - '@app.serializer.normalizer.registration.inner'
-#
-#  App\Serializer\Normalizer\RegistrationJsonldNormalizer:
-#    class: App\Serializer\Normalizer\RegistrationNormalizer
-#    decorates: ds_security.serializer.jsonld.normalizer.acl.property
-#    arguments:
-#      - '@app.serializer.jsonld.normalizer.registration.inner'
+  App\Serializer\Normalizer\RegistrationNormalizer:
+    class: App\Serializer\Normalizer\RegistrationNormalizer
+    decorates: Ds\Component\Acl\Serializer\Normalizer\Property\JsonNormalizer
+    arguments:
+      - '@App\Serializer\Normalizer\RegistrationNormalizer.inner'
+
+  App\Serializer\Normalizer\RegistrationJsonldNormalizer:
+    class: App\Serializer\Normalizer\RegistrationNormalizer
+    decorates: Ds\Component\Acl\Serializer\Normalizer\Property\JsonLdNormalizer
+    arguments:
+      - '@App\Serializer\Normalizer\RegistrationJsonldNormalizer.inner'
 
   App\Stat\Registration\CountStat:
     tags:
