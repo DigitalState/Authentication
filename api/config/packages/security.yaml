@@ -84,8 +84,8 @@ security:
     - { path: ^/auth, role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/, role: IS_AUTHENTICATED_FULLY }
     # Routes required to exist by FOSUserBundle, but not used by the application.
-    - { path: ^/check-email,          role: ROLE_NO_ACCESS }
-    - { path: ^/reset,                role: ROLE_NO_ACCESS }
-    - { path: ^/profile/show,         role: ROLE_NO_ACCESS }
-    - { path: ^/logout,               role: ROLE_NO_ACCESS }
+    - { path: ^/check-email, role: ROLE_NO_ACCESS }
+    - { path: ^/reset, role: ROLE_NO_ACCESS }
+    - { path: ^/profile/show, role: ROLE_NO_ACCESS }
+    - { path: ^/logout, role: ROLE_NO_ACCESS }
     #
