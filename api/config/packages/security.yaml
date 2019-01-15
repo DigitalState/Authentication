@@ -2,6 +2,18 @@ security:
   encoders:
     FOS\UserBundle\Model\UserInterface: bcrypt
 
+  providers:
+    anonymous:
+      id: App\Security\Provider\AnonymousProvider
+    individual:
+      id: App\Security\Provider\IndividualProvider
+    organization:
+      id: App\Security\Provider\OrganizationProvider
+    staff:
+      id: App\Security\Provider\StaffProvider
+    system:
+      id: App\Security\Provider\SystemProvider
+
   firewalls:
     dev:
       pattern: ^/(_(profiler|wdt)|css|images|js|sandbox)/?
@@ -11,6 +23,54 @@ security:
       stateless: true
       provider: ds_system
       http_basic: ~
+    auth_individual:
+      pattern: ^/auth/individual
+      stateless: true
+      anonymous: true
+      provider: individual
+      form_login:
+        check_path: app_auth_individual_check
+        username_parameter: username
+        password_parameter: password
+        success_handler: lexik_jwt_authentication.handler.authentication_success
+        failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        require_previous_session: false
+    auth_organization:
+      pattern: ^/auth/organization
+      stateless: true
+      anonymous: true
+      provider: organization
+      form_login:
+        check_path: app_auth_organization_check
+        username_parameter: username
+        password_parameter: password
+        success_handler: lexik_jwt_authentication.handler.authentication_success
+        failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        require_previous_session: false
+    auth_staff:
+      pattern: ^/auth/staff
+      stateless: true
+      anonymous: true
+      provider: staff
+      form_login:
+        check_path: app_auth_staff_check
+        username_parameter: username
+        password_parameter: password
+        success_handler: lexik_jwt_authentication.handler.authentication_success
+        failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        require_previous_session: false
+    auth_system:
+      pattern: ^/auth/system
+      stateless: true
+      anonymous: true
+      provider: system
+      form_login:
+        check_path: app_auth_system_check
+        username_parameter: username
+        password_parameter: password
+        success_handler: lexik_jwt_authentication.handler.authentication_success
+        failure_handler: lexik_jwt_authentication.handler.authentication_failure
+        require_previous_session: false
     api:
       pattern: ^/
       stateless: true
@@ -21,4 +81,11 @@ security:
 
   access_control:
     - { path: ^/system/, role: ROLE_SYSTEM }
+    - { path: ^/auth, role: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/, role: IS_AUTHENTICATED_FULLY }
+    # Routes required to exist by FOSUserBundle, but not used by the application.
+    - { path: ^/check-email,          role: ROLE_NO_ACCESS }
+    - { path: ^/reset,                role: ROLE_NO_ACCESS }
+    - { path: ^/profile/show,         role: ROLE_NO_ACCESS }
+    - { path: ^/logout,               role: ROLE_NO_ACCESS }
+    #
