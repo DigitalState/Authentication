@@ -23,6 +23,10 @@ security:
       stateless: true
       provider: ds_system
       http_basic: ~
+    auth_anonymous:
+      pattern: ^/auth/anonymous
+      stateless: true
+      anonymous: true
     auth_individual:
       pattern: ^/auth/individual
       stateless: true
