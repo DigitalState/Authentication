@@ -8,7 +8,8 @@ framework:
     default_path: '%kernel.project_dir%/translations'
     fallbacks:
       - '%locale%'
-  #csrf_protection: ~
+  csrf_protection:
+    enabled: false
   #http_method_override: true
   session:
     handler_id: ~
