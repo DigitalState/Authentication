@@ -14,6 +14,11 @@ fos_user_profile_show:
   path: /profile/show
   defaults: { _controller: FOSUserBundle:Profile:show }
 
+fos_user_security_login:
+  methods: GET
+  path: /login
+  defaults: { _controller: FOSUserBundle:Security:login }
+
 fos_user_security_logout:
   methods: GET
   path: /logout
