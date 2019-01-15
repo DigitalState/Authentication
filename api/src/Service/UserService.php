@@ -11,7 +11,7 @@ use Ds\Component\Api\Model\IndividualPersona;
 use Ds\Component\Api\Model\Organization;
 use Ds\Component\Api\Model\OrganizationPersona;
 use Ds\Component\Entity\Service\EntityService;
-use Ds\Component\Identity\Model\Identity;
+use Ds\Component\Security\Model\Identity;
 use FOS\UserBundle\Model\UserManagerInterface;
 use LogicException;
 
@@ -67,7 +67,7 @@ final class UserService extends EntityService
     public function createIdentity(User $user)
     {
         if ($user->getIdentityUuid()) {
-            throw new LogicException('Identity already exists.');
+            throw new LogicException('Identity "'.$user->getIdentityUuid().'" already exists.');
         }
 
         switch ($user->getIdentity()) {
