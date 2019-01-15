@@ -7,3 +7,6 @@ fos_user:
   from_email:
     address: admin@localhost
     sender_name: admin
+  resetting:
+    email:
+      template: App:Resetting:email.html.twig

@@ -75,6 +75,10 @@ security:
         success_handler: lexik_jwt_authentication.handler.authentication_success
         failure_handler: lexik_jwt_authentication.handler.authentication_failure
         require_previous_session: false
+    password:
+      pattern: ^/password
+      stateless: true
+      anonymous: true
     api:
       pattern: ^/
       stateless: true
@@ -84,12 +88,13 @@ security:
           - lexik_jwt_authentication.jwt_token_authenticator
 
   access_control:
-    - { path: ^/system/, role: ROLE_SYSTEM }
-    - { path: ^/auth, role: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/, role: IS_AUTHENTICATED_FULLY }
     # Routes required to exist by FOSUserBundle, but not used by the application.
     - { path: ^/check-email, role: ROLE_NO_ACCESS }
     - { path: ^/reset, role: ROLE_NO_ACCESS }
     - { path: ^/profile/show, role: ROLE_NO_ACCESS }
     - { path: ^/logout, role: ROLE_NO_ACCESS }
     #
+    - { path: ^/system/, role: ROLE_SYSTEM }
+    - { path: ^/auth, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/password, role: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/, role: IS_AUTHENTICATED_FULLY }

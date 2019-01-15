@@ -37,3 +37,15 @@ app_auth_organization_check:
   path: /auth/organization
   defaults:
     _controller: FOSUserBundle:Security:check
+
+app_password_request:
+  methods: POST
+  path: /password/requests
+  defaults:
+    _controller: FOSUserBundle:Resetting:sendEmail
+
+app_password_reset:
+  methods: POST
+  path: /password/reset/{token}
+  defaults:
+    _controller: FOSUserBundle:Resetting:reset
