@@ -29,13 +29,11 @@ trait User
         $events = $this->userService->getManager()->getEventManager()->getListeners();
 
         foreach ($events as $event => $listeners) {
-            foreach ($listeners as $listener) {
-                if (!is_object($listener)) {
-                    continue;
-                }
-
-                if ($listener instanceof IdentityListener) {
+            foreach ($listeners as $key => $listener) {
+                if (is_object($listener) && $listener instanceof IdentityListener) {
                     $listener->setEnabled(false);
+                } else if (is_string($listener) && $listener === IdentityListener::class) {
+                    $this->userService->getManager()->getEventManager()->removeEventListener(['postPersist'], $listener);
                 }
             }
         }
