@@ -111,7 +111,7 @@ final class UserService extends EntityService
                 break;
 
             default:
-                throw new DomainException('User identity is not supported.');
+                throw new DomainException('User identity "'.$user->getIdentity().'" is not supported.');
         }
 
         $user->setIdentityUuid($identity->getUuid());
