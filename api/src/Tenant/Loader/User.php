@@ -26,14 +26,14 @@ trait User
      */
     public function load(Tenant $tenant)
     {
-        $events = $this->userService->getManager()->getEventManager()->getListeners();
+        $eventManager = $this->userService->getManager()->getEventManager();
 
-        foreach ($events as $event => $listeners) {
+        foreach ($eventManager->getListeners() as $event => $listeners) {
             foreach ($listeners as $key => $listener) {
                 if (is_object($listener) && $listener instanceof IdentityListener) {
                     $listener->setEnabled(false);
                 } else if (is_string($listener) && $listener === IdentityListener::class) {
-                    $this->userService->getManager()->getEventManager()->removeEventListener(['postPersist'], $listener);
+                    $eventManager->removeEventListener(['postPersist'], $listener);
                 }
             }
         }
