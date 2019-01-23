@@ -17,7 +17,7 @@ objects:
 
   - uuid: '%user.admin.uuid%'
     username: admin@staff.ds
-    password: '%user.system.password%'
+    password: '%user.admin.password%'
     owner: BusinessUnit
     owner_uuid: '%business_unit.administration.uuid%'
     identity: Staff
