@@ -1,4 +1,4 @@
-@api @security @firewall @access @deny
+@api @security @firewall @access
 Feature: Deny access to non-authenticated users to access endpoints
 
   Scenario: Browse accesses

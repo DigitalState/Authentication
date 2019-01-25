@@ -1,4 +1,4 @@
-@api @security @firewall @config @deny
+@api @security @firewall @config
 Feature: Deny access to non-authenticated users to config endpoints
 
   Scenario: Browse configs
