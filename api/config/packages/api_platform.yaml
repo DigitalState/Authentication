@@ -29,11 +29,11 @@ services:
         uuid: exact
         owner: exact
         ownerUuid: exact
-        username: partial
-        email: partial
+        username: ipartial
+        email: ipartial
         identity: exact
         identityUuid: exact
-        roles: partial
+        roles: ipartial
     tags:
       - { name: api_platform.filter, id: app.user.search }
 
@@ -77,7 +77,7 @@ services:
         uuid: exact
         owner: exact
         ownerUuid: exact
-        username: partial
+        username: ipartial
         user: exact
     tags:
       - { name: api_platform.filter, id: app.registration.search }
