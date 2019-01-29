@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Entity\Attribute\Accessor as EntityAccessor;
+use DateTime;
 use Ds\Component\Model\Type\Deletable;
 use Ds\Component\Model\Type\Identifiable;
 use Ds\Component\Model\Type\Uuidentifiable;
@@ -162,7 +163,20 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
      * @ApiProperty(writable=false)
      * @Serializer\Groups({"user_output"})
      */
-    protected $lastLogin;
+    protected $lastLogin; # region accessors
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setLastLogin(DateTime $time = null)
+    {
+        // Disable last login by always setting it to null. This avoids a version bump due to login in.
+        $this->lastLogin = null;
+
+        return $this;
+    }
+
+    # endregion
 
     /**
      * @var \Doctrine\Common\Collections\Collection
