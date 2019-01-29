@@ -160,8 +160,6 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
 
     /**
      * @var \DateTime
-     * @ApiProperty(writable=false)
-     * @Serializer\Groups({"user_output"})
      */
     protected $lastLogin; # region accessors
 
