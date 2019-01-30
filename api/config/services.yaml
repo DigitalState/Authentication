@@ -1,0 +1,78 @@
+parameters:
+  locale: en
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  App\:
+    resource: ../src/{Controller,EventListener,Fixture,Repository,Security,Service,Stat,Tenant}
+
+  App\Controller\:
+    resource: ../src/Controller
+    tags: [controller.service_arguments]
+
+  App\EventListener\Entity\Registration\UserListener:
+    tags:
+      - { name: doctrine.event_listener, event: postPersist }
+
+  App\EventListener\Entity\User\IdentityListener:
+    tags:
+      - { name: doctrine.event_listener, event: postPersist }
+
+  App\EventListener\ResettingListener:
+    tags:
+      - { name: kernel.event_subscriber }
+
+  App\Fixture\:
+    resource: ../src/Fixture
+    tags: [doctrine.fixture.orm]
+
+  App\Repository\RegistrationRepository:
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments:
+      - App\Entity\Registration
+
+  App\Service\RegistrationService:
+    public: true # Used by registration user event listener
+
+  App\Service\UserService:
+    public: true # Used by user identity event listener
+
+  App\Serializer\Normalizer\RegistrationNormalizer:
+    class: App\Serializer\Normalizer\RegistrationNormalizer
+    decorates: Ds\Component\Acl\Serializer\Normalizer\Property\JsonNormalizer
+    arguments:
+      - '@App\Serializer\Normalizer\RegistrationNormalizer.inner'
+
+  App\Serializer\Normalizer\RegistrationJsonldNormalizer:
+    class: App\Serializer\Normalizer\RegistrationNormalizer
+    decorates: Ds\Component\Acl\Serializer\Normalizer\Property\JsonLdNormalizer
+    arguments:
+      - '@App\Serializer\Normalizer\RegistrationJsonldNormalizer.inner'
+
+  App\Stat\Registration\CountStat:
+    tags:
+      - { name: ds_statistic.stat, alias: registration.count }
+
+  App\Tenant\Loader\AclLoader:
+    tags:
+      - { name: ds_tenant.loader }
+
+  App\Tenant\Loader\ConfigLoader:
+    tags:
+      - { name: ds_tenant.loader }
+
+  App\Tenant\Loader\UserLoader:
+    tags:
+      - { name: ds_tenant.loader }
+
+  App\Tenant\Unloader\RegistrationUnloader:
+    tags:
+      - { name: ds_tenant.unloader, priority: -1 }
+
+  App\Tenant\Unloader\UserUnloader:
+    tags:
+      - { name: ds_tenant.unloader }

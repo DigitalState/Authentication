@@ -1,0 +1,5 @@
+app_auth_system_check:
+  methods: POST
+  path: /auth/system
+  defaults:
+    _controller: FOSUserBundle:Security:check

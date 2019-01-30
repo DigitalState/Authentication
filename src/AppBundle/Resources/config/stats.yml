@@ -1,7 +1,0 @@
-services:
-  app.stat.registration.count:
-    class: AppBundle\Stat\Registration\CountStat
-    arguments:
-      - '@app.service.registration'
-    tags:
-      - { name: ds_statistic.stat, alias: registration.count }

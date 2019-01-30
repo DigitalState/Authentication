@@ -1,0 +1,2 @@
+ds_discovery:
+  host: authentication_mock_discovery:8080

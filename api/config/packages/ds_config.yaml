@@ -1,0 +1,19 @@
+ds_config:
+  configs:
+    - { key: app.spa.admin,                               encrypt: false,  title: app.configs.spa.admin                              }
+    - { key: app.spa.portal,                              encrypt: false,  title: app.configs.spa.portal                             }
+    - { key: app.registration.individual.owner.type,      encrypt: false,  title: app.configs.registration.individual.owner.type     }
+    - { key: app.registration.individual.owner.uuid,      encrypt: false,  title: app.configs.registration.individual.owner.uuid     }
+    - { key: app.registration.individual.roles,           encrypt: false,  title: app.configs.registration.individual.roles          }
+    - { key: app.registration.individual.enabled,         encrypt: false,  title: app.configs.registration.individual.enabled        }
+    - { key: app.registration.organization.owner.type,    encrypt: false,  title: app.configs.registration.organization.owner.type   }
+    - { key: app.registration.organization.owner.uuid,    encrypt: false,  title: app.configs.registration.organization.owner.uuid   }
+    - { key: app.registration.organization.roles,         encrypt: false,  title: app.configs.registration.organization.roles        }
+    - { key: app.registration.organization.enabled,       encrypt: false,  title: app.configs.registration.organization.enabled      }
+    - { key: app.registration.staff.owner.type,           encrypt: false,  title: app.configs.registration.staff.owner.type          }
+    - { key: app.registration.staff.owner.uuid,           encrypt: false,  title: app.configs.registration.staff.owner.uuid          }
+    - { key: app.registration.staff.roles,                encrypt: false,  title: app.configs.registration.staff.roles               }
+    - { key: app.registration.staff.enabled,              encrypt: false,  title: app.configs.registration.staff.enabled             }
+    - { key: app.resetting.email.subject,                 encrypt: false,  title: app.configs.resetting.email.subject                }
+    - { key: app.resetting.email.body.plain,              encrypt: false,  title: app.configs.resetting.email.body.plain             }
+    - { key: app.resetting.email.body.html,               encrypt: false,  title: app.configs.resetting.email.body.html              }

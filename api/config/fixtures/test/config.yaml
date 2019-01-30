@@ -1,0 +1,308 @@
+objects:
+  - uuid: dc58c698-5af1-4f2c-afe5-43002a15646d
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: ds_api.user.username
+    value: system@system.ds
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 4c4f7f38-f8ef-4ab4-84ef-fc67405d2fe2
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: ds_api.user.password
+    value: system
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 76dccd6a-1139-4bf9-8c4a-8bf443287b4a
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: ds_api.user.uuid
+    value: 85726ec8-7685-4655-ac91-4746ae71c2cc # System
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: af6f3cdb-04e1-4ea0-a793-07d1e1f9f694
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: ds_api.user.roles
+    value: []
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: e7175cb5-59cf-4c0e-a2c0-40d05b6176eb
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: ds_api.user.identity.roles
+    value: []
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: c0f1f860-ed10-43b4-90c4-69503dfbf4cd
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: ds_api.user.identity.type
+    value: System
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 2678bdf3-2114-482a-a709-617cb58bbb33
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: ds_api.user.identity.uuid
+    value: aa18b644-a503-49fa-8f53-10f4c1f8e3a1 # System
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 706bede8-effb-46c4-b8a3-a152af11a433
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: ds_api.user.tenant
+    value: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 3405a643-5470-432e-be15-3d1547a5d71c
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.spa.admin
+    value: http://admin.ds
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 3473b773-2c9e-491c-8d9c-ceaa873febf0
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.spa.portal
+    value: http://portal.ds
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 42a1337b-3ae6-4879-b640-3cd589cd50b0
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.individual.owner.type
+    value: BusinessUnit
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 8320e450-88a1-4daa-8cf1-14aacf2d6feb
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.individual.owner.uuid
+    value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: dbe606a8-c5a1-4e8a-9ab2-26afc722b005
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.individual.roles
+    value: []
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 810dbf24-4608-4d8f-8239-c5a91ae2c8fa
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.individual.enabled
+    value: true
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: d9eee4a3-1f93-4fd4-ba9b-346722ef4584
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.organization.owner.type
+    value: BusinessUnit
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 42233d61-00ae-4c3a-92fe-0a6d16b1de81
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.organization.owner.uuid
+    value: 83bf8f26-7181-4bed-92f3-3ce5e4c286d7 # Backoffice
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: d5f6b26d-13a4-4a0e-87fa-881b8866265a
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.organization.roles
+    value: []
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: cb27fbea-4ba2-468c-a095-1429cd05f361
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.organization.enabled
+    value: true
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 380a7396-a6d0-4c8c-8339-974cd39c2cf5
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.staff.owner.type
+    value: BusinessUnit
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 69b1289c-c9de-4c22-a485-0914bac3ed24
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.staff.owner.uuid
+    value: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 6ba9f0ce-52d0-4324-bd59-356bcb7deeb3
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.staff.roles
+    value: []
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 1bbf1092-551f-4626-bd1e-ed172f625f8b
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.registration.staff.enabled
+    value: false
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 4a8b3564-2006-4882-9566-c3c897eaea74
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.resetting.email.subject
+    value: app.resetting.email.subject
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: ceded513-e9ac-4998-92dd-da979bae788c
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.resetting.email.body.plain
+    value: app.resetting.email.body.plain
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: eed40891-5d47-4ec5-b332-e1a54bbdbb1b
+    owner_uuid: 325e1004-8516-4ca9-a4d3-d7505bd9a7fe # Administration
+    key: app.resetting.email.body.html
+    value: app.resetting.email.body.html
+    tenant: b6ac25fe-3cd6-4100-a054-6bba2fc9ef18 # Tenant 1
+
+  - uuid: 66d6f4bc-bc54-44af-b574-77a317c42e85
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: ds_api.user.username
+    value: system@system.ds
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 105227f2-03ff-4d72-b47c-95bda73f301a
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: ds_api.user.password
+    value: system
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 45fb5e02-af7f-4079-ad28-5ed8e3e84de6
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: ds_api.user.uuid
+    value: d6a5c45e-2e14-4dd0-b1eb-7bd36db3fcf6 # System
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 90818c1a-5e87-4e1e-be8a-4a1f651532d9
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: ds_api.user.roles
+    value: []
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 069d8bd2-d544-48fb-865e-f926eb525955
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: ds_api.user.identity.roles
+    value: []
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 6e3eda03-877f-418b-910f-b8835157e130
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: ds_api.user.identity.type
+    value: System
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: bf546641-14e2-4215-add5-660525f0099d
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: ds_api.user.identity.uuid
+    value: 571c4b5f-532e-48ac-aa6a-8099d57d9088 # System
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 0834539b-86c2-4f57-8f4f-f144cef5735c
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: ds_api.user.tenant
+    value: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 834c6f97-90ec-42a6-a78b-476dcbb51058
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.spa.admin
+    value: http://admin.ds
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 89b592c7-0c87-472b-9983-077ce1a32464
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.spa.portal
+    value: http://portal.ds
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: bbf2aed8-f081-4fb4-9368-d3abe9c3e903
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.individual.owner.type
+    value: BusinessUnit
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 4ae87864-57e7-40d8-ae6b-681d3b61b386
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.individual.owner.uuid
+    value: 6e9c30e2-ce82-4d32-a60a-b0c6b0a1474e # Backoffice
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: a0c697f0-565a-4928-9dce-87299e570d71
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.individual.roles
+    value: []
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: c7b1e7e0-defc-4bcd-8882-27b086e5c67a
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.individual.enabled
+    value: true
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: fe678a5f-37ac-44c4-b416-d921104ed136
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.owner.type
+    value: BusinessUnit
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 98cce1e4-3cd7-4763-9957-93e13c171415
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.owner.uuid
+    value: 6e9c30e2-ce82-4d32-a60a-b0c6b0a1474e # Backoffice
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: eb48684e-eb43-49e6-b3cf-03f30dd318ce
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.roles
+    value: []
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 4fbb0fe3-48fa-4a3d-bcd6-ae124fd1da7a
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.organization.enabled
+    value: true
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 5c60469c-426c-44c5-a7d7-a164a3537438
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.staff.owner.type
+    value: BusinessUnit
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: d74ef0d6-5de4-4654-aecc-996aef3eed44
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.staff.owner.uuid
+    value: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 970428cc-2329-41f8-958e-203f662c7187
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.staff.roles
+    value: []
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: c40b0da0-b173-44fb-8fa5-c7312a4c8eb4
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.registration.staff.enabled
+    value: false
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 45bf0536-d210-42ce-a1df-d44753dc9379
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.resetting.email.subject
+    value: app.resetting.email.subject
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: ebc63058-e939-4222-b90d-a56872b7a028
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.resetting.email.body.plain
+    value: app.resetting.email.body.plain
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+  - uuid: 6b1f2fcf-2a3d-4f10-be38-7ec1ea700edd
+    owner_uuid: 72ecd949-6960-4d9d-8baa-3dc15c2cbd63 # Administration
+    key: app.resetting.email.body.html
+    value: app.resetting.email.body.html
+    tenant: 92000deb-b847-4838-915c-b95d2b28e960 # Tenant 2
+
+prototype:
+  uuid: ~
+  owner: BusinessUnit
+  owner_uuid: ~
+  key: ~
+  value: ~
+  tenant: ~

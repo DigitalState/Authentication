@@ -1,0 +1,10 @@
+objects: []
+
+prototype:
+  uuid: ~
+  owner: BusinessUnit
+  owner_uuid: ~
+  username: ~
+  password: ~
+  data: {}
+  tenant: ~
