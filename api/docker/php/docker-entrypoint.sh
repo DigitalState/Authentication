@@ -20,7 +20,7 @@ if [ "$1" = 'php-fpm' ] || [ "$1" = 'bin/console' ]; then
         sleep 1
     done
 
-    bin/console doctrine:migration:migrate --no-interaction
+    php bin/console doctrine:migration:migrate --no-interaction
 fi
 
 exec docker-php-entrypoint "$@"
