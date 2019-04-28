@@ -15,7 +15,7 @@ services:
           - authentication_database
 
   php:
-    image: digitalstate/authentication:php-0.16.4
+    image: digitalstate/authentication:php-0.16.5
     depends_on:
       - database
     env_file:
@@ -41,7 +41,7 @@ services:
           - authentication_php
 
   api:
-    image: digitalstate/authentication:api-0.16.4
+    image: digitalstate/authentication:api-0.16.5
     depends_on:
       - php
     networks:
