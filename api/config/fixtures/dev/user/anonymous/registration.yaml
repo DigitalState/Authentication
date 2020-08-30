@@ -2,6 +2,7 @@ objects: []
 
 prototype:
   uuid: ~
+  created_at: ~
   owner: BusinessUnit
   owner_uuid: a9d68bf7-5000-49fe-8b00-33dde235b327 # Backoffice
   username: ~

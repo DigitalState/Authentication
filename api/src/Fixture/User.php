@@ -3,6 +3,7 @@
 namespace App\Fixture;
 
 use App\EventListener\Entity\User\IdentityListener;
+use DateTime;
 use Doctrine\Common\Persistence\ObjectManager;
 use Ds\Component\Database\Fixture\Yaml;
 
@@ -52,6 +53,13 @@ trait User
                 ->setIdentityUuid($object->identity_uuid)
                 ->setEnabled($object->enabled)
                 ->setTenant($object->tenant);
+
+            if (null !== $object->created_at) {
+                $date = new DateTime;
+                $date->setTimestamp($object->created_at);
+                $user->setCreatedAt($date);
+            }
+
             $userManager->updateUser($user);
         }
     }
