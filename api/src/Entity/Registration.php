@@ -86,8 +86,9 @@ class Registration implements Identifiable, Uuidentifiable, Ownable, Deletable, 
 
     /**
      * @var \DateTime
-     * @ApiProperty(writable=false)
-     * @Serializer\Groups({"registration_output"})
+     * @ApiProperty
+     * @Serializer\Groups({"registration_output", "registration_input"})
+     * @Assert\DateTime
      */
     protected $createdAt;
 

@@ -105,8 +105,9 @@ class User extends BaseUser implements Identifiable, Uuidentifiable, Ownable, Id
 
     /**
      * @var \DateTime
-     * @ApiProperty(writable=false)
-     * @Serializer\Groups({"user_output"})
+     * @ApiProperty
+     * @Serializer\Groups({"user_output", "user_input"})
+     * @Assert\DateTime
      */
     protected $createdAt;
 

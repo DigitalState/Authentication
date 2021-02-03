@@ -8,6 +8,7 @@ objects:
 
 prototype:
   uuid: ~
+  created_at: ~
   username: ~
   email: ~
   password: ~

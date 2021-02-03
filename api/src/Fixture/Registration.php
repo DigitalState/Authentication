@@ -4,6 +4,7 @@ namespace App\Fixture;
 
 use App\Entity\Registration as RegistrationEntity;
 use App\EventListener\Entity\Registration\UserListener;
+use DateTime;
 use Doctrine\Common\Persistence\ObjectManager;
 use Ds\Component\Database\Fixture\Yaml;
 
@@ -48,6 +49,13 @@ trait Registration
                 ->setPassword($object->password)
                 ->setData($object->data)
                 ->setTenant($object->tenant);
+
+            if (null !== $object->created_at) {
+                $date = new DateTime;
+                $date->setTimestamp($object->created_at);
+                $registration->setCreatedAt($date);
+            }
+
             $manager->persist($registration);
         }
 
